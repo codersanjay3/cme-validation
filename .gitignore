@@ -1,0 +1,31 @@
+# Large or regenerable data (share out of band, see DATA.md)
+edgar_cache/
+bond_cache/
+stock_prices.pkl
+*.pkl
+
+# Build and tool noise
+__pycache__/
+*.pyc
+.DS_Store
+graphify-out/
+overleaf_upload.zip
+cme_paper_corrected.aux
+cme_paper_corrected.log
+cme_paper_corrected.out
+report/*.aux
+report/*.log
+report/*.out
+report/*.toc
+
+# Secrets and local settings
+.env
+.env.*
+.claude/settings.local.json
+
+# Beads / Dolt files (added by bd init)
+.dolt/
+*.db
+.beads-credential-key
+.beads/proxieddb/
+*.gate.lock*
