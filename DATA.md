@@ -8,6 +8,14 @@ The repo holds code, small results and the paper. Large or regenerable data is e
 | `bond_cache/` | about 12 MB | N-PORT bond fund cache | Rebuild with `bond_discover.py` |
 | `stock_prices.pkl` | about 47 MB | Yahoo daily prices, survivors only | Rebuild with `stock_prices.py` |
 
+**Fastest route: download the snapshot from the GitHub Release `data-v1`** (private, collaborators only, 611 MB):
+
+```bash
+gh release download data-v1 --repo codersanjay3/cme-validation
+shasum -a 256 -c SHA256SUMS.txt
+tar -xzf cme-data.tar.gz     # run in the repo root; restores all three paths
+```
+
 Put the three paths in the same locations inside your checkout. For a git worktree, symlink them from the main checkout, for example:
 
 ```bash

@@ -9,7 +9,7 @@
    bd bootstrap          # pulls the shared task database from GitHub
    bd list               # should show the same tasks as everyone else
    ```
-3. Get the data: see `DATA.md`.
+3. Get the data: `gh release download data-v1`, then follow `DATA.md` (about 611 MB, expands to about 7.4 GB).
 4. Pick a distinct agent name (for example `friend-agent`) and use it everywhere: branch prefix, `from:` label, `DECISIONS.md` entries.
 5. Start Claude Code in the repo folder. The hooks load the shared memory automatically. Then follow `CLAUDE.md`.
 
