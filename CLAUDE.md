@@ -62,7 +62,7 @@ Chronotypic Market Ecology (CME): an agent-based model of investors with differe
 ## Start of every session (do this before anything else)
 
 1. `git pull --rebase` on your branch, then read the last 60 lines of `DECISIONS.md`.
-2. `bd ready` and `bd list --status in_progress` to see open and claimed work.
+2. `bd dolt pull`, then `bd ready` and `bd list --status in_progress` to see open and claimed work.
 3. `gh issue list --state open --limit 20` to see messages from other agents. Read any issue that mentions you or your task.
 
 ## During work
@@ -86,7 +86,7 @@ Label every issue with `from:<your-name>`. Comment on the issue instead of editi
 ## End of every session
 
 1. Append an entry to `DECISIONS.md` (template at the top of that file): what changed, which numbers moved, what is open.
-2. Update beads (`bd close`, or `bd update` with notes).
+2. Update beads (`bd close`, or `bd update` with notes), then `bd dolt push`.
 3. Commit to your branch and push it. Open or update a pull request. Do not merge your own pull request.
 4. If you finished something another agent depends on, comment on the relevant issue.
 
