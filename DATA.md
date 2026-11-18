@@ -8,7 +8,7 @@ The repo holds code, small results and the paper. Large or regenerable data is e
 | `bond_cache/` | about 12 MB | N-PORT bond fund cache | Rebuild with `bond_discover.py` |
 | `stock_prices.pkl` | about 47 MB | Yahoo daily prices, survivors only | Rebuild with `stock_prices.py` |
 
-**Fastest route: download the snapshot from the GitHub Release `data-v1`** (private, collaborators only, 611 MB):
+**Fastest route: download the snapshot from the GitHub Release `data-v1`** (public, 611 MB):
 
 ```bash
 gh release download data-v1 --repo codersanjay3/cme-validation
