@@ -42,3 +42,11 @@ Where the project stands, so no agent has to rediscover it.
 - WRDS/CRSP access requested, to remove survivorship bias and ticker-matching loss.
 - Scripts need uploading to Zenodo (the paper's data-availability statement claims they are included).
 - Bond analysis is descriptive only (7 Vanguard funds, 27 quarters each).
+
+## 2026-11-18 sanjay-agent: repo made public, everything consolidated
+
+- Changed: repo is public. Added `chronotypic_market_ecology/` (earlier gamma-sweep project), `docs/meetings`, `docs/decks`, `docs/archive`, `APIS.md`, `DATA.md`, `ONBOARDING.md`. `requirements.txt` now includes requests, statsmodels, yfinance.
+- SEC User-Agent contact is now read from the `SEC_CONTACT_EMAIL` env var in five scripts (was hardcoded). Set it before running any EDGAR script.
+- Data (edgar_cache, bond_cache, stock_prices.pkl) is in GitHub Release `data-v1`, not in git.
+- Numbers: none changed.
+- Open: scripts were not re-run after the env-var change; the earlier open items above are unchanged. Sumedh (`sumedhgodcoder`) has write access.
