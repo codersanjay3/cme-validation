@@ -16,6 +16,7 @@ Data:
   - SPY returns: yfinance (quarterly market return control)
 """
 
+import os
 import csv, ssl, urllib.request, math
 from pathlib import Path
 from collections import defaultdict
@@ -119,7 +120,7 @@ for idx, val in spy_ret.items():
 print('Fetching EPU from FRED...')
 try:
     url = 'https://fred.stlouisfed.org/graph/fredgraph.csv?id=USEPUINDXM'
-    req = urllib.request.Request(url, headers={'User-Agent': 'research jaysubbu@gmail.com'})
+    req = urllib.request.Request(url, headers={'User-Agent': 'research ' + os.environ.get('SEC_CONTACT_EMAIL', 'set-SEC_CONTACT_EMAIL')})
     with urllib.request.urlopen(req, timeout=20, context=ctx) as r:
         epu_text = r.read().decode()
     epu_rows = [line.split(',') for line in epu_text.strip().split('\n')[1:]]

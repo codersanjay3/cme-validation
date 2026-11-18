@@ -12,6 +12,7 @@ For each fund and quarter we compute two horizon proxies:
                        dates are excluded from the trade count.
 Then correlate each with the MOVE index, by fund and by credit type.
 """
+import os
 import json, re, ssl, time, math, urllib.request
 from datetime import datetime
 from pathlib import Path
@@ -23,7 +24,7 @@ import yfinance as yf
 ROOT = Path("/Users/sanjaysubramania/cme_validation")
 CACHE = ROOT / "bond_cache"
 ctx = ssl._create_unverified_context()
-H = {"User-Agent": "research jaysubbu@gmail.com"}
+H = {"User-Agent": "research " + os.environ.get("SEC_CONTACT_EMAIL", "set-SEC_CONTACT_EMAIL")}
 CIK = 106444
 TYPES = {
     "VANGUARD SHORT-TERM TREASURY FUND": "Treasury",

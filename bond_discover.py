@@ -1,8 +1,9 @@
 """List fund series (names) available per family by reading only filing headers."""
+import os
 import json, ssl, urllib.request, re, time
 from collections import defaultdict
 ctx = ssl._create_unverified_context()
-H = {'User-Agent': 'research jaysubbu@gmail.com'}
+H = {'User-Agent': 'research ' + os.environ.get('SEC_CONTACT_EMAIL', 'set-SEC_CONTACT_EMAIL')}
 FAM = {'PIMCO': 810893, 'Vanguard': 106444, 'BlackRock': 276463}
 
 def get(u, nbytes=None):

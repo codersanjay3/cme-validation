@@ -8,6 +8,7 @@ a quarter, analogous to the equity TDI from 13F filings in the main paper.
 We then correlate quarterly TDI with ^MOVE bond volatility.
 """
 
+import os
 import ssl, urllib.request, json, re, math
 from datetime import datetime, date
 from collections import defaultdict
@@ -16,7 +17,7 @@ import numpy as np
 from scipy import stats
 
 ctx = ssl._create_unverified_context()
-HEADERS = {'User-Agent': 'research jaysubbu@gmail.com'}
+HEADERS = {'User-Agent': 'research ' + os.environ.get('SEC_CONTACT_EMAIL', 'set-SEC_CONTACT_EMAIL')}
 
 
 def fetch(url, timeout=30):

@@ -61,7 +61,7 @@ TAU_FLOOR = 5.0    # 1 week minimum
 TAU_CAP   = 2000.0 # matches TAU_MAX upper bound (prevents artificial mass point at log(1260))
 
 EDGAR_HEADERS = {
-    "User-Agent": "CME-Validation jaysubbu@gmail.com",
+    "User-Agent": "CME-Validation " + os.environ.get("SEC_CONTACT_EMAIL", "set-SEC_CONTACT_EMAIL"),
     "Accept-Encoding": "gzip, deflate",
 }
 EDGAR_RATE = 0.12   # seconds between requests (stay under EDGAR's 10 req/s limit)
