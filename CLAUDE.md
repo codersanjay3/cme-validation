@@ -103,7 +103,8 @@ Label every issue with `from:<your-name>`. Comment on the issue instead of editi
 ## Run and verify
 
 ```bash
-pip install -r requirements.txt     # numpy, scipy, matplotlib, networkx, pandas (statsmodels, yfinance for the empirical scripts)
+pip install -r requirements.txt     # numpy, scipy, matplotlib, networkx, pandas, requests, statsmodels, yfinance
+export SEC_CONTACT_EMAIL="you@example.com"   # required by the SEC for EDGAR requests; see APIS.md
 python verify_numbers.py            # 30-seed check of the simulation ratios
 ```
 
@@ -117,3 +118,6 @@ Other scripts and what they produce are listed in `REPRODUCE.md`.
 - Stock-level test: `map_cusips.py`, `stock_prices.py`, `stock_level_test.py`
 - Bond analysis: `bond_discover.py`, `bond_by_type.py`
 - Paper: `cme_frl_submission.tex`; explanatory report: `report/`
+- Earlier gamma-sweep project: `chronotypic_market_ecology/`
+- Meeting decks and prompts: `docs/meetings/`; older decks and paper versions: `docs/decks/`, `docs/archive/`
+- External data sources and setup: `APIS.md`; data snapshot: `DATA.md`
