@@ -1,0 +1,9 @@
+/Users/sanjaysubramania/.venv/lib/python3.11/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (1.26.20) or chardet (7.6.0)/charset_normalizer (3.4.3) doesn't match a supported version!
+  warnings.warn(
+distinct CUSIPs ever held: 44573
+2014Q2 CUSIPs with >=1 holder: 12436  >=10: 3189  >=20: 1615  >=40: 303
+2019Q2 CUSIPs with >=1 holder: 9111  >=10: 3431  >=20: 2025  >=40: 226
+2023Q2 CUSIPs with >=1 holder: 11907  >=10: 3714  >=20: 1972  >=40: 215
+CUSIPs with >=10 holders in >=30 quarters: 2449
+CUSIP formats (9 chars): 2449 of 2449
+OpenFIGI FAILED: <HTTPError 413: 'Payload Too Large'>

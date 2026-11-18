@@ -1,0 +1,40 @@
+\section{Background and Related Work}
+\label{sec:background}
+
+This section explains the ideas our work builds on and where it differs from earlier research.
+
+\subsection{The Fractal Market Hypothesis}
+
+\citet{peters1994} argued that financial markets look statistically similar at many time scales: a chart of daily prices resembles a chart of hourly prices, which resembles a chart of monthly prices. He proposed that this is because the market is made of investors with different horizons, each reacting to information relevant to their own time scale. Markets stay liquid, he argued, because when one group of investors is unwilling to trade, another group with a different horizon is willing. Crashes happen when horizons collapse onto each other: investors who normally act on different time scales all start acting on the same one, so that the usual counterparties disappear.
+
+This is an attractive explanation of why some crashes feel so sudden, but it has three limits. It is a verbal hypothesis rather than a fitted model, it does not say \emph{why} horizons would converge, and it is hard to test because investor horizons are not directly observed. Existing work tests pieces of it. \citet{kristoufek2012} examines the scaling properties of stock indices around the 2008 financial crisis and finds the predictions of the hypothesis fit reasonably well. \citet{li2014} build an agent-based model with investors of different horizons, and find that liquidity is supplied by investors with different horizons and that stability improves as a market moves from uniform to diverse horizons, although with a finite maximum horizon extra diversity need not add stability. Our model is close in spirit to the second paper. We differ by letting horizon similarity determine who interacts with whom, and by letting horizons adapt to neighbours.
+
+\subsection{Heterogeneous agents, networks, and herding}
+
+Many models of financial markets assume investors are identical. A large literature relaxes this and shows that differences between investors can generate realistic features of prices such as bursts of volatility and heavy tails \citep{arthur1997,lebaron2001,cont2001,farmerfoley2009}. A related literature studies how social interaction makes behaviour correlated (herding; \citealp{bikhchandani1992,devenow1996}) and how the shape of a network of connections can amplify shocks \citep{acemoglu2015}.
+
+One result is especially relevant for the idea of ``like seeks like''. \citet{golub2012} show that when people mostly talk to others who are similar to them (homophily), information spreads more slowly across the whole population. Our model has an analogous effect: strong clustering by horizon means investors rarely mix with those of very different horizons, so horizons drift more slowly. There is a difference. In their model people update \emph{beliefs}. In ours investors adapt their \emph{observation frequency}, which we describe as preference-based rather than belief-based learning.
+
+\subsection{Why horizons differ: limited attention}
+
+Why would investors choose different horizons at all? One answer is rational inattention \citep{sims2003,caplin2015}: people have limited attention, so each investor optimally concentrates on the price patterns at one time scale. Our model takes horizons as given, which is a simplification, and we leave deriving them from attention constraints for later work.
+
+\subsection{Empirical studies of institutional investment horizons}
+
+A large body of empirical finance classifies institutional investors by how long they hold stocks, typically using portfolio turnover. \citet{bushee1998} finds that when a large share of a firm is owned by institutions with high portfolio turnover that trade on momentum, managers are more likely to cut research spending to reverse an earnings decline. \citet{gaspar2005} show that firms with short-horizon shareholders are more often takeover targets but receive lower premiums. Most closely related to our empirical work, \citet{cella2013} use the same type of quarterly holdings data to show that stocks owned by short-horizon institutions fall further, and later rebound more, during market turmoil, so short-horizon owners \emph{amplify} market shocks.
+
+These papers study the \emph{level} of short-horizon ownership: how much of a stock is held by short-horizon investors. We ask a different question: how \emph{similar} are the horizons of a stock's owners, holding the average horizon fixed? A stock owned by a half-and-half mix of short and long horizons is different from one owned entirely by medium-horizon investors, even if the average is the same. This distinction matters because the Fractal Market Hypothesis is about the mix, not the average.
+
+\subsection{Disagreement, trading, and volatility}
+
+A further piece of related work explains why volatility and trading volume move together. \citet{harrisraviv1993}, in a paper titled ``Differences of opinion make a horse race'', model investors who disagree about the value of an asset and show that more disagreement produces more trading and more volatility. This matters for our empirical work. When volatility is high, investors disagree more and trade more, so measured horizons could shorten for a behavioural reason. Section~\ref{sec:drift} separates this behavioural channel from a purely accounting channel that we show to be important.
+
+\subsection{Where this work sits}
+
+In short, our contributions relative to this literature are:
+\begin{enumerate}[leftmargin=*]
+\item a network model in which horizon similarity governs who interacts with whom and horizons adapt to neighbours;
+\item a direct empirical test that like-horizon investors hold similar portfolios;
+\item a careful treatment of how investment horizons are measured from holdings data, including a demonstration that a standard approach is contaminated by price movements; and
+\item a stock-level test of whether the \emph{similarity} of owners' horizons predicts volatility, along with an honest account of where the model and the data disagree.
+\end{enumerate}

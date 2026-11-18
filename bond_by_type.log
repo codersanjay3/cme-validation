@@ -1,0 +1,23 @@
+/Users/sanjaysubramania/.venv/lib/python3.11/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (1.26.20) or chardet (7.6.0)/charset_normalizer (3.4.3) doesn't match a supported version!
+  warnings.warn(
+VANGUARD SHORT-TERM TREASURY FUND: 28 reports
+VANGUARD INTERMEDIATE-TERM TREASURY FUND: 28 reports
+VANGUARD LONG-TERM TREASURY FUND: 28 reports
+VANGUARD SHORT-TERM INVESTMENT-GRADE FUND: 28 reports
+VANGUARD INTERMEDIATE-TERM INVESTMENT-GRADE FUND: 28 reports
+VANGUARD LONG-TERM INVESTMENT-GRADE FUND: 28 reports
+VANGUARD HIGH-YIELD CORPORATE FUND: 28 reports
+
+fund                                                   n mean WAM(yr)  median tau_beh(d)  r(WAM,MOVE)  r(tau_beh,MOVE)
+VANGUARD SHORT-TERM TREASURY FUND                     27         3.75                146   -0.30 (p=0.13)   +0.45 (p=0.02)
+VANGUARD INTERMEDIATE-TERM TREASURY FUND              27         6.63                211   -0.54 (p=0.00)   +0.44 (p=0.02)
+VANGUARD LONG-TERM TREASURY FUND                      27        21.97                400   -0.40 (p=0.04)   +0.30 (p=0.13)
+VANGUARD SHORT-TERM INVESTMENT-GRADE FUND             27         4.29                437   -0.64 (p=0.00)   +0.47 (p=0.01)
+VANGUARD INTERMEDIATE-TERM INVESTMENT-GRADE FUND      27         8.40                363   -0.41 (p=0.03)   +0.73 (p=0.00)
+VANGUARD LONG-TERM INVESTMENT-GRADE FUND              27        22.84                765   -0.28 (p=0.16)   +0.01 (p=0.95)
+VANGUARD HIGH-YIELD CORPORATE FUND                    27         5.52                667   -0.31 (p=0.12)   +0.36 (p=0.07)
+
+By credit type (fund-quarters pooled, quarter-demeaned within fund):
+  Treasury                     fund-quarters= 81  median tau_beh=   218d  r(log tau_beh, MOVE)=+0.38 (p=0.000)  r(WAM, MOVE)=-0.40 (p=0.000)
+  Investment-grade corporate   fund-quarters= 81  median tau_beh=   454d  r(log tau_beh, MOVE)=+0.33 (p=0.003)  r(WAM, MOVE)=-0.47 (p=0.000)
+  High-yield corporate         fund-quarters= 27  median tau_beh=   667d  r(log tau_beh, MOVE)=+0.36 (p=0.068)  r(WAM, MOVE)=-0.31 (p=0.117)

@@ -1,0 +1,16 @@
+loading holdings...
+
+=== share-based tau (primary): 63261 stock-quarters, 1699 stocks, 48 quarters ===
+mean DISP = 0.487, corr(DISP, mean_lt) = +0.37
+  log next-qtr realized vol    FM beta(DISP)=-0.0459 (NW t=-6.20, p=0.000, 48 qtrs) | pooled FE beta=-0.0169 (cluster t=-4.13, p=0.000)   [CME predicts sign: -]
+  next-qtr min daily return    FM beta(DISP)=+0.0417 (NW t=+4.47, p=0.000, 48 qtrs) | pooled FE beta=-0.0038 (cluster t=-0.58, p=0.564)   [CME predicts sign: + (less negative when dispersed)]
+  next-qtr skewness            FM beta(DISP)=-0.0006 (NW t=-0.09, p=0.928, 48 qtrs) | pooled FE beta=-0.0053 (cluster t=-0.68, p=0.494)   [CME predicts sign: +]
+  STOCK + QUARTER FE (within-stock changes only) lrv_next: beta(DISP)=-0.0106 (cluster t=-2.42, p=0.016)
+  PLACEBO (tau shuffled across institutions) lrv_next: FM beta=+0.0000 (t=+0.01)
+
+=== value-weight tau (paper baseline): 63239 stock-quarters, 1699 stocks, 48 quarters ===
+mean DISP = 0.397, corr(DISP, mean_lt) = +0.25
+  log next-qtr realized vol    FM beta(DISP)=-0.0440 (NW t=-8.04, p=0.000, 48 qtrs) | pooled FE beta=-0.0089 (cluster t=-2.33, p=0.020)   [CME predicts sign: -]
+  next-qtr min daily return    FM beta(DISP)=+0.0416 (NW t=+4.73, p=0.000, 48 qtrs) | pooled FE beta=-0.0064 (cluster t=-1.07, p=0.287)   [CME predicts sign: + (less negative when dispersed)]
+  next-qtr skewness            FM beta(DISP)=+0.0025 (NW t=+0.38, p=0.703, 48 qtrs) | pooled FE beta=+0.0009 (cluster t=+0.13, p=0.900)   [CME predicts sign: +]
+  STOCK + QUARTER FE (within-stock changes only) lrv_next: beta(DISP)=-0.0047 (cluster t=-1.13, p=0.257)

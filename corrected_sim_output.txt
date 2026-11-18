@@ -1,0 +1,1 @@
+Smoke test PASSED. Keys: ['volatility', 'tmfi', 'assortativity', 'lambda2', 'tdi', 'acf_lag1', 'temporal_liquidity', 'd_tau_mean']

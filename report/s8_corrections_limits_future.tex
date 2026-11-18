@@ -1,0 +1,78 @@
+\section{Corrections Made Along the Way}
+\label{sec:corrections}
+
+Several earlier claims did not survive closer examination. We list them together so that a reader can see exactly what changed. Each was corrected in the paper.
+
+\begin{table}[htbp]
+\centering
+\caption{Earlier claims, what we found, and what the text now says.}
+\label{tab:corr}
+\small
+\begin{tabular}{p{0.07\linewidth}p{0.27\linewidth}p{0.30\linewidth}p{0.28\linewidth}}
+\toprule
+ & \textbf{Earlier claim} & \textbf{What we found} & \textbf{Now}\\
+\midrule
+1 & Corrected statistic for the clustering score is about 15, with an effective sample of 17 (``17 lags'') & Never computed. Real Newey--West: $t=19.0$ at 3 lags, $16.3$ at 8; effective sample about 24 & Reported with a lag table and lag-choice rules\\
+2 & Clustering significant at $p<0.001$ in every quarter & The pairwise test overstates significance. Permutation test: 48 of 50 quarters at 5\%, 47 of 50 at 1\% & Reported as 48 of 50\\
+3 & Horizon diversity versus VIX ($r=-0.53$) validates the model & Largely price drift. Share-based turnover gives $r=-0.06$ & Reframed as a measurement artifact\\
+4 & Granger result ``confirms'' the model's channel & Direction is the reverse of the model, and does not reproduce on a rebuilt series & Marked suggestive\\
+5 & Temporal liquidity versus VIX validates the model; sample of 36 quarters & Sample is 45 quarters; correlation is mostly mechanical because volatility is inside TL; autocorrelation part unrelated to VIX ($+0.04$) & Reported as mechanical\\
+6 & The MOVE index was ours & It is a published ICE Bank of America index & Described correctly\\
+7 & Compressing horizons raises simulated volatility & The sweep never fed the compressed horizons into the simulation. Properly done, volatility falls & Replaced with the real result\\
+8 & The uniform price mode bounded by $0.0016$ with no derivation & Derived gain is $\lambda n\bar\beta/\bar p\approx 0.0013$ & Derivation added\\
+9 & Temporal liquidity peaks at moderate clustering & Very large run-to-run spread; peak not statistically reliable & Treated with caution\\
+10 & Related work & Closest empirical overlap (Cella et al., 2013) was not cited & Cited and differences stated\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Limitations and Threats to Validity}
+\label{sec:limits}
+
+We collect here the main reasons the results should be read with care.
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{Horizons are inferred, not observed.} The mapping $\tau=63/\theta$ from turnover to a horizon is a rough device. It cannot see trading within a quarter, short positions or derivatives, and the sample is tilted toward slow institutions.
+\item \textbf{The share-based turnover result rests on our own rebuild.} The rebuilt diversity series correlates only $0.50$ with the original, with a particularly large gap in 2022 Q4. We have not identified the source. An independent check by someone else on the team is warranted before the conclusion is relied upon.
+\item \textbf{The stock-level sample is survivors only.} Free price data omit delisted and acquired companies, and only about 60\% of securities could be matched to tickers.
+\item \textbf{The stock-level effect is small.} Within a stock, one standard deviation of owner spread moves next-quarter volatility by about 1\% of a standard deviation, and only with share-based horizons.
+\item \textbf{The panel is limited.} The holdings cover 150 managers. The clustering score and the owner-spread measure are computed from those managers only.
+\item \textbf{Holdings are not trades.} The clustering score measures similarity of holdings, not of purchases.
+\item \textbf{The model and the stock-level result disagree in sign} (Section~\ref{sec:tension}). Whether this is a flaw in the model, in the data, or in how the hypothesis maps onto the model is open.
+\item \textbf{The model is stylised.} Horizons are exogenous, trading goes through a single market maker, the fundamental value is a simple random walk, and the market has only 80 investors. Results at 160 and 320 investors point the same way, but this is not a model of any specific market.
+\item \textbf{Bond results are descriptive.} Seven funds, 27 quarters each, one fund family.
+\item \textbf{Some earlier numbers rest on approximations or single runs.} For example, the belief-fragmentation ratio has large run-to-run variation.
+\end{enumerate}
+
+\section{Future Work}
+\label{sec:future}
+
+\subsection{Access to the standard stock database}
+
+The most valuable data upgrade is CRSP, the Center for Research in Security Prices, a standard database in finance that holds every US stock back to 1926 including those later delisted, with market capitalisation, trading volume and carefully adjusted returns. Universities usually provide access through Wharton Research Data Services (WRDS). WRDS also provides the full 13F holdings database covering all managers, not just our 150. With it we could:
+\begin{itemize}[leftmargin=*]
+\item repeat the stock-level test on the full universe, removing the survivorship bias and the ticker-matching loss;
+\item control for firm size and trading volume properly;
+\item test more outcomes, such as crash risk, co-movement with the market, and liquidity measures; and
+\item use all managers when measuring owner horizons.
+\end{itemize}
+This is the single step most likely to settle whether the small stock-level effect is real. We are seeking access.
+
+\subsection{Other next steps}
+\begin{itemize}[leftmargin=*]
+\item \textbf{Rebuild the aggregate diversity measure from share-based turnover throughout}, and resolve the discrepancy with the original series.
+\item \textbf{Decide on the model change} described in Section~\ref{sec:tension}, and if one is made, re-verify every simulation result.
+\item \textbf{Use trade-level data} to separate the behavioural link between volatility and trading speed from price drift, and to test whether like-horizon investors \emph{buy} the same securities.
+\item \textbf{Improve the bond test} with insurer bond filings (NAIC Schedule D), which record actual portfolio turnover, and with a larger set of bond funds across families.
+\item \textbf{Derive horizons from limited attention} \citep{sims2003} so that they are an outcome of the model, not an input.
+\item \textbf{Add an information-asymmetry channel} in the spirit of \citet{kyle1985} and \citet{akerlof1970}, in which a long-horizon investor discounts prices proposed by short-horizon investors who may know more.
+\end{itemize}
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+We set out to ask whether the diversity of investor time horizons matters for market stability, and to make the Fractal Market Hypothesis concrete. We built a model in which investors with similar horizons cluster and drift together. In the model, clustering lowers volatility and nearly eliminates belief fragmentation, while drift steadily erodes horizon diversity.
+
+The real-data results are more mixed than we first believed. The model's central assumption holds: investors with similar horizons really do hold more similar portfolios, an effect that is modest but consistent and robust to careful statistical correction. Our first headline empirical result, a link between horizon diversity and the VIX, does not survive when price movements are removed from the turnover measure, and we report it as a measurement artifact. At the level of individual stocks, similar-horizon owners go with slightly higher volatility, as the hypothesis predicts, though the effect is small and opposite in sign to what our own model simulates.
+
+We think the most useful outcome of this work is an honest map of what is and is not established: a clean test of the model's key assumption, a demonstration of a measurement trap that affects any study inferring horizons from holdings, and a clearly identified gap between the model's simulated channel and the fragility the hypothesis is about. Closing that gap, with better data and a revised model, is the next step.

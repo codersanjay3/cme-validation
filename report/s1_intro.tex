@@ -1,0 +1,72 @@
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{The basic problem: investors live on different clocks}
+
+Imagine two investors looking at the same stock. The first is a high-frequency trading firm whose computers buy and sell within fractions of a second and rarely hold anything overnight. The second is a pension fund that buys shares to hold for ten years. They see the same price, but they are asking different questions. The trading firm asks, ``Which way will this move in the next few seconds?'' The pension fund asks, ``Will this company still be worth owning when my members retire?'' In between sit hedge funds, which hold positions for weeks or months, and mutual funds, which hold for months or years.
+
+We call the typical length of time over which an investor looks at price information and holds positions that investor's \emph{trading horizon}, measured in trading days. A day trader might have a horizon of one day, a pension fund a horizon of several years. The central question of this research is simple to state:
+
+\begin{keyidea}[The central question]
+Does it matter for market stability that investors have \emph{different} trading horizons, and what happens when investors with similar horizons mostly deal with each other and slowly become more alike?
+\end{keyidea}
+
+There is an old and appealing intuition behind this question. If everyone in a market wants to sell at the same moment, there is nobody to buy, and prices collapse. If investors have a healthy mix of horizons, then when short-horizon traders panic, long-horizon investors may see a bargain and step in. This idea was popularised by \citet{peters1994} as the \emph{Fractal Market Hypothesis} (FMH): markets are stable when investors operate across many different time horizons, and become fragile when horizons converge. The hypothesis is informal. It says what should happen but does not specify a mechanism for \emph{why} horizons would converge or how fast.
+
+\subsection{What this project does}
+
+We make the Fractal Market Hypothesis concrete in three steps.
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{We build a model.} The Chronotypic Market Ecology (CME) model is an agent-based computer simulation of 80 investors. (``Chronotype'' is a word from biology for a person's natural rhythm, for example a morning person versus a night owl. We use it for an investor's natural trading rhythm.) Each simulated investor has a trading horizon. Investors form a network in which links between investors with similar horizons are more likely than links between investors with very different horizons. We call this tendency \emph{horizon clustering} (the technical term is \emph{temporal homophily}, meaning ``like seeks like''). A dial in the model controls how strong it is. Investors also slowly adapt their horizons toward the average of those they are linked to.
+
+\item \textbf{We measure the model's behaviour.} We track simulated price volatility, how fragmented beliefs are between horizon groups, and how diverse horizons are.
+
+\item \textbf{We test it against real data.} We use quarterly holdings reports filed with the US Securities and Exchange Commission (SEC) by large investment managers, holdings reports of bond funds, stock prices, and published volatility indexes, to ask whether the assumptions and implications of the model show up in the real world.
+\end{enumerate}
+
+\subsection{The research questions}
+
+We organise the work around five questions.
+
+\begin{description}[leftmargin=2.2em,style=nextline]
+\item[Q1] In the model, how does horizon clustering affect volatility and the fragmentation of beliefs?
+\item[Q2] In the model, does the drift of horizons toward one's neighbours erode the diversity of horizons?
+\item[Q3] In real data, do investors with similar horizons really hold similar portfolios? (This is the key assumption of the model.)
+\item[Q4] In real data, is the diversity of investor horizons related to market volatility, and if so in which direction does the relationship run?
+\item[Q5] Do the model's predictions about how horizon structure relates to volatility agree with what we see in individual stocks?
+\end{description}
+
+\subsection{Findings at a glance}
+
+We state the outcome at the start so a reader knows what to expect. Not every result supports the original idea. Table~\ref{tab:glance} summarises each result and gives an honest verdict. Details and numbers follow in later sections.
+
+\begin{table}[htbp]
+\centering
+\caption{Summary of results and our verdict on each.}
+\label{tab:glance}
+\small
+\begin{tabular}{p{0.34\linewidth}p{0.42\linewidth}p{0.16\linewidth}}
+\toprule
+\textbf{Question} & \textbf{Result} & \textbf{Verdict}\\
+\midrule
+Q1: clustering and volatility (model) & Volatility falls $1.31\times$; belief fragmentation falls $14.25\times$; both replicated over 30 runs & Supported (in the model)\\
+Q2: horizon drift (model) & Horizon diversity falls at every clustering strength tested & Supported (in the model)\\
+Q3: do like-horizon investors hold similar stocks? & Yes. Average correlation $+0.158$, positive in all 50 quarters; significant after correction for time dependence & Supported\\
+Q4: horizon diversity versus the VIX & Original correlation $-0.53$ is mostly a measurement artifact; it vanishes ($-0.06$) when price moves are removed from the turnover measure & Not supported\\
+Q4: bond funds by credit quality & Funds trade at different speeds (218, 454, 667 days for Treasury, investment-grade, high-yield); horizons lengthen when bond volatility is high & Descriptive only\\
+Q5: stock-level test & Stocks whose owners have similar horizons are slightly more volatile next quarter; effect is small within a stock & Weak support; opposite in sign to the model's simulated channel\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{How to read this document}
+
+This document is meant to stand on its own. It does not assume that the reader has seen our earlier paper. Each technical idea is explained in plain words before any formula appears, and key ideas are set in boxed notes. Whenever we introduce a number, we say how it was computed and what it would mean for the argument. We use the following conventions.
+
+\begin{itemize}[leftmargin=*]
+\item We use plain-English names for our measures: \emph{trading horizon} (the symbol $\tau$ in the formulas), \emph{horizon diversity} (the Temporal Diversity Index, TDI), \emph{horizon clustering score} (the estimated clustering parameter $\hat\kappa_h$), \emph{belief fragmentation} (the Temporal Market Fragmentation Index, TMFI), and \emph{temporal liquidity} (TL). Appendix~\ref{app:glossary} lists every term.
+\item ``VIX'' is the Chicago Board Options Exchange's published index of the stock market's expected volatility, often called the market's ``fear gauge''. ``MOVE'' is the equivalent published index for US Treasury bonds. We did not construct either.
+\item A \emph{correlation} is a number between $-1$ and $+1$ describing how closely two series move together. The sign gives the direction. We use the term \emph{significant} in its usual statistical sense: unlikely to arise by luck alone.
+\item Section~\ref{sec:corrections} lists every earlier claim of ours that we had to retract or soften. We think a reader should see these together.
+\end{itemize}

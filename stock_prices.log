@@ -1,0 +1,81 @@
+/Users/sanjaysubramania/.venv/lib/python3.11/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (1.26.20) or chardet (7.6.0)/charset_normalizer (3.4.3) doesn't match a supported version!
+  warnings.warn(
+1723 tickers
+0 (3413, 100)
+Failed to get ticker 'BF/A' reason: Expecting value: line 1 column 1 (char 0)
+HTTP Error 404: {"finance":{"result":null,"error":{"code":"Not Found","description":"HTTP 404 Not Found"}}}
+Failed to get ticker 'BF/B' reason: Expecting value: line 1 column 1 (char 0)
+HTTP Error 404: {"finance":{"result":null,"error":{"code":"Not Found","description":"HTTP 404 Not Found"}}}
+
+2 Failed downloads:
+['BF/A', 'BF/B']: YFException("Failed to parse json response from Yahoo Finance: {'code': 'Not Found', 'description': 'HTTP 404 Not Found'}")
+100 (3413, 100)
+Failed to get ticker 'BRK/A' reason: Expecting value: line 1 column 1 (char 0)
+$BRK/A: possibly delisted; no timezone found
+Failed to get ticker 'BRK/B' reason: Expecting value: line 1 column 1 (char 0)
+$BRK/B: possibly delisted; no timezone found
+
+2 Failed downloads:
+['BRK/A', 'BRK/B']: possibly delisted; no timezone found
+200 (3413, 100)
+$CMA: possibly delisted; no timezone found
+$CTRA: possibly delisted; no timezone found
+
+2 Failed downloads:
+['CMA', 'CTRA']: possibly delisted; no timezone found
+300 (3413, 100)
+400 (3413, 100)
+500 (3413, 100)
+Failed to get ticker 'GEF/B' reason: Expecting value: line 1 column 1 (char 0)
+$GEF/B: possibly delisted; no timezone found
+$GDEN: possibly delisted; no timezone found
+$GLDD: possibly delisted; no timezone found
+
+3 Failed downloads:
+['GEF/B', 'GDEN', 'GLDD']: possibly delisted; no timezone found
+600 (3413, 100)
+Failed to get ticker 'HEI/A' reason: Expecting value: line 1 column 1 (char 0)
+$HEI/A: possibly delisted; no timezone found
+
+1 Failed download:
+['HEI/A']: possibly delisted; no timezone found
+700 (3413, 100)
+Failed to get ticker 'LEN/B' reason: Expecting value: line 1 column 1 (char 0)
+$LEN/B: possibly delisted; no timezone found
+
+1 Failed download:
+['LEN/B']: possibly delisted; no timezone found
+800 (3413, 100)
+900 (3413, 100)
+$MOFG: possibly delisted; no timezone found
+Failed to get ticker 'MOG/A' reason: Expecting value: line 1 column 1 (char 0)
+$MOG/A: possibly delisted; no timezone found
+
+2 Failed downloads:
+['MOFG', 'MOG/A']: possibly delisted; no timezone found
+1000 (3413, 100)
+Failed to get ticker 'PBR/A' reason: Expecting value: line 1 column 1 (char 0)
+$PBR/A: possibly delisted; no timezone found
+$PCH: possibly delisted; no timezone found
+
+2 Failed downloads:
+['PBR/A', 'PCH']: possibly delisted; no timezone found
+1100 (3413, 100)
+1200 (3413, 100)
+1300 (3413, 100)
+$TGNA: possibly delisted; no timezone found
+$SNBRQ: possibly delisted; no price data found  (1d 2012-10-01 -> 2026-04-30)
+$STKL: possibly delisted; no timezone found
+
+3 Failed downloads:
+['TGNA', 'STKL']: possibly delisted; no timezone found
+['SNBRQ']: possibly delisted; no price data found  (1d 2012-10-01 -> 2026-04-30)
+1400 (3413, 100)
+1500 (3413, 100)
+1600 (3413, 100)
+$ZEUS: possibly delisted; no timezone found
+
+1 Failed download:
+['ZEUS']: possibly delisted; no timezone found
+1700 (3413, 23)
+saved 88753 ticker-quarters

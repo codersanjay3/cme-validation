@@ -1,0 +1,69 @@
+\section{Data and How We Measure Investor Horizons}
+\label{sec:data}
+
+The model is only useful if its ideas can be connected to the real world. The hardest part is that an investor's trading horizon is not recorded anywhere. We have to infer it from what investors disclose. This section explains the data and the inference step by step.
+
+\subsection{Quarterly holdings reports (Form 13F)}
+
+In the United States, every institutional investment manager that controls more than \$100 million in qualifying assets must file a quarterly report with the SEC, called Form 13F, listing the stocks it holds at quarter end. Each row of the report gives a security, identified by a nine-character code called a \emph{CUSIP}, and the dollar value of the position. These reports are public and free from the SEC's EDGAR system.
+
+We use the 150 managers that file most consistently, over 52 quarters from 2013 Q1 to 2026 Q1. For our clustering analysis we use 50 usable quarters with 85 to 107 managers each. For each manager and quarter we have a list of positions. We also keep the raw reports, which additionally give the \emph{number of shares} held, because share counts (not dollar values) turn out to matter in Section~\ref{sec:drift}.
+
+\begin{caution}[Limits of this data]
+The reports show only long stock positions at quarter end. They omit short positions, many derivatives, and anything done between quarter ends. A manager that buys and sells the same stock within a quarter leaves no trace. So the horizons we infer are \emph{lower bounds on activity}, and the sample leans toward slower-moving institutions (mutual funds, pensions, insurers, endowments). Very fast traders are largely absent.
+\end{caution}
+
+\subsection{From holdings to a trading horizon}
+
+For each manager, we compare their holdings in two consecutive quarters. Let $w_{i,s}$ denote the weight (fraction of portfolio value) manager $i$ puts on security $s$. \emph{Turnover} is the share of the portfolio that changed:
+\begin{equation}
+\theta_i \;=\; \tfrac12\sum_{s}\big|w_{i,s}^{\text{now}}-w_{i,s}^{\text{before}}\big| .
+\label{eq:turnover}
+\end{equation}
+If nothing changed, $\theta_i=0$. If the manager sold everything and bought an entirely different set of stocks, $\theta_i=1$. We then convert turnover to a trading horizon in trading days:
+\begin{equation}
+\tau_i \;=\; \frac{63}{\theta_i}, \qquad\text{limited to the range } 5\le \tau_i\le 2000 .
+\label{eq:tau}
+\end{equation}
+The number 63 is roughly the number of trading days in a quarter. A manager who completely turns over their portfolio each quarter ($\theta=1$) has a horizon of about one quarter (63 days). A manager who changes 10\% of the portfolio per quarter ($\theta=0.1$) has a horizon of about 630 days. We ignore managers with turnover below 0.1\% (inactive filers, which would produce absurdly long horizons).
+
+\begin{example}[Three real managers in one quarter]
+Table~\ref{tab:example} shows three managers from the 2019 Q2 data, chosen to be a fast, a typical and a slow trader. We label them A, B, C and do not identify them.
+\end{example}
+
+\begin{table}[htbp]
+\centering
+\caption{Three real managers in 2019 Q2. Turnover is from changes in portfolio weights.}
+\label{tab:example}
+\begin{tabular}{lrrrr}
+\toprule
+Manager & Positions held & Turnover vs.\ last quarter & Trading horizon (days) & Largest single holding\\
+\midrule
+A (fast) & 580 & 52.1\% & 121 & 18.1\%\\
+B (typical) & 2{,}651 & 11.5\% & 548 & 2.6\%\\
+C (slow) & 223 & 4.2\% & 1{,}511 & 7.1\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{From many horizons to one diversity number}
+
+To summarise a quarter we gather the horizons of all managers with valid data, sort them into the same 16 log-scale bins used in the model, and compute the entropy of Eq.~\eqref{eq:tdi}. The result is a single number per quarter, \emph{horizon diversity}. We require at least 50 reporting managers in a quarter. This yields 45 quarters, 2013 Q3 to 2024 Q3. Horizon diversity in this sample (our original series) averages $1.86$ and ranges from $1.02$ (2022 Q4) to $1.99$ (2019 Q2).
+
+\subsection{Market volatility indexes}
+
+\textbf{VIX} is a published index, calculated by the Chicago Board Options Exchange from prices of options on the S\&P~500, that measures the volatility investors \emph{expect} over the next 30 days. It is widely called the market's fear gauge. We average its daily values within each quarter.
+
+\textbf{MOVE} is the Merrill Lynch (now ICE Bank of America) Option Volatility Estimate, the analogous published index for US Treasury bonds, computed from prices of options on Treasuries. We did not create either index. (In an earlier meeting one of us described the MOVE index as something we built; that was incorrect.) We download monthly values and average them by quarter.
+
+\subsection{Other data}
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{Bond fund holdings.} Mutual funds file a different quarterly report, Form N-PORT, listing every holding including the par amount, market value and maturity date. We use it for the bond analysis (Section~\ref{sec:bonds}).
+\item \textbf{Stock prices.} Daily adjusted closing prices from Yahoo Finance for individual stocks, matched to the holdings by converting CUSIPs to ticker symbols using OpenFIGI, a free public identifier service.
+\item \textbf{Economic policy uncertainty.} A published index of newspaper-based policy uncertainty \citep{baker2016}, used as a control variable.
+\end{itemize}
+
+\subsection{Checking the data}
+
+Several simple checks matter for results to be trustworthy. We keep only positions with positive value (and positive share counts when we use shares), so that no logarithm of zero or division by zero can arise. We drop managers with turnover below 0.1\%. We cap horizons at 5 and 2{,}000 days. We exclude quarters with fewer than 50 reporting managers from the diversity series and require at least 8 managers with valid horizons for the clustering score. For the stock-level work we require at least 10 owners per stock and at least 50 trading days of prices in a quarter. Appendix~\ref{app:checks} gives the full list.

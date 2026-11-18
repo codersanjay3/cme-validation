@@ -2,13 +2,19 @@
   "hooks": {
     "SessionStart": [
       {
+        "matcher": "",
         "hooks": [
-          {
-            "command": "bd prime --hook-json",
-            "type": "command"
-          }
-        ],
-        "matcher": ""
+          { "type": "command", "command": "bd prime --hook-json" },
+          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/scripts/session_start_context.sh" }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          { "type": "command", "command": "\"$CLAUDE_PROJECT_DIR\"/scripts/session_end_check.sh" }
+        ]
       }
     ]
   }

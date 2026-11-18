@@ -1,0 +1,147 @@
+\appendix
+
+\section{Glossary of Terms}
+\label{app:glossary}
+
+\begin{longtable}{p{0.27\linewidth}p{0.66\linewidth}}
+\toprule
+\textbf{Term} & \textbf{Plain-English meaning}\\
+\midrule
+\endhead
+Trading horizon ($\tau$) & How long an investor typically holds a position and looks back at prices, in trading days.\\
+Chronotype & Our word for an investor's natural trading horizon.\\
+Horizon clustering ($\kappa_h$, ``temporal homophily'') & The tendency for investors with similar horizons to deal with each other. In the model, a dial; in the data, estimated as a correlation.\\
+Horizon clustering score ($\hat\kappa_h$) & The estimated clustering in real data: the correlation, across pairs of managers, between how close their horizons are and how similar their portfolios are.\\
+Horizon diversity (TDI) & How spread out investors' horizons are, measured by the entropy of the share of investors in 16 log-scale bins. Zero if all in one bin.\\
+Belief fragmentation (TMFI) & How much average beliefs about the price differ between horizon groups.\\
+Temporal liquidity (TL) & One divided by the product of return volatility and the size of the first autocorrelation. Higher means smoother price discovery.\\
+Fractal Market Hypothesis & The idea that markets are stable when investors have many different time horizons and fragile when horizons converge.\\
+Turnover & The share of a portfolio that changed from one quarter to the next.\\
+Price drift & Change in portfolio weights caused by price movements rather than trading.\\
+Form 13F & Quarterly report of stock holdings filed with the SEC by large investment managers.\\
+Form N-PORT & The analogous holdings report for registered funds, including bond funds.\\
+CUSIP & A nine-character code that uniquely identifies a security.\\
+VIX & Published index of expected US stock-market volatility (``fear gauge'').\\
+MOVE & Published ICE Bank of America index of expected Treasury-bond volatility.\\
+Weighted average maturity & The dollar-weighted average years remaining to maturity of a bond fund's holdings.\\
+Cosine similarity & A number from 0 to 1 measuring how alike two lists of weights are.\\
+Correlation & A number from $-1$ to $+1$ measuring how closely two series move together.\\
+$t$-statistic, $p$-value & Measures of how surprising a result would be by luck alone. A $t$ above about 2, or a $p$ below 0.05, is conventionally significant.\\
+Newey--West correction & An adjustment to uncertainty estimates for data in which each observation resembles its neighbours. It needs a number of \emph{lags}.\\
+Block bootstrap & Resampling blocks of consecutive observations to estimate uncertainty without assuming independence.\\
+Permutation test & Shuffling a variable many times to see how often chance alone produces a result as strong as the real one.\\
+Granger test & Asks whether past values of one series help predict another beyond that series' own past. A test of lead and lag, not proof of cause.\\
+Fama--MacBeth regression & Run a regression separately each period, then average the coefficients over time.\\
+Fixed effects & Controls that remove anything constant about a stock (or about a period), so that comparisons are within a stock (or period).\\
+Placebo test & A test using shuffled or irrelevant data that should show no effect; it checks that the method does not manufacture results.\\
+Survivorship bias & Distortion from only including companies that still exist.\\
+CRSP, WRDS & The standard university database of US stock prices (CRSP) and the service that provides access to it (Wharton Research Data Services).\\
+Fiedler value ($\lambda_2$) & A standard measure of how well connected a network is.\\
+Assortativity & Correlation between a node's characteristic and its neighbours' characteristics. High means like links with like.\\
+\bottomrule
+\end{longtable}
+
+\section{Model Parameters}
+\label{app:params}
+
+\begin{table}[htbp]
+\centering
+\begin{tabular}{llr}
+\toprule
+Parameter & Meaning & Value\\
+\midrule
+$n$ & Number of simulated investors & 80\\
+$T$ & Periods per run (after a 500-period burn-in) & 500\\
+$\lambda$ & Price impact of net demand & 0.008\\
+$\bar\alpha$ & Value-investing weight & 0.30\\
+$\bar\beta$ & Trend-following weight & 0.20\\
+$\sigma_F$ & Volatility of the fundamental value & 0.010\\
+$\sigma_0$ & Base demand noise & 1.0\\
+$\gamma$ & Cross-horizon friction coefficient & 0.20\\
+$\sigma_{\mathrm{obs}}$ & Observation noise for belief fragmentation & 0.008\\
+$\eta$ & Horizon adaptation rate & 0.06\\
+$\kappa_h$ & Horizon clustering strength (swept) & 0 to 6\\
+Seeds & Random-number seeds per setting & 30 (10 for asset-class sweep)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Data Handling Rules}
+\label{app:checks}
+
+\begin{itemize}[leftmargin=*]
+\item Holdings: only positions with strictly positive value are kept (and positive share counts when shares are used), so no logarithm of zero or division by zero arises.
+\item Managers with quarterly turnover below 0.1\% are dropped.
+\item Horizons are limited to 5 to 2{,}000 trading days.
+\item Horizon diversity: quarters need at least 50 reporting managers (45 quarters qualify, 2013 Q3 to 2024 Q3).
+\item Clustering score: quarters need at least 8 managers with valid horizons and at least 20 pairs (50 quarters qualify).
+\item Share-based turnover: a single price per security (the implied price from reported value and shares) for both quarters; positions whose share count changes by almost exactly a split ratio (2, 3, 4, 5, 6, 8, 10 or 20, or their inverses) are rebased before measuring trades.
+\item Bond funds: par amount and market value used; bonds that matured between reports are not counted as trades; only consecutive reports 60 to 125 days apart are used.
+\item Stock-level test: at least 10 owners per stock, at least 50 trading days of prices in a quarter, quarters with fewer than 60 stocks skipped in the quarter-by-quarter regressions.
+\item Quarterly VIX and MOVE: averages of the published values within each quarter.
+\end{itemize}
+
+\section{Additional Results}
+\label{app:extra}
+
+\begin{table}[htbp]
+\centering
+\caption{All stock-level results (standardised coefficients on owner-horizon spread). Newey--West errors for the quarter-by-quarter method; stock-clustered errors for the others.}
+\small
+\begin{tabular}{llrr}
+\toprule
+Outcome & Method & Share-based & Weight-based\\
+\midrule
+Next-quarter volatility (log) & Quarter-by-quarter average & $-0.0459$ ($t=-6.20$) & $-0.0440$ ($t=-8.04$)\\
+ & Pooled, quarter effects & $-0.0169$ ($t=-4.13$) & $-0.0089$ ($t=-2.33$)\\
+ & Stock and quarter effects & $-0.0106$ ($t=-2.42$) & $-0.0047$ ($t=-1.13$)\\
+Worst daily return next quarter & Quarter-by-quarter average & $+0.0417$ ($t=4.47$) & $+0.0416$ ($t=4.73$)\\
+ & Pooled, quarter effects & $-0.0038$ ($t=-0.58$) & $-0.0064$ ($t=-1.07$)\\
+Skewness next quarter & Quarter-by-quarter average & $-0.0006$ ($t=-0.09$) & $+0.0025$ ($t=+0.38$)\\
+ & Pooled, quarter effects & $-0.0053$ ($t=-0.68$) & $+0.0009$ ($t=+0.13$)\\
+Placebo (volatility) & Quarter-by-quarter average & $0.0000$ ($t=0.01$) & not run\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\caption{Autocorrelation of the quarterly clustering score at lags 1 to 8 and Ljung--Box tests.}
+\small
+\begin{tabular}{lrrrrrrrr}
+\toprule
+Lag & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8\\
+\midrule
+Autocorrelation & 0.346 & 0.247 & 0.146 & 0.093 & 0.051 & 0.164 & 0.058 & 0.028\\
+\bottomrule
+\end{tabular}
+
+\vspace{4pt}
+Ljung--Box $p$-values: 0.012 (1 lag), 0.008 (2 lags), 0.023 (4 lags), 0.102 (8 lags).
+\end{table}
+
+\section{Reproducing the Results}
+\label{app:repro}
+
+All code is in the project folder \texttt{cme\_validation}. The main files are listed below in the order they are run.
+
+\begin{center}
+\small
+\begin{tabular}{p{0.38\linewidth}p{0.52\linewidth}}
+\toprule
+File & Purpose\\
+\midrule
+\texttt{cme\_canonical.py} & The simulation model and all simulation results.\\
+\texttt{verify\_numbers.py} & 30-seed paired replication of the volatility and fragmentation ratios.\\
+\texttt{empirical\_tdi.py} & Downloads holdings and builds the original horizon diversity series.\\
+\texttt{kappa\_empirical.py} & Computes the clustering score each quarter.\\
+\texttt{kappa\_hac\_tests.py} & Newey--West at several lags, bootstrap and permutation test.\\
+\texttt{price\_adjusted\_tdi.py} & Share-based turnover and the price-drift comparison.\\
+\texttt{bond\_empirical.py}, \texttt{bond\_by\_type.py} & Bond fund analyses.\\
+\texttt{map\_cusips.py}, \texttt{stock\_prices.py} & Security-to-ticker mapping and price download.\\
+\texttt{stock\_level\_test.py} & The stock-level test.\\
+\texttt{sim\_concentration\_check.py} & Horizon-compression experiment in the simulation.\\
+\texttt{worked\_example.py} & Prints the three-manager worked example.\\
+\bottomrule
+\end{tabular}
+\end{center}

@@ -1,0 +1,7 @@
+Highlights
+
+- Network microfoundation for the Fractal Market Hypothesis via tau-proximity graphs
+- Short-run channel: homophily suppresses volatility 1.29x by reducing cross-tau friction
+- Long-run channel: tau-adaptation produces echo chambers (delta-TDI = -0.114)
+- TMFI falls 14.28x vs 1.29x for volatility -- temporal fragmentation nearly eliminated
+- SEC 13-F data: r = -0.526 between TDI and VIX (p<0.001, n=45 quarters)
