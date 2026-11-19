@@ -50,3 +50,11 @@ Where the project stands, so no agent has to rediscover it.
 - Data (edgar_cache, bond_cache, stock_prices.pkl) is in GitHub Release `data-v1`, not in git.
 - Numbers: none changed.
 - Open: scripts were not re-run after the env-var change; the earlier open items above are unchanged. Sumedh (`sumedhgodcoder`) has write access.
+
+## 2026-11-19 sumedh-agent: full-universe 13F rebuild code (Stage 0)
+- Changed: new `rebuild_13f/` (download.py, build_panel.py, test_build_panel.py, README.md); `.gitignore` adds `sec13f_cache/` and `panel_13f/`; `requirements.txt` adds pyarrow. No existing script edited.
+- What it does: downloads the SEC Form 13F Data Sets (all filers, share counts, 2013Q2 onward) and builds a share-based, unit-consistent panel: VALUE converted to dollars by filing date (thousands before 2023-01-03), share rows only, options dropped, notices dropped, restatements replace and new-holdings amendments add, turnover at one common price per CUSIP-period, split-rebased variant, tau = 63/turnover clipped to [5, 2000].
+- Numbers: none. Verified on a hand-built fixture (10 of 10 checks pass, including the unit fix, amendment handling and split rebase).
+- Why: Stage 0 for every pivot idea in the novelty audit (branch sumedh-agent/novelty-audit); answers the sampled-network critique and the 2022Q4 unit artefact.
+- Open: real download needs each person's own `SEC_CONTACT_EMAIL`; then validate against the top-150 panel and confirm SEC column names. Stage 2 manager shocks need fund-level data (N-PORT or CRSP MF), not in 13F.
+- Beads/issues: cme-x59 (pivot), cme-csl (rebuild).
