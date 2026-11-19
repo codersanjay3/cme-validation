@@ -62,3 +62,15 @@ Where the project stands, so no agent has to rediscover it.
 - Why: independent audit requested in cme-0ef; found while doing the novelty literature review.
 - Open: `price_adjusted_tdi.py` values positions exited in 2022Q4 at the 2022Q3 price (thousands) while others use 2022Q4 prices (dollars), so share-based turnover in that one transition understates sells; needs a rerun from the raw XML with a unit fix (should not change the r about -0.06 conclusion, unverified). Paper text citing 1.021, r = -0.526 and r = -0.661 (excl. 2022Q4) needs a result-change issue and Sanjay's sign-off.
 - Beads/issues: cme-0ef (comment added, left open for Sanjay to close).
+
+## 2026-11-18 sumedh-agent: share-based TDI with the 13F unit fix (follow-up to #1)
+- Changed: added `scripts/check_share_tdi_unit_fix.py` (deterministic, no seed; extracts `parse`, `rebase_splits`, `turnover_shares`, `turnover_weights`, `tdi` unchanged from `price_adjusted_tdi.py`) and outputs `results/check_share_tdi_unit_fix.csv`, `results/check_share_tdi_unit_fix.json`. No existing script edited.
+- Fix: divide reported values by 1000 for every filing with filing date on or after 2023-01-03 (1,845 filings, including late amendments for earlier quarters). Without it, `turnover_shares` prices exited positions with the older (thousands) price, understating 2022Q4 turnover.
+- Numbers (2013Q3-2024Q3, n = 45, VIX from the stored `price_adjusted_tdi_results.csv`):
+  - Recomputation reproduces the stored series exactly (corr 1.000 for `tdi_s` and `tdi_x`).
+  - Share-based TDI 2022Q4: 1.788 -> 2.061; split-rebased: 1.761 -> 2.057.
+  - r(TDI, VIX): share-based +0.024 -> +0.128 (p = 0.40); split-rebased -0.003 -> +0.098 (p = 0.52); value-weight (`tdi_w`, unit-immune) -0.571.
+- Why: open item in issue #1 and bead cme-0ef.
+- Conclusion unchanged and slightly strengthened: once price drift is removed, horizon diversity is unrelated to VIX.
+- Open: the paper prints r = -0.06 (share-based) and -0.10 (split-rebased) and -0.59 (value-weight), while the stored CSV gives +0.024, -0.003 and -0.571 over the same 45 quarters. The paper's figures probably used a different VIX series or window; Sanjay should confirm which, then update the paper with the unit-fixed numbers.
+- Beads/issues: cme-0ef, #1.
