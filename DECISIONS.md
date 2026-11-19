@@ -65,3 +65,10 @@ Where the project stands, so no agent has to rediscover it.
 - Why: follow-up literature search found the filing-date rule is not enough. A practitioner analysis reports a few percent of 2026Q2 holdings reports still in thousands; StoneX disclosed it misreported from 2022Q4 to 2025Q1; Barclays amended a 2024 filing to fix units.
 - Open: the same check should be considered for any existing script that reads raw 13F values (empirical_tdi.py, price_adjusted_tdi.py); real-data run still waits on SEC_CONTACT_EMAIL.
 - Beads/issues: cme-csl, #1, #4.
+
+## 2026-11-19 sumedh-agent: full-universe 13F panel built and validated
+- Changed: `rebuild_13f/build_panel.py` streams per zip and per quarter, stores shares as floats, drops report periods before 2013Q1 (940 filer date errors) and clears stale outputs; new `rebuild_13f/validate_vs_top150.py`; `results/rebuild_13f_build_report.json`, `results/validate_rebuild_vs_top150.json`. Release `data-rebuild-v1` holds tau.parquet and filings.parquet.
+- Numbers (no paper number changed): 322,015 holdings filings, 13,124 institutions, 287,197 institution-quarter horizons, 2013Q1 to 2026Q2; about 3,300 filers per quarter in 2013 rising to about 8,600 in 2026 (top-150 panel: about 133). Unit check rescaled 8,754 filings up and 2,723 down. Against the top-150 share-based horizons: 99.8% coverage, rank correlation 0.934, median absolute log difference 0.009; 2022Q4 agrees least (0.83), as expected from the unit fix.
+- Why: Stage 0 of the pivot; answers the sampled-network critique; makes every horizon share-based and unit-consistent.
+- Open: rerun the stock-level test and kappa-hat on the full universe; build the full-universe overlap network; Stage 1a variance decomposition and pre-registered Stage 1b test. Stage 2 needs fund-level manager data (N-PORT or CRSP MF).
+- Beads/issues: cme-csl, #4.

@@ -43,6 +43,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 UNIT_CUTOFF = pd.Timestamp("2023-01-03")
+FIRST_PERIOD = "2013Q1"   # earliest report period kept (data sets begin with 2013 filings)
 TAU_LO, TAU_HI = 5.0, 2000.0
 SPLITS = (2, 3, 4, 5, 6, 8, 10, 20)
 
@@ -96,8 +97,8 @@ def load_zip(path, report):
     keep = inf.SSHPRNAMTTYPE.str.upper().eq("SH") & inf.PUTCALL.str.strip().eq("")
     r["rows_dropped_not_shares_or_options"] = int((~keep).sum())
     inf = inf[keep].rename(columns={"ACCESSION_NUMBER": "accession"})
-    inf["shares"] = pd.to_numeric(inf.SSHPRNAMT.str.replace(",", ""), errors="coerce")
-    inf["value_raw"] = pd.to_numeric(inf.VALUE.str.replace(",", ""), errors="coerce")
+    inf["shares"] = pd.to_numeric(inf.SSHPRNAMT.str.replace(",", ""), errors="coerce").astype("float64")
+    inf["value_raw"] = pd.to_numeric(inf.VALUE.str.replace(",", ""), errors="coerce").astype("float64")
     inf["cusip"] = inf.CUSIP.str.upper().str.strip()
     inf = inf.dropna(subset=["shares", "value_raw"])
     inf = inf[(inf.shares > 0) & (inf.value_raw > 0) & (inf.cusip.str.len() >= 8)]
@@ -168,7 +169,7 @@ def turnover_panel(pos):
         m["p"] = m.cusip.map(pr_b).fillna(m.cusip.map(pr_a))
         m = m.dropna(subset=["p"])
         both = (m.shares_0 > 0) & (m.shares_1 > 0)
-        m["shares_0s"] = m.shares_0
+        m["shares_0s"] = m.shares_0.astype("float64")
         m.loc[both, "shares_0s"] = _split_rebase(m.loc[both, "shares_0"].to_numpy(), m.loc[both, "shares_1"].to_numpy())
         g = m.assign(tr=(m.shares_1 - m.shares_0).abs() * m.p, trs=(m.shares_1 - m.shares_0s).abs() * m.p,
                      v0=m.shares_0 * m.p, v0s=m.shares_0s * m.p, v1=m.shares_1 * m.p).groupby("cik")
@@ -195,8 +196,11 @@ def main():
     # Pass 2: one period at a time -> amendments, units, aggregation.
     # Pass 3: two consecutive periods at a time -> turnover (same turnover_panel as tested).
     import pyarrow.dataset as ds
+    import shutil
     stage, posdir = out / "stage", out / "positions"
-    stage.mkdir(exist_ok=True); posdir.mkdir(exist_ok=True)
+    for d in (stage, posdir):
+        shutil.rmtree(d, ignore_errors=True)   # never mix outputs of two builds
+        d.mkdir(parents=True)
     report, F = {}, []
     zips = sorted(cache.glob("*.zip"))
     if not zips:
@@ -209,6 +213,12 @@ def main():
         print(f"{z.name}: {len(f)} holdings filings, {len(i)} share rows", flush=True)
         del i
     filings = pd.concat(F, ignore_index=True).drop_duplicates("accession")
+    # The data sets start with filings made in 2013; report periods far earlier
+    # (e.g. 1987, 2001) are filer date errors. Keep periods from FIRST_PERIOD on.
+    pkey = filings.period.str[:4].astype(int) * 4 + filings.period.str[5].astype(int)
+    too_early = pkey < (int(FIRST_PERIOD[:4]) * 4 + int(FIRST_PERIOD[5]))
+    report["_filings_dropped_period_before_" + FIRST_PERIOD] = int(too_early.sum())
+    filings = filings[~too_early]
     filings.to_parquet(out / "filings.parquet", index=False)
     use = resolve_amendments(filings)
     meta = use.merge(filings[["accession", "filing_date"]], on="accession")

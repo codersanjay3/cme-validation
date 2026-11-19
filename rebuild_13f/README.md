@@ -33,9 +33,15 @@ python rebuild_13f/test_build_panel.py       # 11 hand-worked checks on a synthe
 - `tau.parquet`: cik, period, turnover, tau, turnover_split, tau_split, n_positions, aum_usd
 - `build_report.json`: counts at every step, so each rule's effect is visible
 
+## First full build (2026-11-19)
+
+- 54 SEC data sets (3.0 GB), 322,015 holdings filings, 13,124 institutions, 76 million positions, 287,197 institution-quarter horizons (median tau 647 trading days), periods 2013Q1 to 2026Q2. Build time about 3 minutes, 2.4 GB peak memory.
+- Unit check: 8,754 filings still in thousands after 2023-01-03 rescaled up; 2,723 already in dollars before it rescaled down (about 3.6% of filings). 940 filings with report periods before 2013 (filer date errors) dropped.
+- Validation against `tau_by_inst_quarter.json` (series x): 99.8% of old institution-quarters found; rank correlation 0.934 (0.926 within quarter); median absolute log difference 0.009; 92% within a factor of 1.5; worst quarter 2022Q4 (0.83), the unit-break quarter, where the new panel is meant to differ. Details: `results/validate_rebuild_vs_top150.json`, `results/rebuild_13f_build_report.json`.
+- Shared outputs: GitHub release `data-rebuild-v1` (tau.parquet, filings.parquet, build report, download manifest, SHA256SUMS). Positions (755 MB) are not uploaded; rebuild them from the SEC files in about 3 minutes.
+
 ## Not yet done
 
 - Column names checked against the real files (2026-11-19): all required columns present. One three-month file: 9,900 holdings filings, 3.68 million share rows, parsed in 3 s at 1.3 GB peak memory.
-- Validate against the existing top-150 panel (`tau_by_inst_quarter.json`) for overlapping CIKs.
 - Overlap network on the full universe, the variance decomposition (Stage 1a) and the pre-registered descriptive test (Stage 1b).
 - Fund-level manager data for the Stage 2 shock design is not in 13F; needs N-PORT or CRSP mutual-fund data.
