@@ -1,0 +1,67 @@
+{
+  "sub_questions": [
+    "Q1: What does the published and working-paper literature say that is relevant to a pivot of the CME paper?",
+    "Q1a: What is known about investor horizon heterogeneity and market stability, including the Fractal Market Hypothesis and heterogeneous-horizon agent-based models?",
+    "Q1b: What is known about institutional investment horizons measured from 13F turnover and their effects on prices, volatility, crash risk, liquidity and fragility?",
+    "Q1c: What is known about the dispersion or heterogeneity of a stock's ownership base (as opposed to the level of short-horizon ownership) as a predictor of volatility, crashes or liquidity provision in stress?",
+    "Q1d: What is known about common ownership, portfolio overlap networks, connected stocks, fire sales and flow-driven fragility?",
+    "Q1e: What is known about peer effects, herding and contagion in institutional trading behaviour, especially in trading frequency, turnover or horizon, and which network peer-effect identification methods apply?",
+    "Q1f: What is known about measuring investor horizons from holdings, including price-drift or mechanical contamination of turnover measures?",
+    "Q1g: What is known about homophily in investor networks?",
+    "Q2: For each candidate pivot A to E, has it already been done, which are the closest papers, and what increment would be genuinely novel and defensible?",
+    "Q3: Which single pivot or combination is the most defensible and novel, which journals with impact factor above 4 to 5 does it fit, what identification strategy and data upgrades does it need, and what are the main referee objections it must survive?",
+    "Q0 (implicit): How does the current CME paper and its evidence position the team for each pivot (what transfers, what must be discarded)?"
+  ],
+  "entities": [
+    {"name": "Pivot A: Horizon contagion (peer effects in horizon via portfolio-overlap networks; neighbour horizons from non-overlapping stocks; friends-of-friends instruments)", "type": "candidate_pivot", "required_fields": ["already done?", "closest papers", "novel and defensible increment"]},
+    {"name": "Pivot B: Holder-horizon dispersion (not level) and stock fragility / within-stock liquidity provision in stress", "type": "candidate_pivot", "required_fields": ["already done?", "closest papers", "novel and defensible increment"]},
+    {"name": "Pivot C: Price-drift contamination of turnover-based horizon measures (value-weight vs share-based)", "type": "candidate_pivot", "required_fields": ["already done?", "closest papers", "novel and defensible increment"]},
+    {"name": "Pivot D: Horizon homophily in co-holding as an empirical fact", "type": "candidate_pivot", "required_fields": ["already done?", "closest papers", "novel and defensible increment"]},
+    {"name": "Pivot E: Agent-based model with endogenous horizon adaptation calibrated to estimated adaptation rates and tested out of sample", "type": "candidate_pivot", "required_fields": ["already done?", "closest papers", "novel and defensible increment"]},
+    {"name": "Fractal Market Hypothesis (Peters 1994)", "type": "theory", "required_fields": ["claims", "tests", "ABM implementations"]},
+    {"name": "SEC Form 13F institutional holdings", "type": "data", "required_fields": ["horizon measures built from it", "known limitations"]},
+    {"name": "Journals with impact factor above 4 to 5 in finance/economics", "type": "category", "required_fields": ["fit per pivot"]},
+    {"name": "CRSP / WRDS (and Thomson-Refinitiv s34 13F)", "type": "data", "required_fields": ["what it would add"]}
+  ],
+  "required_formats": [
+    "per-pivot novelty verdict with closest papers and the novel increment",
+    "committed single recommendation (pivot or combination) with journal targets, identification, data upgrades and referee objections",
+    "literature map organized by strands (a) to (g)"
+  ],
+  "required_sections": [
+    "literature map covering strands (a)-(g)",
+    "per-pivot novelty assessment for A, B, C, D, E",
+    "recommendation with journals, identification strategy, data upgrades, referee objections"
+  ],
+  "required_section_headings": [
+    "## 1. Where the Current CME Paper Stands",
+    "## 2. Literature Map",
+    "## 3. Novelty Audit of the Five Candidate Pivots",
+    "## 4. Recommended Pivot",
+    "## 5. Target Journals and Fit",
+    "## 6. Identification Strategy and Data Upgrades",
+    "## 7. Referee Objections the Pivot Must Survive"
+  ],
+  "time_horizons": ["literature through November 2026, including recent working papers (2023-2026)"],
+  "time_periods": [
+    {"period": "2013Q2-2026Q1", "type": "sample-period", "primary_source": "SEC 13F-HR filings (project's own data)", "issuer": "SEC EDGAR"}
+  ],
+  "scope_conditions": [
+    "finance and economics journals with impact factor above 4 to 5",
+    "novelty means not already published or circulated as a working paper (SSRN, NBER, CEPR, arXiv q-fin)",
+    "pivot must be executable with the team's data (13F panel, N-PORT, free prices) plus feasible upgrades (CRSP/WRDS)"
+  ],
+  "pipeline_tier": "full",
+  "response_format": "argumentative",
+  "citation_style": "inline",
+  "levers": {
+    "register": "analyze",
+    "register_confidence": "high",
+    "domain_notes": "Sourcing: academic-first. Prioritise top finance journals (JF, JFE, RFS, JFQA, Management Science, Review of Finance, JBF, JFM, JEDC) and SSRN/NBER working papers; the novelty verdict depends on finding the closest existing paper, so search for near-duplicates aggressively, including 2023-2026 working papers. Strong evidence: published paper or working paper whose design overlaps the candidate pivot; weak evidence: blog posts or derivative commentary. Recency: the whole literature matters, but the last 36 months are critical for novelty.",
+    "inference_depth": "deep",
+    "rationale": {
+      "register": "query asks to determine whether pivots have been done and to recommend one: evaluation-shaped",
+      "inference_depth": "a novelty verdict is an inference over absences in the literature, which requires deep searching including working papers"
+    }
+  }
+}

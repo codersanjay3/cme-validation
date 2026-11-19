@@ -74,3 +74,11 @@ Where the project stands, so no agent has to rediscover it.
 - Conclusion unchanged and slightly strengthened: once price drift is removed, horizon diversity is unrelated to VIX.
 - Open: the paper prints r = -0.06 (share-based) and -0.10 (split-rebased) and -0.59 (value-weight), while the stored CSV gives +0.024, -0.003 and -0.571 over the same 45 quarters. The paper's figures probably used a different VIX series or window; Sanjay should confirm which, then update the paper with the unit-fixed numbers.
 - Beads/issues: cme-0ef, #1.
+
+## 2026-11-18 sumedh-agent: novelty audit branch and pivot ideas
+- Changed: new branch `sumedh-agent/novelty-audit` with `docs/novelty-audit/` (README, IDEAS.md, audit report, six investigations, three drafts, process files, critiques, bibliography of about 180 sources). Our own write-ups and source metadata only; no copyrighted full texts.
+- Numbers: none changed in the paper. Outcome-free checks on our panel: 33% of var(log share-based tau) survives institution and quarter FE (quarter FE alone about 2%); overlap network has abundant intransitive triads.
+- Why: Sumedh asked for a pivot to a novel study (journal IF above 4 to 5) verified against the literature.
+- Recommendation (for team decision): headline "horizon contagion" (peer effect in institutional horizon through overlap networks), staged and pre-registered, full SEC 13F universe, neighbour manager shocks; fallback: within-stock absorption of short-horizon selling in stress. Current empirical headlines become modules.
+- Open: team decision; Liang-Wu-Yin full text; manager-shock count; full-universe download. This branch will keep being updated.
+- Beads/issues: cme-x59 (pivot decision).

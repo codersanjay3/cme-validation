@@ -1,0 +1,5 @@
+# Search plan (step 2.1)
+Academic lens: 42 OpenAlex/Crossref queries in academic_queries.tsv (items Q1a-Q1g, Pivots A-E, Q3; lenses breadth/depth/adversarial/novelty). Results: academic_ranked.txt (664 unique).
+Web lens (12 searches): peer effects fund turnover; GMM churn rate; horizon heterogeneity within stock; LeBaron horizons ABM; long-term investors liquidity in COVID stress (adversarial: institutions amplified crash); horizon homophily co-holding; Blocher peer effects; churn dispersion within stock; recent investor-horizon WPs 2024-26; connected stocks/fragility; style/turnover contagion; FMH ABM Li-Nishimura-Men.
+Adversarial searches so far (>=5): FMH criticism; reflection problem/correlated effects; common-ownership measurement critique; turnover measure bias; COVID evidence that institutions amplified rather than absorbed; "more memory destabilizing" (Kuznetsov-Verbic vs LeBaron).
+Gap check vs coverage-matrix: every row has >=1 search. Pivot C and D novelty need wave-2 targeted searches.

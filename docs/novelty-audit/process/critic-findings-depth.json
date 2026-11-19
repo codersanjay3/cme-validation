@@ -1,0 +1,82 @@
+{
+ "critic_type": "depth",
+ "findings": [
+  {
+   "severity": "major",
+   "location": "Section 3.1 'Residual risk' and Section 4.2 (fourth point): 'nobody has shown that a large filer's turnover moves when one manager leaves'",
+   "issue": "The headline shock design (manager deaths, departures, retirements) is exactly the variant the near-duplicate audit says a prior paper could pre-empt, but the draft discloses only MacDonald and Liang-Wu-Yin as residual risks. The 'nobody has shown' claim is an audited absence stated flatly, with no statement of what was searched, and the vault holds contrary hints.",
+   "evidence": "interim-report-pivot-a-near-duplicate-audit: residual risk (ii) a snippet-found thesis on turnover after manager departures 'hints that manager-level portable turnover is studied'; 'What would change this position': a published manager-mover design showing turnover follows managers would pre-empt a manager-move variant of A. interim-report-horizon-trait-or-time-varying: Clare-Sapuric-Todorovic (the-impact-of-manager-changes-on-fund) documents manager change as a material event changing holdings and performance; the investigator found no paper quantifying the effect on turnover or horizon (absence from limited search). Clare et al. is not cited in the draft.",
+   "recommendation": "Add manager-change/portable-turnover literature (Clare et al., the departure thesis) to the closest-papers list and residual-risk paragraph; soften 4.2 to 'none located in [named searches]'; state this as a pre-emption risk for the Stage 2 variant specifically and add a pre-submission check."
+  },
+  {
+   "severity": "major",
+   "location": "Section 3.1 'Has it been done?' and Executive summary ('roughly eighteen search framings'); probabilities in table rows A, B, E and Section 3.2/3.5",
+   "issue": "The absence claim for A gives the number of framings but not the search instrument or its limits, and the stated confidences drift upward from the investigators' with no stated basis. Provenance discipline for an audited absence requires what was searched and where recall was weak.",
+   "evidence": "interim-report-pivot-a-near-duplicate-audit: 'most of the below were read as search-engine snippets or abstract-level'; 'US-centric web search, not SSRN/Google Scholar full-text'; Chinese-language journals (CNKI) unsearched; post-June-2026 SSRN uploads unseen; three items unread (Liang-Wu-Yin, NUS/CUHK flows paper, CFR 15-16); confidence 'about 65%'. Draft says about 70%. interim-report-dispersion-and-absorption: B 'not a stand-alone paper' at about 65% and only about 45% that no dispersion-to-crash near-duplicate exists; draft says about 80%. interim-report-data-upgrade-and-abm-calibration: E novelty 'about 55%'; draft says about 70%.",
+   "recommendation": "State the search instrument and blind spots (web search with snippet-level reads, no SSRN or Scholar full text, no Chinese-language databases, unread NUS/CUHK and CFR 15-16) beside the 'eighteen framings'. For each moved probability say what raised it (Chen-Lu-Qin found, Oldham full text obtained, adversarial follow-up) or restore the investigators' figures. Read the NUS/CUHK flows paper as well as MacDonald and Liang-Wu-Yin."
+  },
+  {
+   "severity": "major",
+   "location": "Section 3.2 verdict ('Absorption is the strongest stand-alone alternative'), Section 4.2 ('B, reframed around absorption, dominates'), Section 4.4 fallback rows",
+   "issue": "The draft elevates absorption to the strongest stand-alone fallback, but the depth investigation committed the opposite: B is a section, and the existing evidence leans against the strong version, so the likely result is a modest relative effect. The reader is not told the fallback's own expected strength, which undercuts the 'each failed test still yields a publishable product' claim for a journal above 4 to 5.",
+   "evidence": "interim-report-dispersion-and-absorption-beyond-chan-cheng-hameed, Committed position: 'worth a section ... not a stand-alone paper for an IF>4-5 journal'; 'existing evidence leans against a strong version' (Glossner: institutions net-sold, retail bought; CEG: long-horizon holders also sold, 7% vs 21%; Barbon et al.: co-trading dominates counter-trading, 30-42% of positions per snippet, unverified); 'publishable as a fact but modest'; a t above 3 surviving GT fragility in both 1982-2016 and 2013-2026 would be needed to make B a short JBF/JFM-tier paper. RIBAF crash paper read at abstract level only.",
+   "recommendation": "Add the investigator's expected-effect assessment and the t above 3 bar to Section 3.2 and the Stage 3 row; name the tier the fallback realistically reaches (JBF/JFM-tier short paper unless the bar is met) rather than JFQA first; report the co-trading evidence from Barbon et al. as a counterweight, flagged as snippet-level."
+  },
+  {
+   "severity": "major",
+   "location": "Section 3.1 'Closest papers' and Section 2.5",
+   "issue": "The closest-papers list omits boundary papers the near-duplicate audit ranked as closest hits, including two keyword collisions a referee or novelty-checker will find first by searching 'horizon contagion' or 'investment horizon spillovers'. Query Q2 asks to name the closest papers.",
+   "evidence": "interim-report-pivot-a-near-duplicate-audit, ranked hits: Pomorski, 'Follow the Leader' (followers amplify leaders' buys by about 15-30%, trade direction); Christoffersen-Sarkissian (fund turnover varies with manager location and experience, the nearest institutional turnover-level determinant); Sialm-Tham (family spillovers in flows); Chinco-Ye 'Investment-Horizon Spillovers' (NBER w23650, name collision, stock-volume wavelets, no investor network); Bhattacharya CSR peer imitation (investor horizon as moderator, firms as peers); Rossi et al. consultant network (CFR 15-16, unread). None appears in the draft or source list.",
+   "recommendation": "Add a short 'names that will collide' paragraph to 3.1 listing Chinco-Ye, Pomorski, Christoffersen-Sarkissian, Sialm-Tham and the horizon-moderated CSR imitation paper, each with one clause on why it does not pre-empt A. Feed the 'Has someone already done this?' objection (item 12) the same list."
+  },
+  {
+   "severity": "major",
+   "location": "Section 3.4 (Pivot D) and Section 4.4 table",
+   "issue": "D is declared 'mechanical as measured' but the draft omits the investigator's quantified expectation and the pass/fail thresholds, so the 'residual' increment is not falsifiable. The kill table has no gate row for D.",
+   "evidence": "interim-report-horizon-homophily-fact-or-mechanical: expects the coefficient to 'shrink by well over half' under share-based tau, active-weight cosine and node/type/family fixed effects, and 't = 19 does not survive dyadic clustering at that magnitude'; probabilities of about 65% that the residual is under one third of raw and about 35% that a meaningful residual survives; would flip if the active-weight, share-based coefficient retains at least about 50% (about 0.08 or more) under dyadic-robust inference, or if BiCM-validated link rates rise monotonically in horizon proximity within the short-tau half; also latent-demand residual similarity (Koijen-Yogo) and Borochin-Yang horizon-class ownership overlap as a further partial pre-emption (FEDS 2016-088).",
+   "recommendation": "Add the thresholds (about 0.08 retained, dyadic-robust inference, monotone BiCM rates in the short-tau half), the investigator's probabilities, the Koijen-Yogo latent-demand test, and Borochin-Yang to 3.4; add a D pass criterion to the 1b row or the stage table."
+  },
+  {
+   "severity": "minor",
+   "location": "Section 1.2 (stock-level dispersion slope paragraph)",
+   "issue": "The comparison to Chan-Cheng-Hameed Table IA1 reports only the strong range and says the CME slope has a 'smaller magnitude'. It omits that one IA1 specification is -0.012 (t = -0.89), almost identical to the CME -0.011, and that the strong values are subperiod-specific.",
+   "evidence": "interim-report-dispersion-and-absorption: IA1 coefficients -0.034** to -0.042*** over 1982-2016 with one specification at -0.012 (t = -0.89), and -0.039* to -0.057** over 2000-2016 (t from -1.85 to -2.59); also the result is net of liquidity level and liquidity volatility and sits outside the paper's main tables.",
+   "recommendation": "Report the full range including the -0.012 (t = -0.89) specification, the subsample split, and that IA1 controls LOGILLIQ and LOGCVILLIQ, then say the CME slope is within the weaker end of the published range rather than merely smaller."
+  },
+  {
+   "severity": "minor",
+   "location": "Section 4.2 (first and second points) and Section 6.2",
+   "issue": "The steelman arithmetic is stated but not derived: the 0.003 and 1% figures and the Nickell bias appear without the formula or the assumption on the neighbour-gap variance, and the mechanism by which a time fixed effect fails (style-specific loadings on the common turnover factor) is compressed to a clause.",
+   "evidence": "interim-report-correlated-turnover-vs-horizon-contagion-identification: PST slope 0.65 (t = 8.65); adding same-category averages keeps the sum at 0.65 and raises R-squared 'by almost half'; 'a time fixed effect only removes the average loading ... loadings differ by style'; a 0.06 rate is small against slow-moving style loadings at AR(1) 0.75. Arithmetic check: 0.85 x 0.06^2 is about 0.003, and (1+0.75)/49 is about 0.036, both consistent but not shown.",
+   "recommendation": "Show the two formulas inline with their inputs (0.85 total variance times 0.06 squared; (1 + rho)/(T - 1)), state the gap-variance assumption, and add one sentence on why quarter fixed effects remove only the average loading while style-by-quarter effects remove the style-specific one."
+  },
+  {
+   "severity": "minor",
+   "location": "Section 2.5/6.2 (correlated-flow confound)",
+   "issue": "The flow-comovement evidence is given as 0.80 vs 0.12 only, and the Koch-Ruenzi-Starks channel (high-turnover funds trade in a correlated way through flows) is absent.",
+   "evidence": "interim-report-correlated-turnover-vs-horizon-contagion-identification: CCH Table 2, low-churn 0.80 vs 0.12, high-churn 0.98 vs 0.16; Koch-Ruenzi-Starks (RFS 2016) about twice the liquidity commonality in high-mutual-fund-ownership stocks, flows as channel, 2003 scandal as shock (abstract-level only, full text unobtainable).",
+   "recommendation": "Add the high-churn pair (0.98 vs 0.16), and cite Koch-Ruenzi-Starks with a snippet-level flag; the high-churn figure matters because short-horizon neighbourhoods are where the draft expects identification to come from."
+  },
+  {
+   "severity": "minor",
+   "location": "Section 6.3 (shock sources) and 2.4",
+   "issue": "The draft treats only the BlackRock-BGI merger as the closure/merger precedent and discards it, while the investigator identified asset-manager closures in Ozdagli-Ryfe as an institutional-data example of exogenous removal of a link-forming driver.",
+   "evidence": "interim-report-correlated-turnover-vs-horizon-contagion-identification: Ozdagli-Ryfe (working-paper-2515) 'manager closures give an exogenous drop in commonality'; Position A cites it as showing 'exogenous removal of a link-forming common driver is feasible in institutional data'. Draft cites [30] only for shared-manager similarity.",
+   "recommendation": "In 6.3 add Ozdagli-Ryfe's closure design as a second shock source and design precedent, with its own contamination caveat (direct holdings change), and note the 30-shock count the investigator set as the threshold for usable shocks."
+  },
+  {
+   "severity": "minor",
+   "location": "Section 6.1 and 6.7 (data upgrades)",
+   "issue": "Data-quality guidance omits two investigator specifics: the known Thomson s34 omissions that make s34 a poor backbone, and a sampling-fraction robustness check for the sampled-network critique.",
+   "evidence": "interim-report-data-upgrade-and-abm-calibration: Thomson 13F files omit some institutions (BlackRock named for 2018; snippet-level, WRDS research note not retrieved); proposed full filer sample or top 1,000 by AUM plus a random-sample check that coefficients are stable as the sampling fraction rises; Release 22.4.1 refreshed all sets on 12 Mar 2024. Also horizon-trait interim: controls for filer-reorganisation flags (CIK merger, AUM jumps above about 50%), dropping event quarters, winsorising log tau.",
+   "recommendation": "Add the s34 omission as the reason it is robustness only (flagged snippet-level), the sampling-fraction stability check to 6.1, and the filer-event flags and winsorisation to the Stage 1 controls."
+  },
+  {
+   "severity": "minor",
+   "location": "Section 3.5 and 6.6 (DeGroot bridge)",
+   "issue": "The bridge equating the peer coefficient with the adaptation weight is flagged as a derivation, but the caveats the investigator attached are missing, as is the established calibration route a referee will cite.",
+   "evidence": "interim-report-data-upgrade-and-abm-calibration: equality holds only if W is row-normalised and the step matches the quarterly horizon; a linear-in-means beta 'identifies a reduced-form of social interaction plus correlated effects'; simulated method of moments and indirect inference (Franke-Westerhoff, Kukacka-Barunik, Grazzini-Richiardi) are established ABM estimators, listed from memory and unverified; no instance found tying a reduced-form peer coefficient to a structural adaptation parameter (thin search).",
+   "recommendation": "Add the row-normalisation and timescale conditions and the correlated-effects caveat to 3.5; name SMM and indirect inference as the accepted alternative, flagged unverified, and say the absence of a bridge precedent rests on a thin search."
+  }
+ ]
+}
