@@ -51,4 +51,5 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 
 ## Log
 
+- 2026-11-18: report patched with 35 of 41 critic findings (search scopes stated, confidence bases explained, joint-probability decision rule added in Section 4.4, 15 new sources incl. MacDonald 2025, FMH tests, herding baselines, 13F data limits). Citation check and polish still running.
 - 2026-11-18: branch created with the audit at the critique stage (report drafted, four critiques done, gap-filling done; patch, citation check and polish still to run).

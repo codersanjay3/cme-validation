@@ -1,0 +1,68 @@
+{
+  "total_findings": 41,
+  "summary": {"applied": 26, "partially_applied": 9, "skipped": 6, "conflicts": 1, "merge_note": "width findings on strand (g) and on Pivot E network ABMs share one partially_applied entry", "orchestrator_escalated": 0, "approx_word_change": "+450 (about +1,000 added, about -550 cut)"},
+  "orchestrator_directives": [
+    {"directive": 1, "status": "applied", "where": "1.1, 4.4 gate 1a paragraph, section 7 objections 1 and 4", "note": "Variance statistics labelled share-based; value-weight 32% given as robustness echo; 2022Q4 unit caveat added; gate 1a reworded to provisionally passed on the top-150 share-based panel, rerun at Stage 0."},
+    {"directive": 2, "status": "applied", "where": "4.4 opening (joint probabilities and bold Decision rule), 4.3 opening sentence, 3.2 verdict", "note": "Labelled as the report's own judgement; 'strongest stand-alone alternative' replaced by 'named fallback'."},
+    {"directive": 3, "status": "applied", "where": "executive summary, summary table row A, section 3 intro, 3.1, 3.2 verdict, 3.4, 3.5 verdict, 2.3", "note": "A 65 to 70% with basis; B 80% raised from 65% after Chen-Lu-Qin; E 70% raised from 55% after Oldham full text; search limits (snippet-level web and OpenAlex/Crossref, no SSRN or Scholar full text, CNKI not searched) stated."},
+    {"directive": 4, "status": "applied", "where": "3.1 Residual risk, objection 12, new source [74]", "note": "MacDonald described at abstract level as a stock-level influence coefficient, not a pre-emption; 'unread' language removed; Liang-Wu-Yin still flagged unread."},
+    {"directive": 5, "status": "applied", "where": "1.2 friction paragraph, 3.5", "note": "'contradicted by data' softened to 'contradicted in sign by the two direct tests', with the insignificant IA1 specification and opposing theory ([24], [84], [86]); recommended action changed to re-sign and restrict to a stress-liquidity channel."},
+    {"directive": 6, "status": "partially_applied", "where": "summary (2022Q4 sentence cut), 1.2, 1.3 (two thesis repeats cut), section 2 intro, section 3 intro, 3.2/3.3 duplicate lists compressed, 3.6 cut to one sentence, 4 intro, 4.3, 4.7 (two sentences cut), 6.2, section 7 items 2, 6, 7, 8 and closing paragraph", "note": "About 550 words of repeated material cut, but the binding additions (directives 1 to 5, audited-absence provenance, 13F limits, FMH tests, herding baselines) still leave the report about 450 words longer. The polish auditor should look for further cuts: 6.5 absorption paragraph, 4.3 remedy list (repeated in sections 6 and 7), section 7 items 1, 3, 9 and 10, and the executive summary's identification list."}
+  ],
+  "applied": [
+    {"critic": "dialectic", "severity": "major", "location": "1.1 / gate 1a / objection 1", "action": "Applied per directive 1, which corrects the finding's premise (the decomposition is share-based, not value-weight)."},
+    {"critic": "dialectic", "severity": "major", "location": "executive summary, 3.1 search claim", "action": "Search instruments and limits stated; confidence basis given (directive 3)."},
+    {"critic": "dialectic", "severity": "major", "location": "4.2/4.3 A versus B-absorption", "action": "4.3 now separates the dispersion asymmetry from the absorption comparison; 4.4 states joint probabilities and an explicit flip rule (directive 2)."},
+    {"critic": "dialectic", "severity": "major", "location": "1.2 friction channel, 3.5", "action": "Scoped per directive 5; Dai et al. [84] and Forera et al. [86] added as opposing evidence; tax-reform identification scoped to illiquidity."},
+    {"critic": "dialectic", "severity": "major", "location": "section 7 objection 4", "action": "Answer now concedes level swings in [25] are market-wide, rests on the idiosyncratic residual and the gate 1a 10% threshold, and names portable manager traits."},
+    {"critic": "dialectic", "severity": "major", "location": "3.5 DeGroot bridge", "action": "Added row-normalisation, one-period-per-quarter, descriptive-coefficient and event-study rescaling conditions (merged with depth finding on the same passage)."},
+    {"critic": "dialectic", "severity": "major", "location": "2.3, 4.3 'new object'", "action": "Chen-Lin-Su-Yao [82], Zhai et al. [83], Chincarini-Lazo-Paz-Moneta [87] added as adjacent work; 'new object' narrowed to 'new horizon-specific object'."},
+    {"critic": "dialectic", "severity": "minor", "location": "executive summary, 2.5 retail-only claim", "action": "Qualified to papers found with turnover or trading frequency as a network-peer outcome."},
+    {"critic": "dialectic", "severity": "minor", "location": "1.2, 3.4 homophily 'mechanical'", "action": "Reworded to 'likely mechanical, though untested' with the revival threshold in 3.4."},
+    {"critic": "dialectic", "severity": "minor", "location": "5.1 JIF bar", "action": "Added sentence naming which outlets clear 5 and which sit at the 4.0 to 4.9 edge; 5.3 ladder made conditional on the t above 3 bar."},
+    {"critic": "depth", "severity": "major", "location": "3.1 residual risk, 4.2 'nobody has shown'", "action": "Manager-change pre-emption risk for the Stage 2 variant stated with Clare et al. [85] and the unretrieved thesis; 4.2 softened to 'no paper located'."},
+    {"critic": "depth", "severity": "major", "location": "3.1, table, 3.2, 3.5 confidence drift", "action": "Each moved probability now states what raised it (directive 3)."},
+    {"critic": "depth", "severity": "major", "location": "3.2 verdict, 5.3", "action": "Fallback strength stated (modest relative effect, JBF-tier unless t above 3 in both samples)."},
+    {"critic": "depth", "severity": "minor", "location": "1.2 IA1 range", "action": "Full IA1 range with -0.012 (t = -0.89), subsample split and liquidity controls reported; CME slope placed at weak end."},
+    {"critic": "depth", "severity": "minor", "location": "4.2 steelman arithmetic", "action": "0.06 squared times 0.85 shown; style-specific loading mechanism stated in one clause."},
+    {"critic": "width", "severity": "major", "location": "3.2, 3.4, 3.5, 2.3 audited absences", "action": "Search scope added per pivot, including the 21-citer OpenAlex forward-citation check on Chan-Cheng-Hameed."},
+    {"critic": "width", "severity": "major", "location": "2.3, 4.3 Chinese peer-effect literature", "action": "Merged with dialectic adjacent-work finding; [82], [83] added."},
+    {"critic": "width", "severity": "minor", "location": "4.6 N-PORT", "action": "Stated what N-PORT supplies (fund-level horizon without filer aggregation, redemption instruments [46]) and that the descriptive bond result is dropped as a finding; redundant 4.7 sentence cut."},
+    {"critic": "width", "severity": "major", "location": "whole report dilution", "action": "Cuts listed under directive 6."},
+    {"critic": "width", "severity": "minor", "location": "summary, 1.3, section 7 close", "action": "1.3 thesis repeats cut; section 7 close replaced by the first observable decision point."},
+    {"critic": "instruction", "severity": "major", "location": "3.1 to 3.5 audited absences", "action": "Search surfaces and limits stated for A, B, D and E; C is pre-empted by construction, so no absence claim needed."},
+    {"critic": "instruction", "severity": "major", "location": "3.1 MacDonald, objection 12", "action": "Resolved via directive 4 and the gap-fill note; Liang-Wu-Yin full text remains unread and is stated as such."},
+    {"critic": "instruction", "severity": "major", "location": "2.1 FMH tests, 1.3", "action": "Peters's claims and the index-level wavelet test [75] added, with the audited absence of holdings- or network-level tests; 1.3 demotion now points to it."},
+    {"critic": "instruction", "severity": "major", "location": "2.5 herding", "action": "LSV [77] and Wermers [76] added as canonical trade-direction herding measures that do not test a horizon peer effect."},
+    {"critic": "instruction", "severity": "major", "location": "2.6 13F limits, 6.2 Bushee, 6.7 s34", "action": "Structural-limits sentences with [78], [79], [81]; Bushee classification cited [80]; s34 gaps noted in the data-upgrade table."},
+    {"critic": "instruction", "severity": "minor", "location": "summary table, 3.x confidence figures", "action": "Section 3 intro labels confidence levels as the report's own judgement bounded by stated searches."}
+  ],
+  "partially_applied": [
+    {"critic": "dialectic", "severity": "minor", "location": "objection 3 / 6.3 manager change rebuilds holdings", "action": "Price-channel placebo and portable-trait point added; the Chinese-language source notes were not cited because they were not read in full here."},
+    {"critic": "depth", "severity": "major", "location": "3.4 D thresholds", "action": "Retention threshold (about 0.08) and monotone validated-link test added; investigator probabilities, Koijen-Yogo latent-demand test and Borochin-Yang not added (length), and no D gate row added to the stage table."},
+    {"critic": "depth", "severity": "minor", "location": "2.3 flow comovement", "action": "High-churn pair 0.98 against 0.16 added; Koch-Ruenzi-Starks skipped (abstract-level only)."},
+    {"critic": "depth", "severity": "minor", "location": "6.1/6.7 data quality", "action": "s34 omissions added with [78, 79]; sampling-fraction stability check and filer-event flags not added (length)."},
+    {"critic": "depth", "severity": "minor", "location": "3.5 DeGroot caveats", "action": "Row-normalisation and timescale conditions added (merged with dialectic); SMM and indirect inference not named because the investigator listed them from memory, unverified."},
+    {"critic": "width", "severity": "major", "location": "2.3 strand c adjacent measures", "action": "Dai et al. [84] (in 1.2) and Chincarini et al. [87] added; Chen-Lee-Sun, Alldredge-Caglayan and the published Benkraiem version of [39] not added (length)."},
+    {"critic": "width", "severity": "major", "location": "2.7 / 3.4 investor-network precedents; 3.5 network ABMs", "action": "Bohlin-Rosvall [88] added to 2.7 and Forera et al. [86] to the sign debate; Delpini, Flori, Ying and the imitation ABMs not added (length; most not verified beyond summaries)."},
+    {"critic": "instruction", "severity": "major", "location": "definitions on first use", "action": "Difference-in-differences and Oster-type bound glossed; Anderson-Rubin and leave-out bias were already glossed in 2.5."}
+  ],
+  "skipped": [
+    {"critic": "depth", "severity": "major", "location": "3.1 'names that will collide'", "reason": "Chinco-Ye note is deprecated (cookie wall, no content); Pomorski, Christoffersen-Sarkissian, Sialm-Tham and the CSR imitation paper have no confirmed vault notes to cite; adding them uncited would breach provenance and directive 6. Recommend a pre-submission keyword check on 'investment-horizon spillovers'."},
+    {"critic": "depth", "severity": "minor", "location": "6.3 Ozdagli-Ryfe closures", "reason": "Closure-shock design not verifiable from the draft's existing use of [30] (shared external manager changes); not added to avoid misdescribing the source."},
+    {"critic": "width", "severity": "minor", "location": "2.1, 2.2, 2.6, 3.2 table: Koijen-Richmond-Yogo, Duarte-Parsa, Chinco", "reason": "Minor; Chinco note deprecated; length directive."},
+    {"critic": "instruction", "severity": "major", "location": "2.7 general homophily literature", "reason": "No vault source on general selection-versus-influence homophily and none fetched in the gap fill; 2.7 already frames selection versus influence via [22, 23, 29, 30, 61]. Would need a new fetch."},
+    {"critic": "instruction", "severity": "minor", "location": "5.2 per-pivot journal mapping", "reason": "5.3 submission ladder already maps each fallback product to outlets; a new table would grow the report (directive 6)."},
+    {"critic": "instruction", "severity": "minor", "location": "summary table comparison columns", "reason": "Would change table column count, which the patch contract forbids; feasibility and identification risk are argued in 4.2 to 4.4."}
+  ],
+  "conflicts": [
+    {"findings": ["dialectic: variance decomposition is value-weight and contaminated", "orchestrator directive 1"], "resolution": "Directive 1 states the statistics were computed on share-based horizons; the finding's premise was corrected and the directive's wording applied."}
+  ],
+  "orchestrator_escalated": [],
+  "notes_for_next_step": [
+    "No finding carried requires_orchestrator_restructure; no critical findings were present.",
+    "New sources appended as [74] to [88]; titles and URLs taken from note frontmatter (Bohlin-Rosvall title from the note body because the frontmatter title is the arXiv stamp; Backus-Conlon-Sinkinson en dash replaced by a hyphen).",
+    "No new quotation marks were added. Existing quotes not covered by the evidence digest and not verified here: Bolton-Santos-Scheinkman 'a more efficient source', Chan-Cheng-Hameed 'can provide liquidity to active mutual funds during fire sales', Pastor-Stambaugh-Taylor 'especially high among funds sharing similar characteristics', Cella-Ellul-Giannetti 'very stable for institutions across time', Gerardi-Lowry-Schenone 'relatively little evidence...', Lan-Moneta-Wermers 'a flawed and downward biased proxy', FRL 'shed insight on the replicability...'. Cite-check should verify these.",
+    "Report remains about 450 words longer than the input draft despite cuts; see directive 6 entry for further cut candidates."
+  ]
+}
