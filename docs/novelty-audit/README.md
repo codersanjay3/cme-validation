@@ -46,11 +46,12 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 
 - Liang-Wu-Yin (SSRN 5048159) full text unread; Chinese literature (CNKI) not searched directly.
 - Count of usable neighbour manager shocks in 2013-2026 (decides idea 1 vs idea 2).
-- Full-universe SEC 13F download: code ready on PR #4; needs `SEC_CONTACT_EMAIL` to run.
+- Full-universe panel: built and validated (PR #4, release `data-rebuild-v1`). Next: Stage 1a variance decomposition and pre-registered Stage 1b test on it.
 - Team decision on the pivot; Professor Chalmers's view on the model.
 
 ## Log
 
+- 2026-11-19: Stage 0 done. Full-universe 13F panel built from the SEC data sets (322k filings, 13,124 institutions, 287k institution-quarter horizons, 2013Q1 to 2026Q2), validated against the top-150 panel (rank correlation 0.934), shared as release `data-rebuild-v1` (PR #4).
 - 2026-11-19: follow-up search (`followup-search-2026-11-19.md`): no pre-emption of idea 1 found (Liang-Wu-Yin abstract, Chinese co-holding literature, manager-change designs); new design precedent for idea 1 (Luo, social-network contagion after disasters); Aragon-Strahan added to idea 2; idea 7 downgraded (known to practitioners). Side result: 13F unit mixing understated the paper's stock-level slope; unit-fixed -0.0200 (t = -4.96) vs -0.0106 (issue #5).
 - 2026-11-19: Stage 0 code ready on branch `sumedh-agent/13f-rebuild` (PR #4): SEC Form 13F Data Sets downloader and full-universe, share-based, unit-consistent panel builder; fixture test 10/10. Real run waits on `SEC_CONTACT_EMAIL` (bead cme-csl).
 - 2026-11-19: report FINAL. Readability pass applied (16 of 19 suggestions; 3 skipped because they dropped words). Ship gate passed on all checks. Next: team decision on the pivot (bead cme-x59), count usable manager shocks, full-universe SEC 13F download.
