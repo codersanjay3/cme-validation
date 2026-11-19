@@ -1,0 +1,17 @@
+{
+ "tdi_w": {
+  "corr_with_stored": 0.504,
+  "corr_with_unit_fixed": 0.467,
+  "n": 49
+ },
+ "tdi_s": {
+  "corr_with_stored": 0.316,
+  "corr_with_unit_fixed": 0.019,
+  "n": 49
+ },
+ "tdi_x": {
+  "corr_with_stored": 0.312,
+  "corr_with_unit_fixed": 0.022,
+  "n": 49
+ }
+}

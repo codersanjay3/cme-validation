@@ -50,3 +50,15 @@ Where the project stands, so no agent has to rediscover it.
 - Data (edgar_cache, bond_cache, stock_prices.pkl) is in GitHub Release `data-v1`, not in git.
 - Numbers: none changed.
 - Open: scripts were not re-run after the env-var change; the earlier open items above are unchanged. Sumedh (`sumedhgodcoder`) has write access.
+
+## 2026-11-18 sumedh-agent: 13F dollar-unit change explains the 2022Q4 TDI minimum
+- Changed: added `scripts/check_13f_unit_break.py` (deterministic, no seed) and its outputs `results/check_13f_unit_break.csv`, `results/check_13f_unit_break_vix.json`, `results/check_13f_unit_break_rebuilt.json`. No existing script or paper file edited.
+- Finding: since 2023-01-03 the SEC requires 13F market values in dollars, not thousands. `holdings_db.json` stores the raw figure as `value_k` throughout, so quarters >= 2022Q4 are in dollars (median position jumps from about 1.8e3 in 2022Q3 to 9.3e5 in 2022Q4). `empirical_tdi.compute_turnover` uses raw value differences, so the 2022Q3 -> 2022Q4 step shows turnover near 1 for nearly every filer (median tau 63).
+- Numbers (script above, functions extracted unchanged from `empirical_tdi.py`):
+  - TDI 2022Q4: paper 1.021 (reproduced exactly as coded), unit-fixed 1.918. The paper's "sample minimum in 2022Q4 (Fed tightening, FTX collapse)" is a data-unit artefact and must be removed.
+  - r(TDI, VIX), 2013Q3-2024Q3, n = 45: paper -0.526; as coded -0.525; unit-fixed -0.641 (p = 2.1e-6). The value-weight series is still price-drift contaminated, so this does not rescue the TDI-VIX claim.
+  - Recomputation matches the stored series at r = 0.998 over 46 quarters.
+  - Bead cme-0ef: the unit fix resolves the 2022Q4 point (fixed 1.92 vs rebuilt value-weight 1.77) but not the overall gap: corr(original, rebuilt tdi_w) 0.504 -> 0.467. The remaining gap comes from different turnover formulas (raw dollar changes vs weight changes) and different filer samples.
+- Why: independent audit requested in cme-0ef; found while doing the novelty literature review.
+- Open: `price_adjusted_tdi.py` values positions exited in 2022Q4 at the 2022Q3 price (thousands) while others use 2022Q4 prices (dollars), so share-based turnover in that one transition understates sells; needs a rerun from the raw XML with a unit fix (should not change the r about -0.06 conclusion, unverified). Paper text citing 1.021, r = -0.526 and r = -0.661 (excl. 2022Q4) needs a result-change issue and Sanjay's sign-off.
+- Beads/issues: cme-0ef (comment added, left open for Sanjay to close).
