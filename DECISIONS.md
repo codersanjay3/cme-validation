@@ -50,3 +50,41 @@ Where the project stands, so no agent has to rediscover it.
 - Data (edgar_cache, bond_cache, stock_prices.pkl) is in GitHub Release `data-v1`, not in git.
 - Numbers: none changed.
 - Open: scripts were not re-run after the env-var change; the earlier open items above are unchanged. Sumedh (`sumedhgodcoder`) has write access.
+
+## 2026-11-18 sumedh-agent: 13F dollar-unit change explains the 2022Q4 TDI minimum
+- Changed: added `scripts/check_13f_unit_break.py` (deterministic, no seed) and its outputs `results/check_13f_unit_break.csv`, `results/check_13f_unit_break_vix.json`, `results/check_13f_unit_break_rebuilt.json`. No existing script or paper file edited.
+- Finding: since 2023-01-03 the SEC requires 13F market values in dollars, not thousands. `holdings_db.json` stores the raw figure as `value_k` throughout, so quarters >= 2022Q4 are in dollars (median position jumps from about 1.8e3 in 2022Q3 to 9.3e5 in 2022Q4). `empirical_tdi.compute_turnover` uses raw value differences, so the 2022Q3 -> 2022Q4 step shows turnover near 1 for nearly every filer (median tau 63).
+- Numbers (script above, functions extracted unchanged from `empirical_tdi.py`):
+  - TDI 2022Q4: paper 1.021 (reproduced exactly as coded), unit-fixed 1.918. The paper's "sample minimum in 2022Q4 (Fed tightening, FTX collapse)" is a data-unit artefact and must be removed.
+  - r(TDI, VIX), 2013Q3-2024Q3, n = 45: paper -0.526; as coded -0.525; unit-fixed -0.641 (p = 2.1e-6). The value-weight series is still price-drift contaminated, so this does not rescue the TDI-VIX claim.
+  - Recomputation matches the stored series at r = 0.998 over 46 quarters.
+  - Bead cme-0ef: the unit fix resolves the 2022Q4 point (fixed 1.92 vs rebuilt value-weight 1.77) but not the overall gap: corr(original, rebuilt tdi_w) 0.504 -> 0.467. The remaining gap comes from different turnover formulas (raw dollar changes vs weight changes) and different filer samples.
+- Why: independent audit requested in cme-0ef; found while doing the novelty literature review.
+- Open: `price_adjusted_tdi.py` values positions exited in 2022Q4 at the 2022Q3 price (thousands) while others use 2022Q4 prices (dollars), so share-based turnover in that one transition understates sells; needs a rerun from the raw XML with a unit fix (should not change the r about -0.06 conclusion, unverified). Paper text citing 1.021, r = -0.526 and r = -0.661 (excl. 2022Q4) needs a result-change issue and Sanjay's sign-off.
+- Beads/issues: cme-0ef (comment added, left open for Sanjay to close).
+
+## 2026-11-18 sumedh-agent: share-based TDI with the 13F unit fix (follow-up to #1)
+- Changed: added `scripts/check_share_tdi_unit_fix.py` (deterministic, no seed; extracts `parse`, `rebase_splits`, `turnover_shares`, `turnover_weights`, `tdi` unchanged from `price_adjusted_tdi.py`) and outputs `results/check_share_tdi_unit_fix.csv`, `results/check_share_tdi_unit_fix.json`. No existing script edited.
+- Fix: divide reported values by 1000 for every filing with filing date on or after 2023-01-03 (1,845 filings, including late amendments for earlier quarters). Without it, `turnover_shares` prices exited positions with the older (thousands) price, understating 2022Q4 turnover.
+- Numbers (2013Q3-2024Q3, n = 45, VIX from the stored `price_adjusted_tdi_results.csv`):
+  - Recomputation reproduces the stored series exactly (corr 1.000 for `tdi_s` and `tdi_x`).
+  - Share-based TDI 2022Q4: 1.788 -> 2.061; split-rebased: 1.761 -> 2.057.
+  - r(TDI, VIX): share-based +0.024 -> +0.128 (p = 0.40); split-rebased -0.003 -> +0.098 (p = 0.52); value-weight (`tdi_w`, unit-immune) -0.571.
+- Why: open item in issue #1 and bead cme-0ef.
+- Conclusion unchanged and slightly strengthened: once price drift is removed, horizon diversity is unrelated to VIX.
+- Open: the paper prints r = -0.06 (share-based) and -0.10 (split-rebased) and -0.59 (value-weight), while the stored CSV gives +0.024, -0.003 and -0.571 over the same 45 quarters. The paper's figures probably used a different VIX series or window; Sanjay should confirm which, then update the paper with the unit-fixed numbers.
+- Beads/issues: cme-0ef, #1.
+
+## 2026-11-19 sumedh-agent: 13F unit mixing understates the stock-level result
+- Changed: added `scripts/check_stock_level_unit_fix.py` and outputs in `results/` (`check_stock_level_unit_fix*.json`, `unit_flips_by_filer*.json`). Runs `stock_level_test.py` unchanged except ROOT, a per-filer unit normalisation of holdings_db values, and the output file. Seed 7 as in the original. No existing script edited.
+- Finding: not every filer switched 13F values to dollars at 2022Q4. In the top-150 panel 66 filers jump about 1000x exactly at 2022Q4; 25 show no jump there; several switch later (2023Q1, 2023Q2, 2024Q3, 2025Q3); a few have one-quarter 1000x spikes before 2023. Inside a stock-quarter, holders still in thousands then get almost no weight. Normalisation: per filer over time, start in thousands and flip unit when the median position value jumps by more than 300x (cross-sectional detection fails: position sizes differ by up to 100x across filers). 84 filers adjusted.
+- Numbers (as coded reproduces the stored `stock_level_results.json` exactly):
+  - Within-stock (stock + quarter FE), share-based: -0.0106 (t = -2.42) -> -0.0200 (t = -4.96). Threshold 100x: -0.0303 (t = -7.18); 1000x: -0.0189 (t = -3.82).
+  - Within-stock, value-weight: -0.0047 (t = -1.13, n.s.) -> -0.0182 (t = -4.63). 100x: -0.0245; 1000x: -0.0106 (t = -2.30).
+  - Pooled quarter FE, share-based: -0.0169 (t = -4.13) -> -0.0388 (t = -9.86). Fama-MacBeth: -0.0459 (t = -6.20) -> -0.0564 (t = -6.65).
+  - Next-quarter minimum return, pooled FE, share-based: now +0.0250 (t = 4.17), the predicted sign (previously not robust).
+  - Placebo stays at zero (-0.0016, t = -0.30).
+- Why: follow-up search found practitioner evidence of late unit switching; our own panel shows it.
+- Meaning: the direction and the paper's reading hold, and the within-stock effect is about twice as large and far more robust. It remains a replication in sign of Chan-Cheng-Hameed (JFQA 2022, internet appendix), so it does not change the pivot recommendation. The 1000x threshold is too strict (real switches sit at about 370x to 1100x); 300x is the primary choice.
+- Open: Sanjay to sign off before the paper text changes; consider using the same normalisation in every script that reads raw 13F values. The full-universe rebuild (#4) handles this per filing.
+- Beads/issues: new result-change issue; cme-0ef.
