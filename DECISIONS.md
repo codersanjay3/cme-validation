@@ -74,3 +74,17 @@ Where the project stands, so no agent has to rediscover it.
 - Conclusion unchanged and slightly strengthened: once price drift is removed, horizon diversity is unrelated to VIX.
 - Open: the paper prints r = -0.06 (share-based) and -0.10 (split-rebased) and -0.59 (value-weight), while the stored CSV gives +0.024, -0.003 and -0.571 over the same 45 quarters. The paper's figures probably used a different VIX series or window; Sanjay should confirm which, then update the paper with the unit-fixed numbers.
 - Beads/issues: cme-0ef, #1.
+
+## 2026-11-19 sumedh-agent: 13F unit mixing understates the stock-level result
+- Changed: added `scripts/check_stock_level_unit_fix.py` and outputs in `results/` (`check_stock_level_unit_fix*.json`, `unit_flips_by_filer*.json`). Runs `stock_level_test.py` unchanged except ROOT, a per-filer unit normalisation of holdings_db values, and the output file. Seed 7 as in the original. No existing script edited.
+- Finding: not every filer switched 13F values to dollars at 2022Q4. In the top-150 panel 66 filers jump about 1000x exactly at 2022Q4; 25 show no jump there; several switch later (2023Q1, 2023Q2, 2024Q3, 2025Q3); a few have one-quarter 1000x spikes before 2023. Inside a stock-quarter, holders still in thousands then get almost no weight. Normalisation: per filer over time, start in thousands and flip unit when the median position value jumps by more than 300x (cross-sectional detection fails: position sizes differ by up to 100x across filers). 84 filers adjusted.
+- Numbers (as coded reproduces the stored `stock_level_results.json` exactly):
+  - Within-stock (stock + quarter FE), share-based: -0.0106 (t = -2.42) -> -0.0200 (t = -4.96). Threshold 100x: -0.0303 (t = -7.18); 1000x: -0.0189 (t = -3.82).
+  - Within-stock, value-weight: -0.0047 (t = -1.13, n.s.) -> -0.0182 (t = -4.63). 100x: -0.0245; 1000x: -0.0106 (t = -2.30).
+  - Pooled quarter FE, share-based: -0.0169 (t = -4.13) -> -0.0388 (t = -9.86). Fama-MacBeth: -0.0459 (t = -6.20) -> -0.0564 (t = -6.65).
+  - Next-quarter minimum return, pooled FE, share-based: now +0.0250 (t = 4.17), the predicted sign (previously not robust).
+  - Placebo stays at zero (-0.0016, t = -0.30).
+- Why: follow-up search found practitioner evidence of late unit switching; our own panel shows it.
+- Meaning: the direction and the paper's reading hold, and the within-stock effect is about twice as large and far more robust. It remains a replication in sign of Chan-Cheng-Hameed (JFQA 2022, internet appendix), so it does not change the pivot recommendation. The 1000x threshold is too strict (real switches sit at about 370x to 1100x); 300x is the primary choice.
+- Open: Sanjay to sign off before the paper text changes; consider using the same normalisation in every script that reads raw 13F values. The full-universe rebuild (#4) handles this per filing.
+- Beads/issues: new result-change issue; cme-0ef.
