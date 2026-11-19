@@ -50,3 +50,25 @@ Where the project stands, so no agent has to rediscover it.
 - Data (edgar_cache, bond_cache, stock_prices.pkl) is in GitHub Release `data-v1`, not in git.
 - Numbers: none changed.
 - Open: scripts were not re-run after the env-var change; the earlier open items above are unchanged. Sumedh (`sumedhgodcoder`) has write access.
+
+## 2026-11-19 sumedh-agent: full-universe 13F rebuild code (Stage 0)
+- Changed: new `rebuild_13f/` (download.py, build_panel.py, test_build_panel.py, README.md); `.gitignore` adds `sec13f_cache/` and `panel_13f/`; `requirements.txt` adds pyarrow. No existing script edited.
+- What it does: downloads the SEC Form 13F Data Sets (all filers, share counts, 2013Q2 onward) and builds a share-based, unit-consistent panel: VALUE converted to dollars by filing date (thousands before 2023-01-03), share rows only, options dropped, notices dropped, restatements replace and new-holdings amendments add, turnover at one common price per CUSIP-period, split-rebased variant, tau = 63/turnover clipped to [5, 2000].
+- Numbers: none. Verified on a hand-built fixture (10 of 10 checks pass, including the unit fix, amendment handling and split rebase).
+- Why: Stage 0 for every pivot idea in the novelty audit (branch sumedh-agent/novelty-audit); answers the sampled-network critique and the 2022Q4 unit artefact.
+- Open: real download needs each person's own `SEC_CONTACT_EMAIL`; then validate against the top-150 panel and confirm SEC column names. Stage 2 manager shocks need fund-level data (N-PORT or CRSP MF), not in 13F.
+- Beads/issues: cme-x59 (pivot), cme-csl (rebuild).
+
+## 2026-11-19 sumedh-agent: 13F rebuild adds a per-filing unit check
+- Changed: `rebuild_13f/build_panel.py` gains `to_dollars()`: after the filing-date rule, each filing's median implied price (value/shares) is compared with the cross-sectional median for the same CUSIP-period (CUSIPs with at least 3 holders); filings near 1/1000 or 1000 are rescaled. Fixture extended (filer 5 still in thousands after the change); 11 of 11 checks pass.
+- Numbers: none.
+- Why: follow-up literature search found the filing-date rule is not enough. A practitioner analysis reports a few percent of 2026Q2 holdings reports still in thousands; StoneX disclosed it misreported from 2022Q4 to 2025Q1; Barclays amended a 2024 filing to fix units.
+- Open: the same check should be considered for any existing script that reads raw 13F values (empirical_tdi.py, price_adjusted_tdi.py); real-data run still waits on SEC_CONTACT_EMAIL.
+- Beads/issues: cme-csl, #1, #4.
+
+## 2026-11-19 sumedh-agent: full-universe 13F panel built and validated
+- Changed: `rebuild_13f/build_panel.py` streams per zip and per quarter, stores shares as floats, drops report periods before 2013Q1 (940 filer date errors) and clears stale outputs; new `rebuild_13f/validate_vs_top150.py`; `results/rebuild_13f_build_report.json`, `results/validate_rebuild_vs_top150.json`. Release `data-rebuild-v1` holds tau.parquet and filings.parquet.
+- Numbers (no paper number changed): 322,015 holdings filings, 13,124 institutions, 287,197 institution-quarter horizons, 2013Q1 to 2026Q2; about 3,300 filers per quarter in 2013 rising to about 8,600 in 2026 (top-150 panel: about 133). Unit check rescaled 8,754 filings up and 2,723 down. Against the top-150 share-based horizons: 99.8% coverage, rank correlation 0.934, median absolute log difference 0.009; 2022Q4 agrees least (0.83), as expected from the unit fix.
+- Why: Stage 0 of the pivot; answers the sampled-network critique; makes every horizon share-based and unit-consistent.
+- Open: rerun the stock-level test and kappa-hat on the full universe; build the full-universe overlap network; Stage 1a variance decomposition and pre-registered Stage 1b test. Stage 2 needs fund-level manager data (N-PORT or CRSP MF).
+- Beads/issues: cme-csl, #4.
