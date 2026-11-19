@@ -72,3 +72,11 @@ Where the project stands, so no agent has to rediscover it.
 - Why: Stage 0 of the pivot; answers the sampled-network critique; makes every horizon share-based and unit-consistent.
 - Open: rerun the stock-level test and kappa-hat on the full universe; build the full-universe overlap network; Stage 1a variance decomposition and pre-registered Stage 1b test. Stage 2 needs fund-level manager data (N-PORT or CRSP MF).
 - Beads/issues: cme-csl, #4.
+
+## 2026-11-19 sumedh-agent: Stage 1 of the pivot run (both gates pass)
+- Changed: `docs/stage1/PREREGISTRATION.md` (commit c14dba7, before any estimate), `stage1/` code (commit d23862d, before the 1b run), `results/stage1a_variance.json`, `results/stage1b_results.json`, `docs/stage1/RESULTS.md`. No existing script or paper number changed.
+- Numbers (new, not in the paper): Stage 1a, full universe: 30.4% of var(log tau) left after institution and quarter FE (gate 10%), quarter FE 2.4%, AR(1) 0.75. Stage 1b: neighbours' non-held-stock horizon -> own next-quarter horizon b = +0.0324 (t = 5.33; 199,225 institution-quarters, 8,866 institutions, 51 quarters; institution and style-by-quarter FE; two-way clustered SE). Future-neighbour placebo -0.0080 (t = -2.48); shuffled placebo +0.0035 (t = 1.62). Secondary: all-positions +0.046, quarter FE only +0.034, k=5 +0.025, k=20 +0.040; adding share of short-horizon neighbours absorbs the average-horizon effect (share short -0.072, t = -5.16). Shuffle seed 20261119.
+- Why: Stage 1 of the recommended pivot (horizon contagion).
+- Meaning: descriptive evidence consistent with horizon contagion, small in size (about 2% of a within SD per SD), implied long-run response about 0.044, same order as the model's assumed 0.06. Not causal; Stage 2 needs fund-level manager shocks.
+- Open: Stage 2 data (N-PORT or CRSP mutual funds for manager changes); test average vs share-of-short-neighbours forms; team decision on the pivot (cme-x59).
+- Beads/issues: cme-x59, cme-csl, cme-i7t (Stage 2).
