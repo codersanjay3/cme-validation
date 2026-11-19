@@ -46,11 +46,12 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 
 - Liang-Wu-Yin (SSRN 5048159) full text unread; Chinese literature (CNKI) not searched directly.
 - Count of usable neighbour manager shocks in 2013-2026 (decides idea 1 vs idea 2).
-- Full-universe SEC 13F download (needs an SEC contact email set as `SEC_CONTACT_EMAIL`).
+- Full-universe SEC 13F download: code ready on PR #4; needs `SEC_CONTACT_EMAIL` to run.
 - Team decision on the pivot; Professor Chalmers's view on the model.
 
 ## Log
 
+- 2026-11-19: Stage 0 code ready on branch `sumedh-agent/13f-rebuild` (PR #4): SEC Form 13F Data Sets downloader and full-universe, share-based, unit-consistent panel builder; fixture test 10/10. Real run waits on `SEC_CONTACT_EMAIL` (bead cme-csl).
 - 2026-11-19: report FINAL. Readability pass applied (16 of 19 suggestions; 3 skipped because they dropped words). Ship gate passed on all checks. Next: team decision on the pivot (bead cme-x59), count usable manager shocks, full-universe SEC 13F download.
 - 2026-11-18: citation check done (378 citation-sentence pairs checked; 41 fixes applied, incl. 2 wrong-source swaps and all non-verbatim quotes removed) and polish pass done (about 640 words of repetition cut). Quote-integrity and lint gates now clean. Readability pass and final ship gate next.
 - 2026-11-18: report patched with 35 of 41 critic findings (search scopes stated, confidence bases explained, joint-probability decision rule added in Section 4.4, 15 new sources incl. MacDonald 2025, FMH tests, herding baselines, 13F data limits). Citation check and polish still running.
