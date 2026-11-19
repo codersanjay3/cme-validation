@@ -82,3 +82,10 @@ Where the project stands, so no agent has to rediscover it.
 - Recommendation (for team decision): headline "horizon contagion" (peer effect in institutional horizon through overlap networks), staged and pre-registered, full SEC 13F universe, neighbour manager shocks; fallback: within-stock absorption of short-horizon selling in stress. Current empirical headlines become modules.
 - Open: team decision; Liang-Wu-Yin full text; manager-shock count; full-universe download. This branch will keep being updated.
 - Beads/issues: cme-x59 (pivot decision).
+
+## 2026-11-19 sumedh-agent: novelty audit report final
+- Changed: `docs/novelty-audit/report.md` final (all 16 pipeline steps; ship gate passed: length, headings, citation density, quote integrity, retractions, critic and patch artifacts, cite-check). Process files updated alongside.
+- Numbers: none in the paper.
+- Why: completes the literature review and novelty audit requested for the pivot.
+- Open: team decision (cme-x59); manager-shock count; full-universe SEC 13F rebuild; Liang-Wu-Yin full text.
+- Beads/issues: cme-x59, PR #3.

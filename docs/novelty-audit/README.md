@@ -7,7 +7,7 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 ## Start here
 
 - [`IDEAS.md`](IDEAS.md): every project idea found, ranked, with novelty status, closest papers, design and journals.
-- [`report.md`](report.md): the full audit report (literature map, novelty verdict per pivot, recommendation, journals, identification, referee objections). Status: see log.
+- [`report.md`](report.md): the full audit report (literature map, novelty verdict per pivot, recommendation, journals, identification, referee objections). **Final: passed every ship check** (10,691 words, 89 sources cited, 40 citations per 1,000 words, all quotes verbatim, no retracted sources).
 - [`sources.csv`](sources.csv): bibliography of every source in the research vault (metadata and our one-line summaries only; full texts are not committed).
 
 ## Bottom line so far
@@ -51,6 +51,7 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 
 ## Log
 
+- 2026-11-19: report FINAL. Readability pass applied (16 of 19 suggestions; 3 skipped because they dropped words). Ship gate passed on all checks. Next: team decision on the pivot (bead cme-x59), count usable manager shocks, full-universe SEC 13F download.
 - 2026-11-18: citation check done (378 citation-sentence pairs checked; 41 fixes applied, incl. 2 wrong-source swaps and all non-verbatim quotes removed) and polish pass done (about 640 words of repetition cut). Quote-integrity and lint gates now clean. Readability pass and final ship gate next.
 - 2026-11-18: report patched with 35 of 41 critic findings (search scopes stated, confidence bases explained, joint-probability decision rule added in Section 4.4, 15 new sources incl. MacDonald 2025, FMH tests, herding baselines, 13F data limits). Citation check and polish still running.
 - 2026-11-18: branch created with the audit at the critique stage (report drafted, four critiques done, gap-filling done; patch, citation check and polish still to run).
