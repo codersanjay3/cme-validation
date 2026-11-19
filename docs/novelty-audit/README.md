@@ -46,11 +46,12 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 
 - Liang-Wu-Yin (SSRN 5048159) full text unread; Chinese literature (CNKI) not searched directly.
 - Count of usable neighbour manager shocks in 2013-2026 (decides idea 1 vs idea 2).
-- Full-universe panel: built and validated (PR #4, release `data-rebuild-v1`). Next: Stage 1a variance decomposition and pre-registered Stage 1b test on it.
+- Full-universe panel: built and validated (PR #4, release `data-rebuild-v1`). Stage 1 passed (PR #6). Next: Stage 2 needs fund-level manager data (N-PORT or CRSP mutual funds).
 - Team decision on the pivot; Professor Chalmers's view on the model.
 
 ## Log
 
+- 2026-11-19: Stage 1 done, both pre-registered gates pass (PR #6, `docs/stage1/` on branch `sumedh-agent/stage1-tests`). 1a: 30.4% of horizon variance moves within institutions (gate 10%). 1b: neighbours' horizon in stocks the institution did not hold predicts its next-quarter horizon, b = +0.032 (t = 5.3); future-neighbour placebo negative, shuffled placebo zero. Small and descriptive; Stage 2 (manager shocks) next, bead cme-i7t.
 - 2026-11-19: Stage 0 done. Full-universe 13F panel built from the SEC data sets (322k filings, 13,124 institutions, 287k institution-quarter horizons, 2013Q1 to 2026Q2), validated against the top-150 panel (rank correlation 0.934), shared as release `data-rebuild-v1` (PR #4).
 - 2026-11-19: follow-up search (`followup-search-2026-11-19.md`): no pre-emption of idea 1 found (Liang-Wu-Yin abstract, Chinese co-holding literature, manager-change designs); new design precedent for idea 1 (Luo, social-network contagion after disasters); Aragon-Strahan added to idea 2; idea 7 downgraded (known to practitioners). Side result: 13F unit mixing understated the paper's stock-level slope; unit-fixed -0.0200 (t = -4.96) vs -0.0106 (issue #5).
 - 2026-11-19: Stage 0 code ready on branch `sumedh-agent/13f-rebuild` (PR #4): SEC Form 13F Data Sets downloader and full-universe, share-based, unit-consistent panel builder; fixture test 10/10. Real run waits on `SEC_CONTACT_EMAIL` (bead cme-csl).

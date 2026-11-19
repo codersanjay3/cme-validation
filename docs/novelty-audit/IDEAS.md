@@ -35,7 +35,9 @@ Ranking: 1 is the recommended headline; 2 is the named fallback; the rest are mo
 
 **Theory.** Strategic complementarity among short-horizon traders (Froot-Scharfstein-Stein 1992; Chamley 2007; Cespa-Vives) predicts a positive peer effect, possibly with tipping, so test nonlinearity.
 
-**Decision rule.** Rough joint success probability about 0.35. Switch to idea 2 if fewer than about 30 usable neighbour manager shocks exist in 2013-2026, or if the Stage 1 coefficient does not survive style-by-quarter fixed effects and the placebo. Stages 0 and 1 are shared with idea 2, so starting with idea 1 costs nothing until the shock gate.
+**Stage 1 result (2026-11-19, PR #6).** Both pre-registered gates pass on the full universe: 30.4% of horizon variance moves within institutions; neighbours' horizon in stocks the institution did not hold predicts its next-quarter horizon, b = +0.032 (t = 5.3); future-neighbour placebo -0.008 (negative), shuffled placebo +0.0035 (n.s.). Small (about 2% of a within SD per SD) and descriptive. Implied long-run response about 0.044, the same order as the model's assumed 0.06.
+
+**Decision rule.** Rough joint success probability about 0.35 before Stage 1. Switch to idea 2 if fewer than about 30 usable neighbour manager shocks exist in 2013-2026, or if the Stage 1 coefficient does not survive style-by-quarter fixed effects and the placebo. Stages 0 and 1 are shared with idea 2, so starting with idea 1 costs nothing until the shock gate.
 
 **Journals.** Review of Finance (2024 JIF 8.4), then Management Science (4.9) and JFQA (4.1 in the 2025 release).
 
