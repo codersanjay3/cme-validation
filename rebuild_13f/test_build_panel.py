@@ -18,6 +18,8 @@ Filer 2 tests amendments and row filters.
 Filer 3 tests the split rebase: EEE 100 sh at $100 (value 10, thousands) -> 200 sh at $50 (value 10,000).
   raw: trades = 100*50 = 5,000; v0 = 5,000; v1 = 10,000 -> 0.3333. split-rebased: no trade -> turnover 0.
 A 13F-NT notice (filer 4) must be ignored.
+Filer 5 kept reporting in thousands after the rule change: 2022Q4 filed 2023-02-15, AAA 100 sh, value 1.
+  The implied-price check (AAA held by 3 filers at $10) must rescale it to $1,000.
 """
 import io, sys, tempfile, zipfile
 from pathlib import Path
@@ -39,7 +41,8 @@ subs = [("A1", "10-NOV-2022", "13F-HR", "0000000001", "30-SEP-2022"),
         ("B4", "01-MAR-2023", "13F-HR/A", "0000000002", "31-DEC-2022"),
         ("C1", "05-NOV-2022", "13F-HR", "0000000003", "30-SEP-2022"),
         ("C2", "05-FEB-2023", "13F-HR", "0000000003", "31-DEC-2022"),
-        ("D1", "05-FEB-2023", "13F-NT", "0000000004", "31-DEC-2022")]
+        ("D1", "05-FEB-2023", "13F-NT", "0000000004", "31-DEC-2022"),
+        ("E1", "15-FEB-2023", "13F-HR", "0000000005", "31-DEC-2022")]
 covs = [("A1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("A2", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("B1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
@@ -48,7 +51,8 @@ covs = [("A1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("B4", "31-DEC-2022", "Y", "1", "NEW HOLDINGS", "13F HOLDINGS REPORT"),
         ("C1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("C2", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT"),
-        ("D1", "31-DEC-2022", "N", "", "", "13F NOTICE")]
+        ("D1", "31-DEC-2022", "N", "", "", "13F NOTICE"),
+        ("E1", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT")]
 infs = [("A1", "AAA000001", "1", "100", "SH", ""), ("A1", "BBB000001", "1", "50", "SH", ""),
         ("A2", "AAA000001", "1000", "100", "SH", ""), ("A2", "CCC000001", "1000", "25", "SH", ""),
         ("B1", "AAA000001", "1", "100", "SH", ""),
@@ -57,7 +61,8 @@ infs = [("A1", "AAA000001", "1", "100", "SH", ""), ("A1", "BBB000001", "1", "50"
         ("B3", "ZZZ000001", "900", "1000", "PRN", ""),
         ("B4", "DDD000001", "500", "10", "SH", ""),
         ("C1", "EEE000001", "10", "100", "SH", ""), ("C2", "EEE000001", "10000", "200", "SH", ""),
-        ("D1", "AAA000001", "5", "5", "SH", "")]
+        ("D1", "AAA000001", "5", "5", "SH", ""),
+        ("E1", "AAA000001", "1", "100", "SH", "")]
 
 def tsv(cols, rows):
     return "\t".join(cols) + "\n" + "\n".join("\t".join(r) for r in rows) + "\n"
@@ -79,7 +84,7 @@ with tempfile.TemporaryDirectory() as d:
     filings, info = bp.load_zip(z, {})
     use = bp.resolve_amendments(filings)
     info = info.merge(filings[["accession", "filing_date"]], on="accession").merge(use, on="accession")
-    info["value_usd"] = info.value_raw.where(info.filing_date >= bp.UNIT_CUTOFF, info.value_raw * 1000)
+    info, unit_counts = bp.to_dollars(info)
     pos = info.groupby(["cik", "period", "cusip"], as_index=False)[["shares", "value_usd"]].sum()
     tau = bp.turnover_panel(pos).set_index("cik")
 
@@ -90,6 +95,8 @@ checks = {
     "restatement replaces original": pos[(pos.cik == "2") & (pos.period == "2022Q3")].shares.sum() == 200,
     "new-holdings amendment added": ((pos.cik == "2") & (pos.period == "2022Q4") & (pos.cusip == "DDD000001")).any(),
     "unit fix: Q3 value in dollars": abs(pos[(pos.cik == "1") & (pos.period == "2022Q3")].value_usd.sum() - 2000) < 1e-9,
+    "late filer in thousands rescaled by price check": abs(pos[(pos.cik == "5")].value_usd.sum() - 1000) < 1e-9
+        and unit_counts["accessions_rescaled_up"] == 1 and unit_counts["accessions_rescaled_down"] == 0,
     "filer 1 turnover 0.5": abs(tau.loc["1", "turnover"] - 0.5) < 1e-9,
     "filer 1 tau 126": abs(tau.loc["1", "tau"] - 126) < 1e-9,
     "filer 2 turnover 1/9": abs(tau.loc["2", "turnover"] - 1 / 9) < 1e-9,

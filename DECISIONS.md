@@ -58,3 +58,10 @@ Where the project stands, so no agent has to rediscover it.
 - Why: Stage 0 for every pivot idea in the novelty audit (branch sumedh-agent/novelty-audit); answers the sampled-network critique and the 2022Q4 unit artefact.
 - Open: real download needs each person's own `SEC_CONTACT_EMAIL`; then validate against the top-150 panel and confirm SEC column names. Stage 2 manager shocks need fund-level data (N-PORT or CRSP MF), not in 13F.
 - Beads/issues: cme-x59 (pivot), cme-csl (rebuild).
+
+## 2026-11-19 sumedh-agent: 13F rebuild adds a per-filing unit check
+- Changed: `rebuild_13f/build_panel.py` gains `to_dollars()`: after the filing-date rule, each filing's median implied price (value/shares) is compared with the cross-sectional median for the same CUSIP-period (CUSIPs with at least 3 holders); filings near 1/1000 or 1000 are rescaled. Fixture extended (filer 5 still in thousands after the change); 11 of 11 checks pass.
+- Numbers: none.
+- Why: follow-up literature search found the filing-date rule is not enough. A practitioner analysis reports a few percent of 2026Q2 holdings reports still in thousands; StoneX disclosed it misreported from 2022Q4 to 2025Q1; Barclays amended a 2024 filing to fix units.
+- Open: the same check should be considered for any existing script that reads raw 13F values (empirical_tdi.py, price_adjusted_tdi.py); real-data run still waits on SEC_CONTACT_EMAIL.
+- Beads/issues: cme-csl, #1, #4.

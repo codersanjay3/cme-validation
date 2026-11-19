@@ -9,7 +9,7 @@ export SEC_CONTACT_EMAIL="you@example.com"   # SEC requires a real contact; set 
 python rebuild_13f/download.py --list        # what the SEC currently offers
 python rebuild_13f/download.py               # downloads to sec13f_cache/ (gitignored), resumable
 python rebuild_13f/build_panel.py            # writes panel_13f/ (gitignored)
-python rebuild_13f/test_build_panel.py       # 10 hand-worked checks on a synthetic data set
+python rebuild_13f/test_build_panel.py       # 11 hand-worked checks on a synthetic data set
 ```
 
 ## What the builder does
@@ -17,6 +17,7 @@ python rebuild_13f/test_build_panel.py       # 10 hand-worked checks on a synthe
 | Rule | Why |
 |---|---|
 | VALUE in dollars by **filing date** (thousands before 2023-01-03, dollars after) | The SEC unit change created the 2022Q4 artefact in the current paper (issue #1) |
+| Per-filing **implied-price check**: a filing whose median value/shares is about 1000x off the cross-sectional price is rescaled | Some filers kept reporting in thousands after the change (practitioner reports of a few percent of reports in 2026Q2; StoneX misreported 2022Q4 to 2025Q1; Barclays amended 2024) |
 | Keep `SSHPRNAMTTYPE = SH`, drop option rows (`PUTCALL` set) | Share counts only; options are not holdings |
 | 13F-HR and 13F-HR/A only; notices dropped | Notices carry no holdings |
 | Per (CIK, period): latest original or RESTATEMENT is the base; later NEW HOLDINGS amendments add rows | Amendments are common and change positions |

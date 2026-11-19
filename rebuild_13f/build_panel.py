@@ -9,7 +9,9 @@ matches them case-insensitively and fails loudly if a required one is missing.
 Rules (each answers a problem found in the audit, docs/novelty-audit/):
 1. Units. 13F market value is in thousands of dollars for filings made before
    2023-01-03 and in dollars from that date (SEC data-set readme). VALUE is put
-   in dollars using the FILING date, so late amendments are handled too.
+   in dollars using the FILING date, so late amendments are handled too. Then a
+   per-filing implied-price check rescales filings that kept the old unit (or
+   switched early): see to_dollars().
 2. Share counts only. Rows with SSHPRNAMTTYPE != "SH" (principal amounts) and
    option rows (PUTCALL set) are dropped.
 3. Filing types. 13F-HR and 13F-HR/A only; 13F-NT notices carry no holdings.
@@ -107,6 +109,36 @@ def resolve_amendments(filings):
                      nh[["cik", "period", "accession"]]], ignore_index=True)
     return use.drop_duplicates()
 
+def to_dollars(info):
+    """Rule 1 plus a per-filing implied-price check.
+
+    The filing-date rule alone is not enough: some filers kept reporting in
+    thousands after 2023-01-03 (practitioner reports of a few percent of
+    reports as late as 2026Q2; StoneX disclosed misreporting from 2022Q4 to
+    2025Q1; Barclays amended a 2024 filing). For each accession, compare the
+    median implied price (value / shares) with the cross-sectional median
+    price of the same CUSIP and period (CUSIPs held by at least 3 filers). A
+    filing whose median ratio sits near 1/1000 is rescaled up, near 1000 down.
+    Returns (info with value_usd, counts of rescaled accessions).
+    """
+    info = info.copy()
+    dated = info.filing_date < UNIT_CUTOFF
+    info["value_usd"] = np.where(dated, info.value_raw * 1000.0, info.value_raw)
+    p = info.value_usd / info.shares
+    grp = info.groupby(["period", "cusip"])
+    ref = p.groupby([info.period, info.cusip]).transform("median")
+    n_holders = grp.cik.transform("nunique")
+    ratio = (p / ref).where(n_holders >= 3)
+    acc_ratio = ratio.groupby(info.accession).transform("median")
+    up = acc_ratio.between(1 / 3000, 1 / 300)
+    down = acc_ratio.between(300, 3000)
+    info.loc[up, "value_usd"] *= 1000.0
+    info.loc[down, "value_usd"] /= 1000.0
+    counts = {"rows_by_date_in_thousands": int(dated.sum()), "rows_by_date_in_dollars": int((~dated).sum()),
+              "accessions_rescaled_up": int(info.loc[up, "accession"].nunique()),
+              "accessions_rescaled_down": int(info.loc[down, "accession"].nunique())}
+    return info, counts
+
 def _split_rebase(prev_sh, cur_sh):
     r = cur_sh / prev_sh
     out = prev_sh.copy()
@@ -165,8 +197,7 @@ def main():
     info = pd.concat(I, ignore_index=True)
     use = resolve_amendments(filings)
     info = info.merge(filings[["accession", "filing_date"]], on="accession").merge(use, on="accession")
-    in_thousands = info.filing_date < UNIT_CUTOFF
-    info["value_usd"] = np.where(in_thousands, info.value_raw * 1000.0, info.value_raw)
+    info, unit_counts = to_dollars(info)
     pos = info.groupby(["cik", "period", "cusip"], as_index=False)[["shares", "value_usd"]].sum()
     tau = turnover_panel(pos)
     filings.to_parquet(out / "filings.parquet", index=False)
@@ -175,7 +206,7 @@ def main():
     summary = {"zips": len(zips), "holdings_filings": int(len(filings)),
                "amendment_kinds": filings.kind.value_counts().to_dict(),
                "reports_used": int(use.groupby(["cik", "period"]).ngroups),
-               "rows_in_thousands": int(in_thousands.sum()), "rows_in_dollars": int((~in_thousands).sum()),
+               **unit_counts,
                "positions": int(len(pos)), "institutions": int(pos.cik.nunique()),
                "periods": sorted(pos.period.unique().tolist()),
                "tau_rows": int(len(tau)), "tau_median": float(tau.tau.median()) if len(tau) else None,
