@@ -27,7 +27,8 @@ Rules (each answers a problem found in the audit, docs/novelty-audit/):
 
 Outputs (in panel_13f/, gitignored):
   filings.parquet    one row per accession: cik, period, filing_date, kind
-  positions.parquet  cik, period, cusip, shares, value_usd (after rules 1-4)
+  positions/<period>.parquet  cik, period, cusip, shares, value_usd (after rules 1-4)
+  stage/<zip>.parquet         compact per-zip staging rows (can be deleted after a build)
   tau.parquet        cik, period, turnover, tau, turnover_split, tau_split,
                      n_positions, aum_usd
   build_report.json  row counts at every step, so each rule's effect is logged
@@ -50,12 +51,16 @@ def _read(zf, stem, cols):
     key = next((k for k in names if k.startswith(stem) and k.endswith((".TSV", ".TXT"))), None)
     if key is None:
         raise KeyError(f"{stem} file not found in {zf.filename}: {sorted(names)}")
-    df = pd.read_csv(io.BytesIO(zf.read(names[key])), sep="\t", dtype=str, keep_default_na=False,
-                     quoting=3, on_bad_lines="warn")
-    df.columns = [c.strip().upper() for c in df.columns]
-    missing = [c for c in cols if c not in df.columns]
+    with zf.open(names[key]) as fh:
+        header = fh.readline().decode("utf-8", errors="replace").rstrip("\r\n").split("\t")
+    upper = {h.strip().upper(): h for h in header}
+    missing = [c for c in cols if c not in upper]
     if missing:
-        raise KeyError(f"{key} in {zf.filename} lacks columns {missing}; has {list(df.columns)}")
+        raise KeyError(f"{key} in {zf.filename} lacks columns {missing}; has {header}")
+    with zf.open(names[key]) as fh:
+        df = pd.read_csv(fh, sep="\t", dtype=str, keep_default_na=False, quoting=3,
+                         on_bad_lines="warn", usecols=[upper[c] for c in cols], encoding_errors="replace")
+    df.columns = [c.strip().upper() for c in df.columns]
     return df[cols]
 
 def _date(s):
@@ -185,30 +190,61 @@ def main():
     args = ap.parse_args()
     cache, out = Path(args.cache), Path(args.out)
     out.mkdir(exist_ok=True)
-    report, F, I = {}, [], []
+    # Streaming build: the full universe does not fit in memory at once.
+    # Pass 1: one zip at a time -> compact staging parquet (rows tagged with period).
+    # Pass 2: one period at a time -> amendments, units, aggregation.
+    # Pass 3: two consecutive periods at a time -> turnover (same turnover_panel as tested).
+    import pyarrow.dataset as ds
+    stage, posdir = out / "stage", out / "positions"
+    stage.mkdir(exist_ok=True); posdir.mkdir(exist_ok=True)
+    report, F = {}, []
     zips = sorted(cache.glob("*.zip"))
     if not zips:
         raise SystemExit(f"no zips in {cache}; run rebuild_13f/download.py first")
     for z in zips:
         f, i = load_zip(z, report)
-        F.append(f); I.append(i)
-        print(f"{z.name}: {len(f)} holdings filings, {len(i)} share rows")
+        F.append(f)
+        i = i.merge(f[["accession", "period"]], on="accession").sort_values("period")
+        i.to_parquet(stage / f"{z.stem}.parquet", index=False)
+        print(f"{z.name}: {len(f)} holdings filings, {len(i)} share rows", flush=True)
+        del i
     filings = pd.concat(F, ignore_index=True).drop_duplicates("accession")
-    info = pd.concat(I, ignore_index=True)
-    use = resolve_amendments(filings)
-    info = info.merge(filings[["accession", "filing_date"]], on="accession").merge(use, on="accession")
-    info, unit_counts = to_dollars(info)
-    pos = info.groupby(["cik", "period", "cusip"], as_index=False)[["shares", "value_usd"]].sum()
-    tau = turnover_panel(pos)
     filings.to_parquet(out / "filings.parquet", index=False)
-    pos.to_parquet(out / "positions.parquet", index=False)
+    use = resolve_amendments(filings)
+    meta = use.merge(filings[["accession", "filing_date"]], on="accession")
+    dataset = ds.dataset(str(stage), format="parquet")
+    periods = sorted(meta.period.unique(), key=lambda q: (int(q[:4]), int(q[5])))
+    unit_counts = {"rows_by_date_in_thousands": 0, "rows_by_date_in_dollars": 0,
+                   "accessions_rescaled_up": 0, "accessions_rescaled_down": 0}
+    n_pos, ciks = 0, set()
+    for q in periods:
+        rows = dataset.to_table(filter=ds.field("period") == q,
+                                columns=["accession", "cusip", "shares", "value_raw"]).to_pandas()
+        rows = rows.merge(meta[meta.period == q], on="accession")
+        if rows.empty:
+            continue
+        rows, c = to_dollars(rows)
+        for k in unit_counts:
+            unit_counts[k] += c[k]
+        p = rows.groupby(["cik", "period", "cusip"], as_index=False)[["shares", "value_usd"]].sum()
+        p.to_parquet(posdir / f"{q}.parquet", index=False)
+        n_pos += len(p); ciks |= set(p.cik)
+        print(f"{q}: {len(p)} positions, {p.cik.nunique()} filers", flush=True)
+    del dataset
+    taus, done = [], [q for q in periods if (posdir / f"{q}.parquet").exists()]
+    for a, b in zip(done, done[1:]):
+        if (int(b[:4]) * 4 + int(b[5])) - (int(a[:4]) * 4 + int(a[5])) != 1:
+            continue
+        pair = pd.concat([pd.read_parquet(posdir / f"{a}.parquet"), pd.read_parquet(posdir / f"{b}.parquet")])
+        t = turnover_panel(pair)
+        taus.append(t[t.period == b])
+    tau = pd.concat(taus, ignore_index=True) if taus else pd.DataFrame()
     tau.to_parquet(out / "tau.parquet", index=False)
     summary = {"zips": len(zips), "holdings_filings": int(len(filings)),
                "amendment_kinds": filings.kind.value_counts().to_dict(),
                "reports_used": int(use.groupby(["cik", "period"]).ngroups),
                **unit_counts,
-               "positions": int(len(pos)), "institutions": int(pos.cik.nunique()),
-               "periods": sorted(pos.period.unique().tolist()),
+               "positions": int(n_pos), "institutions": len(ciks), "periods": done,
                "tau_rows": int(len(tau)), "tau_median": float(tau.tau.median()) if len(tau) else None,
                "per_zip": report}
     (out / "build_report.json").write_text(json.dumps(summary, indent=1, default=str))

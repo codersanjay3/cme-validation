@@ -28,13 +28,14 @@ python rebuild_13f/test_build_panel.py       # 11 hand-worked checks on a synthe
 ## Outputs (`panel_13f/`)
 
 - `filings.parquet`: accession, cik, period, filing date, kind (original, restatement, new_holdings)
-- `positions.parquet`: cik, period, cusip, shares, value_usd
+- `positions/<period>.parquet`: cik, period, cusip, shares, value_usd (one file per quarter)
+- `stage/`: compact per-zip staging files (safe to delete after a build)
 - `tau.parquet`: cik, period, turnover, tau, turnover_split, tau_split, n_positions, aum_usd
 - `build_report.json`: counts at every step, so each rule's effect is visible
 
 ## Not yet done
 
-- Run on the real data (waiting for `SEC_CONTACT_EMAIL`), then check the SEC column names against the readme (the reader fails loudly if one is missing).
+- Column names checked against the real files (2026-11-19): all required columns present. One three-month file: 9,900 holdings filings, 3.68 million share rows, parsed in 3 s at 1.3 GB peak memory.
 - Validate against the existing top-150 panel (`tau_by_inst_quarter.json`) for overlapping CIKs.
 - Overlap network on the full universe, the variance decomposition (Stage 1a) and the pre-registered descriptive test (Stage 1b).
 - Fund-level manager data for the Stage 2 shock design is not in 13F; needs N-PORT or CRSP mutual-fund data.
