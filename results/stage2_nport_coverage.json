@@ -1,0 +1,22 @@
+[
+ {
+  "zip": "2023q1_nport.zip",
+  "filings": 12519,
+  "amendments": 120,
+  "series": 11717,
+  "registrants": 1931,
+  "report_months_with_100plus_filings": {
+   "2022-11": 2482,
+   "2022-12": 6556,
+   "2023-01": 3377
+  },
+  "holding_rows": 6255353,
+  "common_stock_share_rows": 1793033,
+  "common_stock_share_rows_with_cusip": 1150910,
+  "equity_funds": 6478,
+  "equity_funds_nav_100m_plus": 4447,
+  "equity_funds_median_stocks": 75,
+  "equity_funds_total_nav_usd_bn": 17818.3,
+  "definition": "equity fund: >= 80% of value in common stock (EC, NS), >= 20 stocks"
+ }
+]

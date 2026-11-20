@@ -80,3 +80,11 @@ Where the project stands, so no agent has to rediscover it.
 - Meaning: descriptive evidence consistent with horizon contagion, small in size (about 2% of a within SD per SD), implied long-run response about 0.044, same order as the model's assumed 0.06. Not causal; Stage 2 needs fund-level manager shocks.
 - Open: Stage 2 data (N-PORT or CRSP mutual funds for manager changes); test average vs share-of-short-neighbours forms; team decision on the pivot (cme-x59).
 - Beads/issues: cme-x59, cme-csl, cme-i7t (Stage 2).
+
+## 2026-11-19 sumedh-agent: Stage 2 feasibility with free SEC data (N-PORT + Form 497)
+- Changed: new `stage2/` (download_nport.py, nport_coverage.py, scope_events.py, link_events.py, power.py), `docs/stage2/FEASIBILITY.md`, `results/stage2_*.json`, `results/stage2_events.csv`; `.gitignore` adds `stage2_cache/` and `nport_cache/`. No existing script or paper number changed. No Stage 2 coefficient estimated.
+- Numbers (new, scoping only): N-PORT 2023Q1 has 11,717 fund series, 6,478 equity funds (4,447 with net assets of at least 100 million dollars), share counts and CUSIPs; data sets cover 2019Q4 to 2026Q3 only. Form 497 manager events 2019-10 to 2026-09 linked to N-PORT series through filing-header SERIES-IDs: deaths 6 announcements on equity funds (17 series); retirements 231 announcements (938 series, 129 trusts). Power: one shocked neighbour of k = 10 moves the peer variable by delta/10, so at the Stage 1 slope (0.032) the minimum detectable coefficient is 15x to 25x the Stage 1 estimate with about 231 to 300 shocks and a first stage of 0.5; even 3,000 shocks with a first stage of 1.0 reach only 2.3x.
+- Why: Stage 2 (identification) of idea 1; the user asked to try free N-PORT data instead of CRSP.
+- Meaning: deaths fail the count gate; retirements pass it, but the count gate was the wrong test. A single-neighbour manager-shock design cannot identify an effect of the Stage 1 size. Recommendation in FEASIBILITY.md: switch the headline to idea 2 with Stage 1 as a descriptive section (option 1), or find shocks that move many neighbours at once (option 2).
+- Open: team decision on the pivot (cme-x59); if Stage 2 continues, download all 28 N-PORT zips, build the fund panel and measure the retirement first stage; manual pass over death filings.
+- Beads/issues: cme-i7t, cme-x59.
