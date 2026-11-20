@@ -29,3 +29,11 @@ report/*.toc
 .beads-credential-key
 .beads/proxieddb/
 *.gate.lock*
+
+# Full-universe 13F rebuild (see rebuild_13f/README.md)
+sec13f_cache/
+panel_13f/
+
+# Stage 2 scoping caches (see stage2/)
+stage2_cache/
+nport_cache/

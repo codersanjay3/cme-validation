@@ -1,0 +1,15 @@
+{
+ "n_institution_quarters": 214123,
+ "n_institutions": 9278,
+ "n_quarters": 52,
+ "var_log_tau": 0.7671,
+ "share_of_variance_left_after": {
+  "institution": 0.3241,
+  "quarter": 0.976,
+  "institution+quarter": 0.3042,
+  "institution+style_by_quarter": 0.0425
+ },
+ "ar1_log_tau": 0.753,
+ "gate_1a_threshold": 0.1,
+ "gate_1a_pass": true
+}

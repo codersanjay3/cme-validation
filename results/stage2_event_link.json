@@ -1,0 +1,38 @@
+{
+ "equity_series_quarters_used": [
+  "equity_series_2023q1.csv"
+ ],
+ "death": {
+  "fund_series_events": 30,
+  "on_equity_funds": 17,
+  "on_equity_funds_nav_100m": 11,
+  "on_equity_funds_in_window": 16,
+  "distinct_announcements_on_equity_funds": 6,
+  "distinct_trusts_on_equity_funds": 6,
+  "equity_events_by_year": {
+   "2019": 1,
+   "2020": 3,
+   "2021": 2,
+   "2022": 1,
+   "2023": 10
+  }
+ },
+ "retirement": {
+  "fund_series_events": 1896,
+  "on_equity_funds": 938,
+  "on_equity_funds_nav_100m": 821,
+  "on_equity_funds_in_window": 887,
+  "distinct_announcements_on_equity_funds": 231,
+  "distinct_trusts_on_equity_funds": 129,
+  "equity_events_by_year": {
+   "2019": 27,
+   "2020": 68,
+   "2021": 58,
+   "2022": 112,
+   "2023": 135,
+   "2024": 230,
+   "2025": 243,
+   "2026": 65
+  }
+ }
+}
