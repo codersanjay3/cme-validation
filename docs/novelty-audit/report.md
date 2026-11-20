@@ -1,0 +1,434 @@
+# Horizon Contagion: A Novelty Audit and Pivot Plan for Chronotypic Market Ecology
+
+**Executive summary.** The most defensible pivot is Pivot A, recast as horizon contagion: the first identified peer effect in institutional investment horizon transmitted through portfolio-overlap networks. Across roughly eighteen search framings and an adversarial follow-up (web and scholarly-database searches read at snippet or abstract level, without SSRN or Google Scholar full text or Chinese-language databases), no paper was found that regresses an institution's own turnover, holding period or horizon on its network neighbours' horizons; the institutional peer-effect papers found study what is held, traded or flowed [1, 2, 3], and every paper found with trading activity as a network-peer outcome concerns retail investors [4, 5]. The estimand is open because the obvious design does not identify it: turnover carries a common component that is especially strong among similar funds [6], horizon-similar funds receive correlated flows [7], friends-of-friends instruments from a sampled network are generically invalid [8], and regressing an outcome on peers' mean outcome reveals nothing without manipulated peer characteristics [9]. The paper must therefore rest on manager-level shocks to neighbours, with the bereavement design of Liu, Sulaeman, Shu and Yeung as template [10], on the full filer universe that the free SEC Form 13F Data Sets provide [11], run as a staged, pre-registered programme whose kill criteria name a fallback at every gate. Strategic-complementarity theory supplies a signed prediction: because the value of short-horizon information depends on whether others trade on it, short horizons should spread between neighbours, and may tip [12].
+
+Every empirical result the current paper headlines is pre-empted, mechanical or a replication. The dispersion-liquidity link is published in JFQA [7, 13], its internet appendix already reports that holder-horizon dispersion lowers volatility [13], a 2026 Chinese paper ties holder-horizon homogeneity to left-tail risk [14], and drift-neutral turnover has been standard since 2005 [15]. An agent-based model (ABM) with horizon adaptation is new only if its adaptation rate is estimated and tested out of sample [16]. These pieces become modules; if A fails its shock gate, the named fallback is a US stress-episode paper testing whether long-horizon holders absorb short-horizon selling within the same stock, a mechanism Chan, Cheng and Hameed conjecture but never observe [7].
+
+On the report's judgement of fit, the programme suits Review of Finance (JIF 8.4 [17]) first, then Management Science and JFQA. The impact-factor bar was never binding, since Finance Research Letters already sits at 7.1 [18]; the binding constraint is a contribution that is not a replication.
+
+| Pivot | Verdict | Closest papers | Genuinely novel increment | Role in the recommended paper |
+|---|---|---|---|---|
+| A. Horizon contagion | Open as an estimand (about 65 to 70% confidence, search-limited) | Pastor-Stambaugh-Taylor commonality [6]; Hong-Kubik-Stein [1]; Pool-Stoffman-Yonker [2]; Escobar-Pedraza, retail [4] | Shock-identified peer effect in institutional horizon on the full 13F universe, testing the complementarity sign | Headline |
+| B. Holder-horizon dispersion and absorption | Dispersion largely pre-empted; within-stock absorption open | Chan-Cheng-Hameed and appendix [7, 13]; Chen-Lu-Qin [14]; Cella-Ellul-Giannetti [19]; Glossner et al. [20] | US crash-risk horse race against flow fragility; relative absorption by holder horizon in stress | Consequence module; named fallback paper |
+| C. Price-drift contamination | Pre-empted | Gaspar-Massa-Matos [15]; Yan-Zhang [21] | None at journal level; documentation of the 2023 unit break | Data appendix |
+| D. Horizon homophily in co-holding | Mechanical as measured | Crane-Koch-Michenaud [22]; Gualdi et al. [23] | Residual on active weights with share-based horizons, dyadic fixed effects and a configuration-model null | Motivating fact that justifies the shock design |
+| E. Calibrated adaptive-horizon ABM | Novel only in calibrated form (about 70% confidence) | Oldham [16]; LeBaron [24] | Adaptation rate set to the estimated peer coefficient, absorption channel set by B, out-of-sample test | Final section |
+
+## 1. Where the Current CME Paper Stands
+
+### 1.1 The question survives
+
+In the Chronotypic Market Ecology (CME) agent-based model, investors differ in lookback horizon tau, link preferentially to similar-tau investors, and drift toward neighbours' horizons at an assumed rate of 0.06 per period. The empirical half measures horizons from SEC Form 13F filings, the quarterly holdings reports of institutional managers above a reporting threshold. The underlying question is whether horizons behave like a socially transmitted trait whose distribution matters for stability.
+
+That question is worth keeping because the paper never estimates its own central parameter. The 0.06 rate drives the *temporal echo chamber* result, yet nothing in the empirics measures how fast horizons move toward neighbours; if they do, 0.06 is an estimable peer coefficient. On share-based horizons (the project's own data), within-institution standard deviation of log tau is 0.55 against a total of 0.92, with AR(1) persistence of 0.75 across 147 institutions and 50 quarters, implying a within-institution variance share of about 36% and a shock half-life near 2.4 quarters; after institution and quarter fixed effects 33% of the variance remains, and quarter effects alone explain only about 2%. The value-weight panel gives a similar 32%, and correcting the 2022Q4 unit issue in the share-based series does not move the decomposition.
+
+In mutual-fund data average turnover has a 95% correlation with the first principal component of fund turnover [25], whereas here the market-wide component is small, so the live threat is style-level commonality [6], which a style-by-quarter fixed effect is built to absorb.
+
+The network is usable in shape. The top-5 nearest-neighbour overlap network has about 100 institutions per quarter, median pairwise cosine similarity (the normalised dot product of two portfolio-weight vectors) of 0.03 to 0.07, and a median of 32 to 42 friends-of-friends per node who are not friends (the project's own data). Such intransitive triads identify endogenous peer effects in a linear-in-means network model [26]. What fails is the sample: a top-150 network is a sample of thousands of filers, and two-stage least squares with friends-of-friends instruments on a sampled graph generically violates the exclusion restriction [8]. The pivot keeps the geometry and must replace the sample.
+
+### 1.2 The results do not survive
+
+The aggregate horizon-diversity index is not a result. Its correlation with VIX (the option-implied volatility index) of r = -0.53 falls to r = -0.06 when turnover is computed from share changes, as the paper reports, so it measured price drift. The SEC's 13F data-set documentation records a switch of market values from thousands of dollars to dollars for filings from January 3, 2023 [11]. In the project cache the switch produces a 1000x jump at 2022Q4, so the reported 2022Q4 minimum of 1.021 is an artefact (1.918 after rescaling) and the value-weight correlation with VIX moves from -0.526 to -0.641 (the project's own data). Correcting it strengthens a correlation already known to be drift, so neither number belongs in the paper.
+
+The stock-level dispersion slope replicates an existing table. Chan, Cheng and Hameed's Internet Appendix Table IA1 reports quarterly Fama-MacBeth regressions (cross-sections run quarter by quarter, coefficients averaged) of daily return volatility on lagged holder-horizon dispersion, with coefficients of -0.012 to -0.042 over 1982-2016 (-0.012 insignificant at t = -0.89, -0.024 significant only at 10%) and -0.039 to -0.057 over 2000-2016, net of size, book-to-market, institutional ownership, liquidity level and liquidity volatility [13]. The CME slope of -0.011 (t = -2.4) sits at the weak end of that range, on a shorter sample of survivors only (the project's own data).
+
+The simulated friction channel, in which diversity raises volatility, is contradicted in sign by the two direct empirical tests, the appendix table [13] and the project's own slope, though one appendix specification is insignificant and both are correlational; the published headline is that heterogeneous-horizon stocks are more liquid, and its tax-reform identification concerns illiquidity, not volatility [7]. Some theory points the other way: LeBaron's mixed-horizon populations raise return variability [24], and in an overlapping-portfolio model heterogeneous investments go with higher volatility [86]. A larger short-term share also raises post-announcement volatility under Russell-reconstitution identification [84], a level effect in event windows. Fractal Market Hypothesis ABMs find that diversity stabilises [27, 28]. The friction claim should be re-signed and restricted to a stress-liquidity channel estimated from data.
+
+The homophily coefficient (kappa-hat = 0.158, positive in all 50 quarters, Newey-West t = 19) is likely mostly mechanical as measured, though untested. Value-weight cosine is dominated by mega-caps, long-horizon quasi-indexers converge on the market portfolio, and drift-contaminated tau links holdings to measured horizon directly. Characteristic demand, type assortativity and shared asset managers all produce co-holding without any horizon mechanism [22, 29, 30]. A mean coefficient of 0.158 implies an R-squared near 2.5%, and since each quarter's correlation uses roughly 11,000 dyads among the same 150 nodes, the 50-of-50 record is one persistent fact observed 50 times, not 50 confirmations (an inference from the project's own data and sample design).
+
+## 2. Literature Map
+
+Seven strands bear on the pivot and rarely cite one another.
+
+### 2.1 Strand (a): horizon heterogeneity, the FMH and heterogeneous-horizon ABMs
+
+Equilibrium theory treats horizon heterogeneity as an outcome. Crouzet, Dew-Becker and Nathanson model investors who trade at a continuum of frequencies, specialise endogenously, and coexist, profiting from each other [31]. Parsa estimates an investor fixed effect in trading frequency from 13F data and finds that stocks held by high-frequency institutions are more volatile, with the lowest-frequency quintile earning about 6 percentage points a year more [32]. Cespa and Vives show that horizon differences make prices reflect higher-order expectations and can leave the market in a low-liquidity equilibrium [33].
+
+The theory the current paper omits matters most. Froot, Scharfstein and Stein show that short-horizon speculators herd on the same information because the value of information to a short-horizon trader depends on whether others act on it, producing multiple, inefficient equilibria [12]. Chamley derives a related complementarity in information acquisition, with trading frenzies [34]. In all three models horizon is exogenous [12, 33, 34]. No source takes the next step, but the results jointly imply it: if the payoff to a short horizon rises with the share of short-horizon traders an institution trades alongside, its best-response horizon should move toward its neighbours', and multiple equilibria imply tipping in neighbourhoods that are already short-horizon [12, 34]. That is the signed prediction Pivot A lacks.
+
+The ABM literature has endogenous horizons but no network adaptation. LeBaron's horizon distribution evolves through wealth-based replacement [89], and mixed populations raise return variability [24].
+
+Peters's FMH holds that liquidity comes from the coexistence of horizons and that crashes follow when one horizon dominates. Its empirical tests are time-series exercises: wavelet power on major indices shows specific, mostly short, horizons dominating the most turbulent windows of the 2008 crisis [75], inferred from index returns alone; no holdings- or network-level test was found. FMH models find stability rising as horizon structure diversifies [27] and crashes when a divergent structure shrinks [28]. Nishiwaki finds that long-term traders can stabilise or destabilise a Brock-Hommes switching model depending on short-term traders' costs [35], and a PLOS ONE study calibrates minority and majority agent models to the NASDAQ Composite [36].
+
+Oldham's network ABM is CME's nearest relative: an advice network rewires toward class-specific outperforming "Oracles", but horizon is a fixed class with memory weights of 0.95 against 0.90, and nothing is calibrated [16]. Bolton, Santos and Scheinkman supply absorption theory, in which short-run investors sell to long-run investors, "a more efficient source" of liquidity than cash [37].
+
+### 2.2 Strand (b): 13F-based institutional horizons and their effects
+
+The standard horizon is the Gaspar-Massa-Matos churn rate: absolute position changes valued at current prices, with the passive price change on prior holdings subtracted, over average holdings value, ranging from 0 to 2 [15]. Yan and Zhang use the minimum of buys and sells to strip investor cash flows and show that short-term institutional ownership subsumes the return predictability of total ownership [21]. Cremers and Pareek's holding-period duration predicts next-quarter idiosyncratic volatility [38].
+
+The stability results are level effects. Around Lehman, short-horizon institutions sold almost 21% of their holdings against 7% for long-horizon institutions, and stocks mostly held by short-horizon investors had five-week abnormal returns near -12% against about -4% [19]; Cella, Ellul and Giannetti instrument horizon with the correlation between past performance and withdrawals, a funding-fragility instrument [19]. Zhu finds short-term institutions drive the negative ownership-skewness relation [39]. Ben-David, Franzoni, Moussawi and Sedunov find ownership by large, high-turnover institutions most strongly related to volatility and crisis fragility [40]. In the COVID-19 crash high-ownership stocks did worse, mitigated by longer-horizon, passive and foreign ownership [20], and in China long-term holding mitigates crash risk [41].
+
+Whether horizons move depends on the moment. Fund holding-horizon decile ranks persist 20 quarters after formation [42], while average fund turnover swung between 59% and 102% a year from 1979 to 2011 [25]: ranks persist, levels move. The strand treats horizon as a predetermined trait and never asks what changes it. It also warns against framing short horizons as harmful, since short-term institutions are informed [21]; contagion matters because it changes the mix.
+
+### 2.3 Strand (c): dispersion of a stock's ownership base
+
+Chan, Cheng and Hameed define STDCR, the cross-holder standard deviation of churn over mean churn, and show that heterogeneous holder horizons go with higher liquidity, lower liquidity volatility, smaller price impact of extreme flow-induced trading, and an illiquidity premium concentrated in homogeneous stocks [7]. Their 2003 dividend-tax-reform design finds illiquidity falling by 9% to 26% where heterogeneity rose most [7]. The mechanism is correlated liquidity demand: a low-churn fund's flows comove 0.80 with other low-churn funds against 0.12 with funds outside the group, and 0.98 against 0.16 for high-churn funds [7]. The appendix adds return volatility [13]. Chen, Lu and Qin (2026) build a homogeneity index from the same coefficient of variation and find that for A-shares over 2013 to 2024 homogeneity raises left-tail systemic risk through liquidity shocks and order imbalance, robust to difference-in-differences, instrumental variables and Heckman corrections [14].
+
+Greenwood and Thesmar supply the benchmark: fragility as the ownership-weighted quadratic form in owners' flow-shock covariance, with a univariate R-squared near 8% for future volatility [43].
+
+No source says dispersion proxies for low flow covariance, but within-tercile flow comovement [7] and fragility defined as owner flow covariance [43] jointly imply it, so a dispersion effect that does not survive a fragility control merely restates Greenwood-Thesmar. What remains open is narrow: US crash outcomes, a fragility horse race, and a direct test of holder-level absorption. A dispersion-to-crash search (six scholarly-database queries, English and Chinese web queries, and the 21 works citing Chan-Cheng-Hameed in OpenAlex) found no US paper; adjacent work links crowding [87], fund peer trading [82] and co-holding networks [83] to crash risk, tail risk and idiosyncratic volatility through overlap levels, trade direction or network position, not horizon dispersion.
+
+### 2.4 Strand (d): common ownership, overlap networks, fire sales and fragility
+
+Coval and Stafford show that funds with large outflows cut positions, creating reversing price pressure in commonly held stocks, and that trading against constrained funds earns liquidity-provision returns [44]. Anton and Polk show that shared active ownership forecasts excess return correlation, using the 2003 fund scandal as exogenous variation [45]. Gualdi and coauthors validate 13F overlap links against a bipartite configuration model (BiCM, a null in which institutions connect to securities at random subject to observed degrees) and find validated links rose before the 2007-08 crisis and peaked at it [23]. Blocher finds a flow network externality 32% to 92% as large as lagged own flows [3]. Georg, Pierret and Steffen show money market funds shift away from issuers exposed to similar funds, attending more to similarity when facing redemptions [46].
+
+The common-ownership literature has stress-tested the asset-manager merger shock a contagion design would borrow, and the shock failed. After the BlackRock-BGI announcement, funds heavily exposed to commonly held stocks began avoiding them [47]. The merger sample is dominated by BlackRock-BGI in 2009, coinciding with the post-crisis period, and the effect disappears once this is addressed [48]. Between 39% and 56% of stock pairs would see weaker rather than stronger incentives after the same merger [49], and a review finds "relatively little evidence that common ownership causes lower competition" in credible designs [50]. Life insurers sharing an external asset manager hold and trade more similarly, and closures of shared managers lower that similarity [30]. Mergers, which move neighbours' holdings directly, therefore cannot serve as excluded shocks to neighbours' horizons [47, 48].
+
+### 2.5 Strand (e): peer effects, herding and their identification
+
+Institutional peer effects are documented in what is held and traded. A fund's holding of a stock rises about 0.22 percentage points when same-city managers from other families raise theirs by one point [1]. Neighbourhood-connected managers hold and trade more similar portfolios [2], and hedge fund managers with a shared prior employer invest more similarly [51]. Chen Guojin and coauthors apply a co-holding-community peer design to Chinese institutions' bubble-riding [52]. Cohen, Lu and Nguyen show that 71% of managers' trade directions are predictable from their own history [53]. The canonical herding measures ask whether more institutions buy a stock than chance predicts, for pension funds in 1985-89 [77] and for mutual funds in 1975-94, where herding is modest in the average stock and stronger in small stocks [76]; they measure trade direction, so none tests a horizon peer effect.
+
+Among the papers found, trading activity as a network-peer outcome appears only for retail investors: quasi-random classroom exposure to successful peers makes new investors likelier to start trading and to buy similar stocks [4], sociability correlates with active household trading [54], and soccer-driven social interaction raises Israeli retail investors' trading-volume sensitivity to past trades [5]. Liang, Wu and Yin list herding among drivers of Chinese fund turnover, in the trade-direction sense and, at abstract level, without a peer-turnover regression [55].
+
+The methods literature is the referee's checklist. The linear-in-means model regresses an agent's outcome on peers' average outcome and characteristics; the reflection problem is that the group-mean outcome is collinear with group-mean characteristics. Network intransitivity resolves this by supplying friends-of-friends instruments [26].
+
+A 2020 survey classifies responses to correlated effects into random peers, random shocks, structural endogeneity and panel data, and warns that the instruments fail under mismeasurement because "peers of peers who are not peers in the observed network can, in fact, be peers in the real network" [56]. Angrist shows outcome-on-outcome peer regressions are "vacuous, either unity or, if the average is defined as leave-out, determined by a generic intraclass correlation coefficient" [9]. Excluding the focal unit from its own peer pool biases estimates downward [57].
+
+Chandrasekhar and Lewis's Proposition 3.4 cuts both ways: instruments built from a sampled graph are generically invalid, but when the graph records sampled nodes' links to all nodes and outcomes and covariates are observed for all nodes, they stay valid with the second stage restricted to sampled nodes [8]. Friends-of-friends instruments "may become degenerate" in very sparse networks and "may still provide too little first-stage information" in denser ones, which calls for Anderson-Rubin inference, valid under weak instruments [58].
+
+Leary and Roberts instrument peers' policies with peers' idiosyncratic return shocks [59], and Liu et al. use managers' parental deaths as shocks to investment style [10]. Every ingredient of Pivot A exists; the combination does not.
+
+### 2.6 Strand (f): measuring horizons from holdings, and contamination
+
+Drift adjustment is standard: the Gaspar-Massa-Matos numerator values share changes at current prices, so drift survives only in the denominator [15]. Yan and Zhang adopt it [21], Chan, Cheng and Hameed report share-based robustness [7], and the fund literature's Modified Turnover targets "the active changes by a mutual fund manager rather than capturing mechanical portfolio adjustments driven by stock price fluctuations" [60]. Duration sidesteps the issue [38], and Lan, Moneta and Wermers call inverse turnover "a flawed and downward biased proxy" for holding horizon [42]. The SEC's free 13F Data Sets cover July 2013 to August 2026 [11].
+
+Structural limits matter as much as drift: 13F reports quarter-end long positions of managers above $100 million, omitting small positions and confidentially treated holdings, and aggregates many funds per filer [78], while short sales fall under the separate 2023 Rule 13f-2 regime [81]; the Thomson s34 version has gaps and errors, which is why researchers scrape filings, reliable in XML form from mid-2013 [79]. Missing intra-quarter round trips bias churn-based horizons upward in level, and filer aggregation dilutes manager-level shocks (Section 6.3). The CME contamination finding therefore corrects the paper's own non-standard measure (tau as 63 over value-weight turnover); churn and holding-period horizons are different objects [42].
+
+### 2.7 Strand (g): homophily in investor networks
+
+Homophily is the tendency of similar nodes to link. Among investors it appears as type assortativity: institutions in co-holding cliques are "most likely to be dedicated investors and least likely to be quasi-indexers" [22]. Flow comovement is horizon-sorted [7], a BiCM null controls for portfolio size and stock popularity [23], individual investors in the same cosine-similarity community trade alike [88], and characteristic demand [29] and shared managers [30] explain co-holding without any horizon mechanism. Under DeGroot updating, in which agents repeatedly average neighbours' beliefs, homophily slows convergence to consensus while network density does not affect its speed [61]. Horizon homophily is thus Pivot A's identification problem, since links formed on similarity make selection mimic influence, and Golub-Jackson gives the echo-chamber claim an analytic form.
+
+| Strand | Established | Still open | Bearing on the pivots |
+|---|---|---|---|
+| (a) Theory, FMH, ABMs | Frequency specialisation [31]; short-horizon complementarity [12, 34]; horizons evolving by wealth [89] | Network adaptation; an estimated adaptation rate | Sign prediction for A; E's niche |
+| (b) 13F horizons | Drift-neutral churn [15, 21]; level effects on crises, volatility, crashes [19, 39, 40] | What moves an institution's horizon | A's open flank |
+| (c) Ownership dispersion | Liquidity and volatility, US [7, 13]; tail risk, China [14] | US crashes against fragility; holder-level absorption | B becomes module or fallback |
+| (d) Overlap networks | Flows, prices, fire sales [3, 23, 44]; merger shocks discredited [47, 48] | Transmission of a behavioural trait | A's network; shock warning |
+| (e) Peer effects | Holdings and trades [1, 2, 51]; retail turnover [4, 5]; method critiques [8, 9, 58] | Institutional horizon as outcome | A's estimand and checklist |
+| (f) Measurement | Drift adjustment since 2005 [15]; turnover differs from holding horizon [42] | Unit-break documentation | C becomes an appendix |
+| (g) Homophily | Type assortativity [22]; homophily slows consensus [61] | A non-mechanical horizon residual | D motivates A |
+
+## 3. Novelty Audit of the Five Candidate Pivots
+
+A pivot is novel when no published or circulated paper has estimated the same object with the same kind of design. The test for each candidate is the closest paper and the gap to the proposed increment: a small gap in a crowded strand is an extension, while a new estimand with an established design is a contribution. Confidence levels are the report's own judgement, bounded by the searches stated for each pivot.
+
+### 3.1 Pivot A: horizon contagion
+
+**Has it been done?** Not as an estimand. Searches across about eighteen framings (fund families, manager moves, consultants, China and Europe, hedge-fund strategy contagion, holding-period herding, horizon-sorted overlap networks, 2023 to 2026 SSRN and arXiv postings) found no paper regressing institutional turnover or horizon on neighbours' horizons with an exclusion restriction. The searches were snippet- and abstract-level web, OpenAlex and Crossref queries, without SSRN or Google Scholar full text, and reached Chinese literature only through web search, not CNKI. The initial audit put confidence at about 65%; an adversarial follow-up (the Liang-Wu-Yin abstract and reference list [55], Chinese co-holding networks [52], 2023 to 2026 working papers, manager-mover designs) found no pre-emption, so the report's judgement is about 65 to 70%.
+
+**Closest papers.** The nearest object is commonality, not contagion. Pastor, Stambaugh and Taylor regress fund turnover on the leave-one-out average of others' turnover with fund fixed effects, obtaining a slope of 0.65 (t = 8.65), and find commonality "especially high among funds sharing similar characteristics" [6]. With no network, exclusion rule or instrument, that regression is the most important alternative explanation. Hong-Kubik-Stein, Pool-Stoffman-Yonker and Gerritzen et al. share the network-peer architecture with holdings, trades or returns as outcomes [1, 2, 51], Blocher with flows [3], and Chen Guojin et al. already apply co-holding-community designs to other outcomes [52], so the design is not new. Escobar-Pedraza is the cleanest identification precedent for trading peer effects, among retail investors [4].
+
+**Residual risk.** The nearest recent 13F institutional-influence paper is MacDonald's 2025 working paper (SSRN 5692342), read at abstract level: his influence coefficient is the percentage change in one investor's holding of a stock after a 1% change in another investor's holding of the same stock, estimated on 13F data, and passive investors prove more influential than active ones regardless of size [74]. That is a stock-level trade spillover, not an institution-level horizon response, so it does not pre-empt A. The full Liang-Wu-Yin text remains unread, and a study showing that turnover follows departing managers would pre-empt the Stage 2 variant; the manager-change event studies located concern performance [85], and a thesis seen only as a search snippet was not retrieved, so this check precedes submission.
+
+**Novel and defensible increment.** Three parts, all required:
+
+- **A new outcome:** institutional horizon, not holdings or flows.
+- **New identification for that outcome:** manager-level shocks to a neighbour's horizon on a full-universe network with style-by-quarter fixed effects [10, 56].
+- **A theory test:** the Froot-Scharfstein-Stein complementarity predicts a positive coefficient, larger in short-horizon neighbourhoods [12], and Golub-Jackson predicts slower cross-group convergence under homophily [61].
+
+The claim should read *the first identified peer effect in institutional trading horizons*, never *the first peer effects among institutions*. **Verdict:** open, and the defensible lead.
+
+### 3.2 Pivot B: holder-horizon dispersion, fragility and absorption
+
+**Has it been done?** The dispersion half, largely: Chan, Cheng and Hameed publish the measure, mechanism, liquidity outcomes and identification (Section 2.3) and the volatility sign [7, 13], and Chen, Lu and Qin pre-empt tail risk for China [14]. The absorption half, no. Chan, Cheng and Hameed write that long-horizon funds "can provide liquidity to active mutual funds during fire sales" but test only stock-level price impact [7]. The record on absorption conflicts:
+
+| Position | Evidence | Source |
+|---|---|---|
+| Long-horizon investors absorb | Long-run investors are the efficient source of outside liquidity | Bolton-Santos-Scheinkman [37] |
+| | Traders against constrained funds earn liquidity-provision returns | Coval-Stafford [44] |
+| | Insurers and pension funds buy debt securities when prices fall; banks and investment funds trade procyclically | Timmer [62] |
+| Others absorb; institutions co-trade | Retail investors provided liquidity in 2020Q1; downscaling institutions did not buy what fellow institutions abandoned | Glossner et al. [20] |
+| | Long-horizon holders also sold around Lehman, 7% against 21% | Cella-Ellul-Giannetti [19] |
+| | Informed managers prey on liquidating funds, earning 45 to 70 basis points during fire sales | Barbon et al. [63] |
+
+The sides reconcile once absorption is relative: aggregate institutions can net-sell while long-horizon holders within a stock sell less than composition predicts. This is an inference from both sides, testable in 13F data.
+
+**Novel and defensible increment.** A US horse race of dispersion against Greenwood-Thesmar fragility for crash risk, plus a holder-by-stock test of relative absorption in stress instrumented with Coval-Stafford flow-induced selling [43, 44]. **Verdict:** dispersion alone is a section, not a paper (about 80%, raised from 65% once Chen-Lu-Qin pre-empted the tail-risk increment for China [14]). Absorption is the named fallback if A fails because it adjudicates a published conflict, but the evidence above leans against the strong version, so the likely result is a modest relative effect, a JBF-tier short paper unless it clears t above 3 against fragility in both pre- and post-2013 samples.
+
+### 3.3 Pivot C: price-drift contamination of turnover
+
+**Has it been done?** Yes, by construction of the standard measure and its successors (Section 2.6) [7, 15, 21]. **Novel increment:** none at journal level. The reversal of a headline result under value-weight construction and the documented January 2023 unit break are useful to anyone building reported-value series from the free files, and Finance Research Letters especially welcomes work that can "shed insight on the replicability or lack thereof of established results" [18], so a short measurement letter could stand there. **Verdict:** pre-empted; a footnote, data appendix and correction.
+
+### 3.4 Pivot D: horizon homophily in co-holding
+
+**Has it been done?** No paper found in a horizon-sorted overlap search (scholarly databases, English and Chinese web queries) regresses pairwise portfolio similarity on pairwise horizon proximity, but the raw fact is implied by type-assortative cliques [22], horizon-sorted flows [7], characteristic demand [29] and shared managers [30]. Pool-Stoffman-Yonker supply the pairwise design, run from social ties to similarity [2]. **Novel increment:** a residual fact on active weights relative to the market, with share-based horizons, dyadic regressions with node fixed effects, same-family and same-type controls, dyadic-robust inference, and excess BiCM-validated links among horizon-proximate pairs [23], ideally within the short-horizon half where, on the report's reasoning, index geometry cannot drive it.
+
+**Verdict:** likely mechanical as measured, though untested. D revives as a standalone fact only if the active-weight, share-based coefficient keeps about half its raw size (about 0.08) under dyadic-robust inference, or if validated link rates rise monotonically with horizon proximity within the short-horizon half. Its important role is negative: it documents the selection channel A's shock design must defeat.
+
+### 3.5 Pivot E: ABM with endogenous horizon adaptation
+
+**Has it been done?** Endogenous horizons have, through wealth-based selection [89] and information specialisation [31]; so have network ABMs with fixed horizon classes and performance-based rewiring [16], FMH ABMs [27, 28] and calibration to index series [36]. Scholarly-database and web searches of heterogeneous-horizon and network ABMs found no ABM in which links form on horizon similarity, horizons adapt toward neighbours, and the adaptation rate is an estimated peer coefficient tested out of sample. Because Oldham's Oracle lists are class-specific, his network is class-assortative as a by-product, so CME should claim similarity-based link formation, not the first homophily model [16].
+
+**Novel increment.** The bridge is a derivation, not a sourced result. Under DeGroot updating, x(t+1) = (1 - a) x(t) + a W x(t) with row-normalised neighbour matrix W [61], the linear-in-means coefficient on neighbours' average horizon equals the adaptation weight a, so the assumed 0.06 becomes comparable to a quarterly peer coefficient. The mapping needs a row-normalised W and one model period per quarter, and it holds for the dynamic coefficient that Stage 1 treats as descriptive; an event-study estimate must first be rescaled by the shocked neighbour's weight in W. The model also needs an absorption channel whose strength comes from the B estimates, since the friction channel is contradicted in sign by the direct tests [7, 13]. **Verdict:** novel only in this form (about 70%, raised from 55% after reading Oldham's full text [16]), and publishable alone only below the threshold, in the Journal of Economic Dynamics and Control at 1.8 [64] or the Journal of Economic Behavior and Organization at 2.7 [65].
+
+## 4. Recommended Pivot
+
+A peer effect in horizon means an institution's trading horizon changes because its neighbours' horizons changed, not because both responded to the same market conditions. Estimating it requires variation in a neighbour's horizon that does not also hit the focal institution.
+
+### 4.1 The paper
+
+**Working title:** *Horizon Contagion: Peer Effects in Institutional Investment Horizons and Stock Fragility*. **Contribution:** institutions' trading horizons move toward those of their portfolio-overlap neighbours, identified from manager-level shocks to those neighbours, and this contagion compresses the horizon diversity of stocks' ownership bases, raising fragility. Five parts:
+
+1. **Fact.** A full-universe variance decomposition of horizon into institution, quarter, style-by-quarter and idiosyncratic components, as Table 1, answering the trait objection.
+2. **Estimate.** A shock-identified peer coefficient, with both sides' horizons computed on mutually non-held stocks [10].
+3. **Mechanism.** Complementarity tests: a positive coefficient, larger in short-horizon neighbourhoods and in less liquid stocks where short-horizon information is worth more [12, 33, 34].
+4. **Consequence.** Stocks exposed to contagion-driven compression show lower dispersion and, net of Greenwood-Thesmar fragility, higher crash risk and weaker relative absorption in stress [7, 43].
+5. **Model.** The CME ABM with estimated adaptation and absorption, tested out of sample [16, 61].
+
+### 4.2 The strongest case against
+
+The case against A is quantitative. The numbers below are inferences from the project's own data and textbook formulas, not sourced results.
+
+- **First**, the signal is small relative to any leak. Total variance of log tau is about 0.85 and the residual after fixed effects about 0.28. Even if the neighbour-own horizon gap had the full cross-sectional variance, a 0.06 peer response would generate quarterly variation of about 0.06 squared times 0.85, or 0.003, roughly 1% of residual variance, so a correlated-effects leak of that size would reproduce it: quarter fixed effects remove only the average loading on a common turnover factor, not style-specific loadings.
+- **Second**, with institution fixed effects, a lagged dependent variable and about 50 quarters, the Nickell approximation (the bias of within estimators in short dynamic panels) puts the bias on persistence near (1 + 0.75)/(50 - 1), about 0.036, part of which homophily loads onto the peer coefficient; exclusion bias runs the other way [57], so the net sign is unknown.
+- **Third**, widening the network from top-5 to top-10 raises the median friends-of-friends count from 32-42 to about 60-70 (the project's own data), so many measured intransitive friends-of-friends are real peers cut by an arbitrary threshold, which the Chandrasekhar-Lewis mechanism covers as much as node sampling [8]; the full universe then pushes toward the dense regime where instruments are weak [58].
+- **Fourth**, merger shocks are discredited [47, 48, 49], no paper located shows that a large filer's turnover moves when one manager leaves, the churn ratio is stable for institutions across time [19], and most trade directions are predictable from managers' own history [53].
+
+A null in a reflection-plus-exclusion setting is uninformative [9, 57].
+
+On this view B, reframed around absorption, dominates: on identification, with Coval-Stafford selling [44] and the funding-fragility instrument [19]; on novelty, with a published conflict to adjudicate [19, 20]; on feasibility; and on downside protection, since absorption, relative absorption and co-selling are all informative.
+
+### 4.3 Why A still leads
+
+Against B's dispersion half the answer is an asymmetry; against its absorption half it is the expected-value comparison in Section 4.4. A novelty problem cannot be fixed by effort: no data upgrade unpublishes Chan-Cheng-Hameed [7], and a US crash extension reads as an extension of a JFQA paper plus a Chinese replication [14]. An identification problem can be fixed by design, and each threat to A has a known remedy (Section 6).
+
+The 1% variance share and the 0.036 Nickell bias are decisive against a dynamic linear-in-means regression, which is why the headline estimate must come from an event study of discrete shocks: the identifying variation is a jump in one neighbour's horizon, not a small drift, and pre-trends and future-neighbour placebos test the leak directly.
+
+A also absorbs B, whose best pieces become A's consequence section, whereas choosing B discards A's estimand. And A carries a payoff B lacks. Short-horizon ownership amplifies shocks [19] and raises volatility [32]. No source states that contagion multiplies these effects, but these results jointly imply it: a shock that shortens a few central institutions' horizons would propagate through the overlap network and compress the holder-horizon dispersion of the stocks they co-hold, the state associated with illiquidity [7] and tail risk [14]. That multiplier is a new horizon-specific object for financial-stability work; existing links from fund peer trading and co-holding networks to stock risk run through trade direction and network position [82, 83].
+
+### 4.4 The staged programme and its kill criteria
+
+As the report's own judgement, A succeeds as the headline with probability of roughly 0.35 (about 0.65 to 0.70 for novelty times about 0.5 that the manager-shock design identifies), against roughly 0.4 for the absorption paper (about 0.6 for novelty times about 0.7 that 13F data show relative absorption credibly), whose payoff is smaller, a relative effect at best. A-first still holds because Stages 0 and 1 are common to both papers, so the order costs nothing until the shock gate. **Decision rule:** switch to the absorption paper if fewer than about 30 usable neighbour manager shocks exist in 2013 to 2026, or if the Stage 1b neighbour coefficient does not survive style-by-quarter fixed effects and the future-neighbour placebo. The 10% variance and 30-shock thresholds are pre-committed judgement calls, not sourced standards.
+
+| Stage | Test | Pass criterion | If it fails | Fallback product |
+|---|---|---|---|---|
+| 0. Rebuild | Full-universe share-based horizons; unit break corrected; amendments and CUSIPs cleaned | Ranks and within-variance share stable relative to the top-150 cache | Nothing proceeds on contaminated data | Corrected, narrowed CME as an FRL letter |
+| 1a. Variance gate | Residual variance of log tau after institution, quarter, style-by-quarter and flow controls | At least 10% remains; residual persistence not near zero | Horizon is a trait; stop A | Absorption paper (B) with E |
+| 1b. Descriptive peer test | Change in log tau on lagged non-held-stock neighbour horizon, style-by-quarter fixed effects | Positive coefficient; future-neighbour placebo near zero | Selection or a common factor dominates | Bounded descriptive A with D and B at JFS or JBF |
+| 2. Shock design | Neighbour manager deaths, departures, retirements | About 30 or more usable shocks, measurable first stage, no pre-trends | Too few or contaminated shocks | Stage 1b with partial-identification bounds, plus B |
+| 3. Consequence (B) | Dispersion and crash risk against fragility; relative absorption | t above 3 surviving controls in pre- and post-2013 samples | B becomes a robustness section | Section only |
+| 4. Model (E) | ABM calibrated to Stages 2 and 3; out of sample | Beats a naive persistence benchmark for the dispersion path | Illustration only | JEDC or JEBO companion |
+
+Gate 1a's first half is provisionally passed on the top-150 share-based panel, where a third of the variance survives institution and quarter effects, and must be rerun on the full universe; the second half, adding style-by-quarter effects and flows, has not been run.
+
+### 4.5 Pre-registration
+
+Before estimating any peer coefficient, the team should post, on OSF or as a dated SSRN appendix, the outcome (quarterly change in share-based log tau), the network (active-weight cosine, BiCM-validated or top-k, lagged), the neighbour-horizon construction (non-held stocks only), the fixed effects, the placebos and the kill thresholds. Where Angrist's critique is the first thing a referee reaches for [9], a pre-registered specification is worth more than an extra robustness table, costs nothing, and makes a precise null publishable.
+
+### 4.6 What transfers and what is discarded
+
+Transfers: the question; the network construction and horizon panel, rebuilt on the full universe and share-based; the ABM code, re-signed; the stock-level dispersion regression, repositioned as a replication of the Chan-Cheng-Hameed appendix [13]; N-PORT, as a fund-level validation layer free of filer aggregation and a corporate-bond extension, with the descriptive bond result dropped as a finding; and the contamination discovery, recast as visible data hygiene. Discarded: the FMH as headline frame, the friction-volatility claim, the 1.31x volatility and 14x fragmentation simulation numbers as findings, the diversity-VIX result, and kappa-hat as a headline fact.
+
+### 4.7 Forward-looking implications
+
+If the estimate is positive and survives the shock design, three implications follow:
+
+- **First**, the crisis effects of short-horizon ownership [19, 20] carry a network multiplier that fragility measures built from flow covariances [43] and overlap counts [23] do not see: shocks shortening a cluster of neighbours' horizons should predict fragility in the stocks that cluster holds.
+- **Second**, the passive transition reshapes the network itself. Even a personal shock can push an active manager toward quasi-indexing [10], so contagion predicts that shifts toward long horizons spread too, a testable claim about how passive behaviour diffuses.
+- **Third**, agent-based finance gains an adaptation parameter estimated from holdings rather than chosen to match return moments [24, 36].
+
+A precise zero is also informative: it settles whether institutional horizon is a trait and tells modellers to treat horizon change as wealth-driven selection [89] rather than imitation.
+
+## 5. Target Journals and Fit
+
+A journal impact factor (JIF) is the average number of citations received in a year by items the journal published in the two preceding years. It rewards volume and fast-citing fields, moves from year to year, and ranks finance journals differently from the field's own hierarchy. The useful question is which journals publish identified empirical work on institutions, networks and fragility, with the JIF bar used only to exclude venues.
+
+### 5.1 The impact-factor bar was never binding
+
+On the 2024 JIFs in the Review of Finance editor's report [17], JFQA (2.8) and JBF (3.8) miss a 4-to-5 bar that their latest releases clear, at 4.1 [66] and 4.0 [67]. Of the recommended outlets, only Review of Finance and RFS (with JFE and JF) clear 5 on 2024 figures; Management Science, JFQA, JBF and JFS sit at 4.0 to 4.9 on latest releases, the lower edge of the threshold, and are chosen for fit at that risk. High-volume titles such as IRFA, FRL and JIFMIM clear it easily. A field-normalised aggregator places 53.6% of recent Management Science papers [72] and 78.2% of recent RFS papers [73] in their field's global top 10%, a ranking the JIF does not reproduce. The ABM outlets fail the bar [64, 65], pushing the paper toward an empirical-led design, which A is.
+
+### 5.2 Fit by journal
+
+| Journal | JIF (source) | Fit | Comment |
+|---|---|---|---|
+| Review of Finance | 8.4 for 2024 [17] | High | Best balance of reach and fit; published the Liu et al. shock template [10] |
+| Management Science | 4.9 for 2024 [17] | High | Values peer identification; published Gerritzen et al. [51]; Glossner et al. forthcoming there [20] |
+| JFQA | 4.1 in 2025 release; 2.8 for 2024 [17, 66] | High | Home of Chan-Cheng-Hameed [7, 13]; natural home for the absorption fallback |
+| RFS | 5.4 for 2024 [17] | Medium | Needs a clean shock design and a large consequence |
+| JFE and JF | 12 and 9.5 for 2024 [17] | Low to medium | Only with an airtight shock design and a large multiplier |
+| JBF | 4.0 latest release; 3.8 for 2024 [17, 67] | High | Scope lists asset management, networks and liquidity [67]; safest strong outlet |
+| JFS | 4.1 [68] | High for the fragility framing | Scope covers causes and prevention of financial crises [68] |
+| IRFA | 10.2 [69] | Medium | Clears the bar easily; broad |
+| JIFMIM | 6.0 [71] | Medium for B | US-versus-China comparison against Chen-Lu-Qin [14] |
+| Journal of Corporate Finance | 6.9 [70] | Low | Needs corporate outcomes |
+| FRL | 7.1 [18] | Low for the programme | Letters under 2,500 words [18]; home for a measurement letter |
+| JEDC and JEBO | 1.8 and 2.7 [64, 65] | Topical for E alone | Below the bar |
+
+### 5.3 Submission ladder
+
+Submit the full programme to Review of Finance. After a rejection on identification, go to Management Science or JFQA; on contribution, to JBF or JFS with the consequence section promoted. If A dies at Stage 1 or 2, the absorption paper goes first to JFQA if it clears the t above 3 bar, since it tests a mechanism a JFQA paper conjectured, and otherwise to JFS or JBF, with JIFMIM for a US-versus-China version; a dispersion-only module belongs in JFS or JBF. The ABM should not be split off before the empirical paper is accepted, because an uncalibrated model is what the field already has [16, 27].
+
+## 6. Identification Strategy and Data Upgrades
+
+Identification is the argument that a coefficient reflects the causal channel claimed rather than a confound. Here the confounds are common style shocks, correlated flows, selection of neighbours on horizon, and mechanical overlap in shared stocks.
+
+### 6.1 Step zero: rebuild the panel
+
+The SEC Form 13F Data Sets are extracted from the XML portion of every filer's filings from July 2013 and come as filed without accuracy guarantees [11]. Five rules follow:
+
+1. Build Gaspar-Massa-Matos churn from share changes at current prices, with the Yan-Zhang minimum-of-buys-and-sells variant as robustness [15, 21], and retire value-weight tau.
+2. Rescale reported values for filings before January 3, 2023, by filing date rather than report quarter, since the jump's location suggests mixed vintages within 2022Q4 (the project's own data), or avoid the value field.
+3. Clean amendments, notice filings, put and call rows, shares versus principal and CUSIP errors, since the SEC publishes the data as filed [11].
+4. Build the network on the full universe and keep the top filers only as an estimation subsample.
+5. Note that 2013Q2, the current sample's first quarter, precedes the data sets [11].
+
+Rule 4 answers the sampled-network critique at no cost: under the validity part of Proposition 3.4, the team can estimate on its top filers while building neighbours and instruments on the full graph [8]. Because the full universe sharpens the density problem [58], the network should be thresholded or BiCM-validated [23], with sparsity reported and results shown on raw cosine, active-weight cosine and validated links. Two horizon outcomes are required because they are different objects [42]: churn, and a Lan-Moneta-Wermers-style holding horizon from position ages, with Cremers-Pareek duration as a third check [38].
+
+### 6.2 Stage 1: the descriptive peer test
+
+The baseline regresses the quarterly change in share-based log tau on the lagged average log tau of overlap neighbours, with the network formed at t-4 and neighbour horizon computed only from stocks the focal institution does not hold. Controls are institution fixed effects; style-by-quarter fixed effects, with style given by Bushee type (the classification of institutions into quasi-indexers, dedicated and transient investors from annual averages of 13F reports [80]) or an AUM-by-concentration cell; own and neighbours' flows and AUM growth; Pastor-Stambaugh-Taylor same-category averages [6]; and exclusion of same-parent and same-family neighbours. Placebos are future neighbours (links formed at t+4), matched non-neighbours of the same style and size, and neighbour horizon computed from held stocks, which should be larger if mechanics dominate.
+
+The regression is reported because referees will ask for it, but for the reasons in Section 4.2 it is not the identification. The Nickell bias argues for first differences with lagged-level instruments or bias correction, while leave-out bias works against finding convergence [57], so a positive estimate is conservative on that dimension.
+
+### 6.3 Stage 2: the manager-shock event study
+
+The headline is an event study of neighbours of institutions hit by manager-level shocks: deaths and bereavements of portfolio managers, unexpected departures and retirements. The template uses 304 US mutual funds whose managers experienced parental deaths from 1999 to 2013 in a difference-in-differences design (comparing treated and untreated managers before and after the event) and finds that bereaved managers act like quasi-indexers, with lower tracking error and active share, more strongly for unexpected deaths and single-manager funds [10]. That shows the shock moves style; whether it moves turnover is the first stage this paper must establish. The design follows the random-shocks route, valid with an endogenous network provided the shock does not change the network [56], and follows Leary-Roberts in shocking the peer rather than using the peer's chosen outcome [59]. It has five features.
+
+1. **First stage.** The shock must shift neighbour j's horizon on both outcomes, with a sizeable first-stage F statistic.
+2. **Double exclusion.** Measure j's horizon shift on stocks i does not hold and i's response on stocks j does not hold. This blocks neighbours' direct responses to a shocked institution's trades in co-held names [47] and Coval-Stafford price pressure in shared positions [44]. It is a proposed feature; no source has implemented it.
+3. **Fixed effects.** Institution, style-by-quarter and, where feasible, Bushee-type-by-quarter [22].
+4. **Placebos.** Future neighbours, matched non-neighbours and pre-trends.
+5. **Event dependence.** Leave-one-event-out estimates and event-clustered errors, because one dominant event can manufacture a treatment effect [48].
+
+Filer mergers and closures enter only as robustness, pooled and excluding BlackRock-BGI [47, 48].
+
+Mapping shocks to filers is the main data cost: manager identities live at the fund level while 13F filers aggregate many funds, so N-PORT fund holdings and CRSP Mutual Fund manager names and tenure provide the link. The template's modest sample [10] and filer-aggregation dilution imply, as an inference, that power concentrates in small, single-strategy filers such as boutiques and hedge funds. Effects should be reported by filer size, and identification will come disproportionately from the short-horizon end, where the Froot-Scharfstein-Stein complementarity bites hardest [12].
+
+### 6.4 Supporting arms
+
+Neighbours' idiosyncratic redemptions serve as instruments, motivated by Georg, Pierret and Steffen's evidence that funds weigh investor similarity more under redemptions [46], residualised on style-by-quarter flows because flows are style-correlated [7]. The funding-fragility instrument [19] adds exogenous neighbour horizon if interacted with time variation rather than used as a static trait. Friends-of-friends instruments enter as robustness only, with first-stage F statistics, Anderson-Rubin sets and row-scaled adjacency [58]. If shocks are thin, the Stage 1 coefficient is reported with an Oster-type bound (how strong unobserved selection must be to explain it away) or a partial-identification bound.
+
+### 6.5 The consequence module, which is also the fallback design
+
+**Crash and fragility.** Outcomes are next-year crash indicators, NCSKEW (the negative skewness coefficient of firm-specific weekly returns) and DUVOL (the log ratio of down-week to up-week volatility). Regressors are ownership-weighted dispersion of holders' share-based log tau, short-horizon ownership, Greenwood-Thesmar fragility [43], long-term and passive ownership [20], large-institution ownership [40] and the Chan-Cheng-Hameed controls [13]. If dispersion loses to fragility, that clarifies Chan-Cheng-Hameed rather than sinking the module.
+
+**Absorption.** For holder h of stock i in episode e, the outcome is the change in shares held over shares outstanding, and the key regressor is the flow-induced selling of i's short-horizon co-holders interacted with h's horizon class. Holder-by-episode fixed effects absorb each holder's funding shock and risk appetite, answering the objection that long-horizon holders simply had more cash; stock-by-episode effects absorb news and fundamentals. Short-horizon selling is instrumented with Coval-Stafford flow-induced trading [44], as Chan, Cheng and Hameed do [7], and predetermined horizon with funding fragility [19]. Episodes follow the Cella-Ellul-Giannetti turmoil definition [19] for 2013-2026, with 2020Q1 the obvious case and 2008Q3-Q4 requiring pre-2013 holdings.
+
+Because every share a filer sells is bought by someone, the aggregate change in a stock's 13F holdings equals minus the change held by non-filers, so absorption decomposes by accounting identity into long-horizon filers, other filers and non-filers, nesting the retail finding [20] without retail data.
+
+Placebos are non-stress quarters, selling pressure in stocks the holder does not own, and pre-trends; with few episodes, errors are clustered by stock and estimates reported episode by episode.
+
+### 6.6 The model module
+
+The adaptation weight is set to the Stage 2 coefficient through the DeGroot mapping [61]. An absorption channel calibrated to Stage 3 replaces the hard-wired friction channel and lets the data choose the net sign, reconciling LeBaron's destabilising mixture [24] with the stabilising empirical sign [13]. The model is calibrated on 2013-2019, tested on 2020-2026 against a naive persistence benchmark for cross-sectional horizon dispersion, and checked against an analytic convergence-time prediction from Golub-Jackson spectral homophily [61].
+
+### 6.7 Data upgrades, ranked
+
+| Priority | Upgrade | What it buys | Cost |
+|---|---|---|---|
+| 1 | Full-universe SEC 13F Data Sets, share-based and unit-corrected [11] | Answers the sampled-network critique; removes drift and the unit break | Free; cleaning effort |
+| 2 | CRSP stock file via WRDS | Survivor-free and delisting returns, permno mapping, crash measures | Access pending |
+| 3 | CRSP Mutual Fund database with existing N-PORT | Manager identities for shocks; fund-to-filer mapping; flows for Coval-Stafford and fragility [10, 43, 44] | WRDS plus existing data |
+| 4 | Thomson-Refinitiv s34 holdings | Pre-2013 history for 2008 and checks against the Chan-Cheng-Hameed window [7] | WRDS; robustness only, since s34 has gaps, BlackRock missing in 2018 among them [78, 79] |
+| 5 | Fund-level holdings for registered funds | Tests whether quarterly netting hides absorption | Existing N-PORT |
+
+CRSP is a condition of submission for any stress-episode result: the stocks most likely to delist after a crash are those whose absorption failed, so a survivors-only sample selects on the outcome.
+
+## 7. Referee Objections the Pivot Must Survive
+
+The objections are ranked by lethality. The first three decide the paper; the rest yield to design choices and robustness.
+
+1. **This is turnover commonality, not contagion.** Turnover loads on a common factor tied to sentiment, dispersion and liquidity, strongest among similar funds [6, 25]. *Answer:* quarter effects explain only about 2% of share-based horizon variance (the project's own data); style-by-quarter fixed effects, category averages [6] and neighbours' flows absorb the style factor; and the shock moves one neighbour's horizon for reasons unrelated to market conditions [10]. Only the shock answers the style-level version.
+2. **Overlap neighbours are chosen because they are alike.** Co-holding is type-assortative [22], and the D fact is the referee's argument. *Answer:* the lagged, fixed network, personnel shocks that leave it unchanged [56] and future-neighbour placebos (Section 6.3); D is reported as the reason for the design.
+3. **The shocks are few, fund-level, and may hit holdings directly.** The precedent is a fund-level sample [10], mergers change neighbours' holdings [47], and single events dominate merger samples [48]. *Answer:* pool deaths, departures and retirements; focus on single-manager funds and small filers; apply double exclusion, a price-channel placebo (departing managers also rebuild holdings in co-held stocks) and leave-one-event-out.
+4. **Horizon is a fixed trait.** Parsa treats it as a fixed effect [32], it is called stable [19], and holding-horizon ranks persist 20 quarters [42]. *Answer:* the level swings in average turnover [25] are market-wide and belong to objection 1; the reply rests on the idiosyncratic residual passing gate 1a (Section 4.4), or A stops. Portable manager traits must also be separated from peer influence.
+5. **Outcome-on-mean regressions are vacuous.** [9]. *Answer:* the headline uses a manipulated peer characteristic, the design Angrist accepts; Stage 1 is labelled descriptive, and leave-out bias works against it [57].
+6. **Your instruments are invalid or weak.** [8, 58]. *Answer:* Sections 6.1 and 6.4.
+7. **The effect is tiny and Nickell-biased.** *Answer:* Sections 4.3 and 6.2; magnitude is reported through the fragility multiplier.
+8. **Turnover is not horizon, and your earlier data were contaminated.** [11, 42]. *Answer:* Section 6.1, plus N-PORT fund-level validation.
+9. **Complementarity predicts herding in information, not in horizon.** Horizon is exogenous in both models [12, 34]. *Answer:* concede it; the paper extends their logic to endogenous horizon choice and tests the extension's distinctive prediction, tipping in short-horizon neighbourhoods, which common shocks do not produce.
+10. **The consequence section is Chan-Cheng-Hameed again, and China did tail risk.** *Answer:* cite both prominently [7, 14], report volatility as a replication of the appendix [13], and claim only US crash outcomes, the fragility horse race [43] and relative absorption.
+11. **Long-horizon institutions do not absorb; retail does.** [19, 20]. *Answer:* the claim is relative absorption, defined before estimation, and the accounting decomposition nests the retail finding.
+12. **Has someone already done this?** *Answer:* cite commonality [6] and institutional peer effects [1, 2, 3] as boundary markers, word the claim narrowly, distinguish MacDonald's stock-level influence coefficient [74], and read the full Liang-Wu-Yin paper [55] and search for manager-change turnover studies before submission, and drop the FMH from title and abstract.
+
+## Sources
+
+[1] Hong, Kubik and Stein, Thy Neighbor's Portfolio: Word-of-Mouth Effects in the Holdings and Trades of Money Managers (NBER w9711). https://www.nber.org/system/files/working_papers/w9711/w9711.pdf
+[2] Pool, Stoffman and Yonker, The People in Your Neighborhood: Social Interactions and Mutual Fund Portfolios (Journal of Finance 2015). https://ideas.repec.org/a/bla/jfinan/v70y2015i6p2679-2732.html
+[3] Blocher, Network Externalities in Mutual Funds (Journal of Financial Markets 2016). https://ideas.repec.org/a/eee/finmar/v30y2016icp1-26.html
+[4] Escobar and Pedraza, Active Trading and (Poor) Performance: The Social Transmission Channel (Journal of Financial Economics 2023). https://ideas.repec.org/a/eee/jfinec/v150y2023i1p139-165.html
+[5] Gelman, Hirshleifer, Levi and Reiter-Gavish, Social Interaction Intensity and Investor Behavior (NBER w32772). https://cba.lmu.edu/media/lmucollegeofbusinessadministration/departments/finance/Social Interaction Intensity and Investor Behavior.pdf
+[6] Pastor, Stambaugh and Taylor, Do Funds Make More When They Trade More? (NBER w20700). https://www.nber.org/system/files/working_papers/w20700/w20700.pdf
+[7] Chan, Cheng and Hameed, Investor Heterogeneity and Liquidity (JFQA 2022). https://web2-bschool.nus.edu.sg/wp-content/uploads/media_rp/publications/vDsxi1613376975.pdf
+[8] Chandrasekhar and Lewis, Econometrics of Sampled Networks. https://stanford.edu/~arungc/CL.pdf
+[9] Angrist, The Perils of Peer Effects (NBER w19774). https://www.nber.org/system/files/working_papers/w19774/w19774.pdf
+[10] Liu, Sulaeman, Shu and Yeung, Life is Too Short? Bereaved Managers and Investment Decisions (Review of Finance 2023). https://revfin.org/?p=3058
+[11] SEC, Form 13F Data Sets. https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets
+[12] Froot, Scharfstein and Stein, Herd on the Street: Informational Inefficiencies in a Market with Short-Term Speculation (NBER w3250; Journal of Finance 1992). https://www.nber.org/papers/w3250
+[13] Chan, Cheng and Hameed, Investor Heterogeneity and Liquidity: Internet Appendix (JFQA 2022). https://static.cambridge.org/content/id/urn:cambridge.org:id:article:S0022109022000217/resource/name/S0022109022000217sup001.pdf
+[14] Chen, Lu and Qin, Institutional Investor Trading Homogeneity and Left-Tail Systemic Risk (Foreign Economics and Management 2026). https://qks.sufe.edu.cn/J/PDFFull/TxMBou5H-3rV2-xA64-7Pf5-V5uQq9LSBWGd.pdf
+[15] Gaspar, Massa and Matos, Shareholder Investment Horizons and the Market for Corporate Control (Journal of Financial Economics 2005). https://www.darden.virginia.edu/sites/default/files/inline-files/gasparmassamatoshorizonsmajfeapr05.pdf
+[16] Oldham, Short-termism and a Dynamic Investor Network (Complexity 2019). https://web.archive.org/web/20220726165036if_/https://downloads.hindawi.com/journals/complexity/2019/1715624.pdf
+[17] Review of Finance, Report from the Managing Editor 2025. https://revfin.org/wp-content/uploads/2025/08/RF-Report-2025_FINALv2-1.pdf
+[18] Finance Research Letters, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/finance-research-letters
+[19] Cella, Ellul and Giannetti, Investors' Horizons and the Amplification of Market Shocks (LSE FMG DP717; Review of Financial Studies 2013). https://eprints.lse.ac.uk/119037/1/DP717.pdf
+[20] Glossner, Matos, Ramelli and Wagner, Do Institutional Investors Stabilize Equity Markets in Crisis Periods? Evidence from COVID-19 (ECGI WP 688/2020). https://www.ecgi.global/sites/default/files/2026-10/fin-688-2020_do_institutional_investors_stabilize_equity_markets_in_crisi.pdf
+[21] Yan and Zhang, Institutional Investors and Equity Returns: Are Short-term Institutions Better Informed? (Review of Financial Studies 2009). https://www.lehigh.edu/~xuy219/research/horizon_RFS.pdf
+[22] Crane, Koch and Michenaud, Institutional Investor Cliques and Governance. https://www.lebow.drexel.edu/sites/default/files/1488309013-crane-kochmichenaudinstitutional-investor-cliques.pdf
+[23] Gualdi, Cimini, Primicerio, Di Clemente and Challet, Statistically Validated Network of Portfolio Overlaps and Systemic Risk (Scientific Reports 2016). https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5175158/
+[24] LeBaron, Evolution and Time Horizons in an Agent-Based Stock Market (Macroeconomic Dynamics 2001). https://econpapers.repec.org/RePEc:cup:macdyn:v:5:y:2001:i:02:p:225-254_01
+[25] Pastor, Stambaugh and Taylor, Do Funds Make More When They Trade More? (NBER w20700, first revision). https://www.nber.org/system/files/working_papers/w20700/revisions/w20700.rev0.pdf
+[26] Bramoulle, Djebbari and Fortin, Identification of Peer Effects through Social Networks (IZA DP 2652). https://docs.iza.org/dp2652.pdf
+[27] Li, Nishimura and Men, Fractal market hypothesis agent-based model (Physica A 2014), CoMSES catalog entry. https://catalog.comses.net/publications/774
+[28] Li, Li and Sun, Fractal market hypothesis agent-based model (Applied Economics 2017), CoMSES catalog entry. https://catalog.comses.net/publications/192806
+[29] Koijen and Yogo, A Demand System Approach to Asset Pricing (NBER w21749). https://www.nber.org/system/files/working_papers/w21749/w21749.pdf
+[30] Ozdagli and Ryfe, Asset Manager Commonality and Portfolio Similarity (Federal Reserve Bank of Dallas WP 2515r1). https://www.dallasfed.org/~/media/documents/research/papers/2025/wp2515r1.pdf
+[31] Crouzet, Dew-Becker and Nathanson, A Model of Multi-Frequency Trade. https://pages.stern.nyu.edu/~jh4/SternMicroMtg/Old/SternMicroMtg2017/Papers/MultiFreqTrade.pdf
+[32] Parsa, Investors' Horizon and Stock Prices (MIT PhD thesis 2011). http://hdl.handle.net/1721.1/65491
+[33] Cespa and Vives, Higher Order Expectations, Illiquidity and Short-Term Trading (CSEF WP 276). https://www.csef.it/WP/wp276.pdf
+[34] Chamley, Complementarities in Information Acquisition with Short-Term Trades (Theoretical Economics 2007). https://www.bu.edu/econ/files/2012/11/dp156.pdf
+[35] Nishiwaki, Impact of Different Investment Horizons in Heterogeneous Agent Models: Do Long-Term Traders Bring Market Stability? (Journal of Economic Behavior and Organization 2022). https://ideas.repec.org/a/eee/jeborg/v196y2022icp393-401.html
+[36] Calibrating Emergent Phenomena in Stock Markets with Agent Based Models (PLOS ONE 2018). https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5834198/
+[37] Bolton, Santos and Scheinkman, Outside and Inside Liquidity (Quarterly Journal of Economics 2011, working draft). https://business.columbia.edu/sites/default/files-efs/pubfiles/3288/Outside.pdf
+[38] Cremers and Pareek, Institutional Investors' Investment Durations and Stock Return Anomalies (Yale ICF WP 09-19). http://depot.som.yale.edu/icf/papers/fileuploads/2662/original/09-19.pdf
+[39] Zhu, Crash Risk and Investor Horizon (working paper). https://www.edwards.usask.ca/centres/csfm/_files/papers2011/3c-Crash%20Risk%20and%20Investor%20Horizon,%20H.%20Zhu.pdf
+[40] Ben-David, Franzoni, Moussawi and Sedunov, The Granular Nature of Large Institutional Investors (NBER w22247). https://www.nber.org/system/files/working_papers/w22247/w22247.pdf
+[41] Fu, Fang, Yang and Yao, Institutional Investor Horizons and Stock Price Crash Risk (Research in International Business and Finance 2024). https://ideas.repec.org/a/eee/riibaf/v72y2024ipas0275531924003027.html
+[42] Lan, Moneta and Wermers, Holding Horizon: A New Measure of Active Investment Management (CFR Working Paper 15-06). https://www.cfr-cologne.de/download/workingpaper/cfr-15-06.pdf
+[43] Greenwood and Thesmar, Stock Price Fragility (Journal of Financial Economics 2011). https://tevgeniou.github.io/EquityRiskFactors/bibliography/Fragility.pdf
+[44] Coval and Stafford, Asset Fire Sales (and Purchases) in Equity Markets (NBER w11357). https://www.nber.org/system/files/working_papers/w11357/w11357.pdf
+[45] Anton and Polk, Connected Stocks (Journal of Finance 2014). https://personal.lse.ac.uk/polk/research/ConnectedStocks.pdf
+[46] Georg, Pierret and Steffen, Similar Investors. https://www.fmg.ac.uk/sites/default/files/2020-08/6.PIERRET-Similar-Investors-presentation-LSE.pdf
+[47] Massa, Schumacher and Wang, Who Is Afraid of BlackRock? (Review of Financial Studies 2021). https://econpapers.repec.org/RePEc:oup:rfinst:v:34:y:2021:i:4:p:1987-2044.
+[48] Lewellen and Lowry, Does Common Ownership Really Increase Firm Coordination? (Harvard Law School Forum summary of Journal of Financial Economics 2021). https://corpgov.law.harvard.edu/2021/05/21/does-common-ownership-really-increase-firm-coordination/
+[49] Gilje, Gormley and Levit, Who's Paying Attention? Measuring Common Ownership and Its Impact on Managerial Incentives (NBER w25644). https://www.nber.org/papers/w25644.pdf
+[50] Gerardi, Lowry and Schenone, A Critical Review of the Common Ownership Literature (Federal Reserve Bank of Atlanta WP 2023-17). https://doi.org/10.29338/wp2023-17
+[51] Gerritzen, Jackwerth and Plazzi, Birds of a Feather: Do Hedge Fund Managers Flock Together? (Management Science 2024). https://ideas.repec.org/a/inm/ormnsc/v70y2024i5p2976-2998.html
+[52] Chen Guojin et al., Rational Bubble-Riding by Institutional Investors and Its Motives (China Industrial Economics 2021). http://cfrc.pbcsf.tsinghua.edu.cn/__local/B/20/39/C42717CDED9CC5A121DC2EC233A_2A862632_121624.pdf?e=.pdf
+[53] Cohen, Lu and Nguyen, Mimicking Finance (NBER w34849). https://www.nber.org/system/files/working_papers/w34849/w34849.pdf
+[54] Heimer, Friends Do Let Friends Buy Stocks Actively (Federal Reserve Bank of Cleveland WP 13-14). https://www.clevelandfed.org/-/media/project/clevelandfedtenant/clevelandfedsite/publications/working-papers/2013/wp1314.pdf
+[55] Liang, Wu and Yin, High Turnover in Chinese Mutual Funds: Drivers and Effects (SSRN 5048159). https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5048159
+[56] Bramoulle, Djebbari and Fortin, Peer Effects in Networks: A Survey (CRREP 2020-01). https://www.crrep.ca/sites/crrep.ca/files/2020-01.pdf
+[57] Caeyers and Fafchamps, Exclusion Bias in the Estimation of Peer Effects (NBER w22565). https://www.nber.org/system/files/working_papers/w22565/w22565.pdf
+[58] Canen and Chadha, Empirical Challenges with Peers-of-Peers Instruments in the Linear-in-Means Model (arXiv 2602.24215). https://arxiv.org/pdf/2602.24215
+[59] Leary and Roberts, Do Peer Firms Affect Corporate Financial Policy? (Journal of Finance 2014). https://haas.berkeley.edu/wp-content/uploads/LR_PeerEffects_R4.pdf
+[60] Tucker, The Long and the Short: Portfolio Turnover Ratios and Mutual Fund Investment Time Horizons (Journal of Corporation Law 2018). https://jcl.law.uiowa.edu/sites/jcl.law.uiowa.edu/files/2021-08/Tucker_Final_Web.pdf
+[61] Golub and Jackson, How Homophily Affects the Speed of Learning and Best-Response Dynamics (Quarterly Journal of Economics 2012). https://web.stanford.edu/~jacksonm/homophily.pdf
+[62] Timmer, Cyclical Investment Behavior across Financial Institutions (ESRB WP 18). https://www.esrb.europa.eu/pub/pdf/wp/esrbwp18.en.pdf
+[63] Barbon, Di Maggio, Franzoni and Landier, Brokers and Order Flow Leakage: Evidence from Fire Sales (NBER w24089). https://nber.org/system/files/working_papers/w24089/w24089.pdf
+[64] Journal of Economic Dynamics and Control, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/journal-of-economic-dynamics-and-control
+[65] Journal of Economic Behavior and Organization, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/journal-of-economic-behavior-and-organization
+[66] Journal of Financial and Quantitative Analysis, journal page (Cambridge Core). https://www.cambridge.org/core/journals/journal-of-financial-and-quantitative-analysis
+[67] Journal of Banking and Finance, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/journal-of-banking-and-finance
+[68] Journal of Financial Stability, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/journal-of-financial-stability
+[69] International Review of Financial Analysis, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/international-review-of-financial-analysis
+[70] Journal of Corporate Finance, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/journal-of-corporate-finance
+[71] Journal of International Financial Markets, Institutions and Money, journal homepage (ScienceDirect). https://www.sciencedirect.com/journal/journal-of-international-financial-markets-institutions-and-money
+[72] Management Science: Journal Quartile and Metrics Score 2026 (journalmetrics.org). https://www.journalmetrics.org/journal/management-science
+[73] Review of Financial Studies: Journal Quartile and Metrics Score 2026 (journalmetrics.org). https://www.journalmetrics.org/journal/review-of-financial-studies
+[74] MacDonald, Home: Measuring Influence across Institutional Managers throughout Time (research page for SSRN 5692342). https://sites.google.com/view/austinmacdonald/home
+[75] Kristoufek, Fractal Markets Hypothesis and the Global Financial Crisis: Wavelet Power Evidence (Scientific Reports 2013). https://pmc.ncbi.nlm.nih.gov/articles/PMC3790199
+[76] Wermers, Mutual Fund Herding and the Impact on Stock Prices (Journal of Finance 1999). https://terpconnect.umd.edu/~wermers/herding.pdf
+[77] Lakonishok, Shleifer and Vishny, Do Institutional Investors Destabilize Stock Prices? Evidence on Herding and Feedback Trading (NBER w3846). https://www.nber.org/system/files/working_papers/w3846/w3846.pdf
+[78] WRDS, Ownership Data on WRDS. https://wrds-www.wharton.upenn.edu/documents/1414/WRDS_Ownership_Data.pdf
+[79] Backus, Conlon and Sinkinson, Common Ownership in America: 1980-2017. https://chrisconlon.github.io/site/common_owner.pdf
+[80] Bushee, Institutional Investor Classification Data: Variable Definitions. http://accounting-faculty.wharton.upenn.edu/bushee/iivars/
+[81] Sullivan and Cromwell, SEC Adopts Rule 13f-2 Governing Short Sale Disclosure. https://www.sullcrom.com/insights/memo/2023/November/SEC-Adopts-Rule-13f-2-Governing-Short-Sale-Disclosure
+[82] Chen, Lin, Su and Yao, Peer Effect of Fund Trading and the Risk of Individual Stock (Journal of Asian Economics 2025). https://ideas.repec.org/a/eee/asieco/v97y2025ics1049007824001623.html
+[83] Zhai et al., Institutional Investor Network and Idiosyncratic Volatility of Stocks (Economics and Politics 2024). https://econpapers.repec.org/RePEc:bla:ecopol:v:36:y:2024:i:3:p:1261-1288
+[84] Dai, Parwada, Winchester and Zhang, The More We Know, the Less We Agree: A Test of the Trading Horizon Heterogeneity Theory (Financial Review 2022). https://researchers.mq.edu.au/en/publications/the-more-we-know-the-less-we-agree-a-test-of-the-trading-horizon-/
+[85] Clare, Sapuric and Todorovic, The Impact of Manager Changes on Fund Performance. https://www.efmaefm.org/0EFMSYMPOSIUM/2008-Edhec/papers/natasa.pdf
+[86] Forera, Budnick, Vivo, Aufiero, Bartolucci and Caccioli, Financial Instability Transition under Heterogeneous Investments and Portfolio Diversification (arXiv 2501.19260). https://arxiv.org/pdf/2501.19260
+[87] Chincarini, Lazo-Paz and Moneta, Crowded Spaces and Anomalies (Journal of Banking and Finance 2026). https://ideas.repec.org/a/eee/jbfina/v182y2026ics0378426625001992.html
+[88] Bohlin and Rosvall, Stock Portfolio Structure of Individual Investors Infers Future Trading Behavior (arXiv 1402.2494). https://arxiv.org/pdf/1402.2494
+[89] LeBaron, Evolution and Time Horizons in an Agent-Based Stock Market (CEF 1999 working paper). https://econpapers.repec.org/RePEc:sce:scecf9:1342

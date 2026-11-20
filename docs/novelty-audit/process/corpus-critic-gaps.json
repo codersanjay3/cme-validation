@@ -1,0 +1,108 @@
+{
+ "gaps": [
+  {
+   "id": "cc-1",
+   "type": "overturning",
+   "target_position": "Pivot A is novel as an estimand: no paper regresses an institution's own turnover, holding period or horizon on its peers' turnover or horizon (near-duplicate audit, about 65%; comparisons Tension 1).",
+   "search_queries": [
+    "\"High Turnover in Chinese Mutual Funds\" Liang Wu Yin drivers effects herding (abstract and PDF via papers.ssrn.com abstract_id=5048159, ResearchGate, author homepages, Google Scholar 'all versions')",
+    "mutual fund turnover peer effect herding holding period China fund managers regression on peer turnover",
+    "\u57fa\u91d1\u6362\u624b\u7387 \u540c\u7fa4\u6548\u5e94 OR \u673a\u6784\u6295\u8d44\u8005 \u6301\u80a1\u671f\u9650 \u540c\u7fa4\u6548\u5e94 OR \u57fa\u91d1\u7ecf\u7406 \u4ea4\u6613\u9891\u7387 \u7f8a\u7fa4 (CNKI / Wanfang / Baidu Scholar)"
+   ],
+   "source_type": "academic",
+   "priority": "critical",
+   "rationale": "This is the single named unread risk. If Liang-Wu-Yin, or any Chinese-language paper, regresses fund turnover on peers' turnover (network, family, city or co-holding peers), Pivot A drops from novel to partially pre-empted, and the novelty claim must be narrowed to US 13F and overlap-network identification. The Chinese peer-effect literature (\u540c\u7fa4\u6548\u5e94) is large and was not searched at all, and turnover is a standard dependent variable in it."
+  },
+  {
+   "id": "cc-2",
+   "type": "overturning",
+   "target_position": "No 2023-2026 SSRN, NBER, CEPR, arXiv or conference paper estimates horizon or turnover contagion among institutions through portfolio-overlap, common-ownership or social networks (near-duplicate audit; orchestrator notes, wave 2).",
+   "search_queries": [
+    "SSRN 2024 2025 2026 \"peer effects\" \"portfolio turnover\" institutional investors network OR common ownership",
+    "\"short-termism\" contagion OR spillover institutional investors investment horizon network 13F working paper",
+    "\"trading horizon\" OR \"holding horizon\" convergence institutional investors peers AFA OR EFA OR WFA OR SFS Cavalcade 2025 2026 program"
+   ],
+   "source_type": "academic",
+   "priority": "critical",
+   "rationale": "The domain notes make the last 36 months critical for novelty. The audit admits that SSRN title recall was poor (SSRN returned 403 and the tool is web search, not Scholar). A native SSRN, NBER, Google Scholar and conference-program sweep is the cheapest way either to find a killer paper or to let the draft commit harder to 'first identified peer effect in institutional horizon'. Conference programs (AFA/EFA/WFA/SFS/FMA 2025-2026) catch papers that are not yet on SSRN."
+  },
+  {
+   "id": "cc-3",
+   "type": "overturning",
+   "target_position": "The recommended organisational-event variant of Pivot A (manager departures, filer mergers or closures moving neighbours' horizons) is not already published as 'turnover follows the manager' or as family-level turnover spillovers (near-duplicate audit residual risk ii; trait report on manager-change papers).",
+   "search_queries": [
+    "mutual fund manager change portfolio turnover portable trading style manager fixed effects movers",
+    "fund family spillover trading style turnover co-managed funds team managers same family turnover correlation",
+    "hedge fund OR mutual fund manager moves between funds turnover holding period follows manager"
+   ],
+   "source_type": "academic",
+   "priority": "high",
+   "rationale": "The audit found a snippet hinting at a thesis on turnover after manager departures, and the trait report cites two low-authority manager-change papers. A published manager-mover design showing that turnover is a portable manager trait would (a) pre-empt a manager-move version of A and (b) imply that observed horizon convergence is manager reallocation, not peer influence. Either result changes how the recommended event design is framed."
+  },
+  {
+   "id": "cc-4",
+   "type": "overturning",
+   "target_position": "Comparisons Tension 1 and the source-tensions resolution say that Pivot A is credible if built on exogenous shocks to neighbours (filer mergers/closures, manager departures) with style x quarter FE and future-neighbour placebos.",
+   "search_queries": [
+    "Lewellen Lowry \"Does common ownership really increase firm coordination\" institutional mergers identification critique",
+    "institutional investor mergers OR fund closures OR manager deaths exogenous shock portfolio overlap network peer effects identification",
+    "Ozdagli Ryfe asset manager closure common manager portfolio similarity shock design"
+   ],
+   "source_type": "academic",
+   "priority": "high",
+   "rationale": "The recommendation's identification rests on institution-merger and closure shocks, but the vault contains neither the known critique of merger-based common-ownership designs (Lewellen-Lowry JFE 2021: merger events are confounded and timing-sensitive) nor a count of usable precedent shock designs. If that critique transfers, the 'only credible design' itself is a referee target, and the draft must pre-empt it (for example with non-merger shocks such as manager deaths or scandal-driven closures, plus a pre-trend test). This tests the strategy, not the novelty."
+  },
+  {
+   "id": "cc-5",
+   "type": "overturning",
+   "target_position": "Pivot B's remaining open increment, holder-horizon DISPERSION as a predictor of crash risk, negative skewness or fragility beyond Greenwood-Thesmar, has no direct prior art (dispersion report, about 45% that no near-duplicate exists).",
+   "search_queries": [
+    "dispersion OR heterogeneity of institutional investment horizons stock price crash risk NCSKEW DUVOL",
+    "\"investor heterogeneity\" churn rate dispersion holders crash risk OR skewness OR fragility (papers citing Chan Cheng Hameed JFQA 2022)",
+    "\u673a\u6784\u6295\u8d44\u8005 \u6301\u80a1\u671f\u9650 \u5f02\u8d28\u6027 OR \u5206\u6563\u5ea6 \u80a1\u4ef7\u5d29\u76d8\u98ce\u9669"
+   ],
+   "source_type": "academic",
+   "priority": "critical",
+   "rationale": "This is the only part of B that the corpus marks as open, and it rests on two abstracts (Fu et al. RIBAF 2024; Wen et al. 2020), both about level or type. Crash risk is a crowded Chinese-literature outcome, and 'institutional heterogeneity and crash risk' is a natural follow-on to CCH. One hit downgrades B from a section to a citation and removes the consequence test that the A+E+B package relies on. A forward-citation search of CCH (Google Scholar 'cited by') is the most efficient route."
+  },
+  {
+   "id": "cc-6",
+   "type": "overturning",
+   "target_position": "Horizon homophily in co-holding (Pivot D) is not documented as an empirical fact. It is used only as a motivating fact that must survive controls (homophily report; source-tensions).",
+   "search_queries": [
+    "investment horizon similarity portfolio overlap institutional investors similar turnover hold similar stocks",
+    "Chan Cheng (NUS/CUHK) fund flows more correlated among funds with similar investment horizon working paper",
+    "trading style similarity common ownership network assortativity turnover Bushee transient dedicated co-ownership cliques"
+   ],
+   "source_type": "academic",
+   "priority": "high",
+   "rationale": "Only three searches were run for D, and the NUS/CUHK paper on horizon-sorted flow comovement was unreadable. If an existing paper already shows that similar-turnover institutions hold overlapping portfolios (or reports turnover-sorted overlap), the D fact loses its novelty. More importantly, it would show that overlap neighbours are horizon-sorted by construction, which strengthens the correlated-effects objection to Pivot A's neighbour definition. Either way the draft needs it."
+  },
+  {
+   "id": "cc-7",
+   "type": "overturning",
+   "target_position": "Pivot E is novel only in a specific form: horizon-homophilous link formation, adaptation of horizon toward neighbours, and an empirically estimated adaptation rate. Oldham 2019 is the nearest ABM (data/ABM report, about 55%, abstract-level only).",
+   "search_queries": [
+    "Oldham 2019 Complexity \"Understanding How Short-Termism and a Dynamic Investor Network Affects Investor Returns\" full text doi 10.1155/2019/1715624 (Hindawi/Wiley open access; COMSES model code and ODD documentation)",
+    "agent-based model investment horizon imitation social network neighbours adapt time horizon homophily",
+    "agent-based financial market calibrated peer effect DeGroot social learning weight estimated from holdings data"
+   ],
+   "source_type": "academic",
+   "priority": "high",
+   "rationale": "Complexity is open access, so a full-text read is cheap and decisive. If Oldham's investors adapt their horizon (short-termism) through network links or rewire toward similar investors, the CME model mechanism is pre-empted and E reduces to the calibration step alone. A paper that calibrates an ABM imitation weight to an empirical peer coefficient would pre-empt that step too."
+  },
+  {
+   "id": "cc-8",
+   "type": "strengthening",
+   "target_position": "Pivot A has an economic mechanism: horizons should be strategically complementary or learnable across connected institutions. This is needed to survive the referee objection 'why would horizons be contagious rather than a fixed trait' (source-tensions: trait versus movable).",
+   "search_queries": [
+    "Froot Scharfstein Stein 1992 herd on the street short horizons informational inefficiencies strategic complementarity",
+    "strategic complementarity investment horizons short-termism equilibrium multiple equilibria investors theory",
+    "Dow Han Sangiorgi JFE 2024 OR Bolton Santos Scheinkman horizon complementarities long-term investors"
+   ],
+   "source_type": "academic",
+   "priority": "high",
+   "rationale": "The corpus has the trait evidence (Parsa, Crouzet et al., Lan-Moneta-Wermers) but no theory predicting that one institution's horizon responds to its neighbours' horizons. Froot-Scharfstein-Stein (short horizons cause herding on the same information) and the horizon-complementarity literature give A a testable sign and an exclusion-restriction story, and they show that the estimand is economically motivated rather than a data-mining fact. Without a mechanism, a top-field referee will treat A as a correlated-effects exercise."
+  }
+ ]
+}

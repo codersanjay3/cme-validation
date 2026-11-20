@@ -1,0 +1,146 @@
+{
+ "tensions": [
+  {
+   "name": "Horizon: fixed investor trait or movable behaviour",
+   "side_a": {
+    "position": "Trading horizon is a persistent investor characteristic; investors specialise by frequency",
+    "evidence": "Investor fixed effect in trading frequency (Parsa); endogenous frequency specialisation and persistent fund turnover (Crouzet et al.); holding-horizon deciles persist for 20 quarters (Lan-Moneta-Wermers)",
+    "proponents": [
+     "investors-horizon-and-stock-prices",
+     "a-model-of-multi-frequency-trade",
+     "cfr-working-paper-no-15-06"
+    ]
+   },
+   "side_b": {
+    "position": "Horizons move substantially over time",
+    "evidence": "Average fund turnover swings 59%-102% a year with a strong common component (Pastor-Stambaugh-Taylor); evolving horizon mix in ABMs (LeBaron)",
+    "proponents": [
+     "nber-working-paper-series-16",
+     "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market"
+    ]
+   },
+   "resolution": "Both hold at different levels: ranks persist while levels move. For peer-effect purposes what matters is the idiosyncratic within-institution residual after quarter (and style-quarter) effects; project data show 33% of variance left after institution and quarter FE, so the trait view does not kill Pivot A, but the paper must report this decomposition first.",
+   "origin": "comparisons",
+   "decision_relevance": "high"
+  },
+  {
+   "name": "Peer influence versus correlated effects in institutional turnover",
+   "side_a": {
+    "position": "Network structure identifies peer effects",
+    "evidence": "Intransitive triads identify endogenous effects (Bramoulle-Djebbari-Fortin); peers' idiosyncratic shocks as instruments (Leary-Roberts; Georg-Pierret-Steffen)",
+    "proponents": [
+     "iza-dp-no-2652",
+     "do-peer-firms-a\ufb00ect-corporate-financial-policy",
+     "similar-investors1"
+    ]
+   },
+   "side_b": {
+    "position": "Correlated effects and sampling defeat observational network designs",
+    "evidence": "Common turnover component (Pastor-Stambaugh-Taylor); same-horizon flow comovement 0.80 vs 0.12 (Chan-Cheng-Hameed); FoF IV invalid in sampled networks (Chandrasekhar-Lewis); weak in dense networks (Canen-Chadha); outcome-on-mean regressions vacuous (Angrist)",
+    "proponents": [
+     "nber-working-paper-series-15",
+     "investor-heterogeneity-and-liquidity",
+     "econometrics-of-sampled-networks",
+     "empirical-challenges-with-peers-of-peers-instruments",
+     "nber-working-paper-series-4"
+    ]
+   },
+   "resolution": "Side B wins for the design as currently specified. A credible Pivot A needs exogenous shocks to neighbours (filer mergers/closures, manager departures) on a full-universe network with style x quarter FE; FoF IV only as robustness with Anderson-Rubin sets.",
+   "origin": "comparisons",
+   "decision_relevance": "high"
+  },
+  {
+   "name": "Does horizon diversity stabilise or destabilise prices",
+   "side_a": {
+    "position": "Diversity stabilises: more liquidity, lower volatility",
+    "evidence": "Higher holder churn dispersion -> lower illiquidity and lower return volatility, with a 2003 tax-reform shock (Chan-Cheng-Hameed incl. IA1); FMH ABMs (Li-Nishimura-Men; Li-Li-Sun); CME stock-level slope",
+    "proponents": [
+     "investor-heterogeneity-and-liquidity",
+     "internet-appendix",
+     "comses-catalog",
+     "comses-catalog-2"
+    ]
+   },
+   "side_b": {
+    "position": "Heterogeneity raises volatility",
+    "evidence": "Mixed-horizon populations raise variability (LeBaron); heterogeneity raises volatility on overlap networks (Forera et al.); CME's simulated friction channel",
+    "proponents": [
+     "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+     "financial-instability-transition-under-heterogeneous-investments-and"
+    ]
+   },
+   "resolution": "Side A has the stronger evidence (empirical, quasi-experimental). The CME friction channel is the outlier and should be withdrawn or replaced by a calibrated liquidity channel.",
+   "origin": "contradiction-graph",
+   "decision_relevance": "high"
+  },
+  {
+   "name": "Who absorbs short-horizon selling in a crash",
+   "side_a": {
+    "position": "Long-horizon investors supply liquidity",
+    "evidence": "Outside liquidity from long-run investors (Bolton-Santos-Scheinkman); long-term IO mitigated COVID losses (level); insurers/pensions countercyclical (Timmer)",
+    "proponents": [
+     "outside-and-inside-liquidity",
+     "do-institutional-investors-stabilize",
+     "working-paper-series"
+    ]
+   },
+   "side_b": {
+    "position": "Retail and arbitrageurs absorb; institutions co-trade",
+    "evidence": "Retail bought while institutions sold in 2020Q1 (Glossner et al.); long-horizon holders also sold, 7% vs 21% (Cella et al.); same-direction trading by other managers (Barbon et al.)",
+    "proponents": [
+     "do-institutional-investors-stabilize",
+     "issn-0956-8549-717-2",
+     "nber-working-paper-series-17"
+    ]
+   },
+   "resolution": "Side B on absolute absorption; the defensible claim is relative (long-horizon holders sell less), testable within stock with a Coval-Stafford flow-induced instrument. Worth a section, not a paper.",
+   "origin": "contradiction-graph",
+   "decision_relevance": "high"
+  },
+  {
+   "name": "Is horizon homophily in co-holding a fact or an artefact",
+   "side_a": {
+    "position": "Similar-horizon institutions co-hold beyond chance",
+    "evidence": "CME kappa-hat 0.158 positive in all quarters; type-assortative cliques (Crane-Koch-Michaely); excess validated overlap links (Gualdi et al.)",
+    "proponents": [
+     "institutional-investor-cliques-and-governance",
+     "statistically-validated-network-of-portfolio-overlaps-and-systemic-ris"
+    ]
+   },
+   "side_b": {
+    "position": "Mechanical from indexing, drift-contaminated tau and characteristic demand",
+    "evidence": "Characteristic-based demand (Koijen-Yogo); shared asset managers (Ozdagli-Ryfe); price-drift contamination of value-weight tau",
+    "proponents": [
+     "nber-working-paper-series-12",
+     "working-paper-2515"
+    ]
+   },
+   "resolution": "Side B for the raw measure. Only an active-weight, share-based, dyadic-FE, BiCM-validated residual would be a fact, and it is a motivating fact for A, not a contribution.",
+   "origin": "comparisons",
+   "decision_relevance": "medium"
+  },
+  {
+   "name": "Short-horizon institutions: destabilising or informed",
+   "side_a": {
+    "position": "Destabilising",
+    "evidence": "Short-term IO drives crash risk (Zhu); high-turnover large institutions raise volatility (Ben-David et al.); short-horizon sell more in turmoil (Cella et al.)",
+    "proponents": [
+     "crash-risk-and-investor-horizon",
+     "nber-working-paper-series-8",
+     "issn-0956-8549-717-2"
+    ]
+   },
+   "side_b": {
+    "position": "Informed and value-adding",
+    "evidence": "Short-term institutions' trades forecast returns (Yan-Zhang); benefits of short-horizon investors (Giannetti-Yu)",
+    "proponents": [
+     "institutional-investors-and-equity-returns",
+     "dp12021-adapting-to-radical-change-the-benefits-of-short-horizon-inves"
+    ]
+   },
+   "resolution": "Scoped differently (stability vs information); both right. The pivot should not frame short-horizon investors as simply bad: horizon contagion matters because it changes the mix, not because short horizons are harmful per se.",
+   "origin": "orphan-scan",
+   "decision_relevance": "medium"
+  }
+ ]
+}

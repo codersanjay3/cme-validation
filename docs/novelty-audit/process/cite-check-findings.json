@@ -1,0 +1,365 @@
+[
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "The SEC switched 13F market values from thousands of dollars to dollars for filings from January 3, 2023, and warns that it cannot guarantee the accuracy of the free data sets [11].",
+  "cited_note_id": "secgov-form-13f-data-sets",
+  "correct_note_id": null,
+  "evidence": "Note is the SEC Form 13F Data Sets landing page; it carries the accuracy disclaimer but says nothing about the January 3, 2023 switch from thousands of dollars to dollars (that is in the SEC readme, not this note).",
+  "suggested_fix": "soften claim to what the source supports: keep the no-accuracy-guarantee statement for [11] and cite the SEC 13F readme for the 2023 unit change"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Chan, Cheng and Hameed's Internet Appendix Table IA1 reports quarterly Fama-MacBeth regressions (cross-sections run quarter by quarter, coefficients averaged) of daily return volatility on lagged holder-horizon dispersion, with coefficients of -0.034 to -0.042 over 1982-2016 and -0.039 to -0.057 over 2000-2016, but -0.012 (t = -0.89) in one specification, net of size, book-to-market, institutional ownership, liquidity level and liquidity volatility [13].",
+  "cited_note_id": "internet-appendix",
+  "correct_note_id": null,
+  "evidence": "Table IA1 shows -0.034, -0.012, -0.042, -0.024 over 1982-2016 (the -0.024* in Model 4 is omitted, so the stated -0.034 to -0.042 range plus a single -0.012 outlier misdescribes the four models) and -0.051, -0.039, -0.057, -0.047 over 2000-2016.",
+  "suggested_fix": "soften claim to what the source supports: report all four 1982-2016 coefficients (-0.012 to -0.042, one insignificant at -0.012 and one only 10% at -0.024)"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "The dispersion-liquidity link is published in JFQA [7], its internet appendix already reports that holder-horizon dispersion lowers volatility [13], a 2026 Chinese paper ties holder-horizon homogeneity to left-tail risk [14], and drift-neutral turnover has been standard since 2005 [15].",
+  "cited_note_id": "investor-heterogeneity-and-liquidity",
+  "correct_note_id": null,
+  "evidence": "Cited note is the NUS working-paper PDF of Investor Heterogeneity and Liquidity and nowhere states the JFQA publication venue (only the Cambridge/JFQA URL of the separate appendix note [13] points to JFQA).",
+  "suggested_fix": "soften claim to what the source supports or cite the JFQA record for the publication claim"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "The programme fits Review of Finance first, then Management Science and JFQA [17].",
+  "cited_note_id": "review-of-finance-2",
+  "correct_note_id": null,
+  "evidence": "Note is the Review of Finance editor's 2025 report (impact factor 8.4); it supports Review of Finance's standing but says nothing about Management Science or JFQA or any ordering of fit.",
+  "suggested_fix": "soften claim to what the source supports: cite [17] only for the Review of Finance impact factor and present the journal ordering as the report's own judgement"
+ },
+ {
+  "verdict": "wrong-source",
+  "severity": "critical",
+  "sentence": "LeBaron's horizon distribution evolves through wealth-based replacement, and mixed populations raise return variability [24].",
+  "cited_note_id": "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+  "correct_note_id": "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market-2",
+  "evidence": "Cited note (EconPapers abstract) supports mixed populations raising return variability but does not mention wealth-based replacement; the duplicate note ...-market-2 (LeBaron working paper text) says less wealthy agents are replaced by agents drawn according to current wealth.",
+  "suggested_fix": "swap citation for the wealth-replacement clause to econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market-2"
+ },
+ {
+  "verdict": "wrong-source",
+  "severity": "critical",
+  "sentence": "| (a) Theory, FMH, ABMs | Frequency specialisation [31]; short-horizon complementarity [12, 34]; horizons evolving by wealth [24] | Network adaptation; an estimated adaptation rate | Sign prediction for A; E's niche |",
+  "cited_note_id": "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+  "correct_note_id": "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market-2",
+  "evidence": "Cited note (EconPapers abstract) does not mention wealth-driven evolution of horizons; the duplicate note ...-market-2 describes replacement of less wealthy agents with new agents weighted toward wealthier agents' horizons.",
+  "suggested_fix": "swap citation to econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market-2"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Nishiwaki finds that longer horizons stabilise a Brock-Hommes switching model [35], and a PLOS ONE study calibrates heterogeneous-horizon models to index series, arguing horizon heterogeneity is needed for long memory [36].",
+  "cited_note_id": "impact-of-different-investment-horizons-in-heterogeneous-agent-models-do-long-te",
+  "correct_note_id": null,
+  "evidence": "Abstract says the Brock-Hommes instability result is robust if short-term traders bear lower costs and that, when short-term traders bear no costs, long-term trading by fundamentalists destabilizes the market; it does not find that longer horizons stabilise.",
+  "suggested_fix": "soften claim to what the source supports: longer horizons change the strategy fractions and can stabilise or destabilise depending on trader costs"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Nishiwaki finds that longer horizons stabilise a Brock-Hommes switching model [35], and a PLOS ONE study calibrates heterogeneous-horizon models to index series, arguing horizon heterogeneity is needed for long memory [36].",
+  "cited_note_id": "calibrating-emergent-phenomena-in-stock-markets-with-agent-based-models-pmc",
+  "correct_note_id": null,
+  "evidence": "Paper calibrates minority/majority decision-tree agents to the NASDAQ Composite and mentions in passing, citing other work, that horizon heterogeneity is known to be crucial for long memory; it does not itself argue this from calibrated heterogeneous-horizon models.",
+  "suggested_fix": "soften claim to what the source supports: calibrates two-agent minority/majority models to NASDAQ data; the long-memory point is background it cites from other work"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Georg, Pierret and Steffen show money market funds avoid issuers whose other investors hold similar portfolios, identified with other funds' idiosyncratic redemptions [46].",
+  "cited_note_id": "similar-investors1",
+  "correct_note_id": null,
+  "evidence": "Slides show MMFs shift away from issuers exposed to similar MMFs (main result) but the note does not state that this is identified with other funds' idiosyncratic redemptions; it mentions only fixed effects and that funds attend more to similarity when experiencing redemptions.",
+  "suggested_fix": "soften claim to what the source supports: drop the identification clause"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Staggered changes in shared external managers among life insurers produce more similar portfolios and trades [30].",
+  "cited_note_id": "working-paper-2515",
+  "correct_note_id": null,
+  "evidence": "Paper finds insurers sharing asset managers have more similar portfolios and trades and uses closures of shared asset managers as exogenous shocks that lower similarity; no staggered change design is described.",
+  "suggested_fix": "soften claim to what the source supports: describe the identification as closures of shared asset managers"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Among the papers found, turnover as a network-peer outcome appears only for retail investors: quasi-random classroom exposure to successful peers raises new investors' trading frequency [4], sociability correlates with active household trading [54], and soccer-driven social interaction raises Israeli retail investors' trading-volume sensitivity to past trades [5].",
+  "cited_note_id": "active-trading-and-poor-performance-the-social-transmission-channel",
+  "correct_note_id": null,
+  "evidence": "Abstract says peers' gains make students more likely to start trading, buy similar stocks and chase extreme-return stocks; it does not report an effect on trading frequency.",
+  "suggested_fix": "soften claim to what the source supports: peer gains raise the likelihood that new investors start trading and shape which stocks they buy"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Structural limits matter as much as drift: 13F reports quarter-end long positions of managers above $100 million, omitting shorts [81], small positions and confidentially treated holdings, and aggregates many funds per filer [78]; the Thomson s34 version has gaps and errors, which is why researchers scrape filings, reliable in XML form from mid-2013 [79].",
+  "cited_note_id": "sc-publication-sec-adopts-rule-13f-2-governing-short-sale-disclosure-sullivan-cr",
+  "correct_note_id": null,
+  "evidence": "Sullivan and Cromwell memo covers the 2023 Rule 13f-2 short-sale reporting rule (Form SHO); it does not itself state that 13F reports omit short positions or give the quarter-end long-position scope.",
+  "suggested_fix": "soften claim to what the source supports or cite a source stating 13F covers only long positions (e.g., ownership-data-on-wrds [78])"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "**Residual risk.** The nearest recent 13F institutional-influence paper is MacDonald (SSRN 5692342, 2025), read at abstract level: his influence coefficient is the percentage change in one investor's holding of a stock after a 1% change in another investor's holding of the same stock, estimated on 13F data from 1980 to 2023, and passive investors prove more influential than active ones regardless of size [74].",
+  "cited_note_id": "home",
+  "correct_note_id": null,
+  "evidence": "Note is MacDonald's personal website; it supports the definition of the influence coefficient and that passive investors are more influential than active ones, but gives no 1980-2023 sample period and no SSRN number 5692342.",
+  "suggested_fix": "soften claim to what the source supports: drop the 1980-2023 sample and SSRN id or cite the SSRN abstract"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "**Has it been done?** Yes, by construction of the standard measure and its successors (Section 2.6) [7, 15, 21, 42, 60]. **Novel increment:** none at journal level.",
+  "cited_note_id": "cfr-working-paper-no-15-06",
+  "correct_note_id": null,
+  "evidence": "Lan-Moneta-Wermers builds a holding-horizon measure (and a min-of-buys-and-sells turnover analog) but never discusses price-drift or value-weight versus share-based contamination.",
+  "suggested_fix": "soften claim to what the source supports, or drop [42] from the price-drift 'done by construction' claim"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "**Has it been done?** Yes, by construction of the standard measure and its successors (Section 2.6) [7, 15, 21, 42, 60]. **Novel increment:** none at journal level.",
+  "cited_note_id": "the-long-and-the-short-portfolio-turnover-ratios",
+  "correct_note_id": null,
+  "evidence": "Tucker describes the mutual-fund portfolio turnover ratio (min of purchases and sales over TNA) but does not address price-drift contamination or share-based construction.",
+  "suggested_fix": "soften claim to what the source supports, or drop [60] from this citation group"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Pool-Stoffman-Yonker supply the pairwise design, run from social ties to similarity [2]. **Novel increment:** a residual fact on active weights relative to the market, with share-based horizons, dyadic regressions with node fixed effects, same-family and same-type controls, dyadic-robust inference, and excess BiCM-validated links among horizon-proximate pairs, ideally within the short-horizon half where index geometry cannot drive it [23]. **Verdict:** likely mechanical as measured, though untested; D revives as a standalone fact only if the active-weight, share-based coefficient keeps about half its raw size (about 0.08) under dyadic-robust inference, or if validated link rates rise monotonically with horizon proximity within the short-horizon half.",
+  "cited_note_id": "statistically-validated-network-of-portfolio-overlaps-and-systemic-risk-pmc",
+  "correct_note_id": null,
+  "evidence": "The BiCM paper validates portfolio-overlap links against a null model; it says nothing about index geometry or a short-horizon half of institutions.",
+  "suggested_fix": "soften claim to what the source supports (BiCM-validated links only) and attribute the index-geometry point to the authors' own reasoning"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "**Has it been done?** Endogenous horizons have, through wealth-based selection [24] and information specialisation [31]; so have network ABMs with fixed horizon classes and performance-based rewiring [16], FMH ABMs [27, 28] and calibration to index series [36].",
+  "cited_note_id": "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+  "correct_note_id": null,
+  "evidence": "The LeBaron note (abstract only) says a population of long- and short-horizon agents evolves, but does not state wealth-based selection as the mechanism.",
+  "suggested_fix": "soften claim to what the source supports (evolving horizon populations in an ABM) without 'wealth-based selection'"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Because Oldham's Oracle lists are class-specific, his network is class-assortative as a by-product, so CME should claim \"similarity-based link formation\", not \"first homophily\" [16].",
+  "cited_note_id": "oldham-2019-complexity-full-text-wayback-pdf-short-termism-and-dynamic-investor",
+  "correct_note_id": null,
+  "evidence": "Quoted phrases 'similarity-based link formation' and 'first homophily' are the report's own proposed wording, not text in the Oldham note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Third, widening the network from top-5 to top-10 raises the median friends-of-friends count from 32-42 to about 60-70 (the project's own data), so many \"friends-of-friends who are not friends\" are real peers cut by an arbitrary threshold, which the Chandrasekhar-Lewis mechanism covers as much as node sampling [8]; the full universe then pushes toward the dense regime where instruments are weak [58].",
+  "cited_note_id": "econometrics-of-sampled-networks",
+  "correct_note_id": null,
+  "evidence": "Quoted phrase 'friends-of-friends who are not friends' does not appear in the Chandrasekhar-Lewis note (it is the report's own phrase).",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Fourth, merger shocks are discredited [47, 48, 49], no paper located shows that a large filer's turnover moves when one manager leaves, the churn ratio is \"very stable for institutions across time\" [19], and most trade directions are predictable from managers' own history [53].",
+  "cited_note_id": "issn-0956-8549-717-2",
+  "correct_note_id": null,
+  "evidence": "The note says the churn ratio 'is stable for institutions across time' (untabulated); the quoted 'very stable' adds a word not in the source.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "unsupported",
+  "severity": "major",
+  "sentence": "On this view B, reframed around absorption, dominates: on identification, with Coval-Stafford selling [44] and the funding-fragility instrument [19]; on novelty, with a published conflict to adjudicate [19, 20, 63]; on feasibility; and on downside protection, since absorption, relative absorption and co-selling are all informative.",
+  "cited_note_id": "nber-working-paper-series-17",
+  "correct_note_id": null,
+  "evidence": "Barbon et al. (brokers and order-flow leakage in fire sales) does not address whether institutional investors stabilize or destabilize markets, so it is not a side of the 'published conflict' with [19, 20]; no better vault note found.",
+  "suggested_fix": "swap citation or delete [63] from this group"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Transfers: the question; the network construction and horizon panel, rebuilt on the full universe and share-based; the ABM code, re-signed; the stock-level dispersion regression, repositioned as a replication of the Chan-Cheng-Hameed appendix [13]; N-PORT, which measures fund-level horizon without filer aggregation and admits redemption-based instruments [46], as a validation layer and a corporate-bond extension, with the existing descriptive bond result dropped as a finding; and the contamination discovery, recast as visible data hygiene.",
+  "cited_note_id": "similar-investors1",
+  "correct_note_id": null,
+  "evidence": "Georg-Pierret-Steffen slides (eurozone bond-fund similarity) show fund attention to similarity rises during redemptions; they do not use redemptions as instruments nor N-PORT data.",
+  "suggested_fix": "soften claim: redemption-based instruments are the report's own proposal, citing [46] only for similar-investor/redemption evidence"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "A precise zero is also informative: it settles whether institutional horizon is a trait and tells modellers to treat horizon change as performance-driven selection [24] rather than imitation.",
+  "cited_note_id": "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+  "correct_note_id": null,
+  "evidence": "The LeBaron note does not state performance-driven selection of horizons; it only says evolving populations of long and short horizons toward long alone may be difficult.",
+  "suggested_fix": "soften claim to what the source supports"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "| JFQA | 4.1 in 2025 release; 2.8 for 2024 [17, 66] | High | Home of Chan-Cheng-Hameed [7]; natural home for the absorption fallback |",
+  "cited_note_id": "investor-heterogeneity-and-liquidity",
+  "correct_note_id": null,
+  "evidence": "The Chan-Cheng-Hameed note is an NUS working-paper PDF and does not state it was published in JFQA; the JFQA page note does not list it.",
+  "suggested_fix": "soften claim or cite a source showing JFQA publication"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "| RFS | 5.4 for 2024 [17] | Medium | Home of Cella-Ellul-Giannetti [19]; needs a clean shock design and a large consequence |",
+  "cited_note_id": "issn-0956-8549-717-2",
+  "correct_note_id": null,
+  "evidence": "The note is the 2013 FMG discussion paper (No. 717) and does not state RFS publication.",
+  "suggested_fix": "soften claim or cite a source showing RFS publication"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "The SEC Form 13F Data Sets are extracted from the XML portion of every filer's filings from July 2013, include share counts, and come as filed without accuracy guarantees [11].",
+  "cited_note_id": "secgov-form-13f-data-sets",
+  "correct_note_id": null,
+  "evidence": "The SEC page confirms XML extraction, July 2013 start and no accuracy guarantee, but does not say the data sets include share counts.",
+  "suggested_fix": "soften claim: drop 'include share counts' or cite the SEC data-set documentation"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "Five rules follow. (1) Build Gaspar-Massa-Matos churn from share changes at current prices, with the Yan-Zhang minimum-of-buys-and-sells variant as robustness [15, 21], and retire value-weight tau. (2) Rescale reported values for filings before January 3, 2023, by filing date rather than report quarter, since the jump's location suggests mixed vintages within 2022Q4 (the project's own data), or avoid the value field. (3) Clean amendments, notice filings, put and call rows, shares versus principal and CUSIP errors, which the SEC leaves to users [11]. (4) Build the network on the full universe and keep the top filers only as an estimation subsample. (5) Note that 2013Q2, the current sample's first quarter, precedes the data sets [11].",
+  "cited_note_id": "secgov-form-13f-data-sets",
+  "correct_note_id": null,
+  "evidence": "The SEC page says only that accuracy cannot be guaranteed and data are as filed; it does not mention amendments, notice filings, put/call rows, shares-versus-principal or CUSIP errors being left to users (pair 304 is a duplicate of this sentence/note).",
+  "suggested_fix": "soften claim to what the source supports (as-filed data, no accuracy guarantee)"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "The template uses 304 parental deaths of fund managers from 1999 to 2013 in a difference-in-differences design (comparing treated and untreated managers before and after the event) and finds that bereaved managers act like quasi-indexers, with lower tracking error and active share, more strongly for unexpected deaths and single-manager funds [10].",
+  "cited_note_id": "life-is-too-short-bereaved-managers-and-investment-decisions-review-of-finance",
+  "correct_note_id": null,
+  "evidence": "The note describes a sample of 304 U.S. mutual funds whose managers experienced parental deaths in 1999-2013, not 304 parental deaths.",
+  "suggested_fix": "change '304 parental deaths of fund managers' to '304 mutual funds whose managers experienced parental deaths'"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "1. **\"This is turnover commonality, not contagion.\"** Turnover loads on a common factor tied to sentiment, dispersion and liquidity, strongest among similar funds [6, 25]. *Answer:* quarter effects explain only about 2% of share-based horizon variance (the project's own data); style-by-quarter fixed effects, category averages [6] and neighbours' flows absorb the style factor; and the shock moves one neighbour's horizon for reasons unrelated to market conditions [10].",
+  "cited_note_id": "nber-working-paper-series-15",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "2. **\"Overlap neighbours are chosen because they are alike.\"** Co-holding is type-assortative [22], and the D fact is the referee's argument. *Answer:* the lagged, fixed network, personnel shocks that leave it unchanged [56] and future-neighbour placebos (Section 6.3); D is reported as the reason for the design.",
+  "cited_note_id": "institutional-investor-cliques-and-governance",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "3. **\"The shocks are few, fund-level, and may hit holdings directly.\"** The precedent is a fund-level sample [10], mergers change neighbours' holdings [47], and single events dominate merger samples [48]. *Answer:* pool deaths, departures and retirements; focus on single-manager funds and small filers; apply double exclusion, a price-channel placebo (departing managers also rebuild holdings in co-held stocks) and leave-one-event-out; and step down the journal ladder per the kill criteria if shocks are too few.",
+  "cited_note_id": "life-is-too-short-bereaved-managers-and-investment-decisions-review-of-finance",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "4. **\"Horizon is a fixed trait.\"** Parsa treats it as a fixed effect [32], it is called very stable [19], and holding-horizon ranks persist 20 quarters [42]. *Answer:* the level swings in average turnover [25] are market-wide and belong to objection 1; the reply rests on the idiosyncratic residual, a third of share-based variance after institution and quarter effects, which must stay above 10% with non-trivial persistence once style-by-quarter effects and flows enter (gate 1a), or A stops.",
+  "cited_note_id": "investors-horizon-and-stock-prices",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "6. **\"Your instruments are invalid or weak.\"** [8, 58]. *Answer:* Sections 6.1 and 6.4.",
+  "cited_note_id": "econometrics-of-sampled-networks",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "8. **\"Turnover is not horizon, and your earlier data were contaminated.\"** [11, 42]. *Answer:* Section 6.1, plus N-PORT fund-level validation.",
+  "cited_note_id": "secgov-form-13f-data-sets",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "9. **\"Complementarity predicts herding in information, not in horizon.\"** Horizon is exogenous in both models [12, 34]. *Answer:* concede it; the paper extends their logic to endogenous horizon choice and tests the extension's distinctive prediction, tipping in short-horizon neighbourhoods, which common shocks do not produce.",
+  "cited_note_id": "herd-on-the-street-informational-inefficiencies-in-a-market-with-short-term-spec",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "10. **\"The consequence section is Chan-Cheng-Hameed again, and China did tail risk.\"** *Answer:* cite both prominently [7, 14], report volatility as a replication of the appendix [13], and claim only US crash outcomes, the fragility horse race [43] and relative absorption.",
+  "cited_note_id": "investor-heterogeneity-and-liquidity",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "11. **\"Long-horizon institutions do not absorb; retail does.\"** [19, 20]. *Answer:* the claim is relative absorption, defined before estimation, and the accounting decomposition nests the retail finding.",
+  "cited_note_id": "issn-0956-8549-717-2",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "12. **\"Has someone already done this?\"** *Answer:* cite commonality [6] and institutional peer effects [1, 2, 3] as boundary markers, word the claim narrowly, distinguish MacDonald's stock-level influence coefficient [74], and read the full Liang-Wu-Yin paper [55] and search for manager-change turnover studies before submission, and drop the FMH from title and abstract.",
+  "cited_note_id": "nber-working-paper-series-15",
+  "correct_note_id": null,
+  "evidence": "Quoted span is the report's own hypothetical referee objection, not text from the cited note.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "verdict": "partially-supported",
+  "severity": "major",
+  "sentence": "5. **\"Outcome-on-mean regressions are vacuous.\"** [9]. *Answer:* the headline uses a manipulated peer characteristic, the design Angrist accepts; Stage 1 is labelled descriptive, and leave-out bias works against it [57].",
+  "cited_note_id": "nber-working-paper-series-4",
+  "correct_note_id": null,
+  "evidence": "Source wording is 'outcome-on-outcome peer effects are vacuous', not 'Outcome-on-mean regressions are vacuous'.",
+  "suggested_fix": "remove quotation marks and paraphrase"
+ },
+ {
+  "id": "orchestrator-sec-unit-rule",
+  "severity": "major",
+  "issue": "The January 3, 2023 switch of 13F market value from thousands to dollars is stated in the SEC 13F Data Sets readme, not on the Form 13F Data Sets page cited as [11].",
+  "suggested_fix": "Keep the rule but attribute it in prose to the SEC's 13F data-set documentation and to the project's own data (the 1000x jump at 2022Q4), without asserting that [11] states it; remove [11] from that specific clause if [11] is the only citation."
+ },
+ {
+  "id": "orchestrator-macdonald-scope",
+  "severity": "minor",
+  "issue": "MacDonald (SSRN 5692342) sample period 1980-2023 and SSRN number come from the SSRN listing, not the cited personal-site note [74].",
+  "suggested_fix": "Say 'a 2025 working paper (SSRN 5692342)' and describe the influence coefficient and passive-to-active finding, which the note supports; drop the sample years."
+ }
+]

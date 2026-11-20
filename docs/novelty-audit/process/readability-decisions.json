@@ -1,0 +1,99 @@
+{
+ "decisions": [
+  {
+   "id": "rec-1",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-2",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-3",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-4",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-5",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-6",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-7",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-8",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-9",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-11",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-18",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-19",
+   "category": "break-paragraph",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-10",
+   "category": "make-list",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-12",
+   "category": "make-list",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-13",
+   "category": "make-list",
+   "decision": "skip: would drop words ['kappa']"
+  },
+  {
+   "id": "rec-14",
+   "category": "make-list",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-15",
+   "category": "make-list",
+   "decision": "skip: would drop words ['rejection', 'If', 'After']"
+  },
+  {
+   "id": "rec-16",
+   "category": "make-list",
+   "decision": "applied"
+  },
+  {
+   "id": "rec-17",
+   "category": "make-list",
+   "decision": "skip: would drop words ['matched', 'neighbour', 'Controls', 'future', 'Placebos']"
+  }
+ ]
+}

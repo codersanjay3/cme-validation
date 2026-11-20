@@ -1,0 +1,82 @@
+{
+  "critic_type": "dialectic",
+  "findings": [
+    {
+      "severity": "major",
+      "location": "1.1 The question survives / 1.2 / Section 7 objection 1 and 4.4 gate 1a: 'quarter effects alone explain only about 2%' and 'a third of the variance survives institution and quarter effects'",
+      "issue": "The variance decomposition (0.55 vs 0.92 SD, AR(1) 0.75, 2% quarter share, 33% residual) is computed on the project's value-weight tau, which section 1.2 itself declares drift-contaminated and spanning a 1000x unit break at 2022Q4, yet it is used as the load-bearing rebuttal to the PST commonality objection and to declare gate 1a half-passed.",
+      "evidence": "interim-report-horizon-trait-or-time-varying (no 13F variance decomposition exists in the literature; PST common component dominates; 'quarter FE mandatory'); investors-horizons / PST [25] (average fund turnover has 95% correlation with PC1); draft section 1.2 on drift and unit break",
+      "recommendation": "Where the 36%/2%/33% figures are first given, and again in objection 1 and the gate-1a paragraph, state that they come from the contaminated value-weight, top-150 panel and may move in either direction (drift is itself a common component) once share-based, unit-corrected tau is used. Reword 'already passed' to 'provisionally passed on contaminated data; must be rerun at Stage 0'."
+    },
+    {
+      "severity": "major",
+      "location": "Executive summary ('Across roughly eighteen search framings and an adversarial follow-up, no paper was found...') and 3.1 'Has it been done?' ('raised confidence to about 70%')",
+      "issue": "The absence claim is stated without the search limits the vault records: web search was US-centric, SSRN blocked (403), Google Scholar inaccessible, most hits snippet or abstract level, Liang-Wu-Yin read only via a secondary relay, Chinese-language CNKI literature not searchable; the vault's own audit put confidence at about 65%, and the 'adversarial follow-up' did not actually resolve the Liang-Wu-Yin or CNKI risks.",
+      "evidence": "interim-report-pivot-a-near-duplicate-audit (provenance caveat, medium reliability, 65%); liang-wu-yin-high-turnover-in-chinese-mutual-funds-drivers-and-effects-ssrn-5048 (abstract-only, reconstructed from search summary); audited-absence-dispersion-crash-cc-5-horizon-sorted-overlap-cc-6 (moderate reliability, CNKI and Google Scholar not searched); comparisons.md Tension 1",
+      "recommendation": "Add one or two sentences in 3.1 (and a clause in the executive summary) naming what was searched (about 18 web and scholarly-API framings, forward citations of PST and CCH) and what was not (SSRN full text, Google Scholar, CNKI, post-mid-2026 uploads, manager-mover theses), and make the ~70% explicitly a search-recall-limited figure with the stated boundary condition (US 13F holdings-derived horizon outcome). Cite a source for the MacDonald SSRN 5692342 lead or mark it as uncited."
+    },
+    {
+      "severity": "major",
+      "location": "4.2 'On this view B, reframed around absorption, dominates' and 4.3 'Why A still leads' ('a US crash extension reads as an extension of a JFQA paper plus a Chinese replication')",
+      "issue": "The rebuttal to the case for B compares A against B-dispersion (admittedly pre-empted) rather than B-absorption, which the draft itself calls open, the strongest stand-alone alternative and informative under every outcome; the steelman concedes B dominates on four criteria and the response never engages that, and A's joint probability of clearing novelty and identification is never stated though identifiability is called 'lower' than 70%.",
+      "evidence": "interim-report-correlated-turnover-vs-horizon-contagion-identification ('would not build the paper on it', 'not publishable at top-field standard' as specified, about 70% on identification); interim-report-dispersion-and-absorption-beyond-chan-cheng-hameed (absorption feasible with Coval-Stafford, informative either way); draft sections 3.2 and 4.4",
+      "recommendation": "In 4.3, state a rough joint probability for A (novelty about 70% times shock-gate pass probability, with the draft's own judgement that identifiability is lower) and compare it explicitly with B-absorption, whose novelty is open and whose result is publishable in either sign. Either justify A-first on expected-value grounds (higher ceiling, absorbs B) or state the condition under which the order should flip (for example fewer than about 30 usable shocks, identified before any other work). Do not rebut B by pointing to the dispersion half only."
+    },
+    {
+      "severity": "major",
+      "location": "1.2 'The simulated friction channel has the wrong sign' and 6.6 / 3.5 'the friction channel is contradicted by data [7, 13]'",
+      "issue": "The draft says the empirical sign contradicts the friction channel and that the quasi-experimental evidence sits on the stabilising side, but omits evidence on the other side (level of short-horizon share raising event-window volatility with RDD identification; Kondor-type disagreement; Oldham's finding that short-term behaviour raises volatility), and the volatility evidence it relies on is a non-causal Fama-MacBeth appendix table with one insignificant specification (-0.012, t = -0.89) plus a survivors-only slope; the tax-reform identification in CCH concerns illiquidity, not volatility.",
+      "evidence": "the-more-we-know-the-less-we-agree-a-test-of-the-trading-horizon-heterogeneity-t (Dai et al., Financial Review 2022: larger short-term share raises post-announcement volume and volatility, RDD); econpapers-understanding-how-short-termism-and-a-dynamic-investor-network-affect (Oldham: short-term behaviour raises volatility); interim-report-dispersion-and-absorption-beyond-chan-cheng-hameed (IA1 coefficient range includes -0.012, t = -0.89; Kondor 2012 opposing pair)",
+      "recommendation": "Qualify the sentence: the dispersion-volatility sign in IA1 is correlational and mostly negative but not uniformly significant, and the identified causal evidence (tax reform) is on illiquidity. Add that Dai et al. find the level of short-horizon share raises event-window volatility, so the friction channel survives for announcement windows and for level versus dispersion effects, and the recommended action is 're-sign and restrict to the stress/liquidity channel' rather than 'contradicted'."
+    },
+    {
+      "severity": "major",
+      "location": "Section 7 objection 4 answer ('ranks persist while levels move [25]') versus objection 1 answer",
+      "issue": "The reply to 'horizon is a fixed trait' leans on PST's finding that average fund turnover swung 59% to 102%, but that movement is the common component, which is exactly what objection 1 says would mimic contagion; the two answers cite the same evidence for opposite purposes, and the vault's trait interim concludes the movable idiosyncratic part is probably much smaller than 36%.",
+      "evidence": "interim-report-horizon-trait-or-time-varying (committed position: movable component 'probably much smaller than the headline 36%', 60% that a usable idiosyncratic residual exists, zero direct 13F decompositions); PST [6, 25]",
+      "recommendation": "Revise objection 4 so that the time-variation evidence is separated into common and idiosyncratic parts, concede that the level swings in [25] are market-wide, and rest the reply on the Stage 0/1a residual-variance test with the pre-committed 10% threshold. Add the interim's flip condition (residual under about 10% or residual AR(1) near zero means trait, stop A)."
+    },
+    {
+      "severity": "major",
+      "location": "3.5 Pivot E 'Novel increment' and 6.6 The model module ('The adaptation weight is set to the Stage 2 coefficient through the DeGroot mapping [61]')",
+      "issue": "The bridge from an estimated peer coefficient to the ABM adaptation rate 'a' is presented as direct, but it ignores that an event-study response to a discrete shock to one neighbour is a local, scaled effect rather than the linear-in-means weight; that the ABM's 0.06 per period has no stated time unit relative to a quarterly estimate; that the empirical neighbour set (non-held stocks, validated links) differs from the model's W; and that section 4.2 has just declared the dynamic linear-in-means regression uninformative.",
+      "evidence": "draft 4.2 (1% variance share, Nickell bias 0.036) and 4.3 (headline must come from event study, not dynamic regression); angrist [9]; Golub-Jackson [61] (DeGroot learning dynamics, not horizon best-response)",
+      "recommendation": "After the sentence deriving 'a' from the DeGroot update, add a caveat that the mapping holds only for the Stage 1 dynamic coefficient, which the draft treats as descriptive, and that an event-study estimate must be rescaled by the shocked neighbour's weight in W and by the quarter-to-model-period conversion before comparison with 0.06. Mark the Stage 4 calibration as conditional on this rescaling."
+    },
+    {
+      "severity": "major",
+      "location": "4.3 'That multiplier is a new object for financial-stability work' and 3.2 / 2.3 'What remains open is narrow: US crash outcomes' (also 2.5 closing 'Every ingredient of Pivot A exists')",
+      "issue": "Several vault papers that bear on the 'contagion raises fragility' and 'dispersion to crash' novelty claims are omitted: a 2025 paper finding that peer effects in fund trading raise individual-stock tail risk, an investor-diversity index that lowers systemic risk, crowding papers using NCSKEW/DUVOL conditioned on short-horizon ownership, and institutional-network crash-risk papers.",
+      "evidence": "peer-effect-of-fund-trading-and-the-risk-of-individual-stock (Chen, Lin, Su, Yao, J Asian Econ 2025); audited-absence-dispersion-crash-cc-5-horizon-sorted-overlap-cc-6 (Zhang-Miao-Zhang Risks 2025; Ludwig EFMA 2022; Li-Jiang FRL 2022; Chen-Ma-Wu-Zhang CAR 2023); econpapers-institutional-investor-network-and-idiosyncratic-volatility-of-stocks (Zhai et al. 2024)",
+      "recommendation": "Add a short paragraph in 3.2 and 4.3 naming these as closest adjacent work, state that they use trade-direction peer effects or level/type measures rather than horizon peer effects or dispersion, and weaken 'new object' to 'new horizon-specific object' with the audited-absence caveat (moderate reliability; no CNKI or Google Scholar)."
+    },
+    {
+      "severity": "minor",
+      "location": "Executive summary and 2.5: 'every paper with trading activity as the peer outcome concerns retail investors [4, 5]'",
+      "issue": "The vault's near-duplicate audit lists institutional or fund-level turnover/trading adjacent papers (Pomorski peer effects in trade direction, Sialm-Tham fund-family spillovers, Christoffersen-Sarkissian location effects on fund turnover) that the draft's blanket statement omits, so the claim is stronger than the audit that supports it.",
+      "evidence": "interim-report-pivot-a-near-duplicate-audit (closest hits list; Christoffersen-Sarkissian, Sialm-Tham, Pomorski; Wharton snippet on turnover depending on other funds' styles)",
+      "recommendation": "Qualify the sentence to 'every paper found with trading frequency or turnover as a network-peer outcome concerns retail investors', and add the fund-turnover boundary markers (location, family, manager experience) in 3.1 as cross-sectional determinants, not peer effects."
+    },
+    {
+      "severity": "minor",
+      "location": "1.2 'The homophily coefficient ... is mostly mechanical as measured' and 3.4 'Verdict: mechanical as measured'",
+      "issue": "The claim is stated as established, but the vault's analysis ran no test, gave about 65% that the coefficient shrinks below a third and about 35% that a meaningful residual survives, and the audited absence found no paper documenting the raw fact either way.",
+      "evidence": "interim-report-horizon-homophily-fact-or-mechanical (committed position; 'No test was run'; flip condition: at least about 50% of raw magnitude retained); audited-absence-dispersion-crash-cc-5-horizon-sorted-overlap-cc-6 (CC-6 NOT FOUND)",
+      "recommendation": "Rephrase as 'likely mechanical (about two chances in three that most of it disappears under active weights, share-based tau and dyadic fixed effects), untested', cite the retention threshold that would revive D as a standalone fact, and note that the R-squared and persistence inferences use the project's own data."
+    },
+    {
+      "severity": "minor",
+      "location": "Section 7 objection 3 and 6.3 shock design ('The shocks are few, fund-level, and may hit holdings directly')",
+      "issue": "Vault evidence on Chinese manager-change studies shows that a manager change is a portfolio overhaul that breaks co-holding comovement, and that peer-trade deviation is more tied to portable manager traits than to the fund, which cuts against both exclusion and the 'horizon is socially transmitted' reading; the draft engages mergers only.",
+      "evidence": "基金经理更换股票联动与股票价格 (manager change breaks stock comovement within co-held portfolios; manager change not exogenous to holdings); 和而不群还是卓尔不群基于基金网络信息使用的视角 (mover evidence: network-information use tied to manager traits)",
+      "recommendation": "Add one sentence to objection 3 (or 6.3) noting that departures of managers also rebuild holdings and move prices in co-held stocks, so double exclusion needs a price-channel placebo, and add to objection 4 that portable manager traits imply part of 'horizon' belongs to the manager, which the shock design must separate from peer influence."
+    },
+    {
+      "severity": "minor",
+      "location": "5.1 'The impact-factor bar was never binding' and 5.2 table (Management Science 4.9, JBF 4.0, JFQA 4.1/2.8, JFS 4.1 rated 'High')",
+      "issue": "The user's bar is above 4 to 5, yet the fallback ladder routes to journals at or below that line on the draft's own figures, with JIF years mixed (2024 and 2025 releases), and the 'never binding' framing leans on FRL 7.1 as if it settled the constraint.",
+      "evidence": "draft 5.2 table; sources [17], [66], [67], [68]",
+      "recommendation": "Add a sentence stating which recommended outlets clear 5 (Review of Finance, RFS) and which are borderline (Management Science 4.9, JBF, JFQA, JFS about 4.0 to 4.1), label the release year for each figure, and say that the fallbacks are chosen for fit with the stated risk that they sit near the lower edge of the user's threshold."
+    }
+  ]
+}

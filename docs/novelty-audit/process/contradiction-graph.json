@@ -1,0 +1,228 @@
+[
+ {
+  "cluster_id": "diversity-stabilises-or-destabilises",
+  "fight": "Does greater dispersion of investor horizons stabilise markets (more liquidity, lower fragility) or raise volatility?",
+  "side_a": {
+   "position": "Horizon diversity stabilises / improves liquidity",
+   "claims": [
+    "FMH ABM: stability rises from uniform to diversified horizons (with caveats at finite max horizon)",
+    "Higher cross-holder churn dispersion -> more liquidity, lower liquidity volatility (JFQA 2022)",
+    "Illiquidity premia depend on horizon heterogeneity",
+    "Crashes when horizon diversity shrinks (Li-Li-Sun 2017)"
+   ],
+   "sources": [
+    "comses-catalog",
+    "comses-catalog-2",
+    "investor-heterogeneity-and-liquidity",
+    "pricing-liquidity-risk-with-heterogeneous-investment"
+   ]
+  },
+  "side_b": {
+   "position": "Horizon heterogeneity raises volatility",
+   "claims": [
+    "Mixed short/long populations raise return variability (LeBaron)",
+    "Heterogeneity of investments correlates with volatility on overlap networks (Forera et al. 2025)",
+    "CME's own simulated friction channel: more diversity, more volatility"
+   ],
+   "sources": [
+    "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+    "financial-instability-transition-under-heterogeneous-investments-and"
+   ]
+  },
+  "evidence_quality_delta": "Side A has the stronger empirical evidence (JFQA 2022 with a natural experiment; CME stock-level data agree); side B is mostly model-based.",
+  "scope_overlap": "Partly scoped differently: side B is about mixing in a single market (more trading, more volume), side A about who can absorb whom in stress. Both can hold.",
+  "decision_relevance": "high"
+ },
+ {
+  "cluster_id": "who-absorbs-in-stress",
+  "fight": "In sell-offs, do long-horizon institutions absorb short-horizon selling within the same stock?",
+  "side_a": {
+   "position": "Yes: long-run investors supply outside liquidity",
+   "claims": [
+    "Long-run investors supply outside liquidity (theory)",
+    "Long-term IO mitigated COVID losses (level)",
+    "Insurers/pensions trade countercyclically",
+    "Chan et al. argue long-horizon funds absorb fire-selling short-horizon funds (argued, not tested)"
+   ],
+   "sources": [
+    "outside-and-inside-liquidity",
+    "do-institutional-investors-stabilize",
+    "working-paper-series",
+    "investor-heterogeneity-and-liquidity"
+   ]
+  },
+  "side_b": {
+   "position": "No: retail investors and arbitrageurs absorb; institutions amplify",
+   "claims": [
+    "Retail, not long-horizon institutions, were the liquidity providers in the COVID crash",
+    "Investors trading against distressed funds (arbitrageurs) earn liquidity returns",
+    "Hedge funds trading against flows moderate fragility"
+   ],
+   "sources": [
+    "do-institutional-investors-stabilize",
+    "nber-working-paper-series-2",
+    "stock-price-fragility"
+   ]
+  },
+  "evidence_quality_delta": "Side B has direct trade-level evidence; side A is theory plus level correlations. Nobody has tested within-stock absorption by holder horizon.",
+  "scope_overlap": "Genuine open question at the within-stock, by-horizon level: the gap Pivot B would fill.",
+  "decision_relevance": "high"
+ },
+ {
+  "cluster_id": "horizon-trait-or-adaptive",
+  "fight": "Is an institution's horizon a fixed trait or does it move (and could it move toward peers)?",
+  "side_a": {
+   "position": "Fixed/persistent trait",
+   "claims": [
+    "Trading frequency is an investor-specific fixed effect (Parsa)",
+    "Investors specialise by frequency in equilibrium; fund turnover highly persistent (Crouzet et al.)",
+    "Churn averaged over quarters to remove idiosyncratic shocks (Cella et al.)"
+   ],
+   "sources": [
+    "investors-horizon-and-stock-prices",
+    "a-model-of-multi-frequency-trade",
+    "issn-0956-8549-717-2"
+   ]
+  },
+  "side_b": {
+   "position": "Horizons evolve",
+   "claims": [
+    "Horizon mix evolves endogenously through performance/wealth selection (LeBaron)",
+    "Social interaction raises trading activity (Heimer; Gelman et al.) - retail",
+    "Horizon compression during crises (CME, measured on contaminated value-weight turnover)"
+   ],
+   "sources": [
+    "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+    "w-o-r-k-i-n-g",
+    "social-interaction-intensity"
+   ]
+  },
+  "evidence_quality_delta": "Persistence evidence is strong; evolution evidence is model-based or retail. Project data: within-institution sd of log tau 0.55 vs total 0.92, AR(1) 0.75 (not a source; orchestrator diagnostic).",
+  "scope_overlap": "Both can hold: a large fixed component plus a smaller time-varying part. Pivot A must explain the time-varying part.",
+  "decision_relevance": "high"
+ },
+ {
+  "cluster_id": "peer-effects-identifiable",
+  "fight": "Can peer effects in a portfolio-overlap network be credibly identified with observational 13F data?",
+  "side_a": {
+   "position": "Yes, with network structure",
+   "claims": [
+    "Intransitive triads identify endogenous and exogenous effects (FoF IV)",
+    "Panel data, random shocks and structural models address correlated effects",
+    "Peers' idiosyncratic shocks as IV (Leary-Roberts; Georg et al.)"
+   ],
+   "sources": [
+    "iza-dp-no-2652",
+    "peer-effects-in-networks-a-survey",
+    "do-peer-firms-a\ufb00ect-corporate-financial-policy",
+    "similar-investors1"
+   ]
+  },
+  "side_b": {
+   "position": "Hard: many pitfalls",
+   "claims": [
+    "Outcome-on-group-mean regressions are vacuous (Angrist)",
+    "Exclusion bias with leave-out means and FE",
+    "FoF IVs weak in dense networks, invalid in sampled networks"
+   ],
+   "sources": [
+    "nber-working-paper-series-4",
+    "nber-working-paper-series-5",
+    "empirical-challenges-with-peers-of-peers-instruments",
+    "econometrics-of-sampled-networks"
+   ]
+  },
+  "evidence_quality_delta": "Both sides are methodological and correct within scope; side B sets the bar side A must clear.",
+  "scope_overlap": "Not a disagreement about truth: a checklist. The top-150 sample makes the sampled-network critique bite; full 13F universe fixes it.",
+  "decision_relevance": "high"
+ },
+ {
+  "cluster_id": "price-drift-novelty",
+  "fight": "Is price-drift contamination of turnover-based horizons a new finding?",
+  "side_a": {
+   "position": "CME: value-weight turnover is contaminated; share-based removes the VIX link",
+   "claims": [
+    "CME project result r=-0.53 -> -0.06"
+   ],
+   "sources": []
+  },
+  "side_b": {
+   "position": "Already handled by the standard measures",
+   "claims": [
+    "GMM churn nets out passive price changes",
+    "Yan-Zhang churn price-adjusted numerator",
+    "Modified Turnover vs buy-and-hold weights",
+    "Zhu, Chen-Lee-Sun use the same correction"
+   ],
+   "sources": [
+    "journal-of-financial-economics-76-2005-135165",
+    "institutional-investors-and-equity-returns",
+    "the-long-and-the-short-portfolio-turnover-ratios",
+    "crash-risk-and-investor-horizon"
+   ]
+  },
+  "evidence_quality_delta": "Side B decisive.",
+  "scope_overlap": "Resolved: pre-empted.",
+  "decision_relevance": "high"
+ },
+ {
+  "cluster_id": "short-horizon-good-or-bad",
+  "fight": "Are short-horizon institutions destabilising or informed/beneficial?",
+  "side_a": {
+   "position": "Destabilising",
+   "claims": [
+    "Short-term IO drives crash risk",
+    "High-turnover top institutions -> volatility",
+    "Short-horizon sell more in turmoil",
+    "Stock duration predicts idio vol"
+   ],
+   "sources": [
+    "crash-risk-and-investor-horizon",
+    "nber-working-paper-series-8",
+    "issn-0956-8549-717-2",
+    "electronic-copy-available-at-httpssrncomabstract1464954"
+   ]
+  },
+  "side_b": {
+   "position": "Informed/beneficial",
+   "claims": [
+    "Short-term institutions' trades forecast returns",
+    "Short-horizon investors help firms adapt",
+    "Short-horizon institutions drive ownership-valuation link"
+   ],
+   "sources": [
+    "institutional-investors-and-equity-returns",
+    "dp12021-adapting-to-radical-change-the-benefits-of-short-horizon-inves",
+    "institutional-investment-horizon"
+   ]
+  },
+  "evidence_quality_delta": "Both well-evidenced, different outcomes.",
+  "scope_overlap": "Scoped differently (stability vs information). Both right.",
+  "decision_relevance": "medium"
+ },
+ {
+  "cluster_id": "fmh-testable",
+  "fight": "Is the Fractal Market Hypothesis empirically testable at the investor level?",
+  "side_a": {
+   "position": "Tested on index data",
+   "claims": [
+    "FMH predictions fit index behaviour in GFC"
+   ],
+   "sources": [
+    "fractal-markets-hypothesis-and-the-global-financial-crisis"
+   ]
+  },
+  "side_b": {
+   "position": "Investor horizons not identifiable from data (2014 view)",
+   "claims": [
+    "Real data cannot identify horizons, so ABM results untested"
+   ],
+   "sources": [
+    "comses-catalog"
+   ]
+  },
+  "evidence_quality_delta": "Weak on both sides; holdings-based horizons answer side B.",
+  "scope_overlap": "Opportunity rather than conflict.",
+  "decision_relevance": "medium"
+ }
+]
