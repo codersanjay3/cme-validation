@@ -1,0 +1,52 @@
+{
+ "filings_checked": 316973,
+ "by_state": {
+  "ok": 304470,
+  "deflated": 9375,
+  "inflated": 3128
+ },
+ "inflated_by_filing_year": {
+  "2013": 159,
+  "2014": 341,
+  "2015": 373,
+  "2016": 350,
+  "2017": 298,
+  "2018": 310,
+  "2019": 295,
+  "2020": 307,
+  "2021": 314,
+  "2022": 341,
+  "2023": 15,
+  "2024": 14,
+  "2025": 7,
+  "2026": 4
+ },
+ "deflated_by_filing_year": {
+  "2013": 1,
+  "2014": 2,
+  "2015": 2,
+  "2016": 5,
+  "2017": 6,
+  "2018": 6,
+  "2019": 5,
+  "2020": 8,
+  "2021": 7,
+  "2022": 13,
+  "2023": 3822,
+  "2024": 2503,
+  "2025": 1854,
+  "2026": 1141
+ },
+ "inflated_pre_2023_share": 0.987,
+ "inflated_distinct_filers": 620,
+ "inflated_median_positions": 125,
+ "inflated_true_aum_usd_m_median": 295.1,
+ "inflated_as_read_aum_usd_bn_median": 295.1,
+ "inflated_as_read_aum_over_1tn": 686,
+ "inflated_top_position_as_read_over_all_true_holdings_median": 1.4,
+ "inflated_original_vs_amendment": {
+  "original": 2827,
+  "new_holdings": 154,
+  "restatement": 147
+ }
+}

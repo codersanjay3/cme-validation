@@ -1,0 +1,93 @@
+{
+ "window": [
+  "2019-10-01",
+  "2026-09-30"
+ ],
+ "forms": "497",
+ "queries": {
+  "\"passed away\" \"portfolio manager\"": {
+   "kind": "death",
+   "hits": 46
+  },
+  "\"untimely death\" \"portfolio manager\"": {
+   "kind": "death",
+   "hits": 3
+  },
+  "\"recent death\" \"portfolio manager\"": {
+   "kind": "death",
+   "hits": 7
+  },
+  "\"untimely passing\" \"portfolio manager\"": {
+   "kind": "death",
+   "hits": 1
+  },
+  "\"following the death\" \"portfolio manager\"": {
+   "kind": "death",
+   "hits": 1169
+  },
+  "\"due to the death\" \"portfolio manager\"": {
+   "kind": "death",
+   "hits": 601
+  },
+  "death_unique_filings": 1773,
+  "\"will retire\" \"portfolio manager\"": {
+   "kind": "retirement",
+   "hits": 538
+  },
+  "\"announced his retirement\" \"portfolio manager\"": {
+   "kind": "retirement",
+   "hits": 130
+  },
+  "\"announced her retirement\" \"portfolio manager\"": {
+   "kind": "retirement",
+   "hits": 33
+  },
+  "\"has retired\" \"portfolio manager\"": {
+   "kind": "retirement",
+   "hits": 74
+  },
+  "retirement_unique_filings": 748,
+  "\"no longer serve as a portfolio manager\"": {
+   "kind": "departure_any",
+   "hits": 1236
+  },
+  "\"no longer serves as a portfolio manager\"": {
+   "kind": "departure_any",
+   "hits": 572
+  },
+  "departure_any_unique_filings": 1794
+ },
+ "death": {
+  "filings_hit": 1773,
+  "filings_fetched": 1763,
+  "filings_pm_context": 14,
+  "trusts_pm_context": 10,
+  "fund_series_events": 30,
+  "events_by_year": {
+   "2019": 1,
+   "2020": 11,
+   "2021": 3,
+   "2022": 1,
+   "2023": 12,
+   "2024": 1,
+   "2025": 1
+  }
+ },
+ "retirement": {
+  "filings_hit": 748,
+  "filings_fetched": 748,
+  "filings_pm_context": 670,
+  "trusts_pm_context": 222,
+  "fund_series_events": 1896,
+  "events_by_year": {
+   "2019": 68,
+   "2020": 182,
+   "2021": 118,
+   "2022": 219,
+   "2023": 257,
+   "2024": 361,
+   "2025": 523,
+   "2026": 168
+  }
+ }
+}

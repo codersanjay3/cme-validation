@@ -1,0 +1,20 @@
+{
+ "announcements_on_equity_funds": 231,
+ "stated_date_found": 130,
+ "precision": {
+  "day": 121,
+  "month": 6,
+  "quarter": 2,
+  "year": 1
+ },
+ "lag_months_quantiles": {
+  "0.1": 0.5,
+  "0.25": 1.5,
+  "0.5": 4.5,
+  "0.75": 7.6,
+  "0.9": 12.3
+ },
+ "share_lag_at_least_3_months": 0.593,
+ "share_lag_at_least_6_months": 0.341,
+ "lag_outside_minus1_to_36_months": 7
+}

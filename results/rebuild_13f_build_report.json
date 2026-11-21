@@ -1,0 +1,401 @@
+{
+ "zips": 54,
+ "holdings_filings": 322015,
+ "amendment_kinds": {
+  "original": 306647,
+  "restatement": 10404,
+  "new_holdings": 4964
+ },
+ "reports_used": 306671,
+ "rows_by_date_in_thousands": 64331574,
+ "rows_by_date_in_dollars": 42713518,
+ "accessions_rescaled_up": 8754,
+ "accessions_rescaled_down": 2723,
+ "positions": 75963777,
+ "institutions": 13124,
+ "periods": [
+  "2013Q1",
+  "2013Q2",
+  "2013Q3",
+  "2013Q4",
+  "2014Q1",
+  "2014Q2",
+  "2014Q3",
+  "2014Q4",
+  "2015Q1",
+  "2015Q2",
+  "2015Q3",
+  "2015Q4",
+  "2016Q1",
+  "2016Q2",
+  "2016Q3",
+  "2016Q4",
+  "2017Q1",
+  "2017Q2",
+  "2017Q3",
+  "2017Q4",
+  "2018Q1",
+  "2018Q2",
+  "2018Q3",
+  "2018Q4",
+  "2019Q1",
+  "2019Q2",
+  "2019Q3",
+  "2019Q4",
+  "2020Q1",
+  "2020Q2",
+  "2020Q3",
+  "2020Q4",
+  "2021Q1",
+  "2021Q2",
+  "2021Q3",
+  "2021Q4",
+  "2022Q1",
+  "2022Q2",
+  "2022Q3",
+  "2022Q4",
+  "2023Q1",
+  "2023Q2",
+  "2023Q3",
+  "2023Q4",
+  "2024Q1",
+  "2024Q2",
+  "2024Q3",
+  "2024Q4",
+  "2025Q1",
+  "2025Q2",
+  "2025Q3",
+  "2025Q4",
+  "2026Q1",
+  "2026Q2"
+ ],
+ "tau_rows": 287197,
+ "tau_median": 646.8164728541042,
+ "per_zip": {
+  "01dec2024-28feb2025_form13f.zip": {
+   "submissions": 10605,
+   "infotable_rows": 3362299,
+   "holdings_filings": 8721,
+   "rows_dropped_not_shares_or_options": 162461
+  },
+  "01dec2025-28feb2026_form13f.zip": {
+   "submissions": 11372,
+   "infotable_rows": 3473209,
+   "holdings_filings": 9364,
+   "rows_dropped_not_shares_or_options": 141467
+  },
+  "01jan2024-29feb2024_form13f.zip": {
+   "submissions": 9433,
+   "infotable_rows": 2848736,
+   "holdings_filings": 7755,
+   "rows_dropped_not_shares_or_options": 169134
+  },
+  "01jun2024-31aug2024_form13f.zip": {
+   "submissions": 10117,
+   "infotable_rows": 3278515,
+   "holdings_filings": 8125,
+   "rows_dropped_not_shares_or_options": 146670
+  },
+  "01jun2025-31aug2025_form13f.zip": {
+   "submissions": 10799,
+   "infotable_rows": 3360306,
+   "holdings_filings": 8811,
+   "rows_dropped_not_shares_or_options": 149563
+  },
+  "01jun2026-31aug2026_form13f.zip": {
+   "submissions": 11852,
+   "infotable_rows": 3830274,
+   "holdings_filings": 9900,
+   "rows_dropped_not_shares_or_options": 138769
+  },
+  "01mar2024-31may2024_form13f.zip": {
+   "submissions": 9884,
+   "infotable_rows": 3026705,
+   "holdings_filings": 8130,
+   "rows_dropped_not_shares_or_options": 149169
+  },
+  "01mar2025-31may2025_form13f.zip": {
+   "submissions": 10765,
+   "infotable_rows": 3440002,
+   "holdings_filings": 8898,
+   "rows_dropped_not_shares_or_options": 150559
+  },
+  "01mar2026-31may2026_form13f.zip": {
+   "submissions": 11761,
+   "infotable_rows": 3822885,
+   "holdings_filings": 9716,
+   "rows_dropped_not_shares_or_options": 161234
+  },
+  "01sep2024-30nov2024_form13f.zip": {
+   "submissions": 9891,
+   "infotable_rows": 3201864,
+   "holdings_filings": 8123,
+   "rows_dropped_not_shares_or_options": 157594
+  },
+  "01sep2025-30nov2025_form13f.zip": {
+   "submissions": 10422,
+   "infotable_rows": 3267091,
+   "holdings_filings": 8570,
+   "rows_dropped_not_shares_or_options": 142295
+  },
+  "2013q2_form13f.zip": {
+   "submissions": 166,
+   "infotable_rows": 87715,
+   "holdings_filings": 141,
+   "rows_dropped_not_shares_or_options": 11971
+  },
+  "2013q3_form13f.zip": {
+   "submissions": 5227,
+   "infotable_rows": 1533636,
+   "holdings_filings": 3803,
+   "rows_dropped_not_shares_or_options": 113003
+  },
+  "2013q4_form13f.zip": {
+   "submissions": 5043,
+   "infotable_rows": 1519317,
+   "holdings_filings": 3679,
+   "rows_dropped_not_shares_or_options": 120173
+  },
+  "2014q1_form13f.zip": {
+   "submissions": 5425,
+   "infotable_rows": 1584857,
+   "holdings_filings": 4038,
+   "rows_dropped_not_shares_or_options": 140012
+  },
+  "2014q2_form13f.zip": {
+   "submissions": 5415,
+   "infotable_rows": 1588232,
+   "holdings_filings": 4014,
+   "rows_dropped_not_shares_or_options": 128465
+  },
+  "2014q3_form13f.zip": {
+   "submissions": 5482,
+   "infotable_rows": 1638747,
+   "holdings_filings": 4082,
+   "rows_dropped_not_shares_or_options": 131458
+  },
+  "2014q4_form13f.zip": {
+   "submissions": 5465,
+   "infotable_rows": 1636491,
+   "holdings_filings": 4050,
+   "rows_dropped_not_shares_or_options": 152876
+  },
+  "2015q1_form13f.zip": {
+   "submissions": 6045,
+   "infotable_rows": 1768828,
+   "holdings_filings": 4496,
+   "rows_dropped_not_shares_or_options": 158637
+  },
+  "2015q2_form13f.zip": {
+   "submissions": 5914,
+   "infotable_rows": 1711601,
+   "holdings_filings": 4401,
+   "rows_dropped_not_shares_or_options": 128117
+  },
+  "2015q3_form13f.zip": {
+   "submissions": 6000,
+   "infotable_rows": 1772870,
+   "holdings_filings": 4488,
+   "rows_dropped_not_shares_or_options": 128125
+  },
+  "2015q4_form13f.zip": {
+   "submissions": 5975,
+   "infotable_rows": 1695347,
+   "holdings_filings": 4454,
+   "rows_dropped_not_shares_or_options": 113667
+  },
+  "2016q1_form13f.zip": {
+   "submissions": 6072,
+   "infotable_rows": 1710477,
+   "holdings_filings": 4539,
+   "rows_dropped_not_shares_or_options": 118697
+  },
+  "2016q2_form13f.zip": {
+   "submissions": 6034,
+   "infotable_rows": 1747959,
+   "holdings_filings": 4509,
+   "rows_dropped_not_shares_or_options": 109055
+  },
+  "2016q3_form13f.zip": {
+   "submissions": 6007,
+   "infotable_rows": 1742410,
+   "holdings_filings": 4499,
+   "rows_dropped_not_shares_or_options": 131193
+  },
+  "2016q4_form13f.zip": {
+   "submissions": 5994,
+   "infotable_rows": 1716138,
+   "holdings_filings": 4506,
+   "rows_dropped_not_shares_or_options": 105332
+  },
+  "2017q1_form13f.zip": {
+   "submissions": 6210,
+   "infotable_rows": 1805106,
+   "holdings_filings": 4657,
+   "rows_dropped_not_shares_or_options": 126304
+  },
+  "2017q2_form13f.zip": {
+   "submissions": 6218,
+   "infotable_rows": 1790999,
+   "holdings_filings": 4687,
+   "rows_dropped_not_shares_or_options": 105661
+  },
+  "2017q3_form13f.zip": {
+   "submissions": 6207,
+   "infotable_rows": 1746541,
+   "holdings_filings": 4678,
+   "rows_dropped_not_shares_or_options": 95843
+  },
+  "2017q4_form13f.zip": {
+   "submissions": 6174,
+   "infotable_rows": 1801866,
+   "holdings_filings": 4626,
+   "rows_dropped_not_shares_or_options": 96808
+  },
+  "2018q1_form13f.zip": {
+   "submissions": 6570,
+   "infotable_rows": 1879731,
+   "holdings_filings": 4998,
+   "rows_dropped_not_shares_or_options": 101804
+  },
+  "2018q2_form13f.zip": {
+   "submissions": 6622,
+   "infotable_rows": 1925787,
+   "holdings_filings": 5060,
+   "rows_dropped_not_shares_or_options": 107188
+  },
+  "2018q3_form13f.zip": {
+   "submissions": 6647,
+   "infotable_rows": 1934475,
+   "holdings_filings": 5068,
+   "rows_dropped_not_shares_or_options": 104336
+  },
+  "2018q4_form13f.zip": {
+   "submissions": 6659,
+   "infotable_rows": 2040197,
+   "holdings_filings": 5093,
+   "rows_dropped_not_shares_or_options": 126186
+  },
+  "2019q1_form13f.zip": {
+   "submissions": 6887,
+   "infotable_rows": 1945558,
+   "holdings_filings": 5309,
+   "rows_dropped_not_shares_or_options": 135923
+  },
+  "2019q2_form13f.zip": {
+   "submissions": 7144,
+   "infotable_rows": 2301992,
+   "holdings_filings": 5513,
+   "rows_dropped_not_shares_or_options": 151369
+  },
+  "2019q3_form13f.zip": {
+   "submissions": 6932,
+   "infotable_rows": 2116186,
+   "holdings_filings": 5358,
+   "rows_dropped_not_shares_or_options": 158212
+  },
+  "2019q4_form13f.zip": {
+   "submissions": 6981,
+   "infotable_rows": 2116307,
+   "holdings_filings": 5334,
+   "rows_dropped_not_shares_or_options": 158759
+  },
+  "2020q1_form13f.zip": {
+   "submissions": 7285,
+   "infotable_rows": 2159065,
+   "holdings_filings": 5712,
+   "rows_dropped_not_shares_or_options": 149546
+  },
+  "2020q2_form13f.zip": {
+   "submissions": 7296,
+   "infotable_rows": 2163834,
+   "holdings_filings": 5740,
+   "rows_dropped_not_shares_or_options": 162058
+  },
+  "2020q3_form13f.zip": {
+   "submissions": 7157,
+   "infotable_rows": 2089408,
+   "holdings_filings": 5633,
+   "rows_dropped_not_shares_or_options": 193735
+  },
+  "2020q4_form13f.zip": {
+   "submissions": 7237,
+   "infotable_rows": 2156794,
+   "holdings_filings": 5686,
+   "rows_dropped_not_shares_or_options": 229987
+  },
+  "2021q1_form13f.zip": {
+   "submissions": 7883,
+   "infotable_rows": 2454113,
+   "holdings_filings": 6295,
+   "rows_dropped_not_shares_or_options": 212300
+  },
+  "2021q2_form13f.zip": {
+   "submissions": 7927,
+   "infotable_rows": 2376681,
+   "holdings_filings": 6307,
+   "rows_dropped_not_shares_or_options": 198763
+  },
+  "2021q3_form13f.zip": {
+   "submissions": 8096,
+   "infotable_rows": 2660728,
+   "holdings_filings": 6414,
+   "rows_dropped_not_shares_or_options": 193940
+  },
+  "2021q4_form13f.zip": {
+   "submissions": 7985,
+   "infotable_rows": 2569324,
+   "holdings_filings": 6345,
+   "rows_dropped_not_shares_or_options": 199217
+  },
+  "2022q1_form13f.zip": {
+   "submissions": 8921,
+   "infotable_rows": 2684317,
+   "holdings_filings": 7159,
+   "rows_dropped_not_shares_or_options": 191216
+  },
+  "2022q2_form13f.zip": {
+   "submissions": 8906,
+   "infotable_rows": 2603731,
+   "holdings_filings": 7187,
+   "rows_dropped_not_shares_or_options": 144060
+  },
+  "2022q3_form13f.zip": {
+   "submissions": 8948,
+   "infotable_rows": 2632327,
+   "holdings_filings": 7214,
+   "rows_dropped_not_shares_or_options": 138862
+  },
+  "2022q4_form13f.zip": {
+   "submissions": 9010,
+   "infotable_rows": 2622058,
+   "holdings_filings": 7206,
+   "rows_dropped_not_shares_or_options": 142339
+  },
+  "2023q1_form13f.zip": {
+   "submissions": 9201,
+   "infotable_rows": 2786017,
+   "holdings_filings": 7522,
+   "rows_dropped_not_shares_or_options": 151222
+  },
+  "2023q2_form13f.zip": {
+   "submissions": 9113,
+   "infotable_rows": 2672308,
+   "holdings_filings": 7410,
+   "rows_dropped_not_shares_or_options": 151778
+  },
+  "2023q3_form13f.zip": {
+   "submissions": 9108,
+   "infotable_rows": 2724039,
+   "holdings_filings": 7413,
+   "rows_dropped_not_shares_or_options": 154335
+  },
+  "2023q4_form13f.zip": {
+   "submissions": 9196,
+   "infotable_rows": 2886468,
+   "holdings_filings": 7519,
+   "rows_dropped_not_shares_or_options": 173838
+  },
+  "_filings_dropped_period_before_2013Q1": 940
+ }
+}

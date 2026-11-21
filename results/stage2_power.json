@@ -1,0 +1,150 @@
+{
+ "b_stage1": 0.0324,
+ "sigma_within_y": 0.461,
+ "k": 10,
+ "grid": [
+  {
+   "shocks": 30,
+   "exposed_obs": 300,
+   "first_stage_delta": 0.25,
+   "mde_b": 2.981,
+   "mde_over_stage1_b": 92.0
+  },
+  {
+   "shocks": 30,
+   "exposed_obs": 300,
+   "first_stage_delta": 0.5,
+   "mde_b": 1.49,
+   "mde_over_stage1_b": 46.0
+  },
+  {
+   "shocks": 30,
+   "exposed_obs": 300,
+   "first_stage_delta": 1.0,
+   "mde_b": 0.745,
+   "mde_over_stage1_b": 23.0
+  },
+  {
+   "shocks": 100,
+   "exposed_obs": 1000,
+   "first_stage_delta": 0.25,
+   "mde_b": 1.633,
+   "mde_over_stage1_b": 50.4
+  },
+  {
+   "shocks": 100,
+   "exposed_obs": 1000,
+   "first_stage_delta": 0.5,
+   "mde_b": 0.816,
+   "mde_over_stage1_b": 25.2
+  },
+  {
+   "shocks": 100,
+   "exposed_obs": 1000,
+   "first_stage_delta": 1.0,
+   "mde_b": 0.408,
+   "mde_over_stage1_b": 12.6
+  },
+  {
+   "shocks": 300,
+   "exposed_obs": 3000,
+   "first_stage_delta": 0.25,
+   "mde_b": 0.943,
+   "mde_over_stage1_b": 29.1
+  },
+  {
+   "shocks": 300,
+   "exposed_obs": 3000,
+   "first_stage_delta": 0.5,
+   "mde_b": 0.471,
+   "mde_over_stage1_b": 14.5
+  },
+  {
+   "shocks": 300,
+   "exposed_obs": 3000,
+   "first_stage_delta": 1.0,
+   "mde_b": 0.236,
+   "mde_over_stage1_b": 7.3
+  },
+  {
+   "shocks": 1000,
+   "exposed_obs": 10000,
+   "first_stage_delta": 0.25,
+   "mde_b": 0.516,
+   "mde_over_stage1_b": 15.9
+  },
+  {
+   "shocks": 1000,
+   "exposed_obs": 10000,
+   "first_stage_delta": 0.5,
+   "mde_b": 0.258,
+   "mde_over_stage1_b": 8.0
+  },
+  {
+   "shocks": 1000,
+   "exposed_obs": 10000,
+   "first_stage_delta": 1.0,
+   "mde_b": 0.129,
+   "mde_over_stage1_b": 4.0
+  },
+  {
+   "shocks": 3000,
+   "exposed_obs": 30000,
+   "first_stage_delta": 0.25,
+   "mde_b": 0.298,
+   "mde_over_stage1_b": 9.2
+  },
+  {
+   "shocks": 3000,
+   "exposed_obs": 30000,
+   "first_stage_delta": 0.5,
+   "mde_b": 0.149,
+   "mde_over_stage1_b": 4.6
+  },
+  {
+   "shocks": 3000,
+   "exposed_obs": 30000,
+   "first_stage_delta": 1.0,
+   "mde_b": 0.075,
+   "mde_over_stage1_b": 2.3
+  }
+ ],
+ "event_counts_used": {
+  "equity_series_quarters_used": [
+   "equity_series_2023q1.csv"
+  ],
+  "death": {
+   "fund_series_events": 30,
+   "on_equity_funds": 17,
+   "on_equity_funds_nav_100m": 11,
+   "on_equity_funds_in_window": 16,
+   "distinct_announcements_on_equity_funds": 6,
+   "distinct_trusts_on_equity_funds": 6,
+   "equity_events_by_year": {
+    "2019": 1,
+    "2020": 3,
+    "2021": 2,
+    "2022": 1,
+    "2023": 10
+   }
+  },
+  "retirement": {
+   "fund_series_events": 1896,
+   "on_equity_funds": 938,
+   "on_equity_funds_nav_100m": 821,
+   "on_equity_funds_in_window": 887,
+   "distinct_announcements_on_equity_funds": 231,
+   "distinct_trusts_on_equity_funds": 129,
+   "equity_events_by_year": {
+    "2019": 27,
+    "2020": 68,
+    "2021": 58,
+    "2022": 112,
+    "2023": 135,
+    "2024": 230,
+    "2025": 243,
+    "2026": 65
+   }
+  }
+ }
+}
