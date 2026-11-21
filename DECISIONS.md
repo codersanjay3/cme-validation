@@ -88,3 +88,11 @@ Where the project stands, so no agent has to rediscover it.
 - Meaning: deaths fail the count gate; retirements pass it, but the count gate was the wrong test. A single-neighbour manager-shock design cannot identify an effect of the Stage 1 size. Recommendation in FEASIBILITY.md: switch the headline to idea 2 with Stage 1 as a descriptive section (option 1), or find shocks that move many neighbours at once (option 2).
 - Open: team decision on the pivot (cme-x59); if Stage 2 continues, download all 28 N-PORT zips, build the fund panel and measure the retirement first stage; manual pass over death filings.
 - Beads/issues: cme-i7t, cme-x59.
+
+## 2026-11-21 sumedh-agent: idea search round 2 (data scoping)
+- Changed: new `scoping/wrong_unit_filings.py`, `scoping/retirement_windows.py`, `results/scoping_wrong_unit_filings.json`, `results/scoping_retirement_windows.json`. Ranked write-up on branch `sumedh-agent/novelty-audit` (`docs/novelty-audit/ideas-round2-2026-11-21.md`). No existing script or paper number changed.
+- Numbers (new, scoping only): 3,128 of 316,973 13F filings read 1000x too large under the rule in force (620 filers, about 300 a year 2014 to 2022), 9,375 read 1000x too small (almost all after 2023). Retirement announcements on N-PORT equity funds: 130 of 231 state a retirement date; median lag 4.5 months, 59% at least 3 months.
+- Why: the team rejected both Stage 2 fallbacks; user asked for more ideas.
+- Meaning: recommended next idea is lame-duck managers (planned retirements and fund horizons), with fake whales second. Vote recall is close to pre-empted (Li and Zhu 2025).
+- Open: manual SSRN and CNKI search for idea 1; team decision (cme-x59).
+- Beads/issues: cme-x59.
