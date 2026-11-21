@@ -6,6 +6,7 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 
 ## Start here
 
+- [`ideas-round2-2026-11-21.md`](ideas-round2-2026-11-21.md): second idea search after Stage 2 scoping (six new candidates, ranked).
 - [`IDEAS.md`](IDEAS.md): every project idea found, ranked, with novelty status, closest papers, design and journals.
 - [`report.md`](report.md): the full audit report (literature map, novelty verdict per pivot, recommendation, journals, identification, referee objections). **Final: passed every ship check** (10,691 words, 89 sources cited, 40 citations per 1,000 words, all quotes verbatim, no retracted sources).
 - [`sources.csv`](sources.csv): bibliography of every source in the research vault (metadata and our one-line summaries only; full texts are not committed).
@@ -51,6 +52,7 @@ A literature review and novelty audit to decide how to pivot the CME paper into 
 
 ## Log
 
+- 2026-11-21: idea search round 2 (`ideas-round2-2026-11-21.md`). Six new candidates checked against the literature and our data. Recommended: lame-duck managers (planned retirements as a dated end of a manager's career; does the fund's horizon shorten or lengthen?), core open, data ready (231 announcements, median 4.5-month window). Second: fake whales (3,128 13F filings that read 1000x too large as a salience experiment), open but first stage unproven. Vote recall is close to pre-empted (Li and Zhu 2025). SSRN still needs a manual search.
 - 2026-11-19: Stage 2 feasibility with free data (PR #7, `docs/stage2/FEASIBILITY.md` on branch `sumedh-agent/stage2-nport`). N-PORT data sets give fund-level share counts and CUSIPs (2019Q4 to 2026Q3; 6,478 equity funds per quarter). Form 497 manager events link to N-PORT through filing-header series IDs: deaths 6 announcements on equity funds (fails the count gate), retirements 231 (passes). Power check: one shocked neighbour of 10 moves the peer variable by a tenth of the shock, so the design can only detect effects 15x to 25x the Stage 1 slope. Recommendation: switch the headline to idea 2 with Stage 1 as a descriptive section, or scope shocks that hit many neighbours at once. Team decision needed (bead cme-x59).
 - 2026-11-19: Stage 1 done, both pre-registered gates pass (PR #6, `docs/stage1/` on branch `sumedh-agent/stage1-tests`). 1a: 30.4% of horizon variance moves within institutions (gate 10%). 1b: neighbours' horizon in stocks the institution did not hold predicts its next-quarter horizon, b = +0.032 (t = 5.3); future-neighbour placebo negative, shuffled placebo zero. Small and descriptive; Stage 2 (manager shocks) next, bead cme-i7t.
 - 2026-11-19: Stage 0 done. Full-universe 13F panel built from the SEC data sets (322k filings, 13,124 institutions, 287k institution-quarter horizons, 2013Q1 to 2026Q2), validated against the top-150 panel (rank correlation 0.934), shared as release `data-rebuild-v1` (PR #4).
