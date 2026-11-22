@@ -7,7 +7,10 @@ Prospectus turnover = lesser of purchases or sales over average net assets, for 
 fiscal year, including trades inside the quarter. Holdings-based annual turnover here
 = sum of the series' quarterly share-based turnovers (nport_panel_data/tau.parquet)
 over the 12 months ending at the prospectus period date (ddate), requiring 4
-transitions. Holdings-based turnover misses intra-quarter round trips, so it should
+transitions. Three holdings measures: share-based (average of buys and sells),
+split-rebased, and min(buys, sells), the prospectus definition, which nets out
+flow-driven trades. Reported for all funds and for equity funds (at least 20 stocks
+in every quarter of the window). Holdings-based turnover misses intra-quarter round trips, so it should
 sit below the reported rate; the test is how well the two rank funds.
 
 Downloads the Risk/Return data sets for 2019 onward into nport_cache/rr/ (needs
@@ -69,17 +72,23 @@ def main():
         for d, v in zip(p.ddate, p.reported):
             w = g[(g.report_date > d - pd.DateOffset(months=12)) & (g.report_date <= d + pd.DateOffset(days=5))]
             if len(w) == 4:
-                out.append((s, d, v, float(w.turnover.sum()), float(w.turnover_split.sum())))
-    m = pd.DataFrame(out, columns=["series", "ddate", "reported", "holdings", "holdings_split"])
+                out.append((s, d, v, float(w.turnover.sum()), float(w.turnover_split.sum()),
+                            float(w.turnover_min.sum()), int(w.n_stocks.min())))
+    m = pd.DataFrame(out, columns=["series", "ddate", "reported", "holdings", "holdings_split", "holdings_min", "min_stocks"])
     m = m[(m.reported > 0) & (m.reported < 20)]
-    res = {"prospectus_values": int(len(rep)), "matched_fund_years": int(len(m)), "funds": int(m.series.nunique())}
-    if len(m):
-        for c in ("holdings", "holdings_split"):
-            res[c] = {"spearman_with_reported": round(float(m[c].rank().corr(m.reported.rank())), 3),
-                      "pearson_log": round(float(np.corrcoef(np.log(m[c].clip(1e-3)), np.log(m.reported.clip(1e-3)))[0, 1]), 3),
-                      "median_ratio_to_reported": round(float((m[c] / m.reported).median()), 3),
-                      "share_below_reported": round(float((m[c] < m.reported).mean()), 3)}
-        res["reported_median"] = round(float(m.reported.median()), 3)
+
+    def stats(d):
+        r = {"matched_fund_years": int(len(d)), "funds": int(d.series.nunique()),
+             "reported_median": round(float(d.reported.median()), 3)}
+        for c in ("holdings", "holdings_split", "holdings_min"):
+            r[c] = {"spearman_with_reported": round(float(d[c].rank().corr(d.reported.rank())), 3),
+                    "pearson_log": round(float(np.corrcoef(np.log(d[c].clip(1e-3)), np.log(d.reported.clip(1e-3)))[0, 1]), 3),
+                    "median_ratio_to_reported": round(float((d[c] / d.reported).median()), 3),
+                    "share_below_reported": round(float((d[c] < d.reported).mean()), 3)}
+        return r
+
+    res = {"prospectus_values": int(len(rep)), "all_funds": stats(m),
+           "equity_funds_min20_stocks": stats(m[m.min_stocks >= 20])}
     json.dump(res, open(ROOT / "results" / "nport_turnover_validation.json", "w"), indent=1)
     print(json.dumps(res, indent=1))
 

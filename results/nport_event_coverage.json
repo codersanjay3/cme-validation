@@ -1,0 +1,30 @@
+{
+ "all_series": {
+  "series_events": 1896,
+  "announcements": 462,
+  "with_2pre": 1633,
+  "with_2pre_and_2post": 1451,
+  "with_date_2pre_1lame_2post": 403,
+  "announcements_with_date_2pre_1lame_2post": 136
+ },
+ "equity_funds": {
+  "series_events": 714,
+  "announcements": 197,
+  "with_2pre": 663,
+  "with_2pre_and_2post": 596,
+  "with_date_2pre_1lame_2post": 122,
+  "announcements_with_date_2pre_1lame_2post": 46
+ },
+ "power": {
+  "sd_log_turnover_within": 0.642,
+  "mde_log_points": {
+   "N=46,L=1": 0.265,
+   "N=46,L=2": 0.188,
+   "N=100,L=1": 0.18,
+   "N=100,L=2": 0.127,
+   "N=200,L=1": 0.127,
+   "N=200,L=2": 0.09
+  }
+ },
+ "note": "counts only; no outcomes read by event time"
+}

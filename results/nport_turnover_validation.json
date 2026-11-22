@@ -1,0 +1,49 @@
+{
+ "prospectus_values": 85890,
+ "all_funds": {
+  "matched_fund_years": 40783,
+  "funds": 10404,
+  "reported_median": 0.39,
+  "holdings": {
+   "spearman_with_reported": 0.698,
+   "pearson_log": 0.531,
+   "median_ratio_to_reported": 1.07,
+   "share_below_reported": 0.437
+  },
+  "holdings_split": {
+   "spearman_with_reported": 0.699,
+   "pearson_log": 0.531,
+   "median_ratio_to_reported": 1.067,
+   "share_below_reported": 0.44
+  },
+  "holdings_min": {
+   "spearman_with_reported": 0.626,
+   "pearson_log": 0.397,
+   "median_ratio_to_reported": 0.672,
+   "share_below_reported": 0.837
+  }
+ },
+ "equity_funds_min20_stocks": {
+  "matched_fund_years": 27866,
+  "funds": 7082,
+  "reported_median": 0.4,
+  "holdings": {
+   "spearman_with_reported": 0.79,
+   "pearson_log": 0.767,
+   "median_ratio_to_reported": 1.076,
+   "share_below_reported": 0.419
+  },
+  "holdings_split": {
+   "spearman_with_reported": 0.79,
+   "pearson_log": 0.768,
+   "median_ratio_to_reported": 1.073,
+   "share_below_reported": 0.423
+  },
+  "holdings_min": {
+   "spearman_with_reported": 0.791,
+   "pearson_log": 0.702,
+   "median_ratio_to_reported": 0.765,
+   "share_below_reported": 0.809
+  }
+ }
+}

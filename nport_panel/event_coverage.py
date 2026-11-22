@@ -12,10 +12,12 @@ last report before the announcement.
 Windows (report dates): pre = before the announcement month; lame duck = from the
 announcement month to the stated retirement date; post = after the retirement date.
 Run from the repo root: python nport_panel/event_coverage.py
+Also a power check from whole-panel variance (not event-aligned).
 Output: results/nport_event_coverage.json. Deterministic.
 """
 import json
 from pathlib import Path
+import numpy as np
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,7 +57,21 @@ def summary(d):
             "announcements_with_date_2pre_1lame_2post": int(d[d.has_date & (d.pre >= 2) & (d.lame >= 1) & (d.post >= 2)].adsh.nunique())}
 
 
-out = {"all_series": summary(c), "equity_funds": summary(eqc),
-       "note": "counts only; no outcomes read"}
+# Power, from the whole panel only (not aligned to any event, so the design stays blind):
+# within-fund sd of log share-based turnover on equity funds, after fund and quarter means.
+# MDE (80% power, 5% two-sided) for the mean lame-duck shift across N independent events,
+# each averaging L lame-duck reports: 2.8 * sd / sqrt(N * L), ignoring serial correlation.
+t = pd.read_parquet(D / "tau.parquet", columns=["series_id", "period", "turnover_split", "n_stocks"])
+t = t[(t.n_stocks >= 20) & (t.turnover_split > 1e-3)].copy()
+t["y"] = np.log(t.turnover_split)
+t["y"] = t.y - t.groupby("series_id").y.transform("mean")
+t["y"] = t.y - t.groupby("period").y.transform("mean")
+sd = float(t.y.std())
+n_ann = summary(eqc)["announcements_with_date_2pre_1lame_2post"]
+power = {"sd_log_turnover_within": round(sd, 3),
+         "mde_log_points": {f"N={n},L={L}": round(2.8 * sd / np.sqrt(n * L), 3)
+                            for n in (n_ann, 100, 200) for L in (1, 2)}}
+out = {"all_series": summary(c), "equity_funds": summary(eqc), "power": power,
+       "note": "counts only; no outcomes read by event time"}
 json.dump(out, open(ROOT / "results" / "nport_event_coverage.json", "w"), indent=1)
 print(json.dumps(out, indent=1))

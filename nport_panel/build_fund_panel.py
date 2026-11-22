@@ -28,6 +28,9 @@ Rules:
    half a position for a reverse split; N-PORT's monthly prices allow the check.)
    tau = 63 / turnover (quarterly turnover; same definition as the 13F panel),
    clipped to [5, 2000]. Turnover is scaled to a 3-month gap by 3 / gap_months.
+   turnover_min (split-rebased) = min(purchases, sales) / average value, the
+   prospectus definition, which nets out flow-driven buying or selling. It is used
+   to validate against reported turnover; tau stays on the share-based turnover.
 5. Calendar period of a report = calendar quarter of REPORT_DATE.
 
 Outputs (nport_panel/ in the repo root, gitignored):
@@ -36,7 +39,7 @@ Outputs (nport_panel/ in the repo root, gitignored):
                          monthly flows and returns (median across share classes), counts
   holdings/<YYYY-MM>.parquet   series_id, report_date, cusip, shares, value_usd
   tau.parquet            series_id, report_date, prev_report_date, gap_months, period,
-                         turnover, turnover_split, tau, tau_split, n_stocks, eq_value_usd
+                         turnover, turnover_split, turnover_min, tau, tau_split, n_stocks, eq_value_usd
   build_report.json      counts at every step
 Usage: python nport_panel/build_fund_panel.py [--cache nport_cache] [--out nport_panel_data]
 Deterministic.
@@ -128,12 +131,16 @@ def turnover_pairs(cur, prev, price_cur, price_prev):
     m = m.dropna(subset=["p"])
     m["shares_0s"] = split_rebase(m.shares_0.to_numpy(), m.shares_1.to_numpy(),
                                   (m.cusip.map(price_cur) / m.cusip.map(price_prev)).to_numpy())
-    g = m.assign(tr=(m.shares_1 - m.shares_0).abs() * m.p, trs=(m.shares_1 - m.shares_0s).abs() * m.p,
+    d = m.shares_1 - m.shares_0s
+    g = m.assign(tr=(m.shares_1 - m.shares_0).abs() * m.p, trs=d.abs() * m.p,
+                 buy=d.clip(lower=0) * m.p, sell=(-d).clip(lower=0) * m.p,
                  v0=m.shares_0 * m.p, v0s=m.shares_0s * m.p, v1=m.shares_1 * m.p).groupby("pair_id")
-    t = g[["tr", "trs", "v0", "v0s", "v1"]].sum()
+    t = g[["tr", "trs", "buy", "sell", "v0", "v0s", "v1"]].sum()
     t["turnover"] = 0.5 * t.tr / (0.5 * (t.v0 + t.v1))
     t["turnover_split"] = 0.5 * t.trs / (0.5 * (t.v0s + t.v1))
-    return t[["turnover", "turnover_split"]]
+    # prospectus definition: lesser of purchases or sales over average value (flows net out)
+    t["turnover_min"] = np.minimum(t.buy, t.sell) / (0.5 * (t.v0s + t.v1))
+    return t[["turnover", "turnover_split", "turnover_min"]]
 
 
 def build_tau(reports, holddir):
@@ -170,7 +177,7 @@ def build_tau(reports, holddir):
         for m in [k for k in cache if k < (pd.Timestamp(m1 + "-01") - pd.DateOffset(months=5)).strftime("%Y-%m")]:
             cache.pop(m); price.pop(m)
     tau = pd.concat(out, ignore_index=True)
-    for c in ("turnover", "turnover_split"):
+    for c in ("turnover", "turnover_split", "turnover_min"):
         tau[c] = tau[c] * 3.0 / tau.gap_months
     for c, n in (("turnover", "tau"), ("turnover_split", "tau_split")):
         tau[n] = np.clip(63.0 / tau[c].where(tau[c] > 1e-3), TAU_LO, TAU_HI)

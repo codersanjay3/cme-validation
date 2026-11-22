@@ -16,5 +16,7 @@
  },
  "share_lag_at_least_3_months": 0.593,
  "share_lag_at_least_6_months": 0.341,
- "lag_outside_minus1_to_36_months": 7
+ "lag_outside_minus1_to_36_months": 7,
+ "all_retirement_announcements": 462,
+ "all_stated_date_found": 255
 }
