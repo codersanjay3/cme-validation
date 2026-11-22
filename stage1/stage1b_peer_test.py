@@ -76,7 +76,9 @@ def neighbour_table(p0, p1, price_t, price_prev):
     m = m.dropna(subset=["p"])
     both = (m.shares_0 > 0) & (m.shares_1 > 0)
     m["s0"] = m.shares_0.astype("float64")
-    m.loc[both, "s0"] = bp._split_rebase(m.loc[both, "shares_0"].to_numpy(), m.loc[both, "shares_1"].to_numpy())
+    pratio = (m.cusip.map(price_t) / m.cusip.map(price_prev)).to_numpy()
+    m.loc[both, "s0"] = bp._split_rebase(m.loc[both, "shares_0"].to_numpy(), m.loc[both, "shares_1"].to_numpy(),
+                                         pratio[both.to_numpy()])
     m["tr"] = (m.shares_1 - m.s0).abs() * m.p
     m["v0"], m["v1"] = m.s0 * m.p, m.shares_1 * m.p
     return m[["cik", "cusip", "tr", "v0", "v1"]].rename(columns={"cik": "j"})

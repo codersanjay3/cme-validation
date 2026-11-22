@@ -1,15 +1,15 @@
 {
- "n_institution_quarters": 214123,
+ "n_institution_quarters": 214188,
  "n_institutions": 9278,
  "n_quarters": 52,
- "var_log_tau": 0.7671,
+ "var_log_tau": 0.7803,
  "share_of_variance_left_after": {
-  "institution": 0.3241,
-  "quarter": 0.976,
-  "institution+quarter": 0.3042,
-  "institution+style_by_quarter": 0.0425
+  "institution": 0.3289,
+  "quarter": 0.9762,
+  "institution+quarter": 0.3089,
+  "institution+style_by_quarter": 0.0417
  },
- "ar1_log_tau": 0.753,
+ "ar1_log_tau": 0.75,
  "gate_1a_threshold": 0.1,
  "gate_1a_pass": true
 }

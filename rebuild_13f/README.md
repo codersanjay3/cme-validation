@@ -9,7 +9,8 @@ export SEC_CONTACT_EMAIL="you@example.com"   # SEC requires a real contact; set 
 python rebuild_13f/download.py --list        # what the SEC currently offers
 python rebuild_13f/download.py               # downloads to sec13f_cache/ (gitignored), resumable
 python rebuild_13f/build_panel.py            # writes panel_13f/ (gitignored)
-python rebuild_13f/test_build_panel.py       # 11 hand-worked checks on a synthetic data set
+python rebuild_13f/build_panel.py --tau-only # recompute tau.parquet from existing positions/ only
+python rebuild_13f/test_build_panel.py       # 13 hand-worked checks on a synthetic data set
 ```
 
 ## What the builder does
@@ -22,7 +23,7 @@ python rebuild_13f/test_build_panel.py       # 11 hand-worked checks on a synthe
 | 13F-HR and 13F-HR/A only; notices dropped | Notices carry no holdings |
 | Per (CIK, period): latest original or RESTATEMENT is the base; later NEW HOLDINGS amendments add rows | Amendments are common and change positions |
 | Turnover at one common price per CUSIP-period (median across all filers) | Price moves cannot create turnover (the drift problem) |
-| Split-rebased variant (same rule as `price_adjusted_tdi.py`) | Splits look like trades in share counts |
+| Split-rebased variant: rebase by k only if the share ratio is within 2% of k AND the common price ratio is within 10% of 1/k (price check added 2026-11-21, bead cme-d0m) | Splits look like trades in share counts; without the price check, selling exactly half or doubling a position looked like a split |
 | tau = 63 / turnover, clipped to [5, 2000]; zero turnover gives no tau, as in `price_adjusted_tdi.py` | Same horizon definition as the paper |
 
 ## Outputs (`panel_13f/`)

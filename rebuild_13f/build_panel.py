@@ -23,7 +23,10 @@ Rules (each answers a problem found in the audit, docs/novelty-audit/):
    if any filer still holds the CUSIP, else the t-1 price.
        turnover = 0.5 * sum |N_t - N_{t-1}| * P / (0.5 * (sum N_t * P + sum N_{t-1} * P))
    tau = 63 / turnover, clipped to [5, 2000] trading days (as in the paper).
-   A split-rebased variant applies the existing price_adjusted_tdi rule.
+   A split-rebased variant rebases a position's earlier share count by k only if
+   the share ratio is within 2% of k AND the CUSIP's common price ratio is within
+   10% of 1/k (price-confirmed; the share-ratio-only rule used until 2026-11-21
+   mistook half-sales and doublings for splits, bead cme-d0m).
 
 Outputs (in panel_13f/, gitignored):
   filings.parquet    one row per accession: cik, period, filing_date, kind
@@ -33,7 +36,7 @@ Outputs (in panel_13f/, gitignored):
                      n_positions, aum_usd
   build_report.json  row counts at every step, so each rule's effect is logged
 
-Usage: python rebuild_13f/build_panel.py [--cache sec13f_cache] [--out panel_13f]
+Usage: python rebuild_13f/build_panel.py [--cache sec13f_cache] [--out panel_13f] [--tau-only]
 Deterministic; no randomness.
 """
 import argparse, io, json, zipfile
@@ -145,12 +148,20 @@ def to_dollars(info):
               "accessions_rescaled_down": int(info.loc[down, "accession"].nunique())}
     return info, counts
 
-def _split_rebase(prev_sh, cur_sh):
-    r = cur_sh / prev_sh
+def _split_rebase(prev_sh, cur_sh, price_ratio):
+    """Rebase the earlier share count by k (k or 1/k in SPLITS) only when BOTH the
+    filer's share ratio is within 2% of k AND the CUSIP's common price ratio
+    (period t over t-1) is within 10% of 1/k. Without the price check, selling
+    exactly half or doubling a position was read as a split (bead cme-d0m)."""
+    prev_sh = np.asarray(prev_sh, dtype="float64")
     out = prev_sh.copy()
-    for k in SPLITS:
-        hit = (np.abs(r - k) / k < 0.02) | (np.abs(r - 1 / k) * k < 0.02)
-        out = np.where(hit & (out == prev_sh), prev_sh * r, out)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        r = np.asarray(cur_sh, dtype="float64") / prev_sh
+        pr = np.asarray(price_ratio, dtype="float64")
+        for k in SPLITS:
+            for f in (k, 1.0 / k):
+                hit = (np.abs(r / f - 1) < 0.02) & (np.abs(pr * f - 1) < 0.10) & (out == prev_sh) & (prev_sh > 0)
+                out = np.where(hit, prev_sh * f, out)
     return out
 
 def turnover_panel(pos):
@@ -170,7 +181,9 @@ def turnover_panel(pos):
         m = m.dropna(subset=["p"])
         both = (m.shares_0 > 0) & (m.shares_1 > 0)
         m["shares_0s"] = m.shares_0.astype("float64")
-        m.loc[both, "shares_0s"] = _split_rebase(m.loc[both, "shares_0"].to_numpy(), m.loc[both, "shares_1"].to_numpy())
+        pratio = (m.cusip.map(pr_b) / m.cusip.map(pr_a)).to_numpy()
+        m.loc[both, "shares_0s"] = _split_rebase(m.loc[both, "shares_0"].to_numpy(), m.loc[both, "shares_1"].to_numpy(),
+                                                 pratio[both.to_numpy()])
         g = m.assign(tr=(m.shares_1 - m.shares_0).abs() * m.p, trs=(m.shares_1 - m.shares_0s).abs() * m.p,
                      v0=m.shares_0 * m.p, v0s=m.shares_0s * m.p, v1=m.shares_1 * m.p).groupby("cik")
         t = g[["tr", "trs", "v0", "v0s", "v1"]].sum()
@@ -184,13 +197,42 @@ def turnover_panel(pos):
     size = pos.groupby(["cik", "period"]).agg(n_positions=("cusip", "nunique"), aum_usd=("value_usd", "sum")).reset_index()
     return tau.merge(size, on=["cik", "period"], how="left")
 
+def tau_pass(posdir, periods):
+    taus = []
+    for a, b in zip(periods, periods[1:]):
+        if (int(b[:4]) * 4 + int(b[5])) - (int(a[:4]) * 4 + int(a[5])) != 1:
+            continue
+        pair = pd.concat([pd.read_parquet(posdir / f"{a}.parquet"), pd.read_parquet(posdir / f"{b}.parquet")])
+        t = turnover_panel(pair)
+        taus.append(t[t.period == b])
+    return pd.concat(taus, ignore_index=True) if taus else pd.DataFrame()
+
+def tau_only(out):
+    posdir = out / "positions"
+    periods = sorted((f.stem for f in posdir.glob("*.parquet")), key=lambda q: (int(q[:4]), int(q[5])))
+    if not periods:
+        raise SystemExit(f"no positions in {posdir}; run a full build first")
+    tau = tau_pass(posdir, periods)
+    tau.to_parquet(out / "tau.parquet", index=False)
+    rp = out / "build_report.json"
+    summary = json.loads(rp.read_text()) if rp.exists() else {}
+    summary.update({"tau_rows": int(len(tau)), "tau_median": float(tau.tau.median()) if len(tau) else None,
+                    "tau_split_median": float(tau.tau_split.median()) if len(tau) else None,
+                    "tau_recomputed_from_positions": True})
+    rp.write_text(json.dumps(summary, indent=1, default=str))
+    print(json.dumps({k: summary[k] for k in ("tau_rows", "tau_median", "tau_split_median")}, indent=1))
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--cache", default=str(ROOT / "sec13f_cache"))
     ap.add_argument("--out", default=str(ROOT / "panel_13f"))
+    ap.add_argument("--tau-only", action="store_true",
+                    help="recompute tau.parquet from existing positions/ (turnover rules changed, holdings rules not)")
     args = ap.parse_args()
     cache, out = Path(args.cache), Path(args.out)
     out.mkdir(exist_ok=True)
+    if args.tau_only:
+        return tau_only(out)
     # Streaming build: the full universe does not fit in memory at once.
     # Pass 1: one zip at a time -> compact staging parquet (rows tagged with period).
     # Pass 2: one period at a time -> amendments, units, aggregation.
@@ -241,14 +283,8 @@ def main():
         n_pos += len(p); ciks |= set(p.cik)
         print(f"{q}: {len(p)} positions, {p.cik.nunique()} filers", flush=True)
     del dataset
-    taus, done = [], [q for q in periods if (posdir / f"{q}.parquet").exists()]
-    for a, b in zip(done, done[1:]):
-        if (int(b[:4]) * 4 + int(b[5])) - (int(a[:4]) * 4 + int(a[5])) != 1:
-            continue
-        pair = pd.concat([pd.read_parquet(posdir / f"{a}.parquet"), pd.read_parquet(posdir / f"{b}.parquet")])
-        t = turnover_panel(pair)
-        taus.append(t[t.period == b])
-    tau = pd.concat(taus, ignore_index=True) if taus else pd.DataFrame()
+    done = [q for q in periods if (posdir / f"{q}.parquet").exists()]
+    tau = tau_pass(posdir, done)
     tau.to_parquet(out / "tau.parquet", index=False)
     summary = {"zips": len(zips), "holdings_filings": int(len(filings)),
                "amendment_kinds": filings.kind.value_counts().to_dict(),
@@ -256,6 +292,7 @@ def main():
                **unit_counts,
                "positions": int(n_pos), "institutions": len(ciks), "periods": done,
                "tau_rows": int(len(tau)), "tau_median": float(tau.tau.median()) if len(tau) else None,
+               "tau_split_median": float(tau.tau_split.median()) if len(tau) else None,
                "per_zip": report}
     (out / "build_report.json").write_text(json.dumps(summary, indent=1, default=str))
     print(json.dumps({k: v for k, v in summary.items() if k not in ("per_zip", "periods")}, indent=1, default=str))
