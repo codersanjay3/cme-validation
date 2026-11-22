@@ -9,7 +9,7 @@ after a retirement phrase ("will retire ... effective/on/as of <Month day, year>
 "retire at the end of <Month year>", "retire ... <year>").
 
 Run from the repo root:  python scoping/retirement_windows.py
-Output: results/scoping_retirement_windows.json. No randomness.
+Outputs: results/scoping_retirement_windows.json, results/scoping_retirement_dates.csv. No randomness.
 """
 import html, json, re
 from pathlib import Path
@@ -69,4 +69,5 @@ out = {
     "lag_outside_minus1_to_36_months": int(r.lag_months.notna().sum() - len(ok)),
 }
 json.dump(out, open(ROOT / "results" / "scoping_retirement_windows.json", "w"), indent=1)
+r.to_csv(ROOT / "results" / "scoping_retirement_dates.csv", index=False)  # per announcement, no text
 print(json.dumps(out, indent=1))
