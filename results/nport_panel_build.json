@@ -1,0 +1,154 @@
+{
+ "zips": [
+  "2019q4_nport.zip",
+  "2020q1_nport.zip",
+  "2020q2_nport.zip",
+  "2020q3_nport.zip",
+  "2020q4_nport.zip",
+  "2021q1_nport.zip",
+  "2021q2_nport.zip",
+  "2021q3_nport.zip",
+  "2021q4_nport.zip",
+  "2022q1_nport.zip",
+  "2022q2_nport.zip",
+  "2022q3_nport.zip",
+  "2022q4_nport.zip",
+  "2023q1_nport.zip",
+  "2023q2_nport.zip",
+  "2023q3_nport.zip",
+  "2023q4_nport.zip",
+  "2024q1_nport.zip",
+  "2024q2_nport.zip",
+  "2024q3_nport.zip",
+  "2024q4_nport.zip",
+  "2025q1_nport.zip",
+  "2025q2_nport.zip",
+  "2025q3_nport.zip",
+  "2025q4_nport.zip",
+  "2026q1_nport.zip",
+  "2026q2_nport.zip",
+  "2026q3_nport.zip"
+ ],
+ "2019q4_nport": {
+  "reports": 9117,
+  "equity_rows": 888690
+ },
+ "2020q1_nport": {
+  "reports": 11260,
+  "equity_rows": 1095988
+ },
+ "2020q2_nport": {
+  "reports": 12253,
+  "equity_rows": 1127850
+ },
+ "2020q3_nport": {
+  "reports": 12437,
+  "equity_rows": 1154272
+ },
+ "2020q4_nport": {
+  "reports": 12531,
+  "equity_rows": 1144866
+ },
+ "2021q1_nport": {
+  "reports": 11920,
+  "equity_rows": 1109974
+ },
+ "2021q2_nport": {
+  "reports": 12567,
+  "equity_rows": 1173390
+ },
+ "2021q3_nport": {
+  "reports": 12286,
+  "equity_rows": 1161626
+ },
+ "2021q4_nport": {
+  "reports": 12517,
+  "equity_rows": 1172934
+ },
+ "2022q1_nport": {
+  "reports": 12321,
+  "equity_rows": 1181411
+ },
+ "2022q2_nport": {
+  "reports": 12839,
+  "equity_rows": 1206688
+ },
+ "2022q3_nport": {
+  "reports": 12706,
+  "equity_rows": 1172247
+ },
+ "2022q4_nport": {
+  "reports": 12648,
+  "equity_rows": 1155733
+ },
+ "2023q1_nport": {
+  "reports": 12519,
+  "equity_rows": 1132407
+ },
+ "2023q2_nport": {
+  "reports": 13172,
+  "equity_rows": 1215276
+ },
+ "2023q3_nport": {
+  "reports": 12937,
+  "equity_rows": 1159093
+ },
+ "2023q4_nport": {
+  "reports": 12890,
+  "equity_rows": 1149105
+ },
+ "2024q1_nport": {
+  "reports": 12576,
+  "equity_rows": 1109111
+ },
+ "2024q2_nport": {
+  "reports": 13231,
+  "equity_rows": 1195899
+ },
+ "2024q3_nport": {
+  "reports": 13191,
+  "equity_rows": 1171854
+ },
+ "2024q4_nport": {
+  "reports": 12772,
+  "equity_rows": 1115145
+ },
+ "2025q1_nport": {
+  "reports": 12774,
+  "equity_rows": 1121510
+ },
+ "2025q2_nport": {
+  "reports": 13494,
+  "equity_rows": 1164300
+ },
+ "2025q3_nport": {
+  "reports": 13199,
+  "equity_rows": 1141293
+ },
+ "2025q4_nport": {
+  "reports": 13328,
+  "equity_rows": 1125780
+ },
+ "2026q1_nport": {
+  "reports": 13148,
+  "equity_rows": 1106183
+ },
+ "2026q2_nport": {
+  "reports": 14416,
+  "equity_rows": 1236906
+ },
+ "2026q3_nport": {
+  "reports": 14066,
+  "equity_rows": 1188744
+ },
+ "reports_all": 355115,
+ "reports_kept": 331119,
+ "equity_rows_kept": 31103153,
+ "tau_rows": 312867,
+ "tau_rows_gap3": 312524,
+ "series_with_tau": 17203,
+ "report_months": [
+  "2019-09-30",
+  "2026-07-31"
+ ]
+}

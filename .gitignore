@@ -37,3 +37,6 @@ panel_13f/
 # Stage 2 scoping caches (see stage2/)
 stage2_cache/
 nport_cache/
+
+# N-PORT fund panel (see nport_panel/)
+nport_panel_data/
