@@ -34,7 +34,20 @@ Method: six candidates; three parallel literature checks (Google Scholar and SSR
 
 **What makes ours new.** Dated, planned, non-performance end of career; holdings-based outcomes in the pre-departure window; a direct test between the two theories; successor-type split.
 
-**Before committing.** Manual SSRN search (lame duck, retiring manager, career horizon, succession, 2020 to 2026) and CNKI for the Chinese literature; then build the N-PORT fund panel (download all 28 quarters) and pre-register.
+**Before committing.** SSRN title search done (below, no pre-emption); still open: SSRN abstract search by hand and CNKI. Then build the N-PORT fund panel (download all 28 quarters) and pre-register.
+
+### SSRN check (2026-11-21)
+
+SSRN's own search sits behind a bot check that automated browsers cannot pass, so SSRN was searched through Crossref, where every SSRN paper has a DOI with prefix 10.2139: 33 queries (retirement, lame duck, career horizon, succession, departure announcement, tenure, age, key person, resignation, manager deaths, personal horizon), papers from 2015 on, about 700 distinct SSRN papers screened by title. Crossref matches titles and metadata, not abstracts or full text.
+
+**No pre-emption found.** Closest new items:
+- Cui, Ding, Han, Shen and Suardi (2026), SSRN 6878904: China's two-child policy as a shock to anticipated career costs of female fund managers; performance, volatility and style change. Same logic (an anticipated change in career prospects moves portfolio choices), different shock and country.
+- Xu, Han and Wu (2026), SSRN 7061359: managers strategically resign from poorly performing funds while keeping others. Departures chosen by the manager, the opposite of a planned retirement.
+- Lee, Nam, Pool and Zhang (2025), SSRN 5440154 / 5739548: compensation evaluation horizons disclosed in fund SAIs; long-horizon contracts lead to long-term investments. **Use as a mechanism test:** the lame-duck effect should be larger when the retiring manager's pay is evaluated over a short window, and smaller when deferred pay ties the manager to results after leaving. SAIs are free on EDGAR.
+- Kang, Bams, Ebrahimnejad and Tehranian (2024), SSRN 5011836: exogenous horizon variation from disclosure dates; different mechanism.
+- Marino, Kirmse and Previti (2025), SSRN 5397288, "Manager Taxation and Investment Horizon": no abstract available; check by hand.
+
+Remaining gap: abstract and full-text search on SSRN itself (needs a person to pass the bot check), and CNKI.
 
 ## 2. Fake whales
 
