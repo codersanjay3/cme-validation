@@ -17,6 +17,10 @@ Filer 2 tests amendments and row filters.
   trades = 10*50 = 500; v0 = 2,000; v1 = 2,000 + 500 = 2,500 -> turnover = 0.5*500/(0.5*4,500) = 0.1111
 Filer 3 tests the split rebase: EEE 100 sh at $100 (value 10, thousands) -> 200 sh at $50 (value 10,000).
   raw: trades = 100*50 = 5,000; v0 = 5,000; v1 = 10,000 -> 0.3333. split-rebased: no trade -> turnover 0.
+Filer 6 sells exactly half: FFF 100 sh at $10 (value 1, thousands) -> 50 sh at $10 (value 500).
+  The share ratio is 1/2 but the price is unchanged, so it is a trade, not a reverse split:
+  trades = 50*10 = 500; v0 = 1,000; v1 = 500 -> turnover = split-rebased turnover = 1/3.
+  (The share-ratio-only rule used before 2026-11-21 gave split-rebased turnover 0; bead cme-d0m.)
 A 13F-NT notice (filer 4) must be ignored.
 Filer 5 kept reporting in thousands after the rule change: 2022Q4 filed 2023-02-15, AAA 100 sh, value 1.
   The implied-price check (AAA held by 3 filers at $10) must rescale it to $1,000.
@@ -42,7 +46,9 @@ subs = [("A1", "10-NOV-2022", "13F-HR", "0000000001", "30-SEP-2022"),
         ("C1", "05-NOV-2022", "13F-HR", "0000000003", "30-SEP-2022"),
         ("C2", "05-FEB-2023", "13F-HR", "0000000003", "31-DEC-2022"),
         ("D1", "05-FEB-2023", "13F-NT", "0000000004", "31-DEC-2022"),
-        ("E1", "15-FEB-2023", "13F-HR", "0000000005", "31-DEC-2022")]
+        ("E1", "15-FEB-2023", "13F-HR", "0000000005", "31-DEC-2022"),
+        ("F1", "05-NOV-2022", "13F-HR", "0000000006", "30-SEP-2022"),
+        ("F2", "05-FEB-2023", "13F-HR", "0000000006", "31-DEC-2022")]
 covs = [("A1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("A2", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("B1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
@@ -52,7 +58,9 @@ covs = [("A1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("C1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("C2", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT"),
         ("D1", "31-DEC-2022", "N", "", "", "13F NOTICE"),
-        ("E1", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT")]
+        ("E1", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT"),
+        ("F1", "30-SEP-2022", "N", "", "", "13F HOLDINGS REPORT"),
+        ("F2", "31-DEC-2022", "N", "", "", "13F HOLDINGS REPORT")]
 infs = [("A1", "AAA000001", "1", "100", "SH", ""), ("A1", "BBB000001", "1", "50", "SH", ""),
         ("A2", "AAA000001", "1000", "100", "SH", ""), ("A2", "CCC000001", "1000", "25", "SH", ""),
         ("B1", "AAA000001", "1", "100", "SH", ""),
@@ -62,7 +70,8 @@ infs = [("A1", "AAA000001", "1", "100", "SH", ""), ("A1", "BBB000001", "1", "50"
         ("B4", "DDD000001", "500", "10", "SH", ""),
         ("C1", "EEE000001", "10", "100", "SH", ""), ("C2", "EEE000001", "10000", "200", "SH", ""),
         ("D1", "AAA000001", "5", "5", "SH", ""),
-        ("E1", "AAA000001", "1", "100", "SH", "")]
+        ("E1", "AAA000001", "1", "100", "SH", ""),
+        ("F1", "FFF000001", "1", "100", "SH", ""), ("F2", "FFF000001", "500", "50", "SH", "")]
 
 def tsv(cols, rows):
     return "\t".join(cols) + "\n" + "\n".join("\t".join(r) for r in rows) + "\n"
@@ -102,6 +111,8 @@ checks = {
     "filer 2 turnover 1/9": abs(tau.loc["2", "turnover"] - 1 / 9) < 1e-9,
     "filer 3 raw turnover 1/3": abs(tau.loc["3", "turnover"] - 1 / 3) < 1e-9,
     "filer 3 split-rebased turnover 0": abs(tau.loc["3", "turnover_split"]) < 1e-9,
+    "filer 6 half-sale at unchanged price is a trade (raw 1/3)": abs(tau.loc["6", "turnover"] - 1 / 3) < 1e-9,
+    "filer 6 half-sale is not a split (split-rebased 1/3)": abs(tau.loc["6", "turnover_split"] - 1 / 3) < 1e-9,
 }
 for k, v in checks.items():
     print(("PASS " if v else "FAIL ") + k)

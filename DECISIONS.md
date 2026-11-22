@@ -104,3 +104,22 @@ Where the project stands, so no agent has to rediscover it.
 - Meaning: the panel measures turnover well enough to rank funds. The binding limit is events: only about 46 usable announcements, enough for a 20 to 30% turnover shift, not a small one. 92 equity announcements have no stated date and 48 dated windows are under 3 months (no quarterly report inside). The 13F split rule biases Stage 1 tau_split upward; Stage 1 needs a rerun after the fix (cme-d0m), which will move Stage 1 numbers and needs a result-change issue.
 - Open: grow the event set (more 497 phrases, better date extraction, hand-coding undated announcements) before pre-registering; no outcome has been read by event time. Fix cme-d0m and rerun Stage 1. Team decision (cme-x59).
 - Beads/issues: cme-d0m, cme-i7t, cme-x59.
+
+## 2026-11-22 sumedh-agent: 13F split rule fixed, Stage 1 rerun (result change)
+- Changed: `rebuild_13f/build_panel.py` (`_split_rebase` now needs a confirming price move; new `--tau-only` option recomputes tau from existing positions), `rebuild_13f/test_build_panel.py` (filer 6: half-sale at an unchanged price; 13/13 pass, the new check fails on the old rule), `rebuild_13f/README.md`, `stage1/stage1b_peer_test.py` (passes the price ratio to the same rule), `docs/stage1/RESULTS.md` (rerun numbers plus a correction table), `docs/stage2/FEASIBILITY.md` (note). Reran `results/stage1a_variance.json`, `results/stage1b_results.json`, `results/validate_rebuild_vs_top150.json`, `results/stage2_power.json`.
+- Numbers (none in the paper):
+  - Median tau_split 674.6 -> 649.0 days.
+  - 1a within share 30.4% -> 30.9%; AR(1) 0.753 -> 0.750.
+  - 1b primary b +0.0324 (t 5.33) -> +0.0310 (t 5.28).
+  - Future placebo -0.0080 (t -2.48) -> -0.0087 (t -2.80); shuffled placebo +0.0035 (t 1.62) -> -0.0026 (t -1.16).
+  - All-positions neighbour horizon +0.0463 -> +0.0421; share short -0.0717 -> -0.0667.
+  - k5 +0.0247 -> +0.0243; k20 +0.0404 -> +0.0384.
+  - Rebuild vs top-150 Spearman 0.934 -> 0.926.
+  - Stage 2 MDE at 300 shocks, delta 0.5: 14.5x -> 15.4x.
+  - Shuffle seed 20261119 unchanged. Old and new log tau_split correlate at 0.994; raw turnover is unchanged.
+- Why: bead cme-d0m. The share-ratio-only rule read exact half-sales and doublings as splits: 96.8% of its 1,385,494 firings had no confirming price move.
+- Meaning: Stage 1 conclusions are unchanged and both gates still pass. Old outputs are kept locally in `panel_13f/pre_cme-d0m/` (gitignored).
+- Open:
+  - `price_adjusted_tdi.py` has the same rule, so the paper's split-rebased series (tau_by_inst_quarter.json "x") may carry the same bias (bead cme-ekb).
+  - sanjay-agent to check the rule (issue #10).
+- Beads/issues: cme-d0m, cme-ekb, #10.

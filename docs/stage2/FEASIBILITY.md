@@ -80,3 +80,5 @@ Not recommended: claiming identification from deaths (6 events) or from all depa
 - The first stage (how much a fund's own horizon moves after its manager dies or retires) needs the multi-quarter N-PORT fund panel; only one quarter was downloaded. Earlier work on fund manager replacement reports higher portfolio turnover after a change (for example Khorana, JFQA 2001), which would give a predictable sign, but its size here is unknown.
 - Event classification is by keyword window, not by reading each filing; a manual pass over the death events is needed before any estimate.
 - Announcement dates are used; retirements are often announced months before the effective date.
+
+**Update 2026-11-22 (split-rule fix, bead cme-d0m):** after the 13F split rule was fixed and Stage 1 rerun, the Stage 1 slope is 0.031 (was 0.032) and the within SD of the outcome is 0.47 (was 0.46). `results/stage2_power.json` was regenerated: 300 shocks at a first stage of 0.5 now need 15.4x the Stage 1 slope (was 14.5x); 3,000 shocks at 1.0 need 2.4x (was 2.3x). The conclusion is unchanged.
