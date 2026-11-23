@@ -1,0 +1,55 @@
+{
+ "reproduces_stored_series_exactly": {
+  "w": true,
+  "s": true,
+  "x": true
+ },
+ "split_rule_firings": {
+  "continuing_positions": 3707138,
+  "old_rule_fires": 93210,
+  "fires_price_confirmed": 1733,
+  "share_of_fires_unconfirmed": 0.9814,
+  "unconfirmed_share_of_positions": 0.0247
+ },
+ "institution_quarters": 6424,
+ "log_tau_x_change_new_minus_old": {
+  "mean": -0.0326,
+  "median": -0.0141,
+  "share_changed": 0.6919,
+  "corr_old_new": 0.9974
+ },
+ "median_tau_x": {
+  "old": 545.0,
+  "new": 519.7
+ },
+ "r_vix_tdi_w": {
+  "r": -0.571,
+  "p": 4.213830066233786e-05,
+  "n": 45
+ },
+ "r_vix_tdi_s": {
+  "r": 0.024,
+  "p": 0.8758511375201129,
+  "n": 45
+ },
+ "r_vix_tdi_x_old": {
+  "r": -0.003,
+  "p": 0.9838186610868657,
+  "n": 45
+ },
+ "r_vix_tdi_x_price": {
+  "r": -0.008,
+  "p": 0.9561562481723256,
+  "n": 45
+ },
+ "r_vix_tdi_x_old_unitfix": {
+  "r": 0.098,
+  "p": 0.5225662223468233,
+  "n": 45
+ },
+ "r_vix_tdi_x_price_unitfix": {
+  "r": 0.094,
+  "p": 0.5401952744084566,
+  "n": 45
+ }
+}
