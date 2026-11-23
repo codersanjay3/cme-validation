@@ -88,3 +88,27 @@ Where the project stands, so no agent has to rediscover it.
 - Meaning: the direction and the paper's reading hold, and the within-stock effect is about twice as large and far more robust. It remains a replication in sign of Chan-Cheng-Hameed (JFQA 2022, internet appendix), so it does not change the pivot recommendation. The 1000x threshold is too strict (real switches sit at about 370x to 1100x); 300x is the primary choice.
 - Open: Sanjay to sign off before the paper text changes; consider using the same normalisation in every script that reads raw 13F values. The full-universe rebuild (#4) handles this per filing.
 - Beads/issues: new result-change issue; cme-0ef.
+
+## 2026-11-22 sumedh-agent: split rule in the paper's horizon series checked (cme-ekb)
+- Changed: added `scripts/check_split_rule_paper.py` and `scripts/check_stock_level_split_rule.py`, with outputs `results/check_split_rule_paper.json`, `results/check_split_rule_paper_tdi.csv` and `results/check_stock_level_split_rule.json`. The rebuilt horizons go to `edgar_cache/tau_by_inst_quarter_pricesplit.json` (gitignored). No existing script or stored output was edited.
+- Finding:
+  - `price_adjusted_tdi.py::rebase_splits` has the same share-ratio-only rule as the old 13F rebuild (cme-d0m). Series "x" of `tau_by_inst_quarter.json`, the paper's primary stock-level horizon, uses it.
+  - On the top-150 panel it fired on 93,210 of 3,707,138 continuing positions (2.5%). 98.1% of the firings had no confirming price move.
+  - New rule: rebase by k only if the filer's own price ratio for the CUSIP, relative to its median price ratio, is within 10% of 1/k. Using the relative ratio makes the check immune to the 2023 unit change.
+  - Under the old rule the rebuilt w, s and x series equal the stored file exactly, and both stock-level baselines reproduce.
+- Numbers (old rule -> new rule):
+  - Median tau_x 545 -> 520 days; mean log change -0.033; old and new correlate at 0.997.
+  - Stock-level within-stock slope, share-based, as coded: -0.0106 (t -2.42) -> -0.0101 (t -2.31).
+  - Same slope, unit-fixed (issue #5): -0.0200 (t -4.96) -> -0.0200 (t -4.96).
+  - Pooled quarter FE, unit-fixed: -0.0388 (t -9.86) -> -0.0387 (t -9.85).
+  - Fama-MacBeth, as coded: -0.0459 (t -6.20) -> -0.0448 (t -6.11).
+  - Minimum return, unit-fixed FE: +0.0250 (t 4.17) -> +0.0256 (t 4.27).
+  - Placebo zero in all runs. Value-weight results do not use x and are unchanged.
+  - TDI vs VIX, split-rebased (2013Q3 to 2024Q3, n = 45): as coded -0.003 -> -0.008; unit-fixed +0.098 -> +0.094.
+  - Seed 7 (stock-level), as in the original.
+- Why: bead cme-ekb, found while fixing cme-d0m.
+- Meaning: the bias is real but immaterial for the paper. Every stock-level number moves in the third decimal or less, and no conclusion changes. When the paper is updated for issue #5 (unit fix), the split rule in `price_adjusted_tdi.py` should be fixed in the same pass, so the stored outputs carry both fixes.
+- Open:
+  - sanjay-agent to sign off and decide whether to fix `price_adjusted_tdi.py` and regenerate `tau_by_inst_quarter.json` together with the unit fix.
+  - Still unexplained (logged 2026-11-19): the paper prints r = -0.06 / -0.10 / -0.59, but the stored outputs give +0.024 / -0.003 / -0.571.
+- Beads/issues: cme-ekb, #5, #10, #12.
