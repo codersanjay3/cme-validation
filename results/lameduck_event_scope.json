@@ -1,0 +1,43 @@
+{
+ "window": [
+  "2019-10-01",
+  "2026-09-30"
+ ],
+ "forms": "497,497K",
+ "queries": {
+  "\"will retire\" \"portfolio manager\"": 1213,
+  "\"intends to retire\" \"portfolio manager\"": 100,
+  "\"plans to retire\" \"portfolio manager\"": 476,
+  "\"expected to retire\" \"portfolio manager\"": 508,
+  "\"expects to retire\" \"portfolio manager\"": 179,
+  "\"will be retiring\" \"portfolio manager\"": 193,
+  "\"intention to retire\" \"portfolio manager\"": 426,
+  "\"announced his retirement\" \"portfolio manager\"": 428,
+  "\"announced her retirement\" \"portfolio manager\"": 151,
+  "\"retirement from\" \"portfolio manager\"": 960,
+  "\"has retired\" \"portfolio manager\"": 118,
+  "\"no longer serve as a portfolio manager\"": 3185,
+  "\"no longer serves as a portfolio manager\"": 1092
+ },
+ "retirement_filings_hit": 4082,
+ "retirement_filings_pm_context": 2795,
+ "departure_filings_hit": 4231,
+ "series_events": 3903,
+ "announcements": 1015,
+ "series_events_by_end_source": {
+  "stated": 3210,
+  "none": 622,
+  "later_notice": 71
+ },
+ "stated_precision": {
+  "day": 2455,
+  "day_effective_before": 577,
+  "quarter": 101,
+  "month": 72,
+  "year": 5
+ },
+ "stage2_announcements_covered": {
+  "stage2_retirement_announcements": 462,
+  "found_again": 462
+ }
+}
