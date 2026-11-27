@@ -1,0 +1,597 @@
+{
+ "loci": [
+  {
+   "name": "pivot-a-near-duplicate-audit",
+   "one_line": "Has anyone estimated peer effects, contagion or convergence in INSTITUTIONAL turnover, trading frequency, holding period or horizon under any name (fund-family or consultant spillovers, manager moves, Chinese/European fund-turnover peer effects, hedge-fund strategy contagion, holding-period herding, 2024-2026 SSRN/arXiv)?",
+   "flavor": "convergent",
+   "importance": 10,
+   "uncertainty": 7,
+   "disagreement": 4,
+   "decision_impact": 10,
+   "composite_score": 31,
+   "source_budget": 10,
+   "rationale": "The novelty verdict for the leading pivot rests on an audited absence; this locus must either find the killer paper or document the searched-and-absent space.",
+   "merged_from": [
+    "pivot-a-institutional-horizon-peer-effect-near-duplicate-hunt",
+    "pivot-a-audited-absence-adjacent-framings"
+   ],
+   "corpus_evidence": [
+    "active-trading-and-poor-performance-the-social-transmission-channel",
+    "balakina-and-stockler-2025-peer-effects-in-multi-layer-networks-bse-netsci",
+    "birds-of-a-feather-do-hedge-fund-managers-flock-together",
+    "does-communication-increase-investors-trading-frequency-evidence-from-a-chinese",
+    "does-herding-behavior-reveal-skill",
+    "econpapers-institutional-investor-network-and-idiosyncratic-volatility-of-stocks",
+    "facebook-finance-how-social-interaction-propagates-active-investing",
+    "interplay-between-competition-networks-strategy-uniqueness-and-hedge-fund-perfor",
+    "nber-working-paper-series",
+    "nber-working-paper-series-8",
+    "network-externalities-in-mutual-funds",
+    "social-interaction-intensity",
+    "the-people-in-your-neighborhood-social-interactions-and-mutual-fund-portfolios",
+    "w-o-r-k-i-n-g"
+   ],
+   "opposing_positions": [],
+   "suggested_starting_urls": [
+    "https://scholar.google.com/scholar?q=%22peer+effects%22+%22portfolio+turnover%22+mutual+fund+managers",
+    "https://scholar.google.com/scholar?q=%22turnover%22+contagion+%22institutional+investors%22+network+%22investment+horizon%22",
+    "https://scholar.google.com/scholar?q=%22fund+family%22+turnover+spillover+%22trading+style%22",
+    "https://scholar.google.com/scholar?q=%22investment+consultants%22+manager+turnover+short-termism",
+    "https://ideas.repec.org/a/inm/ormnsc/v70y2024i5p2976-2998.html"
+   ],
+   "suggested_searches": [
+    "peer effects in mutual fund turnover",
+    "contagion of short-termism among institutional investors",
+    "investment horizon convergence institutional investors network",
+    "do fund managers mimic peers' trading frequency",
+    "fund family trading style spillover turnover co-managed funds",
+    "manager moves and portfolio turnover of the new fund (portable trading style)",
+    "commonality in mutual fund turnover Pastor Stambaugh Taylor",
+    "investment consultant recommendations and manager turnover pension funds",
+    "co-holding network turnover similarity China institutional investors",
+    "social learning trading frequency hedge funds 13F",
+    "SSRN 2023 2024 2025 2026 'investor horizon' 'peer effects'",
+    "arXiv q-fin 'trading horizon' 'social network' institutional convergence",
+    "peer effects mutual fund turnover rate China",
+    "fund turnover peer effect network common holdings",
+    "contagion of short-termism institutional investors",
+    "investment horizon spillover between institutional investors network",
+    "holding period herding institutional investors",
+    "peer effects trading frequency professional investors",
+    "strategy contagion hedge funds network common holdings 2024",
+    "corporate short-termism peer effects investment horizon peer firms",
+    "SSRN 2025 institutional investor horizon peer network"
+   ],
+   "analyst_rationales": [
+    "Pivot A is the run's leading candidate (orchestrator notes, 'emerging thesis'), but its novelty claim currently rests on absence evidence that coverage-gaps.md marks THIN. Every institutional peer-effect paper in the corpus studies holdings, trades or flows, not turnover or horizon: Hong-Kubik-Stein (nber-working-paper-series) studies weights and trades; Pool-Stoffman-Yonker (the-people-in-your-neighborhood-social-interactions-and-mutual-fund-portfolios) studies holdings and trade similarity; Blocher (network-externalities-in-mutual-funds) studies flows on a common-holdings network; Gerritzen-Jackwerth-Plazzi, MS 2024 (birds-of-a-feather-do-hedge-fund-managers-flock-together), studies return and holdings similarity through shared-employer ties; Kooli-Zhang, FMII 2025 (interplay-between-competition-networks-strategy-uniqueness-and-hedge-fund-perfor), studies strategy distinctiveness through LinkedIn ties; Jiang-Verardo (does-herding-behavior-reveal-skill) uses turnover only as a control. The papers where trading ACTIVITY is the peer outcome are all retail: Heimer 2014 (w-o-r-k-i-n-g), Heimer-Simon (facebook-finance-how-social-interaction-propagates-active-investing), Escobar-Pedraza JFE 2023 (active-trading-and-poor-performance-the-social-transmission-channel), Gelman-Hirshleifer et al. 2024/25 (social-interaction-intensity), Jin-Yu 2022 (does-communication-increase-investors-trading-frequency-evidence-from-a-chinese) and Balakina-Stockler 2025 (balakina-and-stockler-2025-peer-effects-in-multi-layer-networks-bse-netsci). So the gap lies exactly at 'institutional x turnover/horizon x network'. Literatures the sweep never searched, and where a near-duplicate would most likely sit: (i) fund-family and co-managed-fund spillovers in turnover or style (Ben-David et al., nber-working-paper-series-8, already shows correlated flows and similar trades WITHIN families, which suggests family-level horizon correlation may be documented somewhere); (ii) investment-consultant and pension-plan-sponsor influence on manager turnover; (iii) 'short-termism contagion' and manager-turnover pass-through after manager moves (a manager who moves funds carries their turnover); (iv) commonality in mutual fund turnover (Pastor-Stambaugh-Taylor-type evidence that fund turnover has a strong common time-series component); (v) Chinese and European institutional data (WIND, ECB SHS), where co-holding-network papers are numerous (econpapers-institutional-investor-network-and-idiosyncratic-volatility-of-stocks is one). A single hit in any of these turns A's headline from 'new' into 'new setting', so this search is decisive for Q2-A and Q3.",
+    "Coverage-gaps.md rates Pivot A 'THIN on absence evidence'. Five batches found no hit, but they searched the holdings/trades/flows framing (HKS, Pool et al., Blocher, Sias, Jiang-Verardo). Every turnover or trading-frequency peer-effect paper in the corpus is about retail investors: Jin-Yu (does-communication-increase-investors-trading-frequency-evidence-from-a-chinese), Heimer-Simon (facebook-finance-how-social-interaction-propagates-active-investing), Escobar-Pedraza JFE 2023 (active-trading-and-poor-performance-the-social-transmission-channel), Gelman et al. (social-interaction-intensity), Balakina-Stockler (balakina-and-stockler-2025-peer-effects-in-multi-layer-networks-bse-netsci). Blocher (network-externalities-in-mutual-funds) covers flows only. The run's novelty verdict depends on this absence, and the domain notes require an aggressive near-duplicate hunt over 2023-2026. Framings not yet searched: Chinese-language and Chinese-data papers on fund turnover peer effects, which are common in Chinese journals and in Pacific-Basin Finance Journal; peer effects in corporate short-termism or investment horizon (CEO/firm horizon peers); hedge-fund strategy contagion; 'horizon herding'; network spillovers of investment style; SSRN and arXiv 2024-2026. The search terms tried and the results should be recorded as an audited absence."
+   ]
+  },
+  {
+   "name": "correlated-turnover-vs-horizon-contagion-identification",
+   "one_line": "Can a horizon peer effect among 13F overlap neighbours be separated from non-peer comovement in turnover (common turnover factor, correlated flows within horizon classes, shared asset managers, corporate events in co-held stocks) and from reflection/exclusion/sampled-network/weak-IV problems, and which design (non-held-stock neighbour horizons, FoF IV, peers' idiosyncratic flow shocks, manager moves) survives?",
+   "flavor": "dialectical",
+   "importance": 9,
+   "uncertainty": 8,
+   "disagreement": 7,
+   "decision_impact": 9,
+   "composite_score": 33,
+   "source_budget": 10,
+   "rationale": "This decides whether Pivot A is publishable at all; a referee's first objection will be common shocks.",
+   "merged_from": [
+    "common-turnover-factor-vs-horizon-contagion",
+    "identifying-horizon-peer-effects-in-13f-overlap-networks"
+   ],
+   "corpus_evidence": [
+    "a-flow-based-explanation-for-return-predictability",
+    "do-peer-firms-a\ufb00ect-corporate-financial-policy",
+    "does-herding-behavior-reveal-skill",
+    "econometrics-of-network-models",
+    "econometrics-of-sampled-networks",
+    "empirical-challenges-with-peers-of-peers-instruments",
+    "institutional-herding",
+    "institutional-investors-intrinsic-trading-frequency-and-the",
+    "investor-heterogeneity-and-liquidity",
+    "iza-dp-no-2652",
+    "journal-of-financial-economics-153-2024-103795",
+    "nber-working-paper-series-2",
+    "nber-working-paper-series-4",
+    "nber-working-paper-series-5",
+    "nber-working-paper-series-6",
+    "peer-effects-in-networks-a-survey",
+    "similar-investors1",
+    "stock-price-fragility",
+    "the-journal-of-finance-vol-lxix-no-3-june-2014",
+    "unraveling-peers-and-peer-e\ufb00ects",
+    "working-paper-2515"
+   ],
+   "opposing_positions": [
+    [
+     {
+      "position": "Peer effects in an institution network are identifiable: intransitivity gives friends-of-friends instruments, and peers' idiosyncratic shocks (redemptions, flows, scandals) give exogenous variation, with fixed effects absorbing common shocks.",
+      "sources": [
+       "iza-dp-no-2652",
+       "peer-effects-in-networks-a-survey",
+       "do-peer-firms-a\ufb00ect-corporate-financial-policy",
+       "similar-investors1",
+       "nber-working-paper-series-6"
+      ]
+     },
+     {
+      "position": "With observational holdings data the estimate is fragile: group-mean regressions are mechanical, leave-out means create exclusion bias, overlap links are endogenous and homophilous, FoF instruments are weak in dense networks and invalid when the network is sampled (top-150 filers).",
+      "sources": [
+       "nber-working-paper-series-4",
+       "nber-working-paper-series-5",
+       "econometrics-of-sampled-networks",
+       "empirical-challenges-with-peers-of-peers-instruments",
+       "unraveling-peers-and-peer-e\ufb00ects"
+      ]
+     }
+    ]
+   ],
+   "suggested_starting_urls": [
+    "https://doi.org/10.1111/jofi.12505",
+    "https://doi.org/10.1093/rfs/hhw026",
+    "https://www.dallasfed.org/~/media/documents/research/papers/2025/wp2515r1.pdf",
+    "https://www.fmg.ac.uk/sites/default/files/2020-08/6.PIERRET-Similar-Investors-presentation-LSE.pdf",
+    "https://arxiv.org/abs/2602.24215",
+    "https://scholar.google.com/scholar?q=Chandrasekhar+Lewis+%22Econometrics+of+sampled+networks%22",
+    "https://scholar.google.com/scholar?q=%2213F%22+data+errors+Thomson+Reuters+s34+WRDS+research+note",
+    "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets"
+   ],
+   "suggested_searches": [
+    "Pastor Stambaugh Taylor do funds make more when they trade more common component of turnover",
+    "commonality in mutual fund turnover time variation sentiment",
+    "Koch Ruenzi Starks commonality in liquidity demand-side explanation correlated trading",
+    "correlated flows same investment style turnover comovement institutional investors",
+    "sub-advisor shared portfolio manager 13F similar trades",
+    "index reconstitution mechanical turnover institutional investors 13F",
+    "separating peer effects from common shocks fund trading network placebo future peers",
+    "peer effects institutional investors instrumental variable idiosyncratic flow shocks of peers",
+    "mutual fund manager death or departure as exogenous shock to peer funds",
+    "13F filer mergers exogenous change in institutional network",
+    "mutual fund scandal 2003 instrument institutional peers trading behavior",
+    "identification of peer effects with endogenous network formation homophily Goldsmith-Pinkham Imbens finance application",
+    "spatial autoregressive model institutional investors portfolio overlap network estimation",
+    "Thomson Reuters 13F s34 data errors stale holdings after 2013 WRDS SEC 13F",
+    "partial network data peer effects Breza Chandrasekhar McCormick Pan",
+    "exposure mapping network interference shift-share design finance"
+   ],
+   "analyst_rationales": [
+    "This is the main threat to Pivot A, and no batch has addressed it. The proposed design (neighbour horizons from non-held stocks, plus friends-of-friends instruments) removes shocks at the level of individual stocks. It does not remove shocks at the style or strategy level that raise turnover across every stock at once. The corpus points at those shocks without testing them. Chan-Cheng-Hameed (investor-heterogeneity-and-liquidity, Table 2) find that fund-flow comovement is higher within the same churn tercile, so funds with similar horizons get correlated flows, and flows mechanically produce trading (Lou: a-flow-based-explanation-for-return-predictability; Coval-Stafford: nber-working-paper-series-2). Pastor-Stambaugh-Taylor (2017 JF, 'Do funds make more when they trade more?') document a common time-varying component in fund turnover; it is cited in does-herding-behavior-reveal-skill and journal-of-financial-economics-153-2024-103795 but was never fetched. Koch-Ruenzi-Starks (2016 RFS) on correlated trading by high-turnover funds is cited in stock-price-fragility and journal-of-financial-economics-153-2024-103795, also not fetched. Ozdagli-Ryfe (working-paper-2515) show that a shared asset manager produces similar portfolios and trades, which is a correlated effect that looks like a peer effect. Sias (institutional-herding) finds institutions follow both their own lagged demand and each other's. Time fixed effects do not remove a common factor when loadings differ by style, and neighbours in an overlap network share style by construction. So a positive 'horizon contagion' coefficient could be pure correlated effects even with the non-held-stock design. The depth packet should (i) pin down PST 2017 and KRS 2016, (ii) list the confounds and the control or design each needs (factor-loading-by-style interactions, flow controls, removal of same-manager and same-parent pairs, placebo using future neighbours), and (iii) look for any paper that separates peer influence from common turnover shocks.",
+    "Contradiction cluster 'peer-effects-identifiable' is high relevance and is the main referee battleground for Q3. Side A says network structure identifies: intransitive triads give G^2x instruments (iza-dp-no-2652; peer-effects-in-networks-a-survey), and Leary-Roberts's peers' idiosyncratic shocks give the finance template (do-peer-firms-a\ufb00ect-corporate-financial-policy). Georg-Pierret-Steffen instrument similarity with other funds' idiosyncratic redemptions (similar-investors1), and Anton-Polk use the 2003 fund-scandal outflows as an exogenous shock to common ownership (the-journal-of-finance-vol-lxix-no-3-june-2014). Side B lists the pitfalls: Angrist's vacuous group-mean regressions (nber-working-paper-series-4); exclusion bias (nber-working-paper-series-5); FoF instruments invalid in sampled networks, which matters because the top-150 filers are a sample (econometrics-of-sampled-networks); weak FoF instruments in dense networks (empirical-challenges-with-peers-of-peers-instruments); and homophily confounding influence (unraveling-peers-and-peer-e\ufb00ects). Overlap neighbours are a special and so-far unexamined case. The link is formed by the very holdings that generate turnover, so overlap is endogenous to trading. Corporate events in co-held stocks (M&A cash-outs, index deletions) mechanically raise both institutions' turnover, which is why the user proposes non-held-stock neighbour horizons. Even non-held stocks share market-wide and style shocks. The corpus names the tools but no paper applying them to institutional trading-style outcomes. The depth task: (1) find finance papers that use exogenous shocks to institutional peers (Lou-style flow-induced trading, fund scandals, 13F filer mergers or closures, manager deaths or departures, Russell reconstitution) as instruments for peer behaviour; (2) settle whether the non-held-stock construction removes the mechanical channel; (3) say what the full 13F universe (WRDS s34, or SEC Form 13F structured data sets since 2013) fixes for the sampled-network critique, and what known s34 data-quality problems a referee will raise."
+   ]
+  },
+  {
+   "name": "horizon-trait-or-time-varying",
+   "one_line": "Is an institution's horizon a near-fixed trait (Parsa; Crouzet et al.) or does it have a meaningful time-varying part, and what drives it (flows, performance, manager turnover, filer reorganisation, market conditions)?",
+   "flavor": "dialectical",
+   "importance": 8,
+   "uncertainty": 7,
+   "disagreement": 7,
+   "decision_impact": 8,
+   "composite_score": 30,
+   "source_budget": 7,
+   "rationale": "If within-institution variation is mostly flow-driven noise, Pivot A has little to explain.",
+   "merged_from": [
+    "horizon-fixed-trait-or-time-varying",
+    "horizon-trait-or-adaptive-within-institution-drivers"
+   ],
+   "corpus_evidence": [
+    "a-model-of-multi-frequency-trade",
+    "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+    "institutional-investors-intrinsic-trading-frequency-and-the",
+    "investor-heterogeneity-and-liquidity",
+    "investors-horizon-and-stock-prices",
+    "investors-horizons-and-the-amplification-of-market-shocks",
+    "issn-0956-8549-717-2",
+    "nber-working-paper-series-9",
+    "social-interaction-intensity",
+    "w-o-r-k-i-n-g"
+   ],
+   "opposing_positions": [
+    [
+     {
+      "position": "Horizon is essentially a fixed investor trait (an institution fixed effect, or a specialisation chosen in equilibrium), so any 'convergence' is mostly noise or common shocks and there is little to transmit.",
+      "sources": [
+       "investors-horizon-and-stock-prices",
+       "institutional-investors-intrinsic-trading-frequency-and-the",
+       "a-model-of-multi-frequency-trade",
+       "investors-horizons-and-the-amplification-of-market-shocks"
+      ]
+     },
+     {
+      "position": "Horizons and trading intensity evolve, through performance and wealth selection, social interaction, or changing market conditions, so a time-varying component exists and could respond to peers.",
+      "sources": [
+       "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+       "social-interaction-intensity",
+       "w-o-r-k-i-n-g",
+       "nber-working-paper-series-9"
+      ]
+     }
+    ],
+    [
+     {
+      "position": "Horizon is a persistent investor trait (institution fixed effect; equilibrium specialisation by frequency), so there is little room for peers to move it",
+      "sources": [
+       "investors-horizon-and-stock-prices",
+       "institutional-investors-intrinsic-trading-frequency-and-the",
+       "a-model-of-multi-frequency-trade",
+       "issn-0956-8549-717-2"
+      ]
+     },
+     {
+      "position": "Horizons evolve, through performance and wealth selection or social interaction, so peer-driven adaptation is plausible",
+      "sources": [
+       "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+       "w-o-r-k-i-n-g",
+       "social-interaction-intensity"
+      ]
+     }
+    ]
+   ],
+   "suggested_starting_urls": [
+    "http://hdl.handle.net/1721.1/65491",
+    "https://scholar.google.com/scholar?q=%22Do+funds+make+more+when+they+trade+more%22",
+    "https://scholar.google.com/scholar?q=determinants+of+mutual+fund+turnover+time+variation+manager+change",
+    "https://www.nber.org/system/files/working_papers/w23650/w23650.pdf",
+    "https://doi.org/10.1111/jofi.12505"
+   ],
+   "suggested_searches": [
+    "Pastor Stambaugh Taylor fund turnover time variation common component sentiment",
+    "variance decomposition institutional portfolio turnover fixed effect versus time-varying",
+    "manager replacement effect on fund turnover",
+    "fund flows and portfolio turnover dynamics",
+    "institutional investor horizon persistence transition matrix Bushee classification stability",
+    "Bushee transient dedicated classification migration over time",
+    "mergers of investment advisers effect on trading style",
+    "aggregate institutional turnover and VIX market volatility time series",
+    "determinants of changes in mutual fund turnover manager change flows performance",
+    "fund manager replacement effect on portfolio turnover",
+    "persistence of institutional investor turnover churn rate variance decomposition",
+    "time-varying investment horizon institutional investors determinants",
+    "strategy change hedge fund turnover after poor performance"
+   ],
+   "analyst_rationales": [
+    "Contradiction cluster 'horizon-trait-or-adaptive' (high relevance) is a real fight, not a scope mismatch, and it bears directly on Pivot A's premise. Side A: Parsa's 'intrinsic trading frequency' is defined as an institution fixed effect (investors-horizon-and-stock-prices; institutional-investors-intrinsic-trading-frequency-and-the); Crouzet-Dew-Becker-Nathanson derive equilibrium specialisation by frequency (a-model-of-multi-frequency-trade); Cella-Ellul-Giannetti call churn 'stable across time' and average it over quarters to remove noise (investors-horizons-and-the-amplification-of-market-shocks; issn-0956-8549-717-2). Side B: LeBaron's horizon mix evolves (econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market); retail activity responds to peers (social-interaction-intensity; w-o-r-k-i-n-g); Chinco-Ye find a stock's short-run volume tilt changes rapidly month to month (nber-working-paper-series-9). The project's own diagnostic (within-institution sd of log tau 0.55 vs total 0.92, AR(1) 0.75) shows within variation exists. The corpus does not say how much of that variation is (a) measurement noise, (b) a market-wide common component (turnover rising with volatility or sentiment, which would mechanically produce 'convergence' among all institutions), (c) flow-driven or performance-driven, or (d) caused by organisational events (manager change, merger of 13F filers, change of investment consultant). Chan-Cheng-Hameed's finding that same-churn-tercile funds have correlated flows (investor-heterogeneity-and-liquidity) suggests a correlated-shock channel that a horizon peer-effect estimate would absorb. Depth work should find variance decompositions of fund and institution turnover and the documented drivers of turnover changes, so that A's design can net them out and so that the paper can state how large the movable component is.",
+    "This builds on contradiction cluster 'horizon-trait-or-adaptive' (high relevance). Parsa (investors-horizon-and-stock-prices) and Duarte-Parsa (institutional-investors-intrinsic-trading-frequency-and-the) treat trading frequency as an institution fixed effect. Crouzet et al. (a-model-of-multi-frequency-trade) derive specialisation by frequency in equilibrium. Cella-Ellul-Giannetti (issn-0956-8549-717-2) average churn over quarters to remove idiosyncratic noise. Against this, LeBaron (econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market) models horizons that evolve, and Heimer (w-o-r-k-i-n-g) and Gelman et al. (social-interaction-intensity) show social interaction raising retail trading activity. Neither side identifies what drives within-institution changes in 13F turnover. The project diagnostic (within-institution sd of log tau 0.55 against 0.92 total, AR(1) 0.75) shows there is variation, but not whether it is strategic. If most of it comes from flows, manager changes, mergers or filer restructuring, Pivot A has little to explain and referees will say so. This locus should establish the variance decomposition and the known drivers of turnover changes before A is recommended as the headline."
+   ]
+  },
+  {
+   "name": "dispersion-and-absorption-beyond-chan-cheng-hameed",
+   "one_line": "After Chan-Cheng-Hameed (JFQA 2022), what is left of Pivot B: does horizon dispersion lower volatility/crash risk net of fragility and liquidity, and do long-horizon holders actually absorb short-horizon selling within a stock in stress episodes, or do retail/hedge funds?",
+   "flavor": "dialectical",
+   "importance": 7,
+   "uncertainty": 7,
+   "disagreement": 8,
+   "decision_impact": 7,
+   "composite_score": 29,
+   "source_budget": 6,
+   "rationale": "B is partly pre-empted; this locus defines the residual contribution and the sign conflict with the CME simulated channel.",
+   "merged_from": [
+    "who-absorbs-short-horizon-selling-within-stock",
+    "horizon-dispersion-sign-and-increment-beyond-chan-cheng-hameed",
+    "within-stock-absorption-by-horizon-beyond-chan-cheng-hameed"
+   ],
+   "corpus_evidence": [
+    "a-new-measure-for-differences-of-opinions-institutional-trade-dispersion",
+    "comses-catalog",
+    "comses-catalog-2",
+    "crash-risk-and-investor-horizon",
+    "do-institutional-investors-stabilize",
+    "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+    "erasmus-university-rotterdam",
+    "financial-instability-transition-under-heterogeneous-investments-and",
+    "heterogeneity-of-institutional-ownership-and-stock-price-delay",
+    "investor-heterogeneity-and-liquidity",
+    "investors-horizons-and-the-amplification-of-market-shocks",
+    "nber-working-paper-series-2",
+    "nber-working-paper-series-8",
+    "outside-and-inside-liquidity",
+    "pricing-liquidity-risk-with-heterogeneous-investment",
+    "scholarworks-institutional-investor-heterogeneity-and-market-price-dynamics-evid",
+    "stock-price-fragility",
+    "the-more-we-know-the-less-we-agree-a-test-of-the-trading-horizon-heterogeneity-t",
+    "thinking-ahead-for-europe",
+    "which-investors-matter-for-equity-valuations-and-expected-returns-nber",
+    "working-paper-series"
+   ],
+   "opposing_positions": [
+    [
+     {
+      "position": "Long-horizon institutions supply outside liquidity: they buy (or are counterparties) when short-horizon holders fire-sell, so dispersed-horizon holder bases are resilient.",
+      "sources": [
+       "outside-and-inside-liquidity",
+       "working-paper-series",
+       "investor-heterogeneity-and-liquidity",
+       "erasmus-university-rotterdam"
+      ]
+     },
+     {
+      "position": "Liquidity in stress comes from retail investors, hedge funds or arbitrageurs. Long-horizon institutions only sell less (a level effect) and do not absorb short-horizon selling within the same stock.",
+      "sources": [
+       "do-institutional-investors-stabilize",
+       "nber-working-paper-series-2",
+       "investors-horizons-and-the-amplification-of-market-shocks"
+      ]
+     }
+    ],
+    [
+     {
+      "position": "Horizon dispersion stabilises: heterogeneous holder bases have less correlated liquidity demand, more liquidity, lower liquidity volatility and fewer crashes (FMH logic; CME stock-level data agree).",
+      "sources": [
+       "investor-heterogeneity-and-liquidity",
+       "comses-catalog",
+       "comses-catalog-2",
+       "pricing-liquidity-risk-with-heterogeneous-investment"
+      ]
+     },
+     {
+      "position": "Horizon heterogeneity destabilises: mixing short and long horizons raises trading, volume and return variability (Kondor-type disagreement across horizons; ABM and random-matrix models; CME's own simulated friction channel).",
+      "sources": [
+       "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+       "financial-instability-transition-under-heterogeneous-investments-and",
+       "the-more-we-know-the-less-we-agree-a-test-of-the-trading-horizon-heterogeneity-t"
+      ]
+     }
+    ],
+    [
+     {
+      "position": "Long-horizon institutions supply outside liquidity and absorb short-horizon selling, so dispersion stabilises",
+      "sources": [
+       "investor-heterogeneity-and-liquidity",
+       "outside-and-inside-liquidity",
+       "working-paper-series",
+       "comses-catalog-2"
+      ]
+     },
+     {
+      "position": "Retail investors and arbitrageurs absorb while institutions amplify, and horizon mixing raises volatility (CME friction channel, LeBaron)",
+      "sources": [
+       "do-institutional-investors-stabilize",
+       "nber-working-paper-series-2",
+       "stock-price-fragility",
+       "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market"
+      ]
+     }
+    ]
+   ],
+   "suggested_starting_urls": [
+    "https://web2-bschool.nus.edu.sg/wp-content/uploads/media_rp/publications/vDsxi1613376975.pdf",
+    "https://www.ecgi.global/sites/default/files/2026-10/fin-688-2020_do_institutional_investors_stabilize_equity_markets_in_crisi.pdf",
+    "https://scholar.google.com/scholar?q=%22Mutual+fund+trading+style+and+bond+market+fragility%22",
+    "https://scholar.google.com/scholar?q=who+provides+liquidity+fire+sales+institutional+investors+counterparties+13F",
+    "https://web2-bschool.nus.edu.sg/wp-content/uploads/media_rp/publications/vDsxi1613376975.pdf",
+    "https://researchers.mq.edu.au/en/publications/the-more-we-know-the-less-we-agree-a-test-of-the-trading-horizon-/",
+    "https://scholar.google.com/scholar?q=%22investment+horizon%22+heterogeneity+institutional+investors+%22crash+risk%22",
+    "https://scholar.google.com/scholar?q=Kondor+2012+%22Market+for+information%22+OR+%22The+more+we+know+about+the+fundamental%22+horizon"
+   ],
+   "suggested_searches": [
+    "who provides liquidity during mutual fund fire sales counterparties",
+    "liquidity supplying versus liquidity demanding mutual funds trading style fragility",
+    "long-term investors liquidity provision March 2020 equities pension funds insurers buying",
+    "institutional investors buy during crashes contrarian long-horizon 13F stress episodes",
+    "Lehman 2008 long-term institutions net buyers stocks sold by short-term institutions",
+    "corporate bond mutual funds fire sales who absorbs insurers",
+    "within-stock offsetting institutional trades buyer seller horizon",
+    "pension fund rebalancing countercyclical equity market stress liquidity provision",
+    "dispersion of institutional investment horizons stock price crash risk",
+    "heterogeneity of institutional investors horizon idiosyncratic volatility",
+    "institutional investor horizon diversity stock volatility China",
+    "Chan Cheng Hameed investor heterogeneity liquidity follow-up citations 2023 2024 2025",
+    "Kondor 2012 Review of Economic Studies horizon heterogeneity disagreement volume",
+    "holder base heterogeneity stock price fragility Greenwood Thesmar extension",
+    "Bushee classification mix transient dedicated quasi-indexer entropy stock",
+    "ownership-weighted dispersion of churn ratio stock-level",
+    "who provides liquidity institutional investors stress buy side sell side same stock 13F",
+    "long-term institutional investors liquidity provision fire sales stock level counterparties",
+    "Chan Cheng Hameed investor heterogeneity liquidity citations 2023 2024 2025",
+    "dispersion of institutional investor horizons stock crash risk volatility",
+    "institutional trading against fire sales by investment horizon"
+   ],
+   "analyst_rationales": [
+    "Contradiction cluster 'who-absorbs-in-stress' is high relevance and is the only part of Pivot B that Chan-Cheng-Hameed (investor-heterogeneity-and-liquidity, JFQA 2022) did not pre-empt: they ARGUE that long-horizon funds supply liquidity to fire-selling short-horizon funds but do not test it at the trade or holder level. Side A: Bolton-Santos-Scheinkman's outside-liquidity theory (outside-and-inside-liquidity); Timmer's insurers and pension funds trading countercyclically, though by institution type, in German debt securities (working-paper-series); Glossner et al.'s finding that long-term IO mitigated COVID losses, a level effect (do-institutional-investors-stabilize); a low-authority Erasmus thesis on insurers (erasmus-university-rotterdam). Side B: Glossner et al. identify RETAIL as the COVID liquidity providers, with hedge funds selling indiscriminately (do-institutional-investors-stabilize); Coval-Stafford's liquidity-provision returns go to those trading against distressed funds, not to a horizon class (nber-working-paper-series-2); Cella-Ellul-Giannetti show long-term institutions also sold (~7% vs ~21%), so they may sell less rather than buy (investors-horizons-and-the-amplification-of-market-shocks); Koijen-Richmond-Yogo show long-horizon types have the smallest price impact, which is different from absorption (which-investors-matter-for-equity-valuations-and-expected-returns-nber). If long-horizon institutions are net sellers too, Pivot B's mechanism collapses to a level effect. If they are net buyers in high-dispersion stocks, that is a new, testable fact the paper can own. Depth work should find trade-level and holder-level evidence on liquidity supply in fire sales, including the bond-fund literature on liquidity-supplying vs liquidity-demanding fund styles (relevant to the team's N-PORT data).",
+    "Contradiction cluster 'diversity-stabilises-or-destabilises' (high relevance) pits the empirical side, where dispersion means more liquidity (investor-heterogeneity-and-liquidity) and FMH ABMs find stability rises with diversity (comses-catalog; comses-catalog-2), against the model side, where mixing short and long horizons raises return variability (econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market) and investment heterogeneity raises volatility on overlap networks (financial-instability-transition-under-heterogeneous-investments-and). This fight sits inside the CME paper itself: the stock-level data (lower dispersion predicts higher next-quarter volatility, t = -2.4) agree with Chan et al. and the FMH, while the paper's simulated friction channel has the opposite sign. The cluster notes a possible scope reconciliation (mixing raises trading volume and day-to-day variance; dispersion lets one group absorb another's stress selling), and Dai-Parwada-Winchester-Zhang's test of Kondor's horizon-heterogeneity theory (the-more-we-know-the-less-we-agree-a-test-of-the-trading-horizon-heterogeneity-t) found that more short-term investors raise post-announcement volume and volatility. Whether dispersion has a volatility or crash effect separate from the level of short-horizon IO (Cella et al.; Zhu, crash-risk-and-investor-horizon; Ben-David et al., nber-working-paper-series-8), from fragility (stock-price-fragility) and from Chan et al.'s liquidity channel is unresolved, and the corpus has not searched the large Chinese-market literature on 'institutional investor heterogeneity and stock price crash risk'. Depth work must (a) hunt near-duplicates on dispersion leading to volatility or crash, (b) pin down Chan et al.'s exact churn construction and controls so the increment is stated precisely, and (c) find theory that predicts the sign (Kondor 2012; Beber-Driessen-Tuijp, pricing-liquidity-risk-with-heterogeneous-investment), so the model can be re-signed or discarded.",
+    "This combines contradiction clusters 'who-absorbs-in-stress' and 'diversity-stabilises-or-destabilises' (both high relevance). Chan-Cheng-Hameed (investor-heterogeneity-and-liquidity) argue that long-horizon funds absorb short-horizon fire sales but test this only indirectly, through the price impact of flow-induced trading. Glossner et al. (do-institutional-investors-stabilize) find that retail investors, not long-term institutions, provided liquidity in the COVID crash. Coval-Stafford (nber-working-paper-series-2) and Greenwood-Thesmar (stock-price-fragility) point to arbitrageurs and to investors trading against flows. Bolton-Santos-Scheinkman (outside-and-inside-liquidity) and Timmer (working-paper-series) support countercyclical long-run investors. The CME stock-level sign (lower dispersion, higher volatility) agrees with Chan et al. and contradicts the CME model's friction channel, so the model is the outlier. The depth packet should decide: (a) whether a who-trades-against-whom design by holder horizon within a stock is new; (b) whether it is feasible with quarterly 13F, given that intra-quarter round trips are invisible (Lehman 2008Q3/Q4, 2020Q1, 2022 episodes); (c) whether price delay or crash outcomes (Chen-Lee-Sun: heterogeneity-of-institutional-ownership-and-stock-price-delay; Zhu: crash-risk-and-investor-horizon) already cover dispersion."
+   ]
+  },
+  {
+   "name": "horizon-homophily-fact-or-mechanical",
+   "one_line": "Is 'similar-horizon institutions hold similar portfolios' a new fact, or mechanically implied by Bushee-type clustering, characteristic-based demand, index tracking and shared asset managers, and does it survive a bipartite configuration-model null?",
+   "flavor": "dialectical",
+   "importance": 6,
+   "uncertainty": 6,
+   "disagreement": 5,
+   "decision_impact": 6,
+   "composite_score": 23,
+   "source_budget": 4,
+   "rationale": "Pivot D is the motivating fact for A; it must not be mechanical.",
+   "merged_from": [
+    "horizon-homophily-in-co-holding-fact-or-mechanical",
+    "horizon-homophily-vs-characteristic-demand"
+   ],
+   "corpus_evidence": [
+    "arxiv14022494v2-q-fingn-28-aug-2014",
+    "gradual-information-diffusion-across-commonly-owned-firms",
+    "inferring-latent-social-networks-from-stock-holdings",
+    "institutional-investor-cliques-and-governance",
+    "institutional-investors-and-equity-returns",
+    "investor-heterogeneity-and-liquidity",
+    "nber-working-paper-series-12",
+    "similar-investors1",
+    "statistically-validated-network-of-portfolio-overlaps-and-systemic-risk-pmc",
+    "systemic-risk-from-investment-similarities-pmc",
+    "the-people-in-your-neighborhood-social-interactions-and-mutual-fund-portfolios",
+    "which-investors-matter-for-equity-valuations-and-expected-returns-nber",
+    "working-paper-2515"
+   ],
+   "opposing_positions": [
+    [
+     {
+      "position": "Mechanical: horizon homophily in co-holding is implied by horizon-type characteristic preferences, Bushee-type clustering, shared managers and correlated flows, so it is not a new fact",
+      "sources": [
+       "institutional-investors-and-equity-returns",
+       "nber-working-paper-series-12",
+       "institutional-investor-cliques-and-governance",
+       "working-paper-2515",
+       "investor-heterogeneity-and-liquidity"
+      ]
+     },
+     {
+      "position": "Genuine: portfolio similarity is an object investors respond to, and validated overlap networks show excess similarity beyond degree and size nulls, so horizon-conditioned excess similarity could be a new fact",
+      "sources": [
+       "statistically-validated-network-of-portfolio-overlaps-and-systemic-risk-pmc",
+       "similar-investors1"
+      ]
+     }
+    ]
+   ],
+   "suggested_starting_urls": [
+    "https://www.lebow.drexel.edu/sites/default/files/1488309013-crane-kochmichenaudinstitutional-investor-cliques.pdf",
+    "https://www.dallasfed.org/~/media/documents/research/papers/2025/wp2515r1.pdf",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5175158/",
+    "https://scholar.google.com/scholar?q=%22Portfolio+similarity+and+asset+liquidation%22+insurance",
+    "https://doi.org/10.1038/srep39467"
+   ],
+   "suggested_searches": [
+    "determinants of portfolio similarity between institutional investors turnover style size",
+    "portfolio similarity and asset liquidation insurance industry Girardi Hanley Nikolova Pelizzon",
+    "pairwise portfolio overlap institutional investors dyadic regression investor characteristics",
+    "active share benchmark overlap quasi-indexer portfolio similarity",
+    "homophily institutional investors similar investment style co-holding",
+    "same investment horizon institutions hold same stocks clustering",
+    "bipartite configuration model 13F validated overlap investor type",
+    "Bushee 1998 2001 institutional investor classification transient dedicated quasi-indexer stock preferences",
+    "institutional investor preferences stock characteristics by investor type Bennett Sias Starks",
+    "latent demand similarity Koijen Yogo institutional investors characteristics",
+    "portfolio similarity determinants institutional investors style size",
+    "bipartite configuration model 13F validated overlap investor attributes"
+   ],
+   "analyst_rationales": [
+    "Pivot D is the CME paper's strongest empirical result (mean 0.158, positive in all 50 quarters, NW t = 19), but coverage-gaps.md rates its near-duplicate evidence THIN, and the corpus contains several partial pre-emptions and confounds that no one has assembled. Crane-Koch-Michaely (institutional-investor-cliques-and-governance) find that co-holding cliques are dominated by dedicated, not quasi-indexer, institutions, a type-clustering result in co-holding. Chan-Cheng-Hameed show fund flows comove more within the same churn tercile (investor-heterogeneity-and-liquidity). Ozdagli-Ryfe (working-paper-2515) show portfolio similarity driven by a COMMON ASSET MANAGER, a non-homophily confound. Hong-Xu (inferring-latent-social-networks-from-stock-holdings) and Bohlin-Rosvall (arxiv14022494v2-q-fingn-28-aug-2014) build similarity networks without a horizon dimension. Gualdi et al. (statistically-validated-network-of-portfolio-overlaps-and-systemic-risk-pmc) supply the BiCM null for 13F, and Ying (gradual-information-diffusion-across-commonly-owned-firms) finds that low-turnover passive owners drive the co-ownership effects. Low-turnover quasi-indexers mechanically hold near-identical index portfolios, so the correlation may be largely an indexing artefact. Depth work should (a) search for any paper stating horizon or turnover similarity as a predictor of pairwise portfolio overlap, and (b) find the standard decomposition of portfolio overlap into benchmark, style, size and common-manager components, to say whether D can stand as a fact or only as motivation for A.",
+    "The project's main fact (horizon proximity correlates with portfolio cosine similarity, mean 0.158, NW t=19) could follow mechanically from known results. Short-horizon institutions prefer particular stock characteristics (Yan-Zhang: institutional-investors-and-equity-returns). Institutional demand is largely characteristics-based (Koijen-Yogo: nber-working-paper-series-12; Koijen-Richmond-Yogo: which-investors-matter-for-equity-valuations-and-expected-returns-nber). Bushee-type clustering in co-holding cliques (dedicated institutions in cliques, quasi-indexers outside) is documented by Crane-Koch-Michaely (institutional-investor-cliques-and-governance), and Bushee's classification is itself built from turnover and diversification. Shared asset managers produce similar portfolios (working-paper-2515). Same-horizon funds receive correlated flows (investor-heterogeneity-and-liquidity). Gualdi et al. (statistically-validated-network-of-portfolio-overlaps-and-systemic-risk-pmc) and Georg-Pierret-Steffen (similar-investors1) offer nulls and designs under which similarity is a genuine object. Nobody has tested whether horizon proximity predicts similarity in latent demand after characteristics. That test decides whether D survives as a motivating fact or is a by-product of known results."
+   ]
+  },
+  {
+   "name": "data-upgrade-and-abm-calibration",
+   "one_line": "Can free SEC Form 13F data sets give a full-universe network (and how to handle the 2023 dollar-unit change), and is there precedent/mapping for calibrating an ABM adaptation rate to an estimated peer-effect coefficient (linear-in-means to DeGroot), including the closest ABM near-duplicate (Oldham 2019)?",
+   "flavor": "convergent",
+   "importance": 6,
+   "uncertainty": 5,
+   "disagreement": 3,
+   "decision_impact": 6,
+   "composite_score": 20,
+   "source_budget": 3,
+   "rationale": "Answers the sampled-network critique and positions E as a supporting component.",
+   "merged_from": [
+    "full-universe-13f-data-and-sampled-network",
+    "abm-calibrated-to-peer-effect-estimates",
+    "pivot-e-network-horizon-adaptation-abm-prior-art-and-calibration"
+   ],
+   "corpus_evidence": [
+    "calibrating-emergent-phenomena-in-stock-markets-with-agent-based-models-pmc",
+    "comses-catalog",
+    "comses-catalog-2",
+    "econometrics-of-sampled-networks",
+    "econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market",
+    "econpapers-understanding-how-short-termism-and-a-dynamic-investor-network-affect",
+    "empirical-challenges-with-peers-of-peers-instruments",
+    "financial-instability-transition-under-heterogeneous-investments-and",
+    "herding-momentum-and-reversal-in-chinas-a-share-market-an-agent-based-network-mo",
+    "heterogeneous-gain-learning-and-long-swings-in-asset",
+    "how-homophily-a\ufb00ects-the-speed-of",
+    "impact-of-different-investment-horizons-in-heterogeneous-agent-models-do-long-te",
+    "journal-of-economic-behavior-organization-sciencedirectcom-by-elsevier",
+    "journal-of-economic-dynamics-and-control-sciencedirectcom-by-elsevier",
+    "learning-to-manage-investment-portfolios-beyond-simple-utility",
+    "nber-working-paper-series-8",
+    "statistically-validated-network-of-portfolio-overlaps-and-systemic-risk-pmc"
+   ],
+   "opposing_positions": [],
+   "suggested_starting_urls": [
+    "https://www.sec.gov/data-research/sec-markets-data/form-13f-data-sets",
+    "https://wrds-www.wharton.upenn.edu/documents/752/Research_Note_-Thomson_S34_Data_Issues_mldAsdi.pdf",
+    "http://downloads.hindawi.com/journals/8503/2019/1715624.pdf",
+    "https://econpapers.repec.org/RePEc:hin:complx:1715624",
+    "https://arxiv.org/abs/2510.26165",
+    "https://scholar.google.com/scholar?q=agent-based+model+%22investment+horizon%22+adaptation+social+network+imitation+calibration"
+   ],
+   "suggested_searches": [
+    "SEC Form 13F data sets structured flat files 2013 coverage share amount",
+    "13F value reported in dollars instead of thousands 2023 change",
+    "Thomson Reuters s34 data issues 13F WRDS regenerated",
+    "Backus Conlon Sinkinson common ownership data 13F errors",
+    "13F CUSIP to permno mapping without CRSP OpenFIGI",
+    "sampled network peer effects bias fraction of nodes observed",
+    "estimating agent-based financial market models simulated method of moments Franke Westerhoff",
+    "Kukacka Barunik estimation heterogeneous agent model",
+    "DeGroot learning structural estimation from linear-in-means peer effects",
+    "agent-based model calibrated to empirical peer effect estimates out-of-sample validation finance",
+    "agent-based model published Review of Finance OR Management Science OR Journal of Financial Stability heterogeneous horizons",
+    "agent-based model investors imitate neighbours' investment horizon",
+    "co-evolution network and strategy agent-based financial market homophily",
+    "estimating agent-based models from micro data indirect inference portfolio holdings",
+    "agent-based model calibrated to 13F institutional holdings",
+    "adaptive investment horizon social learning artificial stock market",
+    "Fractal Market Hypothesis agent-based model network 2020 2021 2022 2023 2024 2025",
+    "Complexity 2019 short-termism dynamic investor network citations follow-up"
+   ],
+   "analyst_rationales": [
+    "The orchestrator's binding problems for A are N of about 100 per quarter, a sampled network (top 150 filers) and holdings_db storing value_k only. Chandrasekhar-Lewis (econometrics-of-sampled-networks) show that regressions on sampled networks are biased. Canen-Chadha (empirical-challenges-with-peers-of-peers-instruments) warn that friends-of-friends instruments weaken as density rises, which matters once the full universe is used. Ben-David et al. (nber-working-paper-series-8) cite the WRDS research note on Thomson s34 data issues and describe cleaning 13F from SEC filings. Gualdi et al. (statistically-validated-network-of-portfolio-overlaps-and-systemic-risk-pmc) build the full 13F overlap network. Whether CRSP/WRDS access is needed, or the SEC flat files suffice, determines Q3's data-upgrade recommendation and the main referee objection. It also matters whether a reporting-unit change in 13F values could have contaminated the value-weight series in the current paper.",
+    "Pivot E is novel only if the 0.06 adaptation rate is estimated and then tested out of sample. The corpus contains the parts but not the bridge. Golub-Jackson (how-homophily-a\ufb00ects-the-speed-of) give the DeGroot structure in which homophily slows convergence. Oldham (econpapers-understanding-how-short-termism-and-a-dynamic-investor-network-affect) is the closest ABM (horizons plus a dynamic network) but is not calibrated. Scholl et al. 2025 (learning-to-manage-investment-portfolios-beyond-simple-utility) and the PLOS ONE 2018 calibration paper (calibrating-emergent-phenomena-in-stock-markets-with-agent-based-models-pmc) calibrate ABMs to holdings or market data, but not to peer-effect estimates. LeBaron (econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market) has evolving horizons. Journal IFs from wave 2 matter here: JEDC is 1.8 and JEBO 2.7 (journal-of-economic-dynamics-and-control-sciencedirectcom-by-elsevier, journal-of-economic-behavior-organization-sciencedirectcom-by-elsevier), so E can only be a component of an empirical-led paper. The depth packet should find estimation-of-ABM precedents (simulated method of moments, Franke-Westerhoff, Kukacka-Barunik) and any paper that ties a reduced-form peer coefficient to a structural adaptation parameter.",
+    "The corpus already pre-empts large parts of E, but its pieces have not been assembled into a verdict. The 2019 Complexity ABM (econpapers-understanding-how-short-termism-and-a-dynamic-investor-network-affect) has investors with different time horizons in a dynamically EVOLVING advice network (links rewire toward outperforming 'Oracles') and finds that short-termism raises volatility. That is the closest structural near-duplicate of CME's model and has not been read beyond its abstract: does horizon itself adapt, and do links depend on horizon similarity? LeBaron already has endogenous horizon evolution (econpapers-evolution-and-time-horizons-in-an-agent-based-stock-market; heterogeneous-gain-learning-and-long-swings-in-asset). Li-Nishimura-Men and Li-Li-Sun implement the FMH (comses-catalog; comses-catalog-2). The 2022 JEBO HAM adds horizons to Brock-Hommes (impact-of-different-investment-horizons-in-heterogeneous-agent-models-do-long-te). A 2026 lattice/network herding ABM exists (herding-momentum-and-reversal-in-chinas-a-share-market-an-agent-based-network-mo). Scholl-Mahfouz-Calinescu-Farmer 2025 calibrate ABMs to fund holdings (learning-to-manage-investment-portfolios-beyond-simple-utility), and Golub-Jackson give the homophily-plus-averaging theory (how-homophily-a\ufb00ects-the-speed-of). The open question is narrow: is 'calibrate the neighbour-adaptation rate from 13F peer-effect estimates, then test simulated stock-level predictions out of sample' new, and is that bridge (the estimated A coefficient feeding E) a defensible contribution? The answer also decides whether the 0.06 assumed adaptation rate can be replaced by an estimated one. The journal-IF evidence (orchestrator notes: JEDC 1.8, JEBO 2.7) means E can only be a supporting section, so depth should stay bounded to the near-duplicate check and micro-calibration precedents (indirect inference or SMM of network ABMs on holdings)."
+   ]
+  }
+ ],
+ "skip_loci": [
+  {
+   "slug": "pivot-c-price-drift-contamination",
+   "reason": "Resolved in the corpus: the GMM 2005 churn numerator subtracts N_{t-1}*dP (journal-of-financial-economics-76-2005-135165), Yan-Zhang use the same numerator (institutional-investors-and-equity-returns), Tucker documents drift-neutral Modified Turnover (the-long-and-the-short-portfolio-turnover-ratios), and Zhu and Chen-Lee-Sun use the corrected measure (crash-risk-and-investor-horizon; heterogeneity-of-institutional-ownership-and-stock-price-delay). Contradiction cluster 'price-drift-novelty' is marked decisive. The only residual nuance (GMM's denominator is still a value-weighted average; Chan et al. may use value-based churn) is a footnote the drafter can handle from existing notes and does not need an investigator."
+  },
+  {
+   "slug": "journal-impact-factor-verification",
+   "reason": "Already covered by wave 2 (review-of-finance-2 journal report; orchestrator notes list FRL 7.1, RoF 8.4, RFS 5.4, MS 4.9, JFQA 2.8-4.1, JEDC 1.8, JEBO 2.7). This is a fact lookup, not a depth locus."
+  },
+  {
+   "slug": "short-horizon-destabilising-vs-informed",
+   "reason": "Contradiction cluster 'short-horizon-good-or-bad' is medium relevance and scope-split (stability vs information outcomes); both sides are well evidenced (issn-0956-8549-717-2, institutional-investors-and-equity-returns, dp12021). It frames the literature map but does not change any pivot verdict."
+  },
+  {
+   "slug": "fmh-testability-at-investor-level",
+   "reason": "Cluster 'fmh-testable' is medium relevance and an opportunity, not a fight. Holdings-based horizons answer the 2014 'horizons not identifiable' complaint (comses-catalog) by construction; Kristoufek (fractal-markets-hypothesis-and-the-global-financial-crisis) is the index-level benchmark. It can be absorbed into the drafting of the FMH framing and the Pivot E locus."
+  },
+  {
+   "slug": "common-ownership-fire-sale-mechanics",
+   "reason": "Strand (d) is well covered (Coval-Stafford, Anton-Polk, Greenwood-Thesmar, Lou, Greenwood-Landier-Thesmar, Delpini, Gualdi, Friberg et al. 2024; consensus claim 1). Remaining questions are absorbed into the who-absorbs and dispersion-sign loci."
+  },
+  {
+   "slug": "13f-data-upgrade-standalone",
+   "reason": "The data-upgrade question (full 13F universe via WRDS s34 or SEC Form 13F data sets, s34 quality issues, CRSP prices) is folded into the identification locus, because its load-bearing role is answering the sampled-network critique (econometrics-of-sampled-networks), not standing alone."
+  },
+  {
+   "slug": "price-drift-contamination-novelty",
+   "reason": "Resolved and pre-empted: Gaspar-Massa-Matos churn (journal-of-financial-economics-76-2005-135165), Yan-Zhang (institutional-investors-and-equity-returns) and Tucker (the-long-and-the-short-portfolio-turnover-ratios) already net out passive price changes. Contradiction cluster 'price-drift-novelty' has side B decisive. A possible new angle (a 13F value-unit change) is folded into full-universe-13f-data-and-sampled-network."
+  },
+  {
+   "slug": "peer-effect-identification-checklist-generic",
+   "reason": "Cluster 'peer-effects-identifiable' is a methods checklist already covered by B5 (Angrist, Caeyers-Fafchamps, Bramoulle et al., Leary-Roberts, Canen-Chadha). Its specific, unresolved parts are moved into common-turnover-factor-vs-horizon-contagion (correlated effects) and full-universe-13f-data-and-sampled-network (sampling and density)."
+  },
+  {
+   "slug": "journal-impact-factors",
+   "reason": "Answered by wave 2 B11 (FRL 7.1, IRFA 10.2, RoF 8.4, RFS 5.4, MS 4.9, JFQA 4.1, JFS 4.1, JBF 4.0, JEDC 1.8). Nothing left for depth investigation except the ABM-journal fit, which is folded into abm-calibrated-to-peer-effect-estimates."
+  },
+  {
+   "slug": "short-horizon-good-or-bad",
+   "reason": "Medium relevance. The two sides look at different outcomes (stability vs information) and both are right. This frames the literature map but does not change any novelty verdict."
+  },
+  {
+   "slug": "fmh-testable-at-investor-level",
+   "reason": "Medium relevance. It is an opportunity for framing, not an evidential dispute. Holdings-based horizons already answer the 2014 'not identifiable' claim (comses-catalog). Kristoufek is index-level only."
+  },
+  {
+   "slug": "chinco-ye-investment-horizon-spillovers",
+   "reason": "Checked as a possible near-duplicate for A and B (nber-working-paper-series-9). It decomposes stock volume by wavelet frequency, with no holder identities and no peer network, so it is adjacent only. A citation, not a locus."
+  }
+ ],
+ "orchestrator_note": "2023 SEC 13F unit change verified on project data by orchestrator (scripts/check_13f_unit_break.py in cme-validation): value field jumps ~1000x at 2022Q4; original TDI 2022Q4 = 1.021 is an artefact (fixed 1.918); r(TDI,VIX) as coded -0.525, fixed -0.641."
+}

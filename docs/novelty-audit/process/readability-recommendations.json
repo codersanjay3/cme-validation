@@ -1,0 +1,190 @@
+{
+  "recommendations": [
+    {
+      "id": "rec-1",
+      "category": "break-paragraph",
+      "severity": "moderate",
+      "section": "<exec summary>",
+      "current": "never observe [7]. On the report's judgement of fit, the programme suits",
+      "recommended": "never observe [7].\n\nOn the report's judgement of fit, the programme suits",
+      "rationale": "The second summary paragraph runs about 1,400 characters; separating the journal-fit verdict from the pre-emption findings gives each its own beat."
+    },
+    {
+      "id": "rec-2",
+      "category": "break-paragraph",
+      "severity": "major",
+      "section": "### 1.1 The question survives",
+      "current": "does not move the decomposition. In mutual-fund data average turnover",
+      "recommended": "does not move the decomposition.\n\nIn mutual-fund data average turnover",
+      "rationale": "The paragraph exceeds 1,500 characters; the hinge is the move from the project's own variance decomposition to the external commonality threat."
+    },
+    {
+      "id": "rec-3",
+      "category": "break-paragraph",
+      "severity": "major",
+      "section": "### 2.1 Strand (a): horizon heterogeneity, the FMH and heterogeneous-horizon ABMs",
+      "current": "mixed populations raise return variability [24]. Peters's FMH holds that",
+      "recommended": "mixed populations raise return variability [24].\n\nPeters's FMH holds that",
+      "rationale": "The ABM paragraph is about 2,000 characters; the shift from endogenous-horizon ABMs to the FMH and its tests is a clear sub-topic boundary."
+    },
+    {
+      "id": "rec-4",
+      "category": "break-paragraph",
+      "severity": "major",
+      "section": "### 2.1 Strand (a): horizon heterogeneity, the FMH and heterogeneous-horizon ABMs",
+      "current": "NASDAQ Composite [36]. Oldham's network ABM is CME's nearest relative",
+      "recommended": "NASDAQ Composite [36].\n\nOldham's network ABM is CME's nearest relative",
+      "rationale": "Isolating the nearest-relative model and the absorption theory in a closing paragraph makes the closest-paper comparison easy to find."
+    },
+    {
+      "id": "rec-5",
+      "category": "break-paragraph",
+      "severity": "moderate",
+      "section": "### 2.3 Strand (c): dispersion of a stock's ownership base",
+      "current": "Heckman corrections [14]. Greenwood and Thesmar supply the benchmark",
+      "recommended": "Heckman corrections [14].\n\nGreenwood and Thesmar supply the benchmark",
+      "rationale": "The paragraph passes 1,500 characters; the fragility benchmark opens a separate point from the dispersion findings."
+    },
+    {
+      "id": "rec-6",
+      "category": "break-paragraph",
+      "severity": "major",
+      "section": "### 2.5 Strand (e): peer effects, herding and their identification",
+      "current": "friends-of-friends instruments [26]. A 2020 survey classifies",
+      "recommended": "friends-of-friends instruments [26].\n\nA 2020 survey classifies",
+      "rationale": "The methods paragraph is about 2,500 characters; this splits the linear-in-means setup from the survey of critiques."
+    },
+    {
+      "id": "rec-7",
+      "category": "break-paragraph",
+      "severity": "major",
+      "section": "### 2.5 Strand (e): peer effects, herding and their identification",
+      "current": "biases estimates downward [57]. Chandrasekhar and Lewis's Proposition 3.4",
+      "recommended": "biases estimates downward [57].\n\nChandrasekhar and Lewis's Proposition 3.4",
+      "rationale": "Starts the sampled-network and instrument-validity discussion in its own paragraph, which the pivot's design depends on."
+    },
+    {
+      "id": "rec-8",
+      "category": "break-paragraph",
+      "severity": "moderate",
+      "section": "### 2.5 Strand (e): peer effects, herding and their identification",
+      "current": "valid under weak instruments [58]. Leary and Roberts instrument peers' policies",
+      "recommended": "valid under weak instruments [58].\n\nLeary and Roberts instrument peers' policies",
+      "rationale": "Separates the shock-based precedents and the closing summary line from the critique of instruments, finishing the section on a short paragraph."
+    },
+    {
+      "id": "rec-9",
+      "category": "break-paragraph",
+      "severity": "moderate",
+      "section": "### 2.6 Strand (f): measuring horizons from holdings, and contamination",
+      "current": "The SEC's free 13F Data Sets cover July 2013 to August 2026 [11]. Structural limits matter as much as drift:",
+      "recommended": "The SEC's free 13F Data Sets cover July 2013 to August 2026 [11].\n\nStructural limits matter as much as drift:",
+      "rationale": "The paragraph is about 1,700 characters; drift adjustment and structural 13F limits are two distinct points."
+    },
+    {
+      "id": "rec-10",
+      "category": "make-list",
+      "severity": "moderate",
+      "section": "### 3.1 Pivot A: horizon contagion",
+      "current": "**Novel and defensible increment.** Three parts, all required: a new outcome (institutional horizon, not holdings or flows); new identification for that outcome (manager-level shocks to a neighbour's horizon on a full-universe network with style-by-quarter fixed effects [10, 56]); and a theory test (the Froot-Scharfstein-Stein complementarity predicts a positive coefficient, larger in short-horizon neighbourhoods [12], and Golub-Jackson predicts slower cross-group convergence under homophily [61]). The claim should read *the first identified peer effect in institutional trading horizons*, never *the first peer effects among institutions*.",
+      "recommended": "**Novel and defensible increment.** Three parts, all required:\n\n- **A new outcome:** institutional horizon, not holdings or flows.\n- **New identification for that outcome:** manager-level shocks to a neighbour's horizon on a full-universe network with style-by-quarter fixed effects [10, 56].\n- **A theory test:** the Froot-Scharfstein-Stein complementarity predicts a positive coefficient, larger in short-horizon neighbourhoods [12], and Golub-Jackson predicts slower cross-group convergence under homophily [61].\n\nThe claim should read *the first identified peer effect in institutional trading horizons*, never *the first peer effects among institutions*.",
+      "rationale": "Three required components described sequentially in prose are list-shaped, and the reader needs to see all three at a glance."
+    },
+    {
+      "id": "rec-11",
+      "category": "break-paragraph",
+      "severity": "moderate",
+      "section": "### 3.4 Pivot D: horizon homophily in co-holding",
+      "current": "index geometry cannot drive it. **Verdict:** likely mechanical as measured, though untested; D revives as a standalone fact",
+      "recommended": "index geometry cannot drive it.\n\n**Verdict:** likely mechanical as measured, though untested. D revives as a standalone fact",
+      "rationale": "The paragraph is about 1,300 characters and the verdict sentence runs well past 150; the verdict gets its own paragraph and the semicolon becomes a sentence break."
+    },
+    {
+      "id": "rec-12",
+      "category": "make-list",
+      "severity": "major",
+      "section": "### 4.2 The strongest case against",
+      "current": "First, the signal is small relative to any leak. Total variance of log tau is about 0.85 and the residual after fixed effects about 0.28. Even if the neighbour-own horizon gap had the full cross-sectional variance, a 0.06 peer response would generate quarterly variation of about 0.06 squared times 0.85, or 0.003, roughly 1% of residual variance, so a correlated-effects leak of that size would reproduce it: quarter fixed effects remove only the average loading on a common turnover factor, not style-specific loadings. Second, with institution fixed effects, a lagged dependent variable and about 50 quarters, the Nickell approximation (the bias of within estimators in short dynamic panels) puts the bias on persistence near (1 + 0.75)/(50 - 1), about 0.036, part of which homophily loads onto the peer coefficient; exclusion bias runs the other way [57], so the net sign is unknown. Third, widening the network from top-5 to top-10 raises the median friends-of-friends count from 32-42 to about 60-70 (the project's own data), so many measured intransitive friends-of-friends are real peers cut by an arbitrary threshold, which the Chandrasekhar-Lewis mechanism covers as much as node sampling [8]; the full universe then pushes toward the dense regime where instruments are weak [58]. Fourth, merger shocks are discredited [47, 48, 49], no paper located shows that a large filer's turnover moves when one manager leaves, the churn ratio is stable for institutions across time [19], and most trade directions are predictable from managers' own history [53]. A null in a reflection-plus-exclusion setting is uninformative [9, 57].",
+      "recommended": "- **First**, the signal is small relative to any leak. Total variance of log tau is about 0.85 and the residual after fixed effects about 0.28. Even if the neighbour-own horizon gap had the full cross-sectional variance, a 0.06 peer response would generate quarterly variation of about 0.06 squared times 0.85, or 0.003, roughly 1% of residual variance, so a correlated-effects leak of that size would reproduce it: quarter fixed effects remove only the average loading on a common turnover factor, not style-specific loadings.\n- **Second**, with institution fixed effects, a lagged dependent variable and about 50 quarters, the Nickell approximation (the bias of within estimators in short dynamic panels) puts the bias on persistence near (1 + 0.75)/(50 - 1), about 0.036, part of which homophily loads onto the peer coefficient; exclusion bias runs the other way [57], so the net sign is unknown.\n- **Third**, widening the network from top-5 to top-10 raises the median friends-of-friends count from 32-42 to about 60-70 (the project's own data), so many measured intransitive friends-of-friends are real peers cut by an arbitrary threshold, which the Chandrasekhar-Lewis mechanism covers as much as node sampling [8]; the full universe then pushes toward the dense regime where instruments are weak [58].\n- **Fourth**, merger shocks are discredited [47, 48, 49], no paper located shows that a large filer's turnover moves when one manager leaves, the churn ratio is stable for institutions across time [19], and most trade directions are predictable from managers' own history [53].\n\nA null in a reflection-plus-exclusion setting is uninformative [9, 57].",
+      "rationale": "Four enumerated objections in a single 1,800-character paragraph are the report's most list-shaped passage and the heart of the counter-case."
+    },
+    {
+      "id": "rec-13",
+      "category": "make-list",
+      "severity": "moderate",
+      "section": "### 4.6 What transfers and what is discarded",
+      "current": "Transfers: the question; the network construction and horizon panel, rebuilt on the full universe and share-based; the ABM code, re-signed; the stock-level dispersion regression, repositioned as a replication of the Chan-Cheng-Hameed appendix [13]; N-PORT, as a fund-level validation layer free of filer aggregation and a corporate-bond extension, with the descriptive bond result dropped as a finding; and the contamination discovery, recast as visible data hygiene. Discarded: the FMH as headline frame, the friction-volatility claim, the 1.31x volatility and 14x fragmentation simulation numbers as findings, the diversity-VIX result, and kappa-hat as a headline fact.",
+      "recommended": "**Transfers:**\n\n- The question.\n- The network construction and horizon panel, rebuilt on the full universe and share-based.\n- The ABM code, re-signed.\n- The stock-level dispersion regression, repositioned as a replication of the Chan-Cheng-Hameed appendix [13].\n- N-PORT, as a fund-level validation layer free of filer aggregation and a corporate-bond extension, with the descriptive bond result dropped as a finding.\n- The contamination discovery, recast as visible data hygiene.\n\n**Discarded:**\n\n- The FMH as headline frame.\n- The friction-volatility claim.\n- The 1.31x volatility and 14x fragmentation simulation numbers as findings.\n- The diversity-VIX result.\n- Kappa-hat as a headline fact.",
+      "rationale": "A two-part inventory (keep versus drop) is scanned, not read, and the list form lets the team check items off."
+    },
+    {
+      "id": "rec-14",
+      "category": "make-list",
+      "severity": "moderate",
+      "section": "### 4.7 Forward-looking implications",
+      "current": "If the estimate is positive and survives the shock design, three implications follow. First, the crisis effects of short-horizon ownership [19, 20] carry a network multiplier that fragility measures built from flow covariances [43] and overlap counts [23] do not see: shocks shortening a cluster of neighbours' horizons should predict fragility in the stocks that cluster holds. Second, the passive transition reshapes the network itself. Even a personal shock can push an active manager toward quasi-indexing [10], so contagion predicts that shifts toward long horizons spread too, a testable claim about how passive behaviour diffuses. Third, agent-based finance gains an adaptation parameter estimated from holdings rather than chosen to match return moments [24, 36]. A precise zero is also informative: it settles whether institutional horizon is a trait and tells modellers to treat horizon change as wealth-driven selection [89] rather than imitation.",
+      "recommended": "If the estimate is positive and survives the shock design, three implications follow:\n\n- **First**, the crisis effects of short-horizon ownership [19, 20] carry a network multiplier that fragility measures built from flow covariances [43] and overlap counts [23] do not see: shocks shortening a cluster of neighbours' horizons should predict fragility in the stocks that cluster holds.\n- **Second**, the passive transition reshapes the network itself. Even a personal shock can push an active manager toward quasi-indexing [10], so contagion predicts that shifts toward long horizons spread too, a testable claim about how passive behaviour diffuses.\n- **Third**, agent-based finance gains an adaptation parameter estimated from holdings rather than chosen to match return moments [24, 36].\n\nA precise zero is also informative: it settles whether institutional horizon is a trait and tells modellers to treat horizon change as wealth-driven selection [89] rather than imitation.",
+      "rationale": "The announced three implications become three visible items, with the null-result point set apart as the closing beat."
+    },
+    {
+      "id": "rec-15",
+      "category": "make-list",
+      "severity": "moderate",
+      "section": "### 5.3 Submission ladder",
+      "current": "Submit the full programme to Review of Finance. After a rejection on identification, go to Management Science or JFQA; on contribution, to JBF or JFS with the consequence section promoted. If A dies at Stage 1 or 2, the absorption paper goes first to JFQA if it clears the t above 3 bar, since it tests a mechanism a JFQA paper conjectured, and otherwise to JFS or JBF, with JIFMIM for a US-versus-China version; a dispersion-only module belongs in JFS or JBF. The ABM should not be split off before the empirical paper is accepted, because an uncalibrated model is what the field already has [16, 27].",
+      "recommended": "Submit the full programme to Review of Finance. The next step depends on the outcome:\n\n- **Rejection on identification:** go to Management Science or JFQA.\n- **Rejection on contribution:** go to JBF or JFS with the consequence section promoted.\n- **A dies at Stage 1 or 2:** the absorption paper goes first to JFQA if it clears the t above 3 bar, since it tests a mechanism a JFQA paper conjectured, and otherwise to JFS or JBF, with JIFMIM for a US-versus-China version; a dispersion-only module belongs in JFS or JBF.\n\nThe ABM should not be split off before the empirical paper is accepted, because an uncalibrated model is what the field already has [16, 27].",
+      "rationale": "A conditional routing ladder is a decision tree, which reads faster as labelled branches than as a chain of clauses."
+    },
+    {
+      "id": "rec-16",
+      "category": "make-list",
+      "severity": "major",
+      "section": "### 6.1 Step zero: rebuild the panel",
+      "current": "Five rules follow. (1) Build Gaspar-Massa-Matos churn from share changes at current prices, with the Yan-Zhang minimum-of-buys-and-sells variant as robustness [15, 21], and retire value-weight tau. (2) Rescale reported values for filings before January 3, 2023, by filing date rather than report quarter, since the jump's location suggests mixed vintages within 2022Q4 (the project's own data), or avoid the value field. (3) Clean amendments, notice filings, put and call rows, shares versus principal and CUSIP errors, since the SEC publishes the data as filed [11]. (4) Build the network on the full universe and keep the top filers only as an estimation subsample. (5) Note that 2013Q2, the current sample's first quarter, precedes the data sets [11].",
+      "recommended": "Five rules follow:\n\n1. Build Gaspar-Massa-Matos churn from share changes at current prices, with the Yan-Zhang minimum-of-buys-and-sells variant as robustness [15, 21], and retire value-weight tau.\n2. Rescale reported values for filings before January 3, 2023, by filing date rather than report quarter, since the jump's location suggests mixed vintages within 2022Q4 (the project's own data), or avoid the value field.\n3. Clean amendments, notice filings, put and call rows, shares versus principal and CUSIP errors, since the SEC publishes the data as filed [11].\n4. Build the network on the full universe and keep the top filers only as an estimation subsample.\n5. Note that 2013Q2, the current sample's first quarter, precedes the data sets [11].",
+      "rationale": "The prose already numbers its rules and the next paragraph refers to Rule 4 by number, so a numbered list makes the reference resolvable at a glance."
+    },
+    {
+      "id": "rec-17",
+      "category": "make-list",
+      "severity": "moderate",
+      "section": "### 6.2 Stage 1: the descriptive peer test",
+      "current": "Controls are institution fixed effects; style-by-quarter fixed effects, with style given by Bushee type (the classification of institutions into quasi-indexers, dedicated and transient investors from annual averages of 13F reports [80]) or an AUM-by-concentration cell; own and neighbours' flows and AUM growth; Pastor-Stambaugh-Taylor same-category averages [6]; and exclusion of same-parent and same-family neighbours. Placebos are future neighbours (links formed at t+4), matched non-neighbours of the same style and size, and neighbour horizon computed from held stocks, which should be larger if mechanics dominate.",
+      "recommended": "The controls are:\n\n- Institution fixed effects.\n- Style-by-quarter fixed effects, with style given by Bushee type (the classification of institutions into quasi-indexers, dedicated and transient investors from annual averages of 13F reports [80]) or an AUM-by-concentration cell.\n- Own and neighbours' flows and AUM growth.\n- Pastor-Stambaugh-Taylor same-category averages [6].\n- Exclusion of same-parent and same-family neighbours.\n\nThe placebos are:\n\n- Future neighbours (links formed at t+4).\n- Matched non-neighbours of the same style and size.\n- Neighbour horizon computed from held stocks, which should be larger if mechanics dominate.",
+      "rationale": "Two semicolon-chained enumerations of five and three items are specification checklists that referees and replicators will want to scan."
+    },
+    {
+      "id": "rec-18",
+      "category": "break-paragraph",
+      "severity": "major",
+      "section": "### 6.5 The consequence module, which is also the fallback design",
+      "current": "2008Q3-Q4 requiring pre-2013 holdings. Because every share a filer sells",
+      "recommended": "2008Q3-Q4 requiring pre-2013 holdings.\n\nBecause every share a filer sells",
+      "rationale": "The Absorption paragraph is about 1,800 characters; the accounting-identity decomposition is a distinct move from the specification and instruments."
+    },
+    {
+      "id": "rec-19",
+      "category": "break-paragraph",
+      "severity": "moderate",
+      "section": "### 6.5 The consequence module, which is also the fallback design",
+      "current": "nesting the retail finding [20] without retail data. Placebos are non-stress quarters",
+      "recommended": "nesting the retail finding [20] without retail data.\n\nPlacebos are non-stress quarters",
+      "rationale": "Placebos and clustering are the validation step and read better as their own short paragraph after the decomposition."
+    }
+  ],
+  "summary": {
+    "total_recommendations": 19,
+    "by_category": {
+      "merge-paragraphs": 0,
+      "break-paragraph": 12,
+      "make-list": 7,
+      "make-table": 0,
+      "bold-keyterms": 0,
+      "split-sentence": 0,
+      "remove-hr": 0,
+      "add-whitespace": 0
+    },
+    "highest_severity": "major",
+    "expected_net_char_delta": 700
+  }
+}

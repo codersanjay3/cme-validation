@@ -1,0 +1,69 @@
+{
+ "critic_type": "width",
+ "vault_tag": "investor-horizon-novelty-audit-45a8e3",
+ "findings": [
+  {
+   "severity": "major",
+   "location": "3.2 (Pivot B 'Has it been done?' and Verdict), 3.4 (Pivot D), 3.5 (Pivot E), 3.3 (Pivot C); also 2.3 final paragraph",
+   "issue": "Audited absences are asserted without stating what was searched. Pivot A's absence is scoped (about eighteen framings, adversarial follow-up), but B's 'US crash outcomes open (about 80%)', D's 'no paper regresses pairwise similarity on horizon proximity' and E's 'No ABM was found in which links form on horizon similarity...' carry no queries, databases, forward-citation checks or reliability tier. The vault holds an explicit audit note for exactly these absences, so the provenance exists but did not reach the report.",
+   "evidence": "Vault note audited-absence-dispersion-crash-cc-5-horizon-sorted-overlap-cc-6: 6 scholar queries on dispersion-crash plus English and Chinese web queries; OpenAlex forward-citation list of Chan-Cheng-Hameed with 21 citing works, none on crash risk or skewness with horizon dispersion; none found for horizon-sorted portfolio overlap; reliability tier 'moderate' because WebSearch is US-only, Google Scholar not accessible, OpenAlex rate-limited. Draft 3.2 gives only 'about 80% confidence after the Chinese pre-emption'.",
+   "recommendation": "In 3.2, 3.4 and 3.5 add one sentence each naming what was searched (query families, the 21-citer forward-citation check on Chan-Cheng-Hameed, Chinese-language queries) and the reliability limits (no Google Scholar, SSRN blocked, search engine recall). In 3.5 state the ABM search scope. Keep it to one clause per pivot."
+  },
+  {
+   "severity": "major",
+   "location": "2.5 (Strand e) and 3.1 'Closest papers' / 'Residual risk'; 4.1 item 4 (consequence claim)",
+   "issue": "The Chinese fund peer-effect and co-holding-network literature in the vault is mostly omitted. The draft names only Chen Guojin et al. [52] and Liang-Wu-Yin, yet the vault has papers on peer effects in fund trading and stock tail risk, institutional co-holding network structure and idiosyncratic volatility, and fund-manager network herding. These are the nearest prior art to Pivot A's consequence claim (peer effect among funds raises stock fragility) and to the 'institutional peer effects exist only for holdings/trades' boundary statement.",
+   "evidence": "Vault notes: peer-effect-of-fund-trading-and-the-risk-of-individual-stock (Chen, Lin, Su, Yao, J. Asian Econ. 97, 2025: peer effect of fund trading behaviour raises individual-stock left-tail risk via signalling and liquidity channels; trade-direction outcome, not turnover/horizon); econpapers-institutional-investor-network-and-idiosyncratic-volatility-of-stocks (Zhai et al., Economics & Politics 36(3) 2024: co-holding network density lowers and centrality raises idiosyncratic volatility); the-influence-of-the-social-networks-of-fund-managers-on-the-herding-behavior-of-SIFs (HSSC 2023); two Chinese-language co-holding / fund-network notes. Draft grep: none cited.",
+   "recommendation": "Add two or three sentences to 2.5 (or 2.4) citing Chen-Lin-Su-Yao and Zhai et al. as established peer-effect-to-tail-risk and network-to-volatility results whose outcome is trade direction or network position rather than horizon. In 3.1 'Closest papers' add them as boundary markers, and in 4.1 item 4 qualify the consequence claim as extending these."
+  },
+  {
+   "severity": "major",
+   "location": "2.3 (Strand c) and 3.2 closest-papers list",
+   "issue": "Strand (c) is under-treated: it rests on Chan-Cheng-Hameed, Chen-Lu-Qin and Greenwood-Thesmar and omits several vault papers that measure ownership-base heterogeneity or dispersion in other senses. A referee asking 'what else measures heterogeneity of holders?' finds the draft silent, which weakens the claim that holder-horizon dispersion is open beyond the named pre-emptions.",
+   "evidence": "Vault notes: heterogeneity-of-institutional-ownership-and-stock-price-delay (Chen, Lee, Sun WP 2015, 13F 1981-2013: price delay regressed on low/high-churn, concentrated and top-5 holder shares; low-churn lowers delay); a-new-measure-for-differences-of-opinions-institutional-trade-dispersion (Alldredge and Caglayan, JBF 170, 2025: dispersion across institutions' quarterly trades, predicts lower returns); benkraiem-et-al-2022-jifmim (published form of Zhu skewness paper, JIFMIM 2022; draft cites only the working paper [39]); the-more-we-know-the-less-we-agree (Dai et al., Financial Review 2022: short-term-investor share raises volume and volatility, Russell reconstitution design). Draft grep: none of these appears.",
+   "recommendation": "Add one to two sentences to 2.3 listing these as adjacent: type-share and trade-direction dispersion measures versus Chan-Cheng-Hameed's churn dispersion, and note the Russell reconstitution design as a possible exogenous holder-composition source for the B module. Update [39] to cite the published JIFMIM version."
+  },
+  {
+   "severity": "major",
+   "location": "2.7 (Strand g), 3.4 (Pivot D closest papers), 2.4",
+   "issue": "Strand (g) and Pivot D's closest-papers list are thin. D cites Crane-Koch-Michenaud and Gualdi et al. only. The vault has several network studies of investor similarity and portfolio-overlap structure that bear on whether horizon-sorted co-holding was already documented, and which also supply the community-structure null the D residual test needs.",
+   "evidence": "Vault notes: arxiv14022494 (Bohlin and Rosvall 2014: cosine-similarity investor network, Infomap communities, same-community investors trade more alike; individual investors); the-network-of-us-mutual-fund-investments (Delpini et al., arXiv 1801.02205: US mutual fund overlap network, community structure, fragility through the GFC; no turnover/horizon sort); better-to-stay-apart (Flori, Lillo, Pammolli, Annals of OR 2021: bipartite centrality and performance); gradual-information-diffusion-across-commonly-owned-firms (Ying, JFE 156, 2024); arxiv190701119 (empirical investor networks). Draft cites none of these.",
+   "recommendation": "In 2.7 and 3.4 add a sentence naming Bohlin-Rosvall, Delpini et al. and Flori et al. as community/similarity-network precedents that show holdings-similarity structure but do not sort by horizon, and mention Ying as common-owner transmission of information. This supports the D verdict and the community-aware null recommended in 3.4."
+  },
+  {
+   "severity": "major",
+   "location": "3.5 (Pivot E 'Has it been done?') and 2.1 ABM paragraph",
+   "issue": "Pivot E's closest-paper list is limited to Oldham, LeBaron, FMH ABMs and the PLOS ONE calibration. The vault holds several network ABMs with imitation or opinion-proximity link rules, and a 2025 overlapping-portfolio instability model, that a referee would check against 'no ABM was found...'. The verdict also gives no scope for that search.",
+   "evidence": "Vault notes: networks-and-imitations-in-an-agent-based-asset-market (Masmoudi 2014: imitation on small-world networks; no horizon state); herding-momentum-and-reversal-in-chinas-a-share-market-an-agent-based (arXiv 2607.27063, 2026: action probabilities shift toward neighbours, random rewiring); modeling-stock-price-dynamics-with (fuzzy opinion network, links on expectation proximity, arXiv 1602.06213); financial-instability-transition-under-heterogeneous-investments-and (Forera et al., arXiv 2501.19260, 2025: heterogeneity of investments correlates with higher volatility in overlapping portfolios).",
+   "recommendation": "Add two sentences to 3.5 naming these as the closest network ABMs, stating each lacks horizon as the adapting state or an empirically estimated adaptation rate, which sharpens the claim 'similarity-based link formation plus estimated adaptation'. Note that Forera et al. is evidence for the sign of the diversity-volatility channel."
+  },
+  {
+   "severity": "minor",
+   "location": "2.1, 2.2, 2.6 and the absorption table in 3.2",
+   "issue": "Several horizon-level and measurement papers in the vault are omitted: a demand-system result that long-horizon investors move prices least, the original Duarte-Parsa working paper, and a non-13F stock-level horizon measure from volume wavelets. They would enrich the absorption evidence and the measurement strand.",
+   "evidence": "Vault notes: which-investors-matter-for-equity-valuations-and-expected-returns-nber (Koijen, Richmond, Yogo, REStud 2024: hedge funds and small active advisors move prices most per dollar; pensions and insurers least); institutional-investors-intrinsic-trading-frequency (Duarte and Parsa 2011; draft cites only the Parsa thesis [32]); investment-horizon-spillovers-nber (Chinco, NBER w23650: volume-frequency tilt changes rapidly month to month).",
+   "recommendation": "Add Koijen-Richmond-Yogo as a supporting row to the 'Long-horizon investors absorb' side of the 3.2 table, a clause in 2.6 on Chinco's volume-based horizon as an alternative measure showing horizon tilt can change quickly (relevant to the trait-versus-time-varying objection), and cite Duarte-Parsa with [32]."
+  },
+  {
+   "severity": "minor",
+   "location": "4.6, 4.7 and 6.7 (N-PORT treatment)",
+   "issue": "The query lists bond funds from N-PORT as part of the current evidence base and asks about data upgrades. The draft mentions N-PORT only as a validation layer and a one-clause bond-market extension; it says nothing about what the existing descriptive bond result would support or how bond-fund fire-sale literature fits.",
+   "evidence": "Draft grep: N-PORT appears in 4.6, 4.7, 6.3, 6.5 and the 6.7 table, always as an auxiliary; no section assesses the bond-fund result itself. Vault includes Timmer (cited [62]) and Georg-Pierret-Steffen (cited [46]) on fund-level redemption and fire-sale behaviour.",
+   "recommendation": "Add two sentences to 4.6 saying what the existing N-PORT bond-fund descriptive result can and cannot support in the pivot (fund-level horizon with no filer aggregation problem; a natural place for redemption-based instruments [46]), or state explicitly that it is dropped."
+  },
+  {
+   "severity": "major",
+   "location": "Whole report (about 74 KB); Executive summary, 3.6, 4.2-4.3, 4.7, 7",
+   "issue": "Content dilution. The report runs well above the 45-55 KB norm. The same facts recur in several places: the VIX r = -0.53 to -0.06 and 2022Q4 unit-break story in the summary, 1.2 and 6.1; the Chan-Cheng-Hameed pre-emption in the summary, 1.2, 2.3, 3.2, 3.6 and 4.3; the five-pivot verdicts in the summary table, 3.1-3.5, 3.6 and the strand table; and objections in section 7 restate answers already given in 4.2-4.3 and 6.2-6.4. 3.6 and parts of 4.7 restate the thesis.",
+   "evidence": "Summary paragraph 2 and table repeat 3.2-3.5; 3.6 restates 'every result ... pre-empted, mechanical or a replication', a sentence also in the summary and 1.3; section 7 items 2, 3, 6 and 7 repeat identification text from 6.2-6.4.",
+   "recommendation": "Cut 3.6 to one sentence or remove it; trim section 1.2 repetition of the pre-emptions already in the summary; compress section 7 answers to cross-references to 6.x for items 2, 3, 6, 7; shorten 4.7 second and third implications. Target a cut of about 15 percent, preserving all citations."
+  },
+  {
+   "severity": "minor",
+   "location": "Executive summary vs 1.3 and the closing paragraph of section 7",
+   "issue": "The executive summary, 1.3 and the closing paragraph of section 7 each restate the same thesis in similar phrases: only A's estimand is open, every headline empirical result is pre-empted or mechanical, the impact-factor bar was never binding, FRL already at 7.1.",
+   "evidence": "The phrases 'impact-factor bar was never binding'/'does not force the pivot' and 'pre-empted, mechanical or a replication' appear in the summary, 1.3, 3.6 and 5.1; section 7 closes by repeating the risk-taking rationale of 4.3.",
+   "recommendation": "Keep the claim in the summary and the section where it is argued; replace the repeats in 1.3 and the section 7 close with a differentiated forward-looking point such as the decision date and first observable gate result."
+  }
+ ]
+}

@@ -1,0 +1,49 @@
+[
+ {
+  "claim": "Portfolio overlap transmits forced-selling shocks and comovement across commonly held assets",
+  "sources": [
+   "nber-working-paper-series-2",
+   "nber-working-paper-series-10",
+   "the-journal-of-finance-vol-lxix-no-3-june-2014",
+   "stock-price-fragility",
+   "statistically-validated-network-of-portfolio-overlaps-and-systemic-ris",
+   "systemic-risk-from-investment-similarities-pmc"
+  ]
+ },
+ {
+  "claim": "The standard holdings-based horizon measure (Gaspar-Massa-Matos churn) nets out passive price changes",
+  "sources": [
+   "journal-of-financial-economics-76-2005-135165",
+   "institutional-investors-and-equity-returns",
+   "crash-risk-and-investor-horizon",
+   "heterogeneity-of-institutional-ownership-and-stock-price-delay"
+  ]
+ },
+ {
+  "claim": "Peer effects exist in what institutional fund managers hold and trade (social ties, geography, shared employers)",
+  "sources": [
+   "nber-working-paper-series",
+   "the-people-in-your-neighborhood-social-interactions-and-mutual-fund-portfolios-n",
+   "birds-of-a-feather-do-hedge-fund-managers-flock-together",
+   "inferring-latent-social-networks-from-stock-holdings"
+  ]
+ },
+ {
+  "claim": "Short-horizon institutional ownership is associated with more selling in turmoil, higher volatility and crash risk (level effects)",
+  "sources": [
+   "issn-0956-8549-717-2",
+   "crash-risk-and-investor-horizon",
+   "nber-working-paper-series-8",
+   "electronic-copy-available-at-httpssrncomabstract1464954"
+  ]
+ },
+ {
+  "claim": "Credible peer-effect estimates need exogenous variation beyond regressing outcomes on peers' mean outcomes",
+  "sources": [
+   "iza-dp-no-2652",
+   "nber-working-paper-series-4",
+   "nber-working-paper-series-5",
+   "peer-effects-in-networks-a-survey"
+  ]
+ }
+]

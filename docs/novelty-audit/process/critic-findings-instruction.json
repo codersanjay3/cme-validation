@@ -1,0 +1,96 @@
+{
+  "critic_type": "instruction",
+  "structural_mirror_check": "PASS: the draft's seven H2 headings match required_section_headings exactly and in order; ## Sources follows. Decomposition covers all query noun phrases (strands a-g, pivots A-E, Q3 elements); no decomposition-gap found.",
+  "findings": [
+    {
+      "severity": "major",
+      "atomic_item": "Pivots A to E: determine whether it has already been done ... Searches ... no paper was found",
+      "failure_mode": "vague-recommendation",
+      "location": "3.2-3.5 (Pivots B, C, D, E 'Has it been done?') and 3.1 'Has it been done?' paragraph starting 'Not as an estimand. Searches across about eighteen framings'",
+      "issue": "Deep-inference directive: every audited absence (no paper regresses horizon on neighbours' horizon; 'No paper regresses pairwise portfolio similarity on pairwise horizon proximity'; 'No ABM was found in which links form on horizon similarity...') needs a statement of what was searched, but only Pivot A gets a partial list of 'framings' and B to E state absences with no search record (no venues such as SSRN/NBER/CEPR/arXiv q-fin, no query phrasing, no date range, no near-duplicate probes).",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "For each of A-E, add one sentence naming the search surface (SSRN, NBER, CEPR, arXiv q-fin, journal sites, Google Scholar), the key term combinations tried (e.g. 'investor horizon' with 'peer effect', 'homophily' with 'co-holding', 'agent-based' with 'calibrated adaptation'), and the date window (through Nov 2026), so each 'not found' is a bounded audited absence. Replace the bare 'about eighteen framings' with the enumerated list or a compact appendix line."
+    },
+    {
+      "severity": "major",
+      "atomic_item": "A. Horizon contagion ... name the closest papers",
+      "failure_mode": "under-covered",
+      "location": "3.1 'Residual risk' paragraph: 'A title-only 2025 SSRN paper by MacDonald (5692342) ... remains unread'; also Referee objection 12",
+      "issue": "The single closest unresolved near-duplicate to the recommended pivot (MacDonald 2025 on institutions influenced by other institutions' trades; Liang-Wu-Yin full text) is left unread, so the headline novelty verdict for A (about 70%) rests on a title; the query's novelty bar requires resolving this before recommending.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Run a gap-fetch for SSRN 5692342 (abstract plus design: outcome variable, network, identification) and the Liang-Wu-Yin text, then state in 3.1 whether either regresses own horizon, turnover or trading frequency on peers'. Update the confidence figure and objection 12 accordingly. If fetch fails, say so explicitly and state the downside case."
+    },
+    {
+      "severity": "major",
+      "atomic_item": "(a) investor horizon heterogeneity and market stability, the Fractal Market Hypothesis and heterogeneous-horizon agent-based models",
+      "failure_mode": "under-covered",
+      "location": "2.1 Strand (a); FMH defined only in 1.3 ('the claim that markets are stable when investors of many horizons coexist')",
+      "issue": "The decomposition's FMH entity requires claims, tests and ABM implementations; the draft gives one clause on Peters's claim, no empirical tests of the FMH (e.g. Hurst/rescaled-range or scaling tests, crash-period evidence) and treats FMH only through two ABM citations [27, 28], while demoting it to a sentence.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Add 3-4 sentences in 2.1 stating Peters's core claims (liquidity depends on coexistence of horizons; crashes when one horizon dominates), summarising the empirical tests found in the vault (or stating that none were located and what was searched), and then the ABM implementations, so the FMH demotion in 1.3 is argued from the tests rather than asserted."
+    },
+    {
+      "severity": "major",
+      "atomic_item": "(e) peer effects, herding and contagion in institutional trading behaviour, especially in trading frequency, turnover or horizon",
+      "failure_mode": "under-covered",
+      "location": "2.5 Strand (e)",
+      "issue": "Herding and contagion are named in the prompt, but the strand has no canonical institutional-herding measurement literature (trade-direction herding measures, institutional herding and price impact) and no financial-contagion-through-holdings literature beyond fire-sale papers; herding appears only through Liang-Wu-Yin and Cohen-Lu-Nguyen.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Add a paragraph on herding (what the standard herding measures capture: direction not horizon, so none test Pivot A's estimand) and on contagion channels in institutional trading, drawing on vault notes if present; if absent, run a gap-fetch. Tie the paragraph back to why direction-herding is not horizon-contagion."
+    },
+    {
+      "severity": "major",
+      "atomic_item": "(g) homophily in investor networks",
+      "failure_mode": "under-covered",
+      "location": "2.7 Strand (g)",
+      "issue": "The strand rests on one co-holding paper [22], the BiCM null [23] and Golub-Jackson [61]; it has no general homophily literature (selection versus influence, network formation on similarity) and no investor-network homophily evidence outside co-holding cliques, though D's verdict ('mechanical as measured') depends on it.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Expand 2.7 with the general homophily/selection-versus-influence results and any investor-network homophily evidence (shared education, geography, employer, fund family) from the vault, or gap-fetch them, and state how each bears on separating D's fact from A's selection problem."
+    },
+    {
+      "severity": "major",
+      "atomic_item": "SEC Form 13F institutional holdings: horizon measures built from it, known limitations",
+      "failure_mode": "under-covered",
+      "location": "2.2 and 2.6; 6.1 Step zero",
+      "issue": "Known 13F limitations are covered only for unit break, amendments and CUSIP errors; structural limits that bear on horizon measurement (quarter-end snapshots hiding intra-quarter round trips beyond one sentence in 6.5, long-only equity positions, filing threshold, confidential treatment, filer-level aggregation of multiple managers) are not collected, and Bushee type classification is used in 6.2 with no citation or measurement discussion.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Add a short 'limits of 13F as a horizon source' paragraph to 2.6 listing these structural limits with sources, say which are fatal for churn-based horizon and which are second order, and add a source for Bushee classifications where 6.2 uses them."
+    },
+    {
+      "severity": "major",
+      "atomic_item": "readability-structural: definitions on first use",
+      "failure_mode": "missing-definitions",
+      "location": "4.3, 4.4, 6.2-6.4: 'Anderson-Rubin sets', 'Oster-type or partial-identification bound', 'difference-in-differences', 'leave-out bias', 'first stage F statistic', 'row-scaled adjacency'",
+      "issue": "Several identification terms are used without a first-use gloss while other terms (Fama-MacBeth, BiCM, Nickell, NCSKEW) are defined, so the audience adaptation is inconsistent.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Add one-clause parentheticals at first use for Anderson-Rubin inference (a test valid under weak instruments), Oster/partial-identification bounds, difference-in-differences, and leave-out bias; Anderson-Rubin first appears in the executive summary area via 2.5."
+    },
+    {
+      "severity": "minor",
+      "atomic_item": "Journals with impact factor above 4 to 5 in finance/economics: fit per pivot",
+      "failure_mode": "under-covered",
+      "location": "5.2 Fit by journal table",
+      "issue": "The table rates journal fit for the programme and mentions B, C and E fits only in scattered comments; there is no per-pivot journal mapping for the fallback products (B absorption, D descriptive, C letter) in one place.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Add a compact column or a four-row table mapping each pivot or fallback product (A full paper, B absorption paper, C measurement letter, D descriptive fact, E model) to its best above-bar journal and a below-bar fallback."
+    },
+    {
+      "severity": "minor",
+      "atomic_item": "readability-structural: comparison-axis coverage across pivots",
+      "failure_mode": "missing-comparison-dimensions",
+      "location": "Opening table and 3.6",
+      "issue": "The five pivots are compared on verdict, closest papers, increment and role, but not on feasibility with the team's data, time-to-execute, identification risk or scooping risk side by side, so the choice of A over B (which 4.2 concedes dominates on identification and feasibility) is not visible in one table.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Add two or three columns (data required, identification risk, scoop risk) to the summary table or to 3.6, using the evidence already in 4.2-4.3."
+    },
+    {
+      "severity": "minor",
+      "atomic_item": "Recommend the single most defensible novel pivot (or combination)",
+      "failure_mode": "vague-recommendation",
+      "location": "Executive summary and 3.1-3.5: 'about 70% confidence', 'about 80% confidence'",
+      "issue": "Point confidence percentages are asserted without derivation, which reads as false precision on a judgement call; the text elsewhere (4.4) flags the 10% and 30-shock thresholds as judgement calls but not these.",
+      "requires_orchestrator_restructure": false,
+      "recommendation": "Label the 70% and 80% figures as the analyst's subjective judgement, state what moves them (reading MacDonald, number of framings searched), or replace with low/medium/high bands."
+    }
+  ]
+}
