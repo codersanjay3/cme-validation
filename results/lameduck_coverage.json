@@ -1,0 +1,89 @@
+{
+ "all_series": {
+  "series_events": 3903,
+  "announcements": 1015,
+  "in_panel": 3810,
+  "with_end": {
+   "stated": 3210,
+   "later_notice": 71
+  },
+  "lag_months_stated_quantiles": {
+   "0.1": -0.1,
+   "0.25": 1.2,
+   "0.5": 3.1,
+   "0.75": 7.1,
+   "0.9": 11.0
+  },
+  "usable_stated": {
+   "series_events": 1684,
+   "announcements": 512
+  },
+  "usable_stated_or_notice": {
+   "series_events": 1745,
+   "announcements": 536
+  },
+  "mean_lame_reports_usable_stated": 2.04
+ },
+ "equity_funds": {
+  "series_events": 1526,
+  "announcements": 484,
+  "in_panel": 1525,
+  "with_end": {
+   "stated": 1261,
+   "later_notice": 27
+  },
+  "lag_months_stated_quantiles": {
+   "0.1": -1.0,
+   "0.25": 1.1,
+   "0.5": 3.0,
+   "0.75": 6.8,
+   "0.9": 10.9
+  },
+  "usable_stated": {
+   "series_events": 659,
+   "announcements": 233
+  },
+  "usable_stated_or_notice": {
+   "series_events": 681,
+   "announcements": 242
+  },
+  "mean_lame_reports_usable_stated": 2.07
+ },
+ "equity_funds_filing_names_at_most_5_series": {
+  "series_events": 531,
+  "announcements": 379,
+  "in_panel": 531,
+  "with_end": {
+   "stated": 440,
+   "later_notice": 7
+  },
+  "lag_months_stated_quantiles": {
+   "0.1": 0.6,
+   "0.25": 1.9,
+   "0.5": 5.0,
+   "0.75": 9.0,
+   "0.9": 12.7
+  },
+  "usable_stated": {
+   "series_events": 260,
+   "announcements": 178
+  },
+  "usable_stated_or_notice": {
+   "series_events": 265,
+   "announcements": 183
+  },
+  "mean_lame_reports_usable_stated": 2.45
+ },
+ "power": {
+  "sd_log_turnover_within": 0.642,
+  "mde_log_points": {
+   "N=233,L=1": 0.118,
+   "N=233,L=2": 0.083,
+   "N=242,L=1": 0.116,
+   "N=242,L=2": 0.082,
+   "narrow N=178,L=1": 0.135,
+   "narrow N=178,L=2": 0.095
+  }
+ },
+ "note": "counts only; no outcomes read by event time"
+}

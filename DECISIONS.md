@@ -104,3 +104,11 @@ Where the project stands, so no agent has to rediscover it.
 - Meaning: the panel measures turnover well enough to rank funds. The binding limit is events: only about 46 usable announcements, enough for a 20 to 30% turnover shift, not a small one. 92 equity announcements have no stated date and 48 dated windows are under 3 months (no quarterly report inside). The 13F split rule biases Stage 1 tau_split upward; Stage 1 needs a rerun after the fix (cme-d0m), which will move Stage 1 numbers and needs a result-change issue.
 - Open: grow the event set (more 497 phrases, better date extraction, hand-coding undated announcements) before pre-registering; no outcome has been read by event time. Fix cme-d0m and rerun Stage 1. Team decision (cme-x59).
 - Beads/issues: cme-d0m, cme-i7t, cme-x59.
+
+## 2026-11-26 sumedh-agent: lame-duck retirement event set grown 5x (counts only)
+- Changed: new `lameduck/` (find_events.py, test_find_events.py, coverage.py, README.md), `results/lameduck_events.csv`, `results/lameduck_event_scope.json`, `results/lameduck_coverage.json`. Stage 2 scripts unchanged. No paper number changed. No outcome read by event time.
+- Numbers (new): Forms 497 and 497K, 11 retirement wordings plus departure notices: 3,903 series events from 1,015 announcements (Stage 2 had 462; all 462 found again). End dates: 3,210 stated, 71 from a later departure notice, 622 none. Equity funds: 484 announcements; usable (2 pre, 1 lame-duck, 2 post reports) 233 with stated ends, 242 with stated or notice ends (was 46). Filings naming at most 5 series: 178 usable. Median stated lag 3.0 months on equity funds. MDE 0.08 to 0.12 log points at N = 233 (was 0.19 to 0.27 at N = 46), 0.10 to 0.14 at N = 178. No seeds (no randomness).
+- Why: the event count was the binding limit on the lame-duck design (2026-11-21 entry).
+- Meaning: the design can now detect about a 10% shift in fund turnover in the lame-duck window. Ready to pre-register once the team agrees on the pivot.
+- Open: 90 announcements name 10 or more series, so series-level precision is uncertain; choose the unit and robustness subset in the pre-registration. Team decision (cme-x59). Pre-registration not started.
+- Beads/issues: cme-i7t, cme-x59.
